@@ -1,0 +1,2339 @@
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"toshibaStepMotor.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassC2Ev,"ax
+  16              		.align	1
+  17              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassC2Ev
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassC2Ev:
+  25              		.fnstart
+  26              	.LVL0:
+  27              	.LFB294:
+  28              		.file 1 "xiagb/bottom/toshibaStepMotor.cpp"
+   1:xiagb/bottom/toshibaStepMotor.cpp **** #include "toshibaStepMotor.hpp"
+   2:xiagb/bottom/toshibaStepMotor.cpp **** 
+   3:xiagb/bottom/toshibaStepMotor.cpp **** #include <math.h>
+   4:xiagb/bottom/toshibaStepMotor.cpp **** namespace xiagb
+   5:xiagb/bottom/toshibaStepMotor.cpp **** {
+   6:xiagb/bottom/toshibaStepMotor.cpp ****     namespace motorNamespace
+   7:xiagb/bottom/toshibaStepMotor.cpp ****     {
+   8:xiagb/bottom/toshibaStepMotor.cpp ****         namespace toshibaStepMotorNamespace
+   9:xiagb/bottom/toshibaStepMotor.cpp ****         {
+  10:xiagb/bottom/toshibaStepMotor.cpp ****             float toshibaStepMotorClass::curve_s_table[curve_s_num];
+  11:xiagb/bottom/toshibaStepMotor.cpp ****             bool toshibaStepMotorClass::curve_s_data_build_flag;
+  12:xiagb/bottom/toshibaStepMotor.cpp **** 
+  13:xiagb/bottom/toshibaStepMotor.cpp ****             toshibaStepMotorClass::toshibaStepMotorClass()
+  29              		.loc 1 13 13 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  14:xiagb/bottom/toshibaStepMotor.cpp ****             {
+  15:xiagb/bottom/toshibaStepMotor.cpp ****             }
+  34              		.loc 1 15 13 is_stmt 0 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE294:
+  38              		.cantunwind
+  39              		.fnend
+  41              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassC1Ev
+  42              		.thumb_set _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassC1Ev,_ZN5xia
+  43              		.section	.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassD2Ev,"ax
+  44              		.align	1
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 2
+
+
+  45              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassD2Ev
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  49              		.fpu softvfp
+  51              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassD2Ev:
+  52              		.fnstart
+  53              	.LVL1:
+  54              	.LFB297:
+  16:xiagb/bottom/toshibaStepMotor.cpp **** 
+  17:xiagb/bottom/toshibaStepMotor.cpp ****             toshibaStepMotorClass::~toshibaStepMotorClass()
+  55              		.loc 1 17 13 is_stmt 1 view -0
+  56              		.cfi_startproc
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59              		@ link register save eliminated.
+  18:xiagb/bottom/toshibaStepMotor.cpp ****             {
+  19:xiagb/bottom/toshibaStepMotor.cpp ****             }
+  60              		.loc 1 19 13 is_stmt 0 view .LVU3
+  61 0000 7047     		bx	lr
+  62              		.cfi_endproc
+  63              	.LFE297:
+  64              		.cantunwind
+  65              		.fnend
+  67              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassD1Ev
+  68              		.thumb_set _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassD1Ev,_ZN5xia
+  69              		.global	__aeabi_i2d
+  70              		.global	__aeabi_dmul
+  71              		.global	__aeabi_dadd
+  72              		.global	__aeabi_ddiv
+  73              		.global	__aeabi_d2f
+  74              		.section	.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass12curve_
+  75              		.align	1
+  76              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass12curve_s_initE
+  77              		.syntax unified
+  78              		.thumb
+  79              		.thumb_func
+  80              		.fpu softvfp
+  82              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass12curve_s_initEv:
+  83              		.fnstart
+  84              	.LFB299:
+  20:xiagb/bottom/toshibaStepMotor.cpp **** 
+  21:xiagb/bottom/toshibaStepMotor.cpp ****             void toshibaStepMotorClass::curve_s_init()
+  22:xiagb/bottom/toshibaStepMotor.cpp ****             {
+  85              		.loc 1 22 13 is_stmt 1 view -0
+  86              		.cfi_startproc
+  87              		@ args = 0, pretend = 0, frame = 0
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89 0000 10B5     		push	{r4, lr}
+  90              	.LCFI0:
+  91              		.cfi_def_cfa_offset 8
+  92              		.cfi_offset 4, -8
+  93              		.cfi_offset 14, -4
+  23:xiagb/bottom/toshibaStepMotor.cpp ****                 for (uint16_t x = 0; x < curve_s_num; x++)
+  94              		.loc 1 23 17 view .LVU5
+  95              	.LVL2:
+  96              	.LBB10:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 3
+
+
+  97              		.loc 1 23 31 is_stmt 0 view .LVU6
+  98 0002 0024     		movs	r4, #0
+  99              	.LVL3:
+ 100              	.L5:
+ 101              		.loc 1 23 40 is_stmt 1 discriminator 3 view .LVU7
+ 102 0004 C72C     		cmp	r4, #199
+ 103 0006 1FD8     		bhi	.L4
+  24:xiagb/bottom/toshibaStepMotor.cpp ****                     curve_s_table[x] = 1.0 / (1.0 + exp((curve_s_pan_right * 2.0 / curve_s_num * -x
+ 104              		.loc 1 24 21 discriminator 2 view .LVU8
+ 105              		.loc 1 24 96 is_stmt 0 discriminator 2 view .LVU9
+ 106 0008 6042     		rsbs	r0, r4, #0
+ 107 000a FFF7FEFF 		bl	__aeabi_i2d
+ 108              	.LVL4:
+ 109 000e 10A3     		adr	r3, .L7
+ 110 0010 D3E90023 		ldrd	r2, [r3]
+ 111 0014 FFF7FEFF 		bl	__aeabi_dmul
+ 112              	.LVL5:
+ 113              		.loc 1 24 56 discriminator 2 view .LVU10
+ 114 0018 0022     		movs	r2, #0
+ 115 001a 0F4B     		ldr	r3, .L7+8
+ 116 001c FFF7FEFF 		bl	__aeabi_dadd
+ 117              	.LVL6:
+ 118 0020 FFF7FEFF 		bl	exp
+ 119              	.LVL7:
+ 120              		.loc 1 24 51 discriminator 2 view .LVU11
+ 121 0024 0022     		movs	r2, #0
+ 122 0026 0D4B     		ldr	r3, .L7+12
+ 123 0028 FFF7FEFF 		bl	__aeabi_dadd
+ 124              	.LVL8:
+ 125 002c 0246     		mov	r2, r0
+ 126 002e 0B46     		mov	r3, r1
+ 127              		.loc 1 24 44 discriminator 2 view .LVU12
+ 128 0030 0020     		movs	r0, #0
+ 129 0032 0A49     		ldr	r1, .L7+12
+ 130 0034 FFF7FEFF 		bl	__aeabi_ddiv
+ 131              	.LVL9:
+ 132 0038 FFF7FEFF 		bl	__aeabi_d2f
+ 133              	.LVL10:
+ 134              		.loc 1 24 38 discriminator 2 view .LVU13
+ 135 003c 084B     		ldr	r3, .L7+16
+ 136 003e 43F82400 		str	r0, [r3, r4, lsl #2]	@ float
+  23:xiagb/bottom/toshibaStepMotor.cpp ****                 for (uint16_t x = 0; x < curve_s_num; x++)
+ 137              		.loc 1 23 17 is_stmt 1 discriminator 2 view .LVU14
+ 138 0042 0134     		adds	r4, r4, #1
+ 139              	.LVL11:
+  23:xiagb/bottom/toshibaStepMotor.cpp ****                 for (uint16_t x = 0; x < curve_s_num; x++)
+ 140              		.loc 1 23 17 is_stmt 0 discriminator 2 view .LVU15
+ 141 0044 A4B2     		uxth	r4, r4
+ 142              	.LVL12:
+  23:xiagb/bottom/toshibaStepMotor.cpp ****                 for (uint16_t x = 0; x < curve_s_num; x++)
+ 143              		.loc 1 23 17 discriminator 2 view .LVU16
+ 144 0046 DDE7     		b	.L5
+ 145              	.L4:
+  23:xiagb/bottom/toshibaStepMotor.cpp ****                 for (uint16_t x = 0; x < curve_s_num; x++)
+ 146              		.loc 1 23 17 discriminator 2 view .LVU17
+ 147              	.LBE10:
+  25:xiagb/bottom/toshibaStepMotor.cpp **** 
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 4
+
+
+  26:xiagb/bottom/toshibaStepMotor.cpp ****                 curve_s_data_build_flag = true;
+ 148              		.loc 1 26 17 is_stmt 1 view .LVU18
+ 149              		.loc 1 26 41 is_stmt 0 view .LVU19
+ 150 0048 064B     		ldr	r3, .L7+20
+ 151 004a 0122     		movs	r2, #1
+ 152 004c 1A70     		strb	r2, [r3]
+  27:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 153              		.loc 1 27 13 view .LVU20
+ 154 004e 10BD     		pop	{r4, pc}
+ 155              	.LVL13:
+ 156              	.L8:
+ 157              		.loc 1 27 13 view .LVU21
+ 158              		.align	3
+ 159              	.L7:
+ 160 0050 B81E85EB 		.word	-343597384
+ 161 0054 51B89E3F 		.word	1067366481
+ 162 0058 00000840 		.word	1074266112
+ 163 005c 0000F03F 		.word	1072693248
+ 164 0060 00000000 		.word	.LANCHOR0
+ 165 0064 00000000 		.word	.LANCHOR1
+ 166              		.cfi_endproc
+ 167              	.LFE299:
+ 168              		.cantunwind
+ 169              		.fnend
+ 171              		.global	__aeabi_ui2f
+ 172              		.global	__aeabi_fmul
+ 173              		.global	__aeabi_f2uiz
+ 174              		.section	.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv,
+ 175              		.align	1
+ 176              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv
+ 177              		.syntax unified
+ 178              		.thumb
+ 179              		.thumb_func
+ 180              		.fpu softvfp
+ 182              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv:
+ 183              		.fnstart
+ 184              	.LVL14:
+ 185              	.LFB306:
+  28:xiagb/bottom/toshibaStepMotor.cpp **** 
+  29:xiagb/bottom/toshibaStepMotor.cpp ****             void toshibaStepMotorClass::init(GPIO_TypeDef *step_gpiox, uint16_t step_gpio_x, GPIO_T
+  30:xiagb/bottom/toshibaStepMotor.cpp ****             {
+  31:xiagb/bottom/toshibaStepMotor.cpp ****                 if (curve_s_data_build_flag == false)
+  32:xiagb/bottom/toshibaStepMotor.cpp ****                     curve_s_init(), curve_s_data_build_flag = true;
+  33:xiagb/bottom/toshibaStepMotor.cpp **** 
+  34:xiagb/bottom/toshibaStepMotor.cpp ****                 this->step_gpiox = step_gpiox;
+  35:xiagb/bottom/toshibaStepMotor.cpp ****                 this->step_gpio_x = step_gpio_x;
+  36:xiagb/bottom/toshibaStepMotor.cpp **** 
+  37:xiagb/bottom/toshibaStepMotor.cpp ****                 this->dir_gpiox = dir_gpiox;
+  38:xiagb/bottom/toshibaStepMotor.cpp ****                 this->dir_gpio_x = dir_gpio_x;
+  39:xiagb/bottom/toshibaStepMotor.cpp **** 
+  40:xiagb/bottom/toshibaStepMotor.cpp ****                 this->reset_sensor_gpiox = reset_sensor_gpiox;
+  41:xiagb/bottom/toshibaStepMotor.cpp ****                 this->reset_sensor_gpio_x = reset_sensor_gpio_x;
+  42:xiagb/bottom/toshibaStepMotor.cpp ****                 this->reset_sensor_io_lv = reset_sensor_io_lv;
+  43:xiagb/bottom/toshibaStepMotor.cpp ****                 this->reset_dir_io_lv = reset_dir_io_lv;
+  44:xiagb/bottom/toshibaStepMotor.cpp **** 
+  45:xiagb/bottom/toshibaStepMotor.cpp ****                 this->power_timer_handle = power_timer_handle;
+  46:xiagb/bottom/toshibaStepMotor.cpp ****                 this->power_timer_channel = power_timer_channel;
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 5
+
+
+  47:xiagb/bottom/toshibaStepMotor.cpp ****                 this->run_power = run_power;
+  48:xiagb/bottom/toshibaStepMotor.cpp ****                 this->hold_power = hold_power;
+  49:xiagb/bottom/toshibaStepMotor.cpp **** 
+  50:xiagb/bottom/toshibaStepMotor.cpp ****                 stop();
+  51:xiagb/bottom/toshibaStepMotor.cpp ****             }
+  52:xiagb/bottom/toshibaStepMotor.cpp **** 
+  53:xiagb/bottom/toshibaStepMotor.cpp ****             void toshibaStepMotorClass::move(int32_t need_run_step, uint16_t max_speed, uint16_t ac
+  54:xiagb/bottom/toshibaStepMotor.cpp ****             {
+  55:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step == 0)
+  56:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+  57:xiagb/bottom/toshibaStepMotor.cpp ****                     stop();
+  58:xiagb/bottom/toshibaStepMotor.cpp ****                     return;
+  59:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+  60:xiagb/bottom/toshibaStepMotor.cpp **** 
+  61:xiagb/bottom/toshibaStepMotor.cpp ****                 this->need_run_step = need_run_step;
+  62:xiagb/bottom/toshibaStepMotor.cpp ****                 step_counter = 0;
+  63:xiagb/bottom/toshibaStepMotor.cpp ****                 speed = 0;
+  64:xiagb/bottom/toshibaStepMotor.cpp ****                 this->max_speed = max_speed > max_speed_threshold - 100 ? max_speed_threshold : max
+  65:xiagb/bottom/toshibaStepMotor.cpp ****                 interrupt_counter_flag = true;
+  66:xiagb/bottom/toshibaStepMotor.cpp ****                 interrupt_counter = 0;
+  67:xiagb/bottom/toshibaStepMotor.cpp ****                 acc_dec_counter = 0;
+  68:xiagb/bottom/toshibaStepMotor.cpp ****                 acc_dec_step = 0;
+  69:xiagb/bottom/toshibaStepMotor.cpp ****                 this->acc_dec_interval = acc_dec_interval;
+  70:xiagb/bottom/toshibaStepMotor.cpp ****                 speed_accumulator = 0;
+  71:xiagb/bottom/toshibaStepMotor.cpp **** 
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+  73:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+  74:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+  75:xiagb/bottom/toshibaStepMotor.cpp ****                     if (reset_dir_io_lv == GPIO_PIN_SET)
+  76:xiagb/bottom/toshibaStepMotor.cpp ****                         HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, GPIO_PIN_RESET);
+  77:xiagb/bottom/toshibaStepMotor.cpp ****                     else
+  78:xiagb/bottom/toshibaStepMotor.cpp ****                         HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, GPIO_PIN_SET);
+  79:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+  80:xiagb/bottom/toshibaStepMotor.cpp ****                 else
+  81:xiagb/bottom/toshibaStepMotor.cpp ****                     HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, reset_dir_io_lv);
+  82:xiagb/bottom/toshibaStepMotor.cpp ****                 state = motor_accelerate;
+  83:xiagb/bottom/toshibaStepMotor.cpp ****             }
+  84:xiagb/bottom/toshibaStepMotor.cpp **** 
+  85:xiagb/bottom/toshibaStepMotor.cpp ****             void toshibaStepMotorClass::move_to_position(uint16_t position, uint16_t max_speed, uin
+  86:xiagb/bottom/toshibaStepMotor.cpp ****             {
+  87:xiagb/bottom/toshibaStepMotor.cpp ****                 //会将毫米转换成步数
+  88:xiagb/bottom/toshibaStepMotor.cpp ****                 if (position * mm_setp > this->position)
+  89:xiagb/bottom/toshibaStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+  90:xiagb/bottom/toshibaStepMotor.cpp ****                 else
+  91:xiagb/bottom/toshibaStepMotor.cpp ****                     move(-(this->position - position * mm_setp), max_speed, acc_dec_action_interval
+  92:xiagb/bottom/toshibaStepMotor.cpp ****             }
+  93:xiagb/bottom/toshibaStepMotor.cpp **** 
+  94:xiagb/bottom/toshibaStepMotor.cpp ****             void toshibaStepMotorClass::motor_run_time_check()
+  95:xiagb/bottom/toshibaStepMotor.cpp ****             {
+  96:xiagb/bottom/toshibaStepMotor.cpp ****                 if (HAL_GPIO_ReadPin(reset_sensor_gpiox, reset_sensor_gpio_x) == reset_sensor_io_lv
+  97:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+  98:xiagb/bottom/toshibaStepMotor.cpp ****                     if (reset_flag == true)
+  99:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 100:xiagb/bottom/toshibaStepMotor.cpp ****                         stop();
+ 101:xiagb/bottom/toshibaStepMotor.cpp ****                         reset_flag = false, position = 0; //绝对位置置0
+ 102:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 103:xiagb/bottom/toshibaStepMotor.cpp ****                     else if (need_run_step < 0) //不能继续向复位的方向走，但可以向�
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 6
+
+
+ 104:xiagb/bottom/toshibaStepMotor.cpp ****                         stop();
+ 105:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 106:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 107:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 108:xiagb/bottom/toshibaStepMotor.cpp ****             void toshibaStepMotorClass::loop()
+ 109:xiagb/bottom/toshibaStepMotor.cpp ****             {
+ 110:xiagb/bottom/toshibaStepMotor.cpp ****                 if (state == motor_stop)
+ 111:xiagb/bottom/toshibaStepMotor.cpp ****                     return;
+ 112:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 113:xiagb/bottom/toshibaStepMotor.cpp ****                 //拉低脉冲信号
+ 114:xiagb/bottom/toshibaStepMotor.cpp ****                 HAL_GPIO_WritePin(step_gpiox, step_gpio_x, GPIO_PIN_RESET);
+ 115:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 116:xiagb/bottom/toshibaStepMotor.cpp ****                 bool carry_v = false;
+ 117:xiagb/bottom/toshibaStepMotor.cpp ****                 speed_accumulator += speed;                   //叠加速度
+ 118:xiagb/bottom/toshibaStepMotor.cpp ****                 if (speed_accumulator >= max_speed_threshold) //阈值，如果当前速度达到�
+ 119:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 120:xiagb/bottom/toshibaStepMotor.cpp ****                     carry_v = true;
+ 121:xiagb/bottom/toshibaStepMotor.cpp ****                     speed_accumulator -= max_speed_threshold;
+ 122:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 123:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 124:xiagb/bottom/toshibaStepMotor.cpp ****                 if (carry_v == true) //判断是否溢出
+ 125:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 126:xiagb/bottom/toshibaStepMotor.cpp ****                     step_counter++;
+ 127:xiagb/bottom/toshibaStepMotor.cpp ****                     //拉高脉冲信号产生
+ 128:xiagb/bottom/toshibaStepMotor.cpp ****                     HAL_GPIO_WritePin(step_gpiox, step_gpio_x, GPIO_PIN_SET);
+ 129:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 130:xiagb/bottom/toshibaStepMotor.cpp ****                     if (need_run_step > 0)
+ 131:xiagb/bottom/toshibaStepMotor.cpp ****                         position++;
+ 132:xiagb/bottom/toshibaStepMotor.cpp ****                     else
+ 133:xiagb/bottom/toshibaStepMotor.cpp ****                         position--;
+ 134:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 135:xiagb/bottom/toshibaStepMotor.cpp ****                     //额外的操作
+ 136:xiagb/bottom/toshibaStepMotor.cpp ****                     motor_run_time_check();
+ 137:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 138:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 139:xiagb/bottom/toshibaStepMotor.cpp ****                 //根据电机的状态进行工作
+ 140:xiagb/bottom/toshibaStepMotor.cpp ****                 switch (state)
+ 141:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 142:xiagb/bottom/toshibaStepMotor.cpp ****                 case motor_accelerate:
+ 143:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 144:xiagb/bottom/toshibaStepMotor.cpp ****                     //记录加速的步数
+ 145:xiagb/bottom/toshibaStepMotor.cpp ****                     if (carry_v == true)
+ 146:xiagb/bottom/toshibaStepMotor.cpp ****                         acc_dec_step++;
+ 147:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 148:xiagb/bottom/toshibaStepMotor.cpp ****                     if (interrupt_counter_flag)
+ 149:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 150:xiagb/bottom/toshibaStepMotor.cpp ****                         interrupt_counter++;
+ 151:xiagb/bottom/toshibaStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval)
+ 152:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 153:xiagb/bottom/toshibaStepMotor.cpp ****                             interrupt_counter = 0;
+ 154:xiagb/bottom/toshibaStepMotor.cpp ****                             acc_dec_counter++; //计录加速的次数
+ 155:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 156:xiagb/bottom/toshibaStepMotor.cpp ****                             speed = curve_s_table[acc_dec_counter] * max_speed; //计算当前速�
+ 157:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 158:xiagb/bottom/toshibaStepMotor.cpp ****                             //如果加速次数达到最高次数，就停止加速，并让速度
+ 159:xiagb/bottom/toshibaStepMotor.cpp ****                             if (acc_dec_counter >= curve_s_num)
+ 160:xiagb/bottom/toshibaStepMotor.cpp ****                             {
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 7
+
+
+ 161:xiagb/bottom/toshibaStepMotor.cpp ****                                 interrupt_counter_flag = false;
+ 162:xiagb/bottom/toshibaStepMotor.cpp ****                                 speed = max_speed;
+ 163:xiagb/bottom/toshibaStepMotor.cpp ****                                 state = motor_max_speed;
+ 164:xiagb/bottom/toshibaStepMotor.cpp ****                             }
+ 165:xiagb/bottom/toshibaStepMotor.cpp ****                         }
+ 166:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 167:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 168:xiagb/bottom/toshibaStepMotor.cpp ****                     //如果总步数大于1步
+ 169:xiagb/bottom/toshibaStepMotor.cpp ****                     if ((uint32_t)fabs(need_run_step) > 1)
+ 170:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 171:xiagb/bottom/toshibaStepMotor.cpp ****                         if (step_counter >= (uint32_t)fabs(need_run_step) / 2) //如果已走步数
+ 172:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 173:xiagb/bottom/toshibaStepMotor.cpp ****                             //加速时中断计数被断，所以要调整，最后一次加速多
+ 174:xiagb/bottom/toshibaStepMotor.cpp ****                             interrupt_counter = acc_dec_interval - interrupt_counter;
+ 175:xiagb/bottom/toshibaStepMotor.cpp ****                             state = motor_decelerate;
+ 176:xiagb/bottom/toshibaStepMotor.cpp ****                         }
+ 177:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 178:xiagb/bottom/toshibaStepMotor.cpp ****                     else if (step_counter > 0) //只有1步就至少走1步
+ 179:xiagb/bottom/toshibaStepMotor.cpp ****                         state = motor_decelerate;
+ 180:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 181:xiagb/bottom/toshibaStepMotor.cpp ****                     break;
+ 182:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 183:xiagb/bottom/toshibaStepMotor.cpp ****                 case motor_max_speed:
+ 184:xiagb/bottom/toshibaStepMotor.cpp ****                     if (keep_turn_flag && carry_v == true) //当处于保持转动的状态时
+ 185:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 186:xiagb/bottom/toshibaStepMotor.cpp ****                         step_counter--; //加一次就减一次，防止步数达到进入减速的
+ 187:xiagb/bottom/toshibaStepMotor.cpp ****                         if (need_run_step > 0)
+ 188:xiagb/bottom/toshibaStepMotor.cpp ****                             position--;
+ 189:xiagb/bottom/toshibaStepMotor.cpp ****                         else
+ 190:xiagb/bottom/toshibaStepMotor.cpp ****                             position++;
+ 191:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 192:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 193:xiagb/bottom/toshibaStepMotor.cpp ****                     if ((uint32_t)fabs(need_run_step) - step_counter <= acc_dec_step)
+ 194:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 195:xiagb/bottom/toshibaStepMotor.cpp ****                         interrupt_counter_flag = true;
+ 196:xiagb/bottom/toshibaStepMotor.cpp ****                         //进入减速状态就要切换为减速状态时的最大速度
+ 197:xiagb/bottom/toshibaStepMotor.cpp ****                         acc_dec_counter--;
+ 198:xiagb/bottom/toshibaStepMotor.cpp ****                         speed = curve_s_table[acc_dec_counter] * max_speed; //计算当前速度
+ 199:xiagb/bottom/toshibaStepMotor.cpp ****                         state = motor_decelerate;
+ 200:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 201:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 202:xiagb/bottom/toshibaStepMotor.cpp ****                     break;
+ 203:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 204:xiagb/bottom/toshibaStepMotor.cpp ****                 case motor_decelerate:
+ 205:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 206:xiagb/bottom/toshibaStepMotor.cpp ****                     if (interrupt_counter_flag)
+ 207:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 208:xiagb/bottom/toshibaStepMotor.cpp ****                         interrupt_counter++;
+ 209:xiagb/bottom/toshibaStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval) //如果中断次数达到设定
+ 210:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 211:xiagb/bottom/toshibaStepMotor.cpp ****                             interrupt_counter = 0;
+ 212:xiagb/bottom/toshibaStepMotor.cpp ****                             acc_dec_counter--;
+ 213:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 214:xiagb/bottom/toshibaStepMotor.cpp ****                             speed = curve_s_table[acc_dec_counter] * max_speed; //计算当前速�
+ 215:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 216:xiagb/bottom/toshibaStepMotor.cpp ****                             if (acc_dec_counter <= 1)
+ 217:xiagb/bottom/toshibaStepMotor.cpp ****                                 interrupt_counter_flag = false;
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 8
+
+
+ 218:xiagb/bottom/toshibaStepMotor.cpp ****                         }
+ 219:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 220:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 221:xiagb/bottom/toshibaStepMotor.cpp ****                     if (step_counter >= (uint32_t)fabs(need_run_step))
+ 222:xiagb/bottom/toshibaStepMotor.cpp ****                         stop();
+ 223:xiagb/bottom/toshibaStepMotor.cpp ****                     break;
+ 224:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 225:xiagb/bottom/toshibaStepMotor.cpp ****                 default:
+ 226:xiagb/bottom/toshibaStepMotor.cpp ****                     break;
+ 227:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 228:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 229:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 230:xiagb/bottom/toshibaStepMotor.cpp ****             void toshibaStepMotorClass::reset(uint16_t max_speed, uint16_t acc_dec_action_interval)
+ 231:xiagb/bottom/toshibaStepMotor.cpp ****             {
+ 232:xiagb/bottom/toshibaStepMotor.cpp ****                 reset_flag = true;
+ 233:xiagb/bottom/toshibaStepMotor.cpp ****                 move(a_circle_step * -1000, max_speed, acc_dec_action_interval);
+ 234:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 235:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 236:xiagb/bottom/toshibaStepMotor.cpp ****             void toshibaStepMotorClass::stop()
+ 237:xiagb/bottom/toshibaStepMotor.cpp ****             {
+ 186              		.loc 1 237 13 is_stmt 1 view -0
+ 187              		.cfi_startproc
+ 188              		@ args = 0, pretend = 0, frame = 0
+ 189              		@ frame_needed = 0, uses_anonymous_args = 0
+ 190              		.loc 1 237 13 is_stmt 0 view .LVU23
+ 191 0000 38B5     		push	{r3, r4, r5, lr}
+ 192              	.LCFI1:
+ 193              		.cfi_def_cfa_offset 16
+ 194              		.cfi_offset 3, -16
+ 195              		.cfi_offset 4, -12
+ 196              		.cfi_offset 5, -8
+ 197              		.cfi_offset 14, -4
+ 198 0002 0346     		mov	r3, r0
+ 238:xiagb/bottom/toshibaStepMotor.cpp ****                 state = motor_stop;
+ 199              		.loc 1 238 17 is_stmt 1 view .LVU24
+ 200              		.loc 1 238 23 is_stmt 0 view .LVU25
+ 201 0004 0022     		movs	r2, #0
+ 202 0006 0274     		strb	r2, [r0, #16]
+ 239:xiagb/bottom/toshibaStepMotor.cpp ****                 stop_flag = true;
+ 203              		.loc 1 239 17 is_stmt 1 view .LVU26
+ 204              		.loc 1 239 27 is_stmt 0 view .LVU27
+ 205 0008 0121     		movs	r1, #1
+ 206 000a 80F84010 		strb	r1, [r0, #64]
+ 240:xiagb/bottom/toshibaStepMotor.cpp ****                 keep_turn_flag = false;
+ 207              		.loc 1 240 17 is_stmt 1 view .LVU28
+ 208              		.loc 1 240 32 is_stmt 0 view .LVU29
+ 209 000e 80F84120 		strb	r2, [r0, #65]
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 210              		.loc 1 241 17 is_stmt 1 view .LVU30
+ 211 0012 90F84820 		ldrb	r2, [r0, #72]	@ zero_extendqisi2
+ 212 0016 62B9     		cbnz	r2, .L10
+ 213              		.loc 1 241 17 is_stmt 0 discriminator 1 view .LVU31
+ 214 0018 426C     		ldr	r2, [r0, #68]
+ 215 001a 1468     		ldr	r4, [r2]
+ 216 001c E06A     		ldr	r0, [r4, #44]
+ 217              	.LVL15:
+ 218              		.loc 1 241 17 discriminator 1 view .LVU32
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 9
+
+
+ 219 001e 1D6D     		ldr	r5, [r3, #80]	@ float
+ 220 0020 FFF7FEFF 		bl	__aeabi_ui2f
+ 221              	.LVL16:
+ 222              		.loc 1 241 17 discriminator 1 view .LVU33
+ 223 0024 2946     		mov	r1, r5
+ 224 0026 FFF7FEFF 		bl	__aeabi_fmul
+ 225              	.LVL17:
+ 226 002a FFF7FEFF 		bl	__aeabi_f2uiz
+ 227              	.LVL18:
+ 228 002e 6063     		str	r0, [r4, #52]
+ 229              	.L9:
+ 242:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 230              		.loc 1 242 13 view .LVU34
+ 231 0030 38BD     		pop	{r3, r4, r5, pc}
+ 232              	.LVL19:
+ 233              	.L10:
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 234              		.loc 1 241 17 discriminator 2 view .LVU35
+ 235 0032 042A     		cmp	r2, #4
+ 236 0034 0ED0     		beq	.L15
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 237              		.loc 1 241 17 discriminator 4 view .LVU36
+ 238 0036 082A     		cmp	r2, #8
+ 239 0038 19D0     		beq	.L16
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 240              		.loc 1 241 17 discriminator 6 view .LVU37
+ 241 003a 426C     		ldr	r2, [r0, #68]
+ 242 003c 1468     		ldr	r4, [r2]
+ 243 003e E06A     		ldr	r0, [r4, #44]
+ 244              	.LVL20:
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 245              		.loc 1 241 17 discriminator 6 view .LVU38
+ 246 0040 1D6D     		ldr	r5, [r3, #80]	@ float
+ 247 0042 FFF7FEFF 		bl	__aeabi_ui2f
+ 248              	.LVL21:
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 249              		.loc 1 241 17 discriminator 6 view .LVU39
+ 250 0046 2946     		mov	r1, r5
+ 251 0048 FFF7FEFF 		bl	__aeabi_fmul
+ 252              	.LVL22:
+ 253 004c FFF7FEFF 		bl	__aeabi_f2uiz
+ 254              	.LVL23:
+ 255 0050 2064     		str	r0, [r4, #64]
+ 256              		.loc 1 242 13 discriminator 6 view .LVU40
+ 257 0052 EDE7     		b	.L9
+ 258              	.LVL24:
+ 259              	.L15:
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 260              		.loc 1 241 17 discriminator 3 view .LVU41
+ 261 0054 426C     		ldr	r2, [r0, #68]
+ 262 0056 1468     		ldr	r4, [r2]
+ 263 0058 E06A     		ldr	r0, [r4, #44]
+ 264              	.LVL25:
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 265              		.loc 1 241 17 discriminator 3 view .LVU42
+ 266 005a 1D6D     		ldr	r5, [r3, #80]	@ float
+ 267 005c FFF7FEFF 		bl	__aeabi_ui2f
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 10
+
+
+ 268              	.LVL26:
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 269              		.loc 1 241 17 discriminator 3 view .LVU43
+ 270 0060 2946     		mov	r1, r5
+ 271 0062 FFF7FEFF 		bl	__aeabi_fmul
+ 272              	.LVL27:
+ 273 0066 FFF7FEFF 		bl	__aeabi_f2uiz
+ 274              	.LVL28:
+ 275 006a A063     		str	r0, [r4, #56]
+ 276 006c E0E7     		b	.L9
+ 277              	.LVL29:
+ 278              	.L16:
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 279              		.loc 1 241 17 discriminator 5 view .LVU44
+ 280 006e 426C     		ldr	r2, [r0, #68]
+ 281 0070 1468     		ldr	r4, [r2]
+ 282 0072 E06A     		ldr	r0, [r4, #44]
+ 283              	.LVL30:
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 284              		.loc 1 241 17 discriminator 5 view .LVU45
+ 285 0074 1D6D     		ldr	r5, [r3, #80]	@ float
+ 286 0076 FFF7FEFF 		bl	__aeabi_ui2f
+ 287              	.LVL31:
+ 241:xiagb/bottom/toshibaStepMotor.cpp ****                 __HAL_TIM_SET_COMPARE(power_timer_handle, power_timer_channel, __HAL_TIM_GET_AUTORE
+ 288              		.loc 1 241 17 discriminator 5 view .LVU46
+ 289 007a 2946     		mov	r1, r5
+ 290 007c FFF7FEFF 		bl	__aeabi_fmul
+ 291              	.LVL32:
+ 292 0080 FFF7FEFF 		bl	__aeabi_f2uiz
+ 293              	.LVL33:
+ 294 0084 E063     		str	r0, [r4, #60]
+ 295 0086 D3E7     		b	.L9
+ 296              		.cfi_endproc
+ 297              	.LFE306:
+ 298              		.cantunwind
+ 299              		.fnend
+ 301              		.section	.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4initEP1
+ 302              		.align	1
+ 303              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4initEP12GPIO_T
+ 304              		.syntax unified
+ 305              		.thumb
+ 306              		.thumb_func
+ 307              		.fpu softvfp
+ 309              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4initEP12GPIO_TypeDeftS4
+ 310              		.fnstart
+ 311              	.LVL34:
+ 312              	.LFB300:
+  30:xiagb/bottom/toshibaStepMotor.cpp ****                 if (curve_s_data_build_flag == false)
+ 313              		.loc 1 30 13 is_stmt 1 view -0
+ 314              		.cfi_startproc
+ 315              		@ args = 36, pretend = 0, frame = 0
+ 316              		@ frame_needed = 0, uses_anonymous_args = 0
+  30:xiagb/bottom/toshibaStepMotor.cpp ****                 if (curve_s_data_build_flag == false)
+ 317              		.loc 1 30 13 is_stmt 0 view .LVU48
+ 318 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 319              	.LCFI2:
+ 320              		.cfi_def_cfa_offset 24
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 11
+
+
+ 321              		.cfi_offset 3, -24
+ 322              		.cfi_offset 4, -20
+ 323              		.cfi_offset 5, -16
+ 324              		.cfi_offset 6, -12
+ 325              		.cfi_offset 7, -8
+ 326              		.cfi_offset 14, -4
+ 327 0002 0446     		mov	r4, r0
+ 328 0004 0F46     		mov	r7, r1
+ 329 0006 1646     		mov	r6, r2
+ 330 0008 1D46     		mov	r5, r3
+  31:xiagb/bottom/toshibaStepMotor.cpp ****                     curve_s_init(), curve_s_data_build_flag = true;
+ 331              		.loc 1 31 17 is_stmt 1 view .LVU49
+  31:xiagb/bottom/toshibaStepMotor.cpp ****                     curve_s_init(), curve_s_data_build_flag = true;
+ 332              		.loc 1 31 45 is_stmt 0 view .LVU50
+ 333 000a 154B     		ldr	r3, .L21
+ 334              	.LVL35:
+  31:xiagb/bottom/toshibaStepMotor.cpp ****                     curve_s_init(), curve_s_data_build_flag = true;
+ 335              		.loc 1 31 45 view .LVU51
+ 336 000c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  31:xiagb/bottom/toshibaStepMotor.cpp ****                     curve_s_init(), curve_s_data_build_flag = true;
+ 337              		.loc 1 31 17 view .LVU52
+ 338 000e 03B3     		cbz	r3, .L20
+ 339              	.LVL36:
+ 340              	.L18:
+  34:xiagb/bottom/toshibaStepMotor.cpp ****                 this->step_gpio_x = step_gpio_x;
+ 341              		.loc 1 34 17 is_stmt 1 view .LVU53
+  34:xiagb/bottom/toshibaStepMotor.cpp ****                 this->step_gpio_x = step_gpio_x;
+ 342              		.loc 1 34 34 is_stmt 0 view .LVU54
+ 343 0010 E762     		str	r7, [r4, #44]
+  35:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 344              		.loc 1 35 17 is_stmt 1 view .LVU55
+  35:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 345              		.loc 1 35 35 is_stmt 0 view .LVU56
+ 346 0012 2687     		strh	r6, [r4, #56]	@ movhi
+  37:xiagb/bottom/toshibaStepMotor.cpp ****                 this->dir_gpio_x = dir_gpio_x;
+ 347              		.loc 1 37 17 is_stmt 1 view .LVU57
+  37:xiagb/bottom/toshibaStepMotor.cpp ****                 this->dir_gpio_x = dir_gpio_x;
+ 348              		.loc 1 37 33 is_stmt 0 view .LVU58
+ 349 0014 2563     		str	r5, [r4, #48]
+  38:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 350              		.loc 1 38 17 is_stmt 1 view .LVU59
+  38:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 351              		.loc 1 38 34 is_stmt 0 view .LVU60
+ 352 0016 BDF81830 		ldrh	r3, [sp, #24]
+ 353 001a 6387     		strh	r3, [r4, #58]	@ movhi
+  40:xiagb/bottom/toshibaStepMotor.cpp ****                 this->reset_sensor_gpio_x = reset_sensor_gpio_x;
+ 354              		.loc 1 40 17 is_stmt 1 view .LVU61
+  40:xiagb/bottom/toshibaStepMotor.cpp ****                 this->reset_sensor_gpio_x = reset_sensor_gpio_x;
+ 355              		.loc 1 40 42 is_stmt 0 view .LVU62
+ 356 001c 079B     		ldr	r3, [sp, #28]
+ 357 001e 6363     		str	r3, [r4, #52]
+  41:xiagb/bottom/toshibaStepMotor.cpp ****                 this->reset_sensor_io_lv = reset_sensor_io_lv;
+ 358              		.loc 1 41 17 is_stmt 1 view .LVU63
+  41:xiagb/bottom/toshibaStepMotor.cpp ****                 this->reset_sensor_io_lv = reset_sensor_io_lv;
+ 359              		.loc 1 41 43 is_stmt 0 view .LVU64
+ 360 0020 BDF82030 		ldrh	r3, [sp, #32]
+ 361 0024 A387     		strh	r3, [r4, #60]	@ movhi
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 12
+
+
+  42:xiagb/bottom/toshibaStepMotor.cpp ****                 this->reset_dir_io_lv = reset_dir_io_lv;
+ 362              		.loc 1 42 17 is_stmt 1 view .LVU65
+  42:xiagb/bottom/toshibaStepMotor.cpp ****                 this->reset_dir_io_lv = reset_dir_io_lv;
+ 363              		.loc 1 42 42 is_stmt 0 view .LVU66
+ 364 0026 9DF82430 		ldrb	r3, [sp, #36]	@ zero_extendqisi2
+ 365 002a 84F83E30 		strb	r3, [r4, #62]
+  43:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 366              		.loc 1 43 17 is_stmt 1 view .LVU67
+  43:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 367              		.loc 1 43 39 is_stmt 0 view .LVU68
+ 368 002e 9DF82830 		ldrb	r3, [sp, #40]	@ zero_extendqisi2
+ 369 0032 84F82430 		strb	r3, [r4, #36]
+  45:xiagb/bottom/toshibaStepMotor.cpp ****                 this->power_timer_channel = power_timer_channel;
+ 370              		.loc 1 45 17 is_stmt 1 view .LVU69
+  45:xiagb/bottom/toshibaStepMotor.cpp ****                 this->power_timer_channel = power_timer_channel;
+ 371              		.loc 1 45 42 is_stmt 0 view .LVU70
+ 372 0036 0B9B     		ldr	r3, [sp, #44]
+ 373 0038 6364     		str	r3, [r4, #68]
+  46:xiagb/bottom/toshibaStepMotor.cpp ****                 this->run_power = run_power;
+ 374              		.loc 1 46 17 is_stmt 1 view .LVU71
+  46:xiagb/bottom/toshibaStepMotor.cpp ****                 this->run_power = run_power;
+ 375              		.loc 1 46 43 is_stmt 0 view .LVU72
+ 376 003a 9DF83030 		ldrb	r3, [sp, #48]	@ zero_extendqisi2
+ 377 003e 84F84830 		strb	r3, [r4, #72]
+  47:xiagb/bottom/toshibaStepMotor.cpp ****                 this->hold_power = hold_power;
+ 378              		.loc 1 47 17 is_stmt 1 view .LVU73
+  47:xiagb/bottom/toshibaStepMotor.cpp ****                 this->hold_power = hold_power;
+ 379              		.loc 1 47 33 is_stmt 0 view .LVU74
+ 380 0042 0D9B     		ldr	r3, [sp, #52]	@ float
+ 381 0044 E364     		str	r3, [r4, #76]	@ float
+  48:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 382              		.loc 1 48 17 is_stmt 1 view .LVU75
+  48:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 383              		.loc 1 48 34 is_stmt 0 view .LVU76
+ 384 0046 0E9B     		ldr	r3, [sp, #56]	@ float
+ 385 0048 2365     		str	r3, [r4, #80]	@ float
+  50:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 386              		.loc 1 50 17 is_stmt 1 view .LVU77
+  50:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 387              		.loc 1 50 21 is_stmt 0 view .LVU78
+ 388 004a 2046     		mov	r0, r4
+ 389 004c FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv
+ 390              	.LVL37:
+  51:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 391              		.loc 1 51 13 view .LVU79
+ 392 0050 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 393              	.LVL38:
+ 394              	.L20:
+  32:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 395              		.loc 1 32 21 is_stmt 1 view .LVU80
+  32:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 396              		.loc 1 32 33 is_stmt 0 view .LVU81
+ 397 0052 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass12curve_s_initEv
+ 398              	.LVL39:
+  32:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 399              		.loc 1 32 61 view .LVU82
+ 400 0056 024B     		ldr	r3, .L21
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 13
+
+
+ 401 0058 0122     		movs	r2, #1
+ 402 005a 1A70     		strb	r2, [r3]
+ 403 005c D8E7     		b	.L18
+ 404              	.L22:
+ 405 005e 00BF     		.align	2
+ 406              	.L21:
+ 407 0060 00000000 		.word	.LANCHOR1
+ 408              		.cfi_endproc
+ 409              	.LFE300:
+ 410              		.cantunwind
+ 411              		.fnend
+ 413              		.section	.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveElt
+ 414              		.align	1
+ 415              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveEltt
+ 416              		.syntax unified
+ 417              		.thumb
+ 418              		.thumb_func
+ 419              		.fpu softvfp
+ 421              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveEltt:
+ 422              		.fnstart
+ 423              	.LVL40:
+ 424              	.LFB301:
+  54:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step == 0)
+ 425              		.loc 1 54 13 is_stmt 1 view -0
+ 426              		.cfi_startproc
+ 427              		@ args = 0, pretend = 0, frame = 0
+ 428              		@ frame_needed = 0, uses_anonymous_args = 0
+  54:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step == 0)
+ 429              		.loc 1 54 13 is_stmt 0 view .LVU84
+ 430 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 431              		.save {r3, r4, r5, r6, r7, lr}
+ 432              	.LCFI3:
+ 433              		.cfi_def_cfa_offset 24
+ 434              		.cfi_offset 3, -24
+ 435              		.cfi_offset 4, -20
+ 436              		.cfi_offset 5, -16
+ 437              		.cfi_offset 6, -12
+ 438              		.cfi_offset 7, -8
+ 439              		.cfi_offset 14, -4
+ 440 0002 0446     		mov	r4, r0
+  55:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 441              		.loc 1 55 17 is_stmt 1 view .LVU85
+ 442 0004 0029     		cmp	r1, #0
+ 443 0006 2FD0     		beq	.L34
+ 444 0008 0D46     		mov	r5, r1
+  61:xiagb/bottom/toshibaStepMotor.cpp ****                 step_counter = 0;
+ 445              		.loc 1 61 17 view .LVU86
+  61:xiagb/bottom/toshibaStepMotor.cpp ****                 step_counter = 0;
+ 446              		.loc 1 61 37 is_stmt 0 view .LVU87
+ 447 000a 6160     		str	r1, [r4, #4]
+  62:xiagb/bottom/toshibaStepMotor.cpp ****                 speed = 0;
+ 448              		.loc 1 62 17 is_stmt 1 view .LVU88
+  62:xiagb/bottom/toshibaStepMotor.cpp ****                 speed = 0;
+ 449              		.loc 1 62 30 is_stmt 0 view .LVU89
+ 450 000c 0021     		movs	r1, #0
+ 451              	.LVL41:
+  62:xiagb/bottom/toshibaStepMotor.cpp ****                 speed = 0;
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 14
+
+
+ 452              		.loc 1 62 30 view .LVU90
+ 453 000e 8160     		str	r1, [r0, #8]
+  63:xiagb/bottom/toshibaStepMotor.cpp ****                 this->max_speed = max_speed > max_speed_threshold - 100 ? max_speed_threshold : max
+ 454              		.loc 1 63 17 is_stmt 1 view .LVU91
+  63:xiagb/bottom/toshibaStepMotor.cpp ****                 this->max_speed = max_speed > max_speed_threshold - 100 ? max_speed_threshold : max
+ 455              		.loc 1 63 23 is_stmt 0 view .LVU92
+ 456 0010 8181     		strh	r1, [r0, #12]	@ movhi
+  64:xiagb/bottom/toshibaStepMotor.cpp ****                 interrupt_counter_flag = true;
+ 457              		.loc 1 64 17 is_stmt 1 view .LVU93
+  64:xiagb/bottom/toshibaStepMotor.cpp ****                 interrupt_counter_flag = true;
+ 458              		.loc 1 64 33 is_stmt 0 view .LVU94
+ 459 0012 4FF69B70 		movw	r0, #65435
+ 460              	.LVL42:
+  64:xiagb/bottom/toshibaStepMotor.cpp ****                 interrupt_counter_flag = true;
+ 461              		.loc 1 64 33 view .LVU95
+ 462 0016 8242     		cmp	r2, r0
+ 463 0018 28BF     		it	cs
+ 464 001a 0246     		movcs	r2, r0
+ 465              	.LVL43:
+  64:xiagb/bottom/toshibaStepMotor.cpp ****                 interrupt_counter_flag = true;
+ 466              		.loc 1 64 33 view .LVU96
+ 467 001c 6432     		adds	r2, r2, #100
+ 468 001e E281     		strh	r2, [r4, #14]	@ movhi
+  65:xiagb/bottom/toshibaStepMotor.cpp ****                 interrupt_counter = 0;
+ 469              		.loc 1 65 17 is_stmt 1 view .LVU97
+  65:xiagb/bottom/toshibaStepMotor.cpp ****                 interrupt_counter = 0;
+ 470              		.loc 1 65 40 is_stmt 0 view .LVU98
+ 471 0020 0122     		movs	r2, #1
+ 472 0022 6274     		strb	r2, [r4, #17]
+  66:xiagb/bottom/toshibaStepMotor.cpp ****                 acc_dec_counter = 0;
+ 473              		.loc 1 66 17 is_stmt 1 view .LVU99
+  66:xiagb/bottom/toshibaStepMotor.cpp ****                 acc_dec_counter = 0;
+ 474              		.loc 1 66 35 is_stmt 0 view .LVU100
+ 475 0024 A182     		strh	r1, [r4, #20]	@ movhi
+  67:xiagb/bottom/toshibaStepMotor.cpp ****                 acc_dec_step = 0;
+ 476              		.loc 1 67 17 is_stmt 1 view .LVU101
+  67:xiagb/bottom/toshibaStepMotor.cpp ****                 acc_dec_step = 0;
+ 477              		.loc 1 67 33 is_stmt 0 view .LVU102
+ 478 0026 A161     		str	r1, [r4, #24]
+  68:xiagb/bottom/toshibaStepMotor.cpp ****                 this->acc_dec_interval = acc_dec_interval;
+ 479              		.loc 1 68 17 is_stmt 1 view .LVU103
+  68:xiagb/bottom/toshibaStepMotor.cpp ****                 this->acc_dec_interval = acc_dec_interval;
+ 480              		.loc 1 68 30 is_stmt 0 view .LVU104
+ 481 0028 E161     		str	r1, [r4, #28]
+  69:xiagb/bottom/toshibaStepMotor.cpp ****                 speed_accumulator = 0;
+ 482              		.loc 1 69 17 is_stmt 1 view .LVU105
+  69:xiagb/bottom/toshibaStepMotor.cpp ****                 speed_accumulator = 0;
+ 483              		.loc 1 69 40 is_stmt 0 view .LVU106
+ 484 002a 6382     		strh	r3, [r4, #18]	@ movhi
+  70:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 485              		.loc 1 70 17 is_stmt 1 view .LVU107
+  70:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 486              		.loc 1 70 35 is_stmt 0 view .LVU108
+ 487 002c 2162     		str	r1, [r4, #32]
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 488              		.loc 1 72 17 is_stmt 1 view .LVU109
+ 489 002e 94F84830 		ldrb	r3, [r4, #72]	@ zero_extendqisi2
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 15
+
+
+ 490              	.LVL44:
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 491              		.loc 1 72 17 is_stmt 0 view .LVU110
+ 492 0032 E3B9     		cbnz	r3, .L26
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 493              		.loc 1 72 17 discriminator 1 view .LVU111
+ 494 0034 636C     		ldr	r3, [r4, #68]
+ 495 0036 1E68     		ldr	r6, [r3]
+ 496 0038 F06A     		ldr	r0, [r6, #44]
+ 497 003a E76C     		ldr	r7, [r4, #76]	@ float
+ 498 003c FFF7FEFF 		bl	__aeabi_ui2f
+ 499              	.LVL45:
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 500              		.loc 1 72 17 discriminator 1 view .LVU112
+ 501 0040 3946     		mov	r1, r7
+ 502 0042 FFF7FEFF 		bl	__aeabi_fmul
+ 503              	.LVL46:
+ 504 0046 FFF7FEFF 		bl	__aeabi_f2uiz
+ 505              	.LVL47:
+ 506 004a 7063     		str	r0, [r6, #52]
+ 507              	.L27:
+  73:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 508              		.loc 1 73 17 is_stmt 1 view .LVU113
+ 509 004c 002D     		cmp	r5, #0
+ 510 004e 3FDD     		ble	.L30
+  75:xiagb/bottom/toshibaStepMotor.cpp ****                         HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, GPIO_PIN_RESET);
+ 511              		.loc 1 75 21 view .LVU114
+  75:xiagb/bottom/toshibaStepMotor.cpp ****                         HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, GPIO_PIN_RESET);
+ 512              		.loc 1 75 25 is_stmt 0 view .LVU115
+ 513 0050 94F82430 		ldrb	r3, [r4, #36]	@ zero_extendqisi2
+  75:xiagb/bottom/toshibaStepMotor.cpp ****                         HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, GPIO_PIN_RESET);
+ 514              		.loc 1 75 21 view .LVU116
+ 515 0054 012B     		cmp	r3, #1
+ 516 0056 35D0     		beq	.L35
+  78:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 517              		.loc 1 78 25 is_stmt 1 view .LVU117
+  78:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 518              		.loc 1 78 42 is_stmt 0 view .LVU118
+ 519 0058 0122     		movs	r2, #1
+ 520 005a 618F     		ldrh	r1, [r4, #58]
+ 521 005c 206B     		ldr	r0, [r4, #48]
+ 522 005e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 523              	.LVL48:
+ 524              	.L32:
+  82:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 525              		.loc 1 82 17 is_stmt 1 view .LVU119
+  82:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 526              		.loc 1 82 23 is_stmt 0 view .LVU120
+ 527 0062 0123     		movs	r3, #1
+ 528 0064 2374     		strb	r3, [r4, #16]
+ 529              	.LVL49:
+ 530              	.L23:
+  83:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 531              		.loc 1 83 13 view .LVU121
+ 532 0066 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 533              	.LVL50:
+ 534              	.L34:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 16
+
+
+  57:xiagb/bottom/toshibaStepMotor.cpp ****                     return;
+ 535              		.loc 1 57 21 is_stmt 1 view .LVU122
+  57:xiagb/bottom/toshibaStepMotor.cpp ****                     return;
+ 536              		.loc 1 57 25 is_stmt 0 view .LVU123
+ 537 0068 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv
+ 538              	.LVL51:
+  58:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 539              		.loc 1 58 21 is_stmt 1 view .LVU124
+ 540 006c FBE7     		b	.L23
+ 541              	.LVL52:
+ 542              	.L26:
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 543              		.loc 1 72 17 is_stmt 0 discriminator 2 view .LVU125
+ 544 006e 042B     		cmp	r3, #4
+ 545 0070 0ED0     		beq	.L36
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 546              		.loc 1 72 17 discriminator 4 view .LVU126
+ 547 0072 082B     		cmp	r3, #8
+ 548 0074 19D0     		beq	.L37
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 549              		.loc 1 72 17 discriminator 6 view .LVU127
+ 550 0076 636C     		ldr	r3, [r4, #68]
+ 551 0078 1E68     		ldr	r6, [r3]
+ 552 007a F06A     		ldr	r0, [r6, #44]
+ 553 007c E76C     		ldr	r7, [r4, #76]	@ float
+ 554 007e FFF7FEFF 		bl	__aeabi_ui2f
+ 555              	.LVL53:
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 556              		.loc 1 72 17 discriminator 6 view .LVU128
+ 557 0082 3946     		mov	r1, r7
+ 558 0084 FFF7FEFF 		bl	__aeabi_fmul
+ 559              	.LVL54:
+ 560 0088 FFF7FEFF 		bl	__aeabi_f2uiz
+ 561              	.LVL55:
+ 562 008c 3064     		str	r0, [r6, #64]
+ 563 008e DDE7     		b	.L27
+ 564              	.LVL56:
+ 565              	.L36:
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 566              		.loc 1 72 17 discriminator 3 view .LVU129
+ 567 0090 636C     		ldr	r3, [r4, #68]
+ 568 0092 1E68     		ldr	r6, [r3]
+ 569 0094 F06A     		ldr	r0, [r6, #44]
+ 570 0096 E76C     		ldr	r7, [r4, #76]	@ float
+ 571 0098 FFF7FEFF 		bl	__aeabi_ui2f
+ 572              	.LVL57:
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 573              		.loc 1 72 17 discriminator 3 view .LVU130
+ 574 009c 3946     		mov	r1, r7
+ 575 009e FFF7FEFF 		bl	__aeabi_fmul
+ 576              	.LVL58:
+ 577 00a2 FFF7FEFF 		bl	__aeabi_f2uiz
+ 578              	.LVL59:
+ 579 00a6 B063     		str	r0, [r6, #56]
+ 580 00a8 D0E7     		b	.L27
+ 581              	.LVL60:
+ 582              	.L37:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 17
+
+
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 583              		.loc 1 72 17 discriminator 5 view .LVU131
+ 584 00aa 636C     		ldr	r3, [r4, #68]
+ 585 00ac 1E68     		ldr	r6, [r3]
+ 586 00ae F06A     		ldr	r0, [r6, #44]
+ 587 00b0 E76C     		ldr	r7, [r4, #76]	@ float
+ 588 00b2 FFF7FEFF 		bl	__aeabi_ui2f
+ 589              	.LVL61:
+  72:xiagb/bottom/toshibaStepMotor.cpp ****                 if (need_run_step > 0)
+ 590              		.loc 1 72 17 discriminator 5 view .LVU132
+ 591 00b6 3946     		mov	r1, r7
+ 592 00b8 FFF7FEFF 		bl	__aeabi_fmul
+ 593              	.LVL62:
+ 594 00bc FFF7FEFF 		bl	__aeabi_f2uiz
+ 595              	.LVL63:
+ 596 00c0 F063     		str	r0, [r6, #60]
+ 597 00c2 C3E7     		b	.L27
+ 598              	.L35:
+  76:xiagb/bottom/toshibaStepMotor.cpp ****                     else
+ 599              		.loc 1 76 25 is_stmt 1 view .LVU133
+  76:xiagb/bottom/toshibaStepMotor.cpp ****                     else
+ 600              		.loc 1 76 42 is_stmt 0 view .LVU134
+ 601 00c4 0022     		movs	r2, #0
+ 602 00c6 618F     		ldrh	r1, [r4, #58]
+ 603 00c8 206B     		ldr	r0, [r4, #48]
+ 604 00ca FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 605              	.LVL64:
+ 606 00ce C8E7     		b	.L32
+ 607              	.L30:
+  81:xiagb/bottom/toshibaStepMotor.cpp ****                 state = motor_accelerate;
+ 608              		.loc 1 81 21 is_stmt 1 view .LVU135
+  81:xiagb/bottom/toshibaStepMotor.cpp ****                 state = motor_accelerate;
+ 609              		.loc 1 81 38 is_stmt 0 view .LVU136
+ 610 00d0 94F82420 		ldrb	r2, [r4, #36]	@ zero_extendqisi2
+ 611 00d4 618F     		ldrh	r1, [r4, #58]
+ 612 00d6 206B     		ldr	r0, [r4, #48]
+ 613 00d8 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 614              	.LVL65:
+ 615 00dc C1E7     		b	.L32
+ 616              		.cfi_endproc
+ 617              	.LFE301:
+ 618              		.fnend
+ 620              		.global	__aeabi_i2f
+ 621              		.global	__aeabi_fcmpgt
+ 622              		.global	__aeabi_fsub
+ 623              		.global	__aeabi_f2iz
+ 624              		.section	.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass16move_t
+ 625              		.align	1
+ 626              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass16move_to_posit
+ 627              		.syntax unified
+ 628              		.thumb
+ 629              		.thumb_func
+ 630              		.fpu softvfp
+ 632              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass16move_to_positionEttt:
+ 633              		.fnstart
+ 634              	.LVL66:
+ 635              	.LFB302:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 18
+
+
+  86:xiagb/bottom/toshibaStepMotor.cpp ****                 //会将毫米转换成步数
+ 636              		.loc 1 86 13 is_stmt 1 view -0
+ 637              		.cfi_startproc
+ 638              		@ args = 0, pretend = 0, frame = 0
+ 639              		@ frame_needed = 0, uses_anonymous_args = 0
+  86:xiagb/bottom/toshibaStepMotor.cpp ****                 //会将毫米转换成步数
+ 640              		.loc 1 86 13 is_stmt 0 view .LVU138
+ 641 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 642              		.save {r4, r5, r6, r7, r8, lr}
+ 643              	.LCFI4:
+ 644              		.cfi_def_cfa_offset 24
+ 645              		.cfi_offset 4, -24
+ 646              		.cfi_offset 5, -20
+ 647              		.cfi_offset 6, -16
+ 648              		.cfi_offset 7, -12
+ 649              		.cfi_offset 8, -8
+ 650              		.cfi_offset 14, -4
+ 651 0004 0446     		mov	r4, r0
+ 652 0006 1746     		mov	r7, r2
+ 653 0008 9846     		mov	r8, r3
+  88:xiagb/bottom/toshibaStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 654              		.loc 1 88 17 is_stmt 1 view .LVU139
+  88:xiagb/bottom/toshibaStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 655              		.loc 1 88 32 is_stmt 0 view .LVU140
+ 656 000a 856A     		ldr	r5, [r0, #40]	@ float
+  88:xiagb/bottom/toshibaStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 657              		.loc 1 88 30 view .LVU141
+ 658 000c 0846     		mov	r0, r1
+ 659              	.LVL67:
+  88:xiagb/bottom/toshibaStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 660              		.loc 1 88 30 view .LVU142
+ 661 000e FFF7FEFF 		bl	__aeabi_i2f
+ 662              	.LVL68:
+  88:xiagb/bottom/toshibaStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 663              		.loc 1 88 30 view .LVU143
+ 664 0012 2946     		mov	r1, r5
+ 665 0014 FFF7FEFF 		bl	__aeabi_fmul
+ 666              	.LVL69:
+ 667 0018 0646     		mov	r6, r0
+  88:xiagb/bottom/toshibaStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 668              		.loc 1 88 40 view .LVU144
+ 669 001a 2068     		ldr	r0, [r4]
+ 670 001c FFF7FEFF 		bl	__aeabi_i2f
+ 671              	.LVL70:
+ 672 0020 0546     		mov	r5, r0
+  88:xiagb/bottom/toshibaStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 673              		.loc 1 88 17 view .LVU145
+ 674 0022 0146     		mov	r1, r0
+ 675 0024 3046     		mov	r0, r6
+ 676 0026 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 677              	.LVL71:
+ 678 002a 68B1     		cbz	r0, .L43
+  89:xiagb/bottom/toshibaStepMotor.cpp ****                 else
+ 679              		.loc 1 89 21 is_stmt 1 view .LVU146
+  89:xiagb/bottom/toshibaStepMotor.cpp ****                 else
+ 680              		.loc 1 89 45 is_stmt 0 view .LVU147
+ 681 002c 2946     		mov	r1, r5
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 19
+
+
+ 682 002e 3046     		mov	r0, r6
+ 683 0030 FFF7FEFF 		bl	__aeabi_fsub
+ 684              	.LVL72:
+  89:xiagb/bottom/toshibaStepMotor.cpp ****                 else
+ 685              		.loc 1 89 25 view .LVU148
+ 686 0034 FFF7FEFF 		bl	__aeabi_f2iz
+ 687              	.LVL73:
+ 688 0038 0146     		mov	r1, r0
+ 689 003a 4346     		mov	r3, r8
+ 690 003c 3A46     		mov	r2, r7
+ 691 003e 2046     		mov	r0, r4
+ 692 0040 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveEltt
+ 693              	.LVL74:
+ 694              	.L38:
+  92:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 695              		.loc 1 92 13 view .LVU149
+ 696 0044 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 697              	.LVL75:
+ 698              	.L43:
+  91:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 699              		.loc 1 91 21 is_stmt 1 view .LVU150
+  91:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 700              		.loc 1 91 43 is_stmt 0 view .LVU151
+ 701 0048 3146     		mov	r1, r6
+ 702 004a 2846     		mov	r0, r5
+ 703 004c FFF7FEFF 		bl	__aeabi_fsub
+ 704              	.LVL76:
+  91:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 705              		.loc 1 91 26 view .LVU152
+ 706 0050 00F10040 		add	r0, r0, #-2147483648
+  91:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 707              		.loc 1 91 25 view .LVU153
+ 708 0054 FFF7FEFF 		bl	__aeabi_f2iz
+ 709              	.LVL77:
+ 710 0058 0146     		mov	r1, r0
+ 711 005a 4346     		mov	r3, r8
+ 712 005c 3A46     		mov	r2, r7
+ 713 005e 2046     		mov	r0, r4
+ 714 0060 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveEltt
+ 715              	.LVL78:
+  92:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 716              		.loc 1 92 13 view .LVU154
+ 717 0064 EEE7     		b	.L38
+ 718              		.cfi_endproc
+ 719              	.LFE302:
+ 720              		.fnend
+ 722              		.section	.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass5resetEt
+ 723              		.align	1
+ 724              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass5resetEtt
+ 725              		.syntax unified
+ 726              		.thumb
+ 727              		.thumb_func
+ 728              		.fpu softvfp
+ 730              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass5resetEtt:
+ 731              		.fnstart
+ 732              	.LVL79:
+ 733              	.LFB305:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 20
+
+
+ 231:xiagb/bottom/toshibaStepMotor.cpp ****                 reset_flag = true;
+ 734              		.loc 1 231 13 is_stmt 1 view -0
+ 735              		.cfi_startproc
+ 736              		@ args = 0, pretend = 0, frame = 0
+ 737              		@ frame_needed = 0, uses_anonymous_args = 0
+ 231:xiagb/bottom/toshibaStepMotor.cpp ****                 reset_flag = true;
+ 738              		.loc 1 231 13 is_stmt 0 view .LVU156
+ 739 0000 08B5     		push	{r3, lr}
+ 740              		.save {r3, lr}
+ 741              	.LCFI5:
+ 742              		.cfi_def_cfa_offset 8
+ 743              		.cfi_offset 3, -8
+ 744              		.cfi_offset 14, -4
+ 745 0002 1346     		mov	r3, r2
+ 232:xiagb/bottom/toshibaStepMotor.cpp ****                 move(a_circle_step * -1000, max_speed, acc_dec_action_interval);
+ 746              		.loc 1 232 17 is_stmt 1 view .LVU157
+ 232:xiagb/bottom/toshibaStepMotor.cpp ****                 move(a_circle_step * -1000, max_speed, acc_dec_action_interval);
+ 747              		.loc 1 232 28 is_stmt 0 view .LVU158
+ 748 0004 0122     		movs	r2, #1
+ 749              	.LVL80:
+ 232:xiagb/bottom/toshibaStepMotor.cpp ****                 move(a_circle_step * -1000, max_speed, acc_dec_action_interval);
+ 750              		.loc 1 232 28 view .LVU159
+ 751 0006 80F83F20 		strb	r2, [r0, #63]
+ 233:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 752              		.loc 1 233 17 is_stmt 1 view .LVU160
+ 233:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 753              		.loc 1 233 21 is_stmt 0 view .LVU161
+ 754 000a 0A46     		mov	r2, r1
+ 755 000c 0149     		ldr	r1, .L47
+ 756              	.LVL81:
+ 233:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 757              		.loc 1 233 21 view .LVU162
+ 758 000e FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveEltt
+ 759              	.LVL82:
+ 234:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 760              		.loc 1 234 13 view .LVU163
+ 761 0012 08BD     		pop	{r3, pc}
+ 762              	.L48:
+ 763              		.align	2
+ 764              	.L47:
+ 765 0014 002CCFFF 		.word	-3200000
+ 766              		.cfi_endproc
+ 767              	.LFE305:
+ 768              		.fnend
+ 770              		.section	.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass20motor_
+ 771              		.align	1
+ 772              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass20motor_run_tim
+ 773              		.syntax unified
+ 774              		.thumb
+ 775              		.thumb_func
+ 776              		.fpu softvfp
+ 778              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass20motor_run_time_checkEv
+ 779              		.fnstart
+ 780              	.LVL83:
+ 781              	.LFB303:
+  95:xiagb/bottom/toshibaStepMotor.cpp ****                 if (HAL_GPIO_ReadPin(reset_sensor_gpiox, reset_sensor_gpio_x) == reset_sensor_io_lv
+ 782              		.loc 1 95 13 is_stmt 1 view -0
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 21
+
+
+ 783              		.cfi_startproc
+ 784              		@ args = 0, pretend = 0, frame = 0
+ 785              		@ frame_needed = 0, uses_anonymous_args = 0
+  95:xiagb/bottom/toshibaStepMotor.cpp ****                 if (HAL_GPIO_ReadPin(reset_sensor_gpiox, reset_sensor_gpio_x) == reset_sensor_io_lv
+ 786              		.loc 1 95 13 is_stmt 0 view .LVU165
+ 787 0000 10B5     		push	{r4, lr}
+ 788              		.save {r4, lr}
+ 789              	.LCFI6:
+ 790              		.cfi_def_cfa_offset 8
+ 791              		.cfi_offset 4, -8
+ 792              		.cfi_offset 14, -4
+ 793 0002 0446     		mov	r4, r0
+  96:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 794              		.loc 1 96 17 is_stmt 1 view .LVU166
+  96:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 795              		.loc 1 96 37 is_stmt 0 view .LVU167
+ 796 0004 818F     		ldrh	r1, [r0, #60]
+ 797 0006 406B     		ldr	r0, [r0, #52]
+ 798              	.LVL84:
+  96:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 799              		.loc 1 96 37 view .LVU168
+ 800 0008 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 801              	.LVL85:
+  96:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 802              		.loc 1 96 82 view .LVU169
+ 803 000c 94F83E30 		ldrb	r3, [r4, #62]	@ zero_extendqisi2
+  96:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 804              		.loc 1 96 17 view .LVU170
+ 805 0010 8342     		cmp	r3, r0
+ 806 0012 00D0     		beq	.L53
+ 807              	.L49:
+ 106:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 808              		.loc 1 106 13 view .LVU171
+ 809 0014 10BD     		pop	{r4, pc}
+ 810              	.LVL86:
+ 811              	.L53:
+  98:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 812              		.loc 1 98 21 is_stmt 1 view .LVU172
+  98:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 813              		.loc 1 98 25 is_stmt 0 view .LVU173
+ 814 0016 94F83F30 		ldrb	r3, [r4, #63]	@ zero_extendqisi2
+  98:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 815              		.loc 1 98 21 view .LVU174
+ 816 001a 33B9     		cbnz	r3, .L54
+ 103:xiagb/bottom/toshibaStepMotor.cpp ****                         stop();
+ 817              		.loc 1 103 26 is_stmt 1 view .LVU175
+ 103:xiagb/bottom/toshibaStepMotor.cpp ****                         stop();
+ 818              		.loc 1 103 30 is_stmt 0 view .LVU176
+ 819 001c 6368     		ldr	r3, [r4, #4]
+ 103:xiagb/bottom/toshibaStepMotor.cpp ****                         stop();
+ 820              		.loc 1 103 26 view .LVU177
+ 821 001e 002B     		cmp	r3, #0
+ 822 0020 F8DA     		bge	.L49
+ 104:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 823              		.loc 1 104 25 is_stmt 1 view .LVU178
+ 104:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 824              		.loc 1 104 29 is_stmt 0 view .LVU179
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 22
+
+
+ 825 0022 2046     		mov	r0, r4
+ 826 0024 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv
+ 827              	.LVL87:
+ 106:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 828              		.loc 1 106 13 view .LVU180
+ 829 0028 F4E7     		b	.L49
+ 830              	.L54:
+ 100:xiagb/bottom/toshibaStepMotor.cpp ****                         reset_flag = false, position = 0; //绝对位置置0
+ 831              		.loc 1 100 25 is_stmt 1 view .LVU181
+ 100:xiagb/bottom/toshibaStepMotor.cpp ****                         reset_flag = false, position = 0; //绝对位置置0
+ 832              		.loc 1 100 29 is_stmt 0 view .LVU182
+ 833 002a 2046     		mov	r0, r4
+ 834 002c FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv
+ 835              	.LVL88:
+ 101:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 836              		.loc 1 101 25 is_stmt 1 view .LVU183
+ 101:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 837              		.loc 1 101 36 is_stmt 0 view .LVU184
+ 838 0030 0023     		movs	r3, #0
+ 839 0032 84F83F30 		strb	r3, [r4, #63]
+ 101:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 840              		.loc 1 101 54 view .LVU185
+ 841 0036 2360     		str	r3, [r4]
+ 842 0038 ECE7     		b	.L49
+ 843              		.cfi_endproc
+ 844              	.LFE303:
+ 845              		.fnend
+ 847              		.global	__aeabi_d2uiz
+ 848              		.section	.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4loopEv,
+ 849              		.align	1
+ 850              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4loopEv
+ 851              		.syntax unified
+ 852              		.thumb
+ 853              		.thumb_func
+ 854              		.fpu softvfp
+ 856              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4loopEv:
+ 857              		.fnstart
+ 858              	.LVL89:
+ 859              	.LFB304:
+ 109:xiagb/bottom/toshibaStepMotor.cpp ****                 if (state == motor_stop)
+ 860              		.loc 1 109 13 is_stmt 1 view -0
+ 861              		.cfi_startproc
+ 862              		@ args = 0, pretend = 0, frame = 0
+ 863              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109:xiagb/bottom/toshibaStepMotor.cpp ****                 if (state == motor_stop)
+ 864              		.loc 1 109 13 is_stmt 0 view .LVU187
+ 865 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 866              		.save {r3, r4, r5, r6, r7, lr}
+ 867              	.LCFI7:
+ 868              		.cfi_def_cfa_offset 24
+ 869              		.cfi_offset 3, -24
+ 870              		.cfi_offset 4, -20
+ 871              		.cfi_offset 5, -16
+ 872              		.cfi_offset 6, -12
+ 873              		.cfi_offset 7, -8
+ 874              		.cfi_offset 14, -4
+ 110:xiagb/bottom/toshibaStepMotor.cpp ****                     return;
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 23
+
+
+ 875              		.loc 1 110 17 is_stmt 1 view .LVU188
+ 110:xiagb/bottom/toshibaStepMotor.cpp ****                     return;
+ 876              		.loc 1 110 21 is_stmt 0 view .LVU189
+ 877 0002 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2
+ 110:xiagb/bottom/toshibaStepMotor.cpp ****                     return;
+ 878              		.loc 1 110 17 view .LVU190
+ 879 0004 03B9     		cbnz	r3, .L70
+ 880              	.LVL90:
+ 881              	.L55:
+ 228:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 882              		.loc 1 228 13 view .LVU191
+ 883 0006 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 884              	.LVL91:
+ 885              	.L70:
+ 228:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 886              		.loc 1 228 13 view .LVU192
+ 887 0008 0446     		mov	r4, r0
+ 114:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 888              		.loc 1 114 17 is_stmt 1 view .LVU193
+ 114:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 889              		.loc 1 114 34 is_stmt 0 view .LVU194
+ 890 000a 0022     		movs	r2, #0
+ 891 000c 018F     		ldrh	r1, [r0, #56]
+ 892 000e C06A     		ldr	r0, [r0, #44]
+ 893              	.LVL92:
+ 114:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 894              		.loc 1 114 34 view .LVU195
+ 895 0010 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 896              	.LVL93:
+ 116:xiagb/bottom/toshibaStepMotor.cpp ****                 speed_accumulator += speed;                   //叠加速度
+ 897              		.loc 1 116 17 is_stmt 1 view .LVU196
+ 117:xiagb/bottom/toshibaStepMotor.cpp ****                 if (speed_accumulator >= max_speed_threshold) //阈值，如果当前速度达到�
+ 898              		.loc 1 117 17 view .LVU197
+ 117:xiagb/bottom/toshibaStepMotor.cpp ****                 if (speed_accumulator >= max_speed_threshold) //阈值，如果当前速度达到�
+ 899              		.loc 1 117 38 is_stmt 0 view .LVU198
+ 900 0014 A389     		ldrh	r3, [r4, #12]
+ 117:xiagb/bottom/toshibaStepMotor.cpp ****                 if (speed_accumulator >= max_speed_threshold) //阈值，如果当前速度达到�
+ 901              		.loc 1 117 35 view .LVU199
+ 902 0016 226A     		ldr	r2, [r4, #32]
+ 903 0018 1344     		add	r3, r3, r2
+ 904 001a 2362     		str	r3, [r4, #32]
+ 118:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 905              		.loc 1 118 17 is_stmt 1 view .LVU200
+ 906 001c 4FF6FE72 		movw	r2, #65534
+ 907 0020 9342     		cmp	r3, r2
+ 908 0022 43D8     		bhi	.L71
+ 116:xiagb/bottom/toshibaStepMotor.cpp ****                 speed_accumulator += speed;                   //叠加速度
+ 909              		.loc 1 116 22 is_stmt 0 view .LVU201
+ 910 0024 0022     		movs	r2, #0
+ 911              	.LVL94:
+ 912              	.L57:
+ 140:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 913              		.loc 1 140 17 is_stmt 1 view .LVU202
+ 140:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 914              		.loc 1 140 25 is_stmt 0 view .LVU203
+ 915 0026 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
+ 140:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 24
+
+
+ 916              		.loc 1 140 17 view .LVU204
+ 917 0028 022B     		cmp	r3, #2
+ 918 002a 60D0     		beq	.L60
+ 919 002c 032B     		cmp	r3, #3
+ 920 002e 00F09180 		beq	.L61
+ 921 0032 012B     		cmp	r3, #1
+ 922 0034 E7D1     		bne	.L55
+ 142:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 923              		.loc 1 142 17 is_stmt 1 view .LVU205
+ 145:xiagb/bottom/toshibaStepMotor.cpp ****                         acc_dec_step++;
+ 924              		.loc 1 145 21 view .LVU206
+ 925 0036 12B1     		cbz	r2, .L62
+ 146:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 926              		.loc 1 146 25 view .LVU207
+ 927 0038 E369     		ldr	r3, [r4, #28]
+ 146:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 928              		.loc 1 146 37 is_stmt 0 view .LVU208
+ 929 003a 0133     		adds	r3, r3, #1
+ 930 003c E361     		str	r3, [r4, #28]
+ 931              	.L62:
+ 148:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 932              		.loc 1 148 21 is_stmt 1 view .LVU209
+ 148:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 933              		.loc 1 148 25 is_stmt 0 view .LVU210
+ 934 003e 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
+ 148:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 935              		.loc 1 148 21 view .LVU211
+ 936 0040 FBB1     		cbz	r3, .L63
+ 150:xiagb/bottom/toshibaStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval)
+ 937              		.loc 1 150 25 is_stmt 1 view .LVU212
+ 938 0042 A38A     		ldrh	r3, [r4, #20]
+ 150:xiagb/bottom/toshibaStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval)
+ 939              		.loc 1 150 42 is_stmt 0 view .LVU213
+ 940 0044 0133     		adds	r3, r3, #1
+ 941 0046 9BB2     		uxth	r3, r3
+ 942 0048 A382     		strh	r3, [r4, #20]	@ movhi
+ 151:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 943              		.loc 1 151 25 is_stmt 1 view .LVU214
+ 151:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 944              		.loc 1 151 50 is_stmt 0 view .LVU215
+ 945 004a 628A     		ldrh	r2, [r4, #18]
+ 151:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 946              		.loc 1 151 25 view .LVU216
+ 947 004c 9342     		cmp	r3, r2
+ 948 004e 18D3     		bcc	.L63
+ 153:xiagb/bottom/toshibaStepMotor.cpp ****                             acc_dec_counter++; //计录加速的次数
+ 949              		.loc 1 153 29 is_stmt 1 view .LVU217
+ 153:xiagb/bottom/toshibaStepMotor.cpp ****                             acc_dec_counter++; //计录加速的次数
+ 950              		.loc 1 153 47 is_stmt 0 view .LVU218
+ 951 0050 0023     		movs	r3, #0
+ 952 0052 A382     		strh	r3, [r4, #20]	@ movhi
+ 154:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 953              		.loc 1 154 29 is_stmt 1 view .LVU219
+ 954 0054 A569     		ldr	r5, [r4, #24]
+ 154:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 955              		.loc 1 154 44 is_stmt 0 view .LVU220
+ 956 0056 0135     		adds	r5, r5, #1
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 25
+
+
+ 957 0058 A561     		str	r5, [r4, #24]
+ 156:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 958              		.loc 1 156 29 is_stmt 1 view .LVU221
+ 156:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 959              		.loc 1 156 66 is_stmt 0 view .LVU222
+ 960 005a 564B     		ldr	r3, .L73
+ 961 005c 53F82570 		ldr	r7, [r3, r5, lsl #2]	@ float
+ 156:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 962              		.loc 1 156 70 view .LVU223
+ 963 0060 E689     		ldrh	r6, [r4, #14]
+ 156:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 964              		.loc 1 156 68 view .LVU224
+ 965 0062 3046     		mov	r0, r6
+ 966 0064 FFF7FEFF 		bl	__aeabi_i2f
+ 967              	.LVL95:
+ 968 0068 3946     		mov	r1, r7
+ 969 006a FFF7FEFF 		bl	__aeabi_fmul
+ 970              	.LVL96:
+ 156:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 971              		.loc 1 156 35 view .LVU225
+ 972 006e FFF7FEFF 		bl	__aeabi_f2uiz
+ 973              	.LVL97:
+ 974 0072 A081     		strh	r0, [r4, #12]	@ movhi
+ 159:xiagb/bottom/toshibaStepMotor.cpp ****                             {
+ 975              		.loc 1 159 29 is_stmt 1 view .LVU226
+ 976 0074 C72D     		cmp	r5, #199
+ 977 0076 04D9     		bls	.L63
+ 161:xiagb/bottom/toshibaStepMotor.cpp ****                                 speed = max_speed;
+ 978              		.loc 1 161 33 view .LVU227
+ 161:xiagb/bottom/toshibaStepMotor.cpp ****                                 speed = max_speed;
+ 979              		.loc 1 161 56 is_stmt 0 view .LVU228
+ 980 0078 0023     		movs	r3, #0
+ 981 007a 6374     		strb	r3, [r4, #17]
+ 162:xiagb/bottom/toshibaStepMotor.cpp ****                                 state = motor_max_speed;
+ 982              		.loc 1 162 33 is_stmt 1 view .LVU229
+ 162:xiagb/bottom/toshibaStepMotor.cpp ****                                 state = motor_max_speed;
+ 983              		.loc 1 162 39 is_stmt 0 view .LVU230
+ 984 007c A681     		strh	r6, [r4, #12]	@ movhi
+ 163:xiagb/bottom/toshibaStepMotor.cpp ****                             }
+ 985              		.loc 1 163 33 is_stmt 1 view .LVU231
+ 163:xiagb/bottom/toshibaStepMotor.cpp ****                             }
+ 986              		.loc 1 163 39 is_stmt 0 view .LVU232
+ 987 007e 0223     		movs	r3, #2
+ 988 0080 2374     		strb	r3, [r4, #16]
+ 989              	.L63:
+ 169:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 990              		.loc 1 169 21 is_stmt 1 view .LVU233
+ 991              	.LVL98:
+ 992              	.LBB11:
+ 993              	.LBI11:
+ 994              		.file 2 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3.
+   1:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // -*- C++ -*- C forwarding header.
+   2:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+   3:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // Copyright (C) 1997-2019 Free Software Foundation, Inc.
+   4:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** //
+   5:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // software; you can redistribute it and/or modify it under the
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 26
+
+
+   7:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // terms of the GNU General Public License as published by the
+   8:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // Free Software Foundation; either version 3, or (at your option)
+   9:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // any later version.
+  10:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  11:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // This library is distributed in the hope that it will be useful,
+  12:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // GNU General Public License for more details.
+  15:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  16:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // Under Section 7 of GPL version 3, you are granted additional
+  17:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // permissions described in the GCC Runtime Library Exception, version
+  18:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // 3.1, as published by the Free Software Foundation.
+  19:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  20:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // You should have received a copy of the GNU General Public License and
+  21:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // <http://www.gnu.org/licenses/>.
+  24:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  25:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** /** @file include/cmath
+  26:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  This is a Standard C++ Library file.  You should @c \#include this file
+  27:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  in your programs, rather than any of the @a *.h implementation files.
+  28:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *
+  29:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  This is the C++ version of the Standard C Library header @c math.h,
+  30:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  and its contents are (mostly) the same as that header, but are all
+  31:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  contained in the namespace @c std (except for names which are defined
+  32:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  as macros in C).
+  33:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  */
+  34:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  35:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** //
+  36:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // ISO C++ 14882: 26.5  C library
+  37:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** //
+  38:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  39:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #pragma GCC system_header
+  40:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  41:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #include <bits/c++config.h>
+  42:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #include <bits/cpp_type_traits.h>
+  43:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #include <ext/type_traits.h>
+  44:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #define _GLIBCXX_INCLUDE_NEXT_C_HEADERS
+  45:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #include_next <math.h>
+  46:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef _GLIBCXX_INCLUDE_NEXT_C_HEADERS
+  47:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #include <bits/std_abs.h>
+  48:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  49:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef _GLIBCXX_CMATH
+  50:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #define _GLIBCXX_CMATH 1
+  51:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  52:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // Get rid of those macros defined in <math.h> in lieu of real functions.
+  53:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef div
+  54:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef acos
+  55:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef asin
+  56:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef atan
+  57:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef atan2
+  58:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef ceil
+  59:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef cos
+  60:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef cosh
+  61:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef exp
+  62:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef fabs
+  63:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef floor
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 27
+
+
+  64:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef fmod
+  65:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef frexp
+  66:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef ldexp
+  67:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef log
+  68:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef log10
+  69:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef modf
+  70:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef pow
+  71:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef sin
+  72:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef sinh
+  73:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef sqrt
+  74:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef tan
+  75:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef tanh
+  76:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  77:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** extern "C++"
+  78:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** {
+  79:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** namespace std _GLIBCXX_VISIBILITY(default)
+  80:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** {
+  81:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  82:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  83:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::acos;
+  84:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  85:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+  86:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+  87:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   acos(float __x)
+  88:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_acosf(__x); }
+  89:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  90:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+  91:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   acos(long double __x)
+  92:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_acosl(__x); }
+  93:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+  94:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  95:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+  96:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+  97:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+  98:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+  99:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     acos(_Tp __x)
+ 100:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_acos(__x); }
+ 101:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 102:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::asin;
+ 103:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 104:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 105:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 106:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   asin(float __x)
+ 107:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_asinf(__x); }
+ 108:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 109:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 110:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   asin(long double __x)
+ 111:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_asinl(__x); }
+ 112:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 113:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 114:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 115:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 116:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 117:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 118:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     asin(_Tp __x)
+ 119:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_asin(__x); }
+ 120:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 28
+
+
+ 121:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::atan;
+ 122:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 123:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 124:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 125:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   atan(float __x)
+ 126:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_atanf(__x); }
+ 127:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 128:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 129:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   atan(long double __x)
+ 130:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_atanl(__x); }
+ 131:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 132:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 133:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 134:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 135:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 136:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 137:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     atan(_Tp __x)
+ 138:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_atan(__x); }
+ 139:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 140:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::atan2;
+ 141:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 142:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 143:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 144:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   atan2(float __y, float __x)
+ 145:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_atan2f(__y, __x); }
+ 146:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 147:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 148:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   atan2(long double __y, long double __x)
+ 149:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_atan2l(__y, __x); }
+ 150:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 151:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 152:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp, typename _Up>
+ 153:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 154:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__promote_2<_Tp, _Up>::__type
+ 155:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     atan2(_Tp __y, _Up __x)
+ 156:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     {
+ 157:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****       typedef typename __gnu_cxx::__promote_2<_Tp, _Up>::__type __type;
+ 158:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****       return atan2(__type(__y), __type(__x));
+ 159:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     }
+ 160:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 161:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::ceil;
+ 162:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 163:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 164:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 165:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   ceil(float __x)
+ 166:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_ceilf(__x); }
+ 167:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 168:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 169:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   ceil(long double __x)
+ 170:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_ceill(__x); }
+ 171:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 172:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 173:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 174:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 175:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ 176:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 177:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     ceil(_Tp __x)
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 29
+
+
+ 178:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_ceil(__x); }
+ 179:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 180:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::cos;
+ 181:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 182:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 183:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 184:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   cos(float __x)
+ 185:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_cosf(__x); }
+ 186:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 187:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 188:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   cos(long double __x)
+ 189:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_cosl(__x); }
+ 190:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 191:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 192:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 193:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 194:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 195:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 196:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     cos(_Tp __x)
+ 197:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_cos(__x); }
+ 198:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 199:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::cosh;
+ 200:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 201:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 202:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 203:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   cosh(float __x)
+ 204:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_coshf(__x); }
+ 205:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 206:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 207:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   cosh(long double __x)
+ 208:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_coshl(__x); }
+ 209:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 210:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 211:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 212:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 213:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 214:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 215:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     cosh(_Tp __x)
+ 216:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_cosh(__x); }
+ 217:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 218:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::exp;
+ 219:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 220:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 221:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 222:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   exp(float __x)
+ 223:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_expf(__x); }
+ 224:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 225:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 226:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   exp(long double __x)
+ 227:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_expl(__x); }
+ 228:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 229:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 230:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 231:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 232:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 233:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 234:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     exp(_Tp __x)
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 30
+
+
+ 235:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_exp(__x); }
+ 236:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 237:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::fabs;
+ 238:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 239:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 240:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 241:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   fabs(float __x)
+ 242:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_fabsf(__x); }
+ 243:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 244:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 245:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   fabs(long double __x)
+ 246:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_fabsl(__x); }
+ 247:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 248:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 249:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 250:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 251:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 252:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 253:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     fabs(_Tp __x)
+ 995              		.loc 2 253 5 view .LVU234
+ 996              	.LBB12:
+ 254:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_fabs(__x); }
+ 997              		.loc 2 254 28 is_stmt 0 view .LVU235
+ 998 0082 6068     		ldr	r0, [r4, #4]
+ 999 0084 FFF7FEFF 		bl	__aeabi_i2d
+ 1000              	.LVL99:
+ 1001              		.loc 2 254 28 view .LVU236
+ 1002              	.LBE12:
+ 1003              	.LBE11:
+ 169:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1004              		.loc 1 169 25 view .LVU237
+ 1005 0088 21F00043 		bic	r3, r1, #-2147483648
+ 1006 008c 1946     		mov	r1, r3
+ 1007 008e FFF7FEFF 		bl	__aeabi_d2uiz
+ 1008              	.LVL100:
+ 169:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1009              		.loc 1 169 21 view .LVU238
+ 1010 0092 0128     		cmp	r0, #1
+ 1011 0094 25D9     		bls	.L64
+ 171:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 1012              		.loc 1 171 25 is_stmt 1 view .LVU239
+ 171:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 1013              		.loc 1 171 29 is_stmt 0 view .LVU240
+ 1014 0096 A368     		ldr	r3, [r4, #8]
+ 171:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 1015              		.loc 1 171 25 view .LVU241
+ 1016 0098 B3EB500F 		cmp	r3, r0, lsr #1
+ 1017 009c B3D3     		bcc	.L55
+ 174:xiagb/bottom/toshibaStepMotor.cpp ****                             state = motor_decelerate;
+ 1018              		.loc 1 174 29 is_stmt 1 view .LVU242
+ 174:xiagb/bottom/toshibaStepMotor.cpp ****                             state = motor_decelerate;
+ 1019              		.loc 1 174 49 is_stmt 0 view .LVU243
+ 1020 009e 638A     		ldrh	r3, [r4, #18]
+ 174:xiagb/bottom/toshibaStepMotor.cpp ****                             state = motor_decelerate;
+ 1021              		.loc 1 174 68 view .LVU244
+ 1022 00a0 A28A     		ldrh	r2, [r4, #20]
+ 174:xiagb/bottom/toshibaStepMotor.cpp ****                             state = motor_decelerate;
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 31
+
+
+ 1023              		.loc 1 174 66 view .LVU245
+ 1024 00a2 9B1A     		subs	r3, r3, r2
+ 174:xiagb/bottom/toshibaStepMotor.cpp ****                             state = motor_decelerate;
+ 1025              		.loc 1 174 47 view .LVU246
+ 1026 00a4 A382     		strh	r3, [r4, #20]	@ movhi
+ 175:xiagb/bottom/toshibaStepMotor.cpp ****                         }
+ 1027              		.loc 1 175 29 is_stmt 1 view .LVU247
+ 175:xiagb/bottom/toshibaStepMotor.cpp ****                         }
+ 1028              		.loc 1 175 35 is_stmt 0 view .LVU248
+ 1029 00a6 0323     		movs	r3, #3
+ 1030 00a8 2374     		strb	r3, [r4, #16]
+ 1031 00aa ACE7     		b	.L55
+ 1032              	.LVL101:
+ 1033              	.L71:
+ 120:xiagb/bottom/toshibaStepMotor.cpp ****                     speed_accumulator -= max_speed_threshold;
+ 1034              		.loc 1 120 21 is_stmt 1 view .LVU249
+ 121:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 1035              		.loc 1 121 21 view .LVU250
+ 121:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 1036              		.loc 1 121 39 is_stmt 0 view .LVU251
+ 1037 00ac A3F57F43 		sub	r3, r3, #65280
+ 1038 00b0 FF3B     		subs	r3, r3, #255
+ 1039 00b2 2362     		str	r3, [r4, #32]
+ 124:xiagb/bottom/toshibaStepMotor.cpp ****                 {
+ 1040              		.loc 1 124 17 is_stmt 1 view .LVU252
+ 126:xiagb/bottom/toshibaStepMotor.cpp ****                     //拉高脉冲信号产生
+ 1041              		.loc 1 126 21 view .LVU253
+ 1042 00b4 A368     		ldr	r3, [r4, #8]
+ 126:xiagb/bottom/toshibaStepMotor.cpp ****                     //拉高脉冲信号产生
+ 1043              		.loc 1 126 33 is_stmt 0 view .LVU254
+ 1044 00b6 0133     		adds	r3, r3, #1
+ 1045 00b8 A360     		str	r3, [r4, #8]
+ 128:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1046              		.loc 1 128 21 is_stmt 1 view .LVU255
+ 128:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1047              		.loc 1 128 38 is_stmt 0 view .LVU256
+ 1048 00ba 0122     		movs	r2, #1
+ 1049 00bc 218F     		ldrh	r1, [r4, #56]
+ 1050 00be E06A     		ldr	r0, [r4, #44]
+ 1051 00c0 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1052              	.LVL102:
+ 130:xiagb/bottom/toshibaStepMotor.cpp ****                         position++;
+ 1053              		.loc 1 130 21 is_stmt 1 view .LVU257
+ 130:xiagb/bottom/toshibaStepMotor.cpp ****                         position++;
+ 1054              		.loc 1 130 25 is_stmt 0 view .LVU258
+ 1055 00c4 6368     		ldr	r3, [r4, #4]
+ 130:xiagb/bottom/toshibaStepMotor.cpp ****                         position++;
+ 1056              		.loc 1 130 21 view .LVU259
+ 1057 00c6 002B     		cmp	r3, #0
+ 1058 00c8 07DD     		ble	.L58
+ 131:xiagb/bottom/toshibaStepMotor.cpp ****                     else
+ 1059              		.loc 1 131 25 is_stmt 1 view .LVU260
+ 1060 00ca 2368     		ldr	r3, [r4]
+ 131:xiagb/bottom/toshibaStepMotor.cpp ****                     else
+ 1061              		.loc 1 131 33 is_stmt 0 view .LVU261
+ 1062 00cc 0133     		adds	r3, r3, #1
+ 1063 00ce 2360     		str	r3, [r4]
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 32
+
+
+ 1064              	.L59:
+ 136:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 1065              		.loc 1 136 21 is_stmt 1 view .LVU262
+ 136:xiagb/bottom/toshibaStepMotor.cpp ****                 }
+ 1066              		.loc 1 136 41 is_stmt 0 view .LVU263
+ 1067 00d0 2046     		mov	r0, r4
+ 1068 00d2 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass20motor_run_time_che
+ 1069              	.LVL103:
+ 120:xiagb/bottom/toshibaStepMotor.cpp ****                     speed_accumulator -= max_speed_threshold;
+ 1070              		.loc 1 120 29 view .LVU264
+ 1071 00d6 0122     		movs	r2, #1
+ 1072 00d8 A5E7     		b	.L57
+ 1073              	.L58:
+ 133:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1074              		.loc 1 133 25 is_stmt 1 view .LVU265
+ 1075 00da 2368     		ldr	r3, [r4]
+ 133:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1076              		.loc 1 133 33 is_stmt 0 view .LVU266
+ 1077 00dc 013B     		subs	r3, r3, #1
+ 1078 00de 2360     		str	r3, [r4]
+ 1079 00e0 F6E7     		b	.L59
+ 1080              	.LVL104:
+ 1081              	.L64:
+ 178:xiagb/bottom/toshibaStepMotor.cpp ****                         state = motor_decelerate;
+ 1082              		.loc 1 178 26 is_stmt 1 view .LVU267
+ 178:xiagb/bottom/toshibaStepMotor.cpp ****                         state = motor_decelerate;
+ 1083              		.loc 1 178 30 is_stmt 0 view .LVU268
+ 1084 00e2 A368     		ldr	r3, [r4, #8]
+ 178:xiagb/bottom/toshibaStepMotor.cpp ****                         state = motor_decelerate;
+ 1085              		.loc 1 178 26 view .LVU269
+ 1086 00e4 002B     		cmp	r3, #0
+ 1087 00e6 8ED0     		beq	.L55
+ 179:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1088              		.loc 1 179 25 is_stmt 1 view .LVU270
+ 179:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1089              		.loc 1 179 31 is_stmt 0 view .LVU271
+ 1090 00e8 0323     		movs	r3, #3
+ 1091 00ea 2374     		strb	r3, [r4, #16]
+ 1092 00ec 8BE7     		b	.L55
+ 1093              	.L60:
+ 183:xiagb/bottom/toshibaStepMotor.cpp ****                     if (keep_turn_flag && carry_v == true) //当处于保持转动的状态时
+ 1094              		.loc 1 183 17 is_stmt 1 view .LVU272
+ 184:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1095              		.loc 1 184 21 view .LVU273
+ 184:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1096              		.loc 1 184 25 is_stmt 0 view .LVU274
+ 1097 00ee 94F84130 		ldrb	r3, [r4, #65]	@ zero_extendqisi2
+ 184:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1098              		.loc 1 184 21 view .LVU275
+ 1099 00f2 4BB1     		cbz	r3, .L65
+ 184:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1100              		.loc 1 184 40 discriminator 1 view .LVU276
+ 1101 00f4 42B1     		cbz	r2, .L65
+ 186:xiagb/bottom/toshibaStepMotor.cpp ****                         if (need_run_step > 0)
+ 1102              		.loc 1 186 25 is_stmt 1 view .LVU277
+ 1103 00f6 A368     		ldr	r3, [r4, #8]
+ 186:xiagb/bottom/toshibaStepMotor.cpp ****                         if (need_run_step > 0)
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 33
+
+
+ 1104              		.loc 1 186 37 is_stmt 0 view .LVU278
+ 1105 00f8 013B     		subs	r3, r3, #1
+ 1106 00fa A360     		str	r3, [r4, #8]
+ 187:xiagb/bottom/toshibaStepMotor.cpp ****                             position--;
+ 1107              		.loc 1 187 25 is_stmt 1 view .LVU279
+ 187:xiagb/bottom/toshibaStepMotor.cpp ****                             position--;
+ 1108              		.loc 1 187 29 is_stmt 0 view .LVU280
+ 1109 00fc 6368     		ldr	r3, [r4, #4]
+ 187:xiagb/bottom/toshibaStepMotor.cpp ****                             position--;
+ 1110              		.loc 1 187 25 view .LVU281
+ 1111 00fe 002B     		cmp	r3, #0
+ 1112 0100 24DD     		ble	.L66
+ 188:xiagb/bottom/toshibaStepMotor.cpp ****                         else
+ 1113              		.loc 1 188 29 is_stmt 1 view .LVU282
+ 1114 0102 2368     		ldr	r3, [r4]
+ 188:xiagb/bottom/toshibaStepMotor.cpp ****                         else
+ 1115              		.loc 1 188 37 is_stmt 0 view .LVU283
+ 1116 0104 013B     		subs	r3, r3, #1
+ 1117 0106 2360     		str	r3, [r4]
+ 1118              	.L65:
+ 193:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1119              		.loc 1 193 21 is_stmt 1 view .LVU284
+ 1120              	.LVL105:
+ 1121              	.LBB13:
+ 1122              	.LBI13:
+ 253:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_fabs(__x); }
+ 1123              		.loc 2 253 5 view .LVU285
+ 1124              	.LBB14:
+ 1125              		.loc 2 254 28 is_stmt 0 view .LVU286
+ 1126 0108 6068     		ldr	r0, [r4, #4]
+ 1127 010a FFF7FEFF 		bl	__aeabi_i2d
+ 1128              	.LVL106:
+ 1129              		.loc 2 254 28 view .LVU287
+ 1130              	.LBE14:
+ 1131              	.LBE13:
+ 193:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1132              		.loc 1 193 25 view .LVU288
+ 1133 010e 21F00043 		bic	r3, r1, #-2147483648
+ 1134 0112 1946     		mov	r1, r3
+ 1135 0114 FFF7FEFF 		bl	__aeabi_d2uiz
+ 1136              	.LVL107:
+ 193:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1137              		.loc 1 193 57 view .LVU289
+ 1138 0118 A368     		ldr	r3, [r4, #8]
+ 193:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1139              		.loc 1 193 55 view .LVU290
+ 1140 011a C01A     		subs	r0, r0, r3
+ 193:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1141              		.loc 1 193 73 view .LVU291
+ 1142 011c E369     		ldr	r3, [r4, #28]
+ 193:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1143              		.loc 1 193 21 view .LVU292
+ 1144 011e 9842     		cmp	r0, r3
+ 1145 0120 3FF671AF 		bhi	.L55
+ 195:xiagb/bottom/toshibaStepMotor.cpp ****                         //进入减速状态就要切换为减速状态时的最大速度
+ 1146              		.loc 1 195 25 is_stmt 1 view .LVU293
+ 195:xiagb/bottom/toshibaStepMotor.cpp ****                         //进入减速状态就要切换为减速状态时的最大速度
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 34
+
+
+ 1147              		.loc 1 195 48 is_stmt 0 view .LVU294
+ 1148 0124 0123     		movs	r3, #1
+ 1149 0126 6374     		strb	r3, [r4, #17]
+ 197:xiagb/bottom/toshibaStepMotor.cpp ****                         speed = curve_s_table[acc_dec_counter] * max_speed; //计算当前速度
+ 1150              		.loc 1 197 25 is_stmt 1 view .LVU295
+ 1151 0128 A369     		ldr	r3, [r4, #24]
+ 197:xiagb/bottom/toshibaStepMotor.cpp ****                         speed = curve_s_table[acc_dec_counter] * max_speed; //计算当前速度
+ 1152              		.loc 1 197 40 is_stmt 0 view .LVU296
+ 1153 012a 013B     		subs	r3, r3, #1
+ 1154 012c A361     		str	r3, [r4, #24]
+ 198:xiagb/bottom/toshibaStepMotor.cpp ****                         state = motor_decelerate;
+ 1155              		.loc 1 198 25 is_stmt 1 view .LVU297
+ 198:xiagb/bottom/toshibaStepMotor.cpp ****                         state = motor_decelerate;
+ 1156              		.loc 1 198 62 is_stmt 0 view .LVU298
+ 1157 012e 214A     		ldr	r2, .L73
+ 1158 0130 52F82350 		ldr	r5, [r2, r3, lsl #2]	@ float
+ 198:xiagb/bottom/toshibaStepMotor.cpp ****                         state = motor_decelerate;
+ 1159              		.loc 1 198 64 view .LVU299
+ 1160 0134 E089     		ldrh	r0, [r4, #14]
+ 1161 0136 FFF7FEFF 		bl	__aeabi_i2f
+ 1162              	.LVL108:
+ 1163 013a 2946     		mov	r1, r5
+ 1164 013c FFF7FEFF 		bl	__aeabi_fmul
+ 1165              	.LVL109:
+ 198:xiagb/bottom/toshibaStepMotor.cpp ****                         state = motor_decelerate;
+ 1166              		.loc 1 198 31 view .LVU300
+ 1167 0140 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1168              	.LVL110:
+ 1169 0144 A081     		strh	r0, [r4, #12]	@ movhi
+ 199:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 1170              		.loc 1 199 25 is_stmt 1 view .LVU301
+ 199:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 1171              		.loc 1 199 31 is_stmt 0 view .LVU302
+ 1172 0146 0323     		movs	r3, #3
+ 1173 0148 2374     		strb	r3, [r4, #16]
+ 1174 014a 5CE7     		b	.L55
+ 1175              	.L66:
+ 190:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 1176              		.loc 1 190 29 is_stmt 1 view .LVU303
+ 1177 014c 2368     		ldr	r3, [r4]
+ 190:xiagb/bottom/toshibaStepMotor.cpp ****                     }
+ 1178              		.loc 1 190 37 is_stmt 0 view .LVU304
+ 1179 014e 0133     		adds	r3, r3, #1
+ 1180 0150 2360     		str	r3, [r4]
+ 1181 0152 D9E7     		b	.L65
+ 1182              	.L61:
+ 204:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1183              		.loc 1 204 17 is_stmt 1 view .LVU305
+ 206:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1184              		.loc 1 206 21 view .LVU306
+ 206:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1185              		.loc 1 206 25 is_stmt 0 view .LVU307
+ 1186 0154 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
+ 206:xiagb/bottom/toshibaStepMotor.cpp ****                     {
+ 1187              		.loc 1 206 21 view .LVU308
+ 1188 0156 CBB1     		cbz	r3, .L67
+ 208:xiagb/bottom/toshibaStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval) //如果中断次数达到设定
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 35
+
+
+ 1189              		.loc 1 208 25 is_stmt 1 view .LVU309
+ 1190 0158 A38A     		ldrh	r3, [r4, #20]
+ 208:xiagb/bottom/toshibaStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval) //如果中断次数达到设定
+ 1191              		.loc 1 208 42 is_stmt 0 view .LVU310
+ 1192 015a 0133     		adds	r3, r3, #1
+ 1193 015c 9BB2     		uxth	r3, r3
+ 1194 015e A382     		strh	r3, [r4, #20]	@ movhi
+ 209:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 1195              		.loc 1 209 25 is_stmt 1 view .LVU311
+ 209:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 1196              		.loc 1 209 50 is_stmt 0 view .LVU312
+ 1197 0160 628A     		ldrh	r2, [r4, #18]
+ 209:xiagb/bottom/toshibaStepMotor.cpp ****                         {
+ 1198              		.loc 1 209 25 view .LVU313
+ 1199 0162 9342     		cmp	r3, r2
+ 1200 0164 12D3     		bcc	.L67
+ 211:xiagb/bottom/toshibaStepMotor.cpp ****                             acc_dec_counter--;
+ 1201              		.loc 1 211 29 is_stmt 1 view .LVU314
+ 211:xiagb/bottom/toshibaStepMotor.cpp ****                             acc_dec_counter--;
+ 1202              		.loc 1 211 47 is_stmt 0 view .LVU315
+ 1203 0166 0023     		movs	r3, #0
+ 1204 0168 A382     		strh	r3, [r4, #20]	@ movhi
+ 212:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1205              		.loc 1 212 29 is_stmt 1 view .LVU316
+ 1206 016a A569     		ldr	r5, [r4, #24]
+ 212:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1207              		.loc 1 212 44 is_stmt 0 view .LVU317
+ 1208 016c 013D     		subs	r5, r5, #1
+ 1209 016e A561     		str	r5, [r4, #24]
+ 214:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1210              		.loc 1 214 29 is_stmt 1 view .LVU318
+ 214:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1211              		.loc 1 214 66 is_stmt 0 view .LVU319
+ 1212 0170 104B     		ldr	r3, .L73
+ 1213 0172 53F82560 		ldr	r6, [r3, r5, lsl #2]	@ float
+ 214:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1214              		.loc 1 214 68 view .LVU320
+ 1215 0176 E089     		ldrh	r0, [r4, #14]
+ 1216 0178 FFF7FEFF 		bl	__aeabi_i2f
+ 1217              	.LVL111:
+ 1218 017c 3146     		mov	r1, r6
+ 1219 017e FFF7FEFF 		bl	__aeabi_fmul
+ 1220              	.LVL112:
+ 214:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 1221              		.loc 1 214 35 view .LVU321
+ 1222 0182 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1223              	.LVL113:
+ 1224 0186 A081     		strh	r0, [r4, #12]	@ movhi
+ 216:xiagb/bottom/toshibaStepMotor.cpp ****                                 interrupt_counter_flag = false;
+ 1225              		.loc 1 216 29 is_stmt 1 view .LVU322
+ 1226 0188 012D     		cmp	r5, #1
+ 1227 018a 0FD9     		bls	.L72
+ 1228              	.L67:
+ 221:xiagb/bottom/toshibaStepMotor.cpp ****                         stop();
+ 1229              		.loc 1 221 21 view .LVU323
+ 221:xiagb/bottom/toshibaStepMotor.cpp ****                         stop();
+ 1230              		.loc 1 221 25 is_stmt 0 view .LVU324
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 36
+
+
+ 1231 018c A568     		ldr	r5, [r4, #8]
+ 1232              	.LVL114:
+ 1233              	.LBB15:
+ 1234              	.LBI15:
+ 253:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_fabs(__x); }
+ 1235              		.loc 2 253 5 is_stmt 1 view .LVU325
+ 1236              	.LBB16:
+ 1237              		.loc 2 254 28 is_stmt 0 view .LVU326
+ 1238 018e 6068     		ldr	r0, [r4, #4]
+ 1239 0190 FFF7FEFF 		bl	__aeabi_i2d
+ 1240              	.LVL115:
+ 1241              		.loc 2 254 28 view .LVU327
+ 1242              	.LBE16:
+ 1243              	.LBE15:
+ 221:xiagb/bottom/toshibaStepMotor.cpp ****                         stop();
+ 1244              		.loc 1 221 41 view .LVU328
+ 1245 0194 21F00043 		bic	r3, r1, #-2147483648
+ 1246 0198 1946     		mov	r1, r3
+ 1247 019a FFF7FEFF 		bl	__aeabi_d2uiz
+ 1248              	.LVL116:
+ 221:xiagb/bottom/toshibaStepMotor.cpp ****                         stop();
+ 1249              		.loc 1 221 21 view .LVU329
+ 1250 019e 8542     		cmp	r5, r0
+ 1251 01a0 FFF431AF 		bcc	.L55
+ 222:xiagb/bottom/toshibaStepMotor.cpp ****                     break;
+ 1252              		.loc 1 222 25 is_stmt 1 view .LVU330
+ 222:xiagb/bottom/toshibaStepMotor.cpp ****                     break;
+ 1253              		.loc 1 222 29 is_stmt 0 view .LVU331
+ 1254 01a4 2046     		mov	r0, r4
+ 1255 01a6 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv
+ 1256              	.LVL117:
+ 1257 01aa 2CE7     		b	.L55
+ 1258              	.L72:
+ 217:xiagb/bottom/toshibaStepMotor.cpp ****                         }
+ 1259              		.loc 1 217 33 is_stmt 1 view .LVU332
+ 217:xiagb/bottom/toshibaStepMotor.cpp ****                         }
+ 1260              		.loc 1 217 56 is_stmt 0 view .LVU333
+ 1261 01ac 0023     		movs	r3, #0
+ 1262 01ae 6374     		strb	r3, [r4, #17]
+ 1263 01b0 ECE7     		b	.L67
+ 1264              	.L74:
+ 1265 01b2 00BF     		.align	2
+ 1266              	.L73:
+ 1267 01b4 00000000 		.word	.LANCHOR0
+ 1268              		.cfi_endproc
+ 1269              	.LFE304:
+ 1270              		.fnend
+ 1272              		.section	.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass9keep_tu
+ 1273              		.align	1
+ 1274              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass9keep_turnEbtt
+ 1275              		.syntax unified
+ 1276              		.thumb
+ 1277              		.thumb_func
+ 1278              		.fpu softvfp
+ 1280              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass9keep_turnEbtt:
+ 1281              		.fnstart
+ 1282              	.LVL118:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 37
+
+
+ 1283              	.LFB307:
+ 243:xiagb/bottom/toshibaStepMotor.cpp **** 
+ 244:xiagb/bottom/toshibaStepMotor.cpp ****             void toshibaStepMotorClass::keep_turn(bool dir, uint16_t max_speed, uint16_t acc_dec_ac
+ 245:xiagb/bottom/toshibaStepMotor.cpp ****             {
+ 1284              		.loc 1 245 13 is_stmt 1 view -0
+ 1285              		.cfi_startproc
+ 1286              		@ args = 0, pretend = 0, frame = 0
+ 1287              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1288              		.loc 1 245 13 is_stmt 0 view .LVU335
+ 1289 0000 10B5     		push	{r4, lr}
+ 1290              		.save {r4, lr}
+ 1291              	.LCFI8:
+ 1292              		.cfi_def_cfa_offset 8
+ 1293              		.cfi_offset 4, -8
+ 1294              		.cfi_offset 14, -4
+ 246:xiagb/bottom/toshibaStepMotor.cpp ****                 keep_turn_flag = true;
+ 1295              		.loc 1 246 17 is_stmt 1 view .LVU336
+ 1296              		.loc 1 246 32 is_stmt 0 view .LVU337
+ 1297 0002 0124     		movs	r4, #1
+ 1298 0004 80F84140 		strb	r4, [r0, #65]
+ 247:xiagb/bottom/toshibaStepMotor.cpp ****                 if (dir)
+ 1299              		.loc 1 247 17 is_stmt 1 view .LVU338
+ 1300 0008 19B1     		cbz	r1, .L76
+ 248:xiagb/bottom/toshibaStepMotor.cpp ****                     move(a_circle_step * 100, max_speed, acc_dec_action_interval); //步数至少�
+ 1301              		.loc 1 248 21 view .LVU339
+ 1302              		.loc 1 248 25 is_stmt 0 view .LVU340
+ 1303 000a 0449     		ldr	r1, .L79
+ 1304              	.LVL119:
+ 1305              		.loc 1 248 25 view .LVU341
+ 1306 000c FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveEltt
+ 1307              	.LVL120:
+ 1308              	.L75:
+ 249:xiagb/bottom/toshibaStepMotor.cpp ****                 else
+ 250:xiagb/bottom/toshibaStepMotor.cpp ****                     move(a_circle_step * -100, max_speed, acc_dec_action_interval);
+ 251:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 1309              		.loc 1 251 13 view .LVU342
+ 1310 0010 10BD     		pop	{r4, pc}
+ 1311              	.LVL121:
+ 1312              	.L76:
+ 250:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 1313              		.loc 1 250 21 is_stmt 1 view .LVU343
+ 250:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 1314              		.loc 1 250 25 is_stmt 0 view .LVU344
+ 1315 0012 0349     		ldr	r1, .L79+4
+ 1316              	.LVL122:
+ 250:xiagb/bottom/toshibaStepMotor.cpp ****             }
+ 1317              		.loc 1 250 25 view .LVU345
+ 1318 0014 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveEltt
+ 1319              	.LVL123:
+ 1320              		.loc 1 251 13 view .LVU346
+ 1321 0018 FAE7     		b	.L75
+ 1322              	.L80:
+ 1323 001a 00BF     		.align	2
+ 1324              	.L79:
+ 1325 001c 00E20400 		.word	320000
+ 1326 0020 001EFBFF 		.word	-320000
+ 1327              		.cfi_endproc
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 38
+
+
+ 1328              	.LFE307:
+ 1329              		.fnend
+ 1331              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass23curve_s_data_
+ 1332              		.global	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass13curve_s_table
+ 1333              		.section	.bss._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass13curve_s
+ 1334              		.align	2
+ 1335              		.set	.LANCHOR0,. + 0
+ 1338              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass13curve_s_tableE:
+ 1339 0000 00000000 		.space	800
+ 1339      00000000 
+ 1339      00000000 
+ 1339      00000000 
+ 1339      00000000 
+ 1340              		.section	.bss._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass23curve_s
+ 1341              		.set	.LANCHOR1,. + 0
+ 1344              	_ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass23curve_s_data_build_fla
+ 1345 0000 00       		.space	1
+ 1346              		.text
+ 1347              	.Letext0:
+ 1348              		.file 3 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\machine\\
+ 1349              		.file 4 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_std
+ 1350              		.file 5 "Drivers/CMSIS/Include/core_cm3.h"
+ 1351              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 1352              		.file 7 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 1353              		.file 8 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 1354              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 1355              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 1356              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 1357              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 1358              		.file 13 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 1359              		.file 14 "xiagb/bottom/toshibaStepMotor.hpp"
+ 1360              		.file 15 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3
+ 1361              		.file 16 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3
+ 1362              		.file 17 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3
+ 1363              		.file 18 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3
+ 1364              		.file 19 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\lib\\gcc\\arm-none-eabi\\9.3.1\\
+ 1365              		.file 20 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_ty
+ 1366              		.file 21 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\ree
+ 1367              		.file 22 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\loc
+ 1368              		.file 23 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\math.h"
+ 1369              		.file 24 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\stdlib.h
+ 1370              		.file 25 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3
+ 1371              		.file 26 "<built-in>"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 39
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 toshibaStepMotor.cpp
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:16     .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassC2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:24     .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassC2Ev:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassC2Ev
+.ARM.exidx.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassC2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:24     .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassC2Ev:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassC1Ev
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:44     .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassD2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:51     .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassD2Ev:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassD2Ev
+.ARM.exidx.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassD2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:51     .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassD2Ev:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClassD1Ev
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:75     .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass12curve_s_initEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:82     .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass12curve_s_initEv:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass12curve_s_initEv
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:160    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass12curve_s_initEv:00000050 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass12curve_s_initEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:175    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:182    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv
+.ARM.exidx.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4stopEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:302    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4initEP12GPIO_TypeDeftS4_tS4_t13GPIO_PinStateS5_P17TIM_HandleTypeDefhff:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:309    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4initEP12GPIO_TypeDeftS4_tS4_t13GPIO_PinStateS5_P17TIM_HandleTypeDefhff:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4initEP12GPIO_TypeDeftS4_tS4_t13GPIO_PinStateS5_P17TIM_HandleTypeDefhff
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:407    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4initEP12GPIO_TypeDeftS4_tS4_t13GPIO_PinStateS5_P17TIM_HandleTypeDefhff:00000060 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4initEP12GPIO_TypeDeftS4_tS4_t13GPIO_PinStateS5_P17TIM_HandleTypeDefhff:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:414    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveEltt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:421    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveEltt:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveEltt
+.ARM.exidx.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4moveEltt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:625    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass16move_to_positionEttt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:632    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass16move_to_positionEttt:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass16move_to_positionEttt
+.ARM.exidx.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass16move_to_positionEttt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:723    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass5resetEtt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:730    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass5resetEtt:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass5resetEtt
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:765    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass5resetEtt:00000014 $d
+.ARM.extab.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass5resetEtt:00000000 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass5resetEtt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:771    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass20motor_run_time_checkEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:778    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass20motor_run_time_checkEv:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass20motor_run_time_checkEv
+.ARM.exidx.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass20motor_run_time_checkEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:849    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4loopEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:856    .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4loopEv:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4loopEv
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:1267   .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4loopEv:000001b4 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass4loopEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:1273   .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass9keep_turnEbtt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:1280   .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass9keep_turnEbtt:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass9keep_turnEbtt
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:1325   .text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass9keep_turnEbtt:0000001c $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass9keep_turnEbtt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:1344   .bss._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass23curve_s_data_build_flagE:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass23curve_s_data_build_flagE
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:1338   .bss._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass13curve_s_tableE:00000000 _ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass13curve_s_tableE
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:1334   .bss._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass13curve_s_tableE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s:1345   .bss._ZN5xiagb14motorNamespace25toshibaStepMotorNamespace21toshibaStepMotorClass23curve_s_data_build_flagE:00000000 $d
+
+UNDEFINED SYMBOLS
+__aeabi_i2d
+__aeabi_dmul
+__aeabi_dadd
+__aeabi_ddiv
+__aeabi_d2f
+exp
+__aeabi_ui2f
+__aeabi_fmul
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccDJFWuN.s 			page 40
+
+
+__aeabi_f2uiz
+HAL_GPIO_WritePin
+__aeabi_unwind_cpp_pr0
+__aeabi_i2f
+__aeabi_fcmpgt
+__aeabi_fsub
+__aeabi_f2iz
+__aeabi_unwind_cpp_pr1
+HAL_GPIO_ReadPin
+__aeabi_d2uiz

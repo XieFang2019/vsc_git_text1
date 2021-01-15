@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ARM",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/project/build/project.elf",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "arm-none-eabi-gdb.exe",
+            "setupCommands": [
+                {
+                    "text": "cd ${workspaceFolder}/project/build"
+                },
+                {
+                    "text": "file project.elf"
+                },
+                {
+                    "text": "target extended-remote localhost:3333"
+                },
+                {
+                    "text": "load"
+                }
+            ],
+            "preLaunchTask": "start",
+            "postDebugTask": "stop"
+        }
+    ]
+}

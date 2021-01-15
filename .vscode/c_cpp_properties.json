@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "project/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3",
+                "project/Drivers/STM32F1xx_HAL_Driver/Inc"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "USE_HAL_DRIVER",
+                "STM32F103xB"
+            ],
+            "compilerPath": "D:/ZKRJ/GNU Arm Embedded Toolchain/9 2020-q2-update/bin/arm-none-eabi-gcc.exe",
+            "intelliSenseMode": "gcc-arm"
+        }
+    ],
+    "version": 4
+}

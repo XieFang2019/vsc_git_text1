@@ -1,0 +1,1069 @@
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"canStepMotor.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC2Ev,"ax",%progb
+  16              		.align	1
+  17              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC2Ev
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC2Ev:
+  25              		.fnstart
+  26              	.LVL0:
+  27              	.LFB72:
+  28              		.file 1 "xiagb/bottom/canStepMotor.cpp"
+   1:xiagb/bottom/canStepMotor.cpp **** #include "canStepMotor.hpp"
+   2:xiagb/bottom/canStepMotor.cpp **** 
+   3:xiagb/bottom/canStepMotor.cpp **** namespace xiagb
+   4:xiagb/bottom/canStepMotor.cpp **** {
+   5:xiagb/bottom/canStepMotor.cpp ****     namespace motorNamespace
+   6:xiagb/bottom/canStepMotor.cpp ****     {
+   7:xiagb/bottom/canStepMotor.cpp ****         namespace canStepMotorNamespace
+   8:xiagb/bottom/canStepMotor.cpp ****         {
+   9:xiagb/bottom/canStepMotor.cpp ****             const char *const canStepMotorClass::argFlagStr = "1";
+  10:xiagb/bottom/canStepMotor.cpp ****             const char *const canStepMotorClass::resetFlagStr = "2";
+  11:xiagb/bottom/canStepMotor.cpp ****             const char *const canStepMotorClass::moveFlagStr = "3";
+  12:xiagb/bottom/canStepMotor.cpp ****             const char *const canStepMotorClass::stopFlagStr = "4";
+  13:xiagb/bottom/canStepMotor.cpp ****             const char *const canStepMotorClass::keepMoveFlagStr = "5";
+  14:xiagb/bottom/canStepMotor.cpp ****             const char *const canStepMotorClass::sensorFlagStr = "6";
+  15:xiagb/bottom/canStepMotor.cpp ****             const char *const canStepMotorClass::stepFlagStr = "7";
+  16:xiagb/bottom/canStepMotor.cpp ****             const char *const canStepMotorClass::stepCountDownFlagStr = "8";
+  17:xiagb/bottom/canStepMotor.cpp **** 
+  18:xiagb/bottom/canStepMotor.cpp ****             canStepMotorClass::canStepMotorClass()
+  29              		.loc 1 18 13 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  19:xiagb/bottom/canStepMotor.cpp ****             {
+  20:xiagb/bottom/canStepMotor.cpp ****             }
+  34              		.loc 1 20 13 is_stmt 0 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE72:
+  38              		.cantunwind
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 2
+
+
+  39              		.fnend
+  41              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC1Ev
+  42              		.thumb_set _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC1Ev,_ZN5xiagb14moto
+  43              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassD2Ev,"ax",%progb
+  44              		.align	1
+  45              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassD2Ev
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  49              		.fpu softvfp
+  51              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassD2Ev:
+  52              		.fnstart
+  53              	.LVL1:
+  54              	.LFB75:
+  21:xiagb/bottom/canStepMotor.cpp **** 
+  22:xiagb/bottom/canStepMotor.cpp ****             canStepMotorClass::~canStepMotorClass()
+  55              		.loc 1 22 13 is_stmt 1 view -0
+  56              		.cfi_startproc
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59              		@ link register save eliminated.
+  23:xiagb/bottom/canStepMotor.cpp ****             {
+  24:xiagb/bottom/canStepMotor.cpp ****             }
+  60              		.loc 1 24 13 is_stmt 0 view .LVU3
+  61 0000 7047     		bx	lr
+  62              		.cfi_endproc
+  63              	.LFE75:
+  64              		.cantunwind
+  65              		.fnend
+  67              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassD1Ev
+  68              		.thumb_set _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassD1Ev,_ZN5xiagb14moto
+  69              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22co
+  70              		.align	2
+  71              	.LC0:
+  72 0000 3100     		.ascii	"1\000"
+  73 0002 0000     		.align	2
+  74              	.LC1:
+  75 0004 25732025 		.ascii	"%s %d %d %d %d %d\012\000"
+  75      64202564 
+  75      20256420 
+  75      25642025 
+  75      640A00
+  76              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22comm
+  77              		.align	1
+  78              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22communicati
+  79              		.syntax unified
+  80              		.thumb
+  81              		.thumb_func
+  82              		.fpu softvfp
+  84              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22communicationNamespa
+  85              		.fnstart
+  86              	.LVL2:
+  87              	.LFB77:
+  25:xiagb/bottom/canStepMotor.cpp **** 
+  26:xiagb/bottom/canStepMotor.cpp ****             void canStepMotorClass::init(canClass *canHandle, uint8_t slaveBoardCanId, uint8_t slav
+  27:xiagb/bottom/canStepMotor.cpp ****             {
+  88              		.loc 1 27 13 is_stmt 1 view -0
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 3
+
+
+  89              		.cfi_startproc
+  90              		@ args = 16, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92              		.loc 1 27 13 is_stmt 0 view .LVU5
+  93 0000 10B5     		push	{r4, lr}
+  94              		.save {r4, lr}
+  95              	.LCFI0:
+  96              		.cfi_def_cfa_offset 8
+  97              		.cfi_offset 4, -8
+  98              		.cfi_offset 14, -4
+  99              		.pad #24
+ 100 0002 86B0     		sub	sp, sp, #24
+ 101              	.LCFI1:
+ 102              		.cfi_def_cfa_offset 32
+ 103 0004 0446     		mov	r4, r0
+ 104 0006 0846     		mov	r0, r1
+ 105              	.LVL3:
+ 106              		.loc 1 27 13 view .LVU6
+ 107 0008 1146     		mov	r1, r2
+ 108              	.LVL4:
+  28:xiagb/bottom/canStepMotor.cpp ****                 this->canHandle = canHandle;
+ 109              		.loc 1 28 17 is_stmt 1 view .LVU7
+ 110              		.loc 1 28 33 is_stmt 0 view .LVU8
+ 111 000a 6060     		str	r0, [r4, #4]
+  29:xiagb/bottom/canStepMotor.cpp ****                 this->slaveBoardCanId = slaveBoardCanId;
+ 112              		.loc 1 29 17 is_stmt 1 view .LVU9
+ 113              		.loc 1 29 39 is_stmt 0 view .LVU10
+ 114 000c 2270     		strb	r2, [r4]
+  30:xiagb/bottom/canStepMotor.cpp ****                 this->slaveBoardMotorChannel = slaveBoardMotorChannel;
+ 115              		.loc 1 30 17 is_stmt 1 view .LVU11
+ 116              		.loc 1 30 46 is_stmt 0 view .LVU12
+ 117 000e 6370     		strb	r3, [r4, #1]
+  31:xiagb/bottom/canStepMotor.cpp **** 
+  32:xiagb/bottom/canStepMotor.cpp ****                 this->state = true; //测试激活
+ 118              		.loc 1 32 17 is_stmt 1 view .LVU13
+ 119              		.loc 1 32 29 is_stmt 0 view .LVU14
+ 120 0010 0122     		movs	r2, #1
+ 121              	.LVL5:
+ 122              		.loc 1 32 29 view .LVU15
+ 123 0012 2272     		strb	r2, [r4, #8]
+  33:xiagb/bottom/canStepMotor.cpp ****                 canHandle->echoPrintf(slaveBoardCanId, "%s %d %d %d %d %d\n", argFlagStr, slaveBoar
+ 124              		.loc 1 33 17 is_stmt 1 view .LVU16
+ 125              		.loc 1 33 38 is_stmt 0 view .LVU17
+ 126 0014 9DF82C20 		ldrb	r2, [sp, #44]	@ zero_extendqisi2
+ 127 0018 0492     		str	r2, [sp, #16]
+ 128              	.LVL6:
+ 129              		.loc 1 33 38 view .LVU18
+ 130 001a 9DF82820 		ldrb	r2, [sp, #40]	@ zero_extendqisi2
+ 131 001e 0392     		str	r2, [sp, #12]
+ 132 0020 9DF82420 		ldrb	r2, [sp, #36]	@ zero_extendqisi2
+ 133 0024 0292     		str	r2, [sp, #8]
+ 134 0026 9DF82020 		ldrb	r2, [sp, #32]	@ zero_extendqisi2
+ 135 002a 0192     		str	r2, [sp, #4]
+ 136 002c 0093     		str	r3, [sp]
+ 137 002e 064B     		ldr	r3, .L7
+ 138              	.LVL7:
+ 139              		.loc 1 33 38 view .LVU19
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 4
+
+
+ 140 0030 064A     		ldr	r2, .L7+4
+ 141 0032 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+ 142              	.LVL8:
+ 143              	.L5:
+  34:xiagb/bottom/canStepMotor.cpp ****                 while (state == true) //等待被激活，如果无法收到反馈，基本就是�
+ 144              		.loc 1 34 17 is_stmt 1 view .LVU20
+ 145              		.loc 1 34 30 view .LVU21
+ 146              		.loc 1 34 24 is_stmt 0 view .LVU22
+ 147 0036 237A     		ldrb	r3, [r4, #8]	@ zero_extendqisi2
+ 148              		.loc 1 34 30 view .LVU23
+ 149 0038 1BB1     		cbz	r3, .L3
+  35:xiagb/bottom/canStepMotor.cpp ****                     osDelay(1);
+ 150              		.loc 1 35 21 is_stmt 1 view .LVU24
+ 151              		.loc 1 35 28 is_stmt 0 view .LVU25
+ 152 003a 0120     		movs	r0, #1
+ 153 003c FFF7FEFF 		bl	osDelay
+ 154              	.LVL9:
+  34:xiagb/bottom/canStepMotor.cpp ****                 while (state == true) //等待被激活，如果无法收到反馈，基本就是�
+ 155              		.loc 1 34 17 view .LVU26
+ 156 0040 F9E7     		b	.L5
+ 157              	.L3:
+  36:xiagb/bottom/canStepMotor.cpp ****             }
+ 158              		.loc 1 36 13 view .LVU27
+ 159 0042 06B0     		add	sp, sp, #24
+ 160              	.LCFI2:
+ 161              		.cfi_def_cfa_offset 8
+ 162              		@ sp needed
+ 163 0044 10BD     		pop	{r4, pc}
+ 164              	.LVL10:
+ 165              	.L8:
+ 166              		.loc 1 36 13 view .LVU28
+ 167 0046 00BF     		.align	2
+ 168              	.L7:
+ 169 0048 00000000 		.word	.LC0
+ 170 004c 04000000 		.word	.LC1
+ 171              		.cfi_endproc
+ 172              	.LFE77:
+ 173              		.fnend
+ 175              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt.str1
+ 176              		.align	2
+ 177              	.LC2:
+ 178 0000 3200     		.ascii	"2\000"
+ 179 0002 0000     		.align	2
+ 180              	.LC3:
+ 181 0004 25732025 		.ascii	"%s %d\012\000"
+ 181      640A00
+ 182              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt,"ax",%
+ 183              		.align	1
+ 184              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt
+ 185              		.syntax unified
+ 186              		.thumb
+ 187              		.thumb_func
+ 188              		.fpu softvfp
+ 190              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt:
+ 191              		.fnstart
+ 192              	.LVL11:
+ 193              	.LFB78:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 5
+
+
+  37:xiagb/bottom/canStepMotor.cpp **** 
+  38:xiagb/bottom/canStepMotor.cpp ****             void canStepMotorClass::reset(uint16_t max_speed, uint16_t acc_dec_action_interval)
+  39:xiagb/bottom/canStepMotor.cpp ****             {
+ 194              		.loc 1 39 13 is_stmt 1 view -0
+ 195              		.cfi_startproc
+ 196              		@ args = 0, pretend = 0, frame = 0
+ 197              		@ frame_needed = 0, uses_anonymous_args = 0
+  40:xiagb/bottom/canStepMotor.cpp ****                 if (!state)
+ 198              		.loc 1 40 17 view .LVU30
+ 199              		.loc 1 40 22 is_stmt 0 view .LVU31
+ 200 0000 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 201              		.loc 1 40 17 view .LVU32
+ 202 0002 03B1     		cbz	r3, .L15
+ 203 0004 7047     		bx	lr
+ 204              	.L15:
+  39:xiagb/bottom/canStepMotor.cpp ****                 if (!state)
+ 205              		.loc 1 39 13 view .LVU33
+ 206 0006 10B5     		push	{r4, lr}
+ 207              		.save {r4, lr}
+ 208              	.LCFI3:
+ 209              		.cfi_def_cfa_offset 8
+ 210              		.cfi_offset 4, -8
+ 211              		.cfi_offset 14, -4
+ 212              		.pad #16
+ 213 0008 84B0     		sub	sp, sp, #16
+ 214              	.LCFI4:
+ 215              		.cfi_def_cfa_offset 24
+ 216 000a 0446     		mov	r4, r0
+  41:xiagb/bottom/canStepMotor.cpp ****                 {
+  42:xiagb/bottom/canStepMotor.cpp ****                     canHandle->echoPrintf(slaveBoardCanId, "%s %d\n", resetFlagStr, slaveBoardMotor
+ 217              		.loc 1 42 21 is_stmt 1 view .LVU34
+ 218              		.loc 1 42 85 is_stmt 0 view .LVU35
+ 219 000c 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 220              		.loc 1 42 42 view .LVU36
+ 221 000e 0292     		str	r2, [sp, #8]
+ 222 0010 0191     		str	r1, [sp, #4]
+ 223 0012 0093     		str	r3, [sp]
+ 224 0014 044B     		ldr	r3, .L16
+ 225 0016 054A     		ldr	r2, .L16+4
+ 226              	.LVL12:
+ 227              		.loc 1 42 42 view .LVU37
+ 228 0018 0178     		ldrb	r1, [r0]	@ zero_extendqisi2
+ 229              	.LVL13:
+ 230              		.loc 1 42 42 view .LVU38
+ 231 001a 4068     		ldr	r0, [r0, #4]
+ 232              	.LVL14:
+ 233              		.loc 1 42 42 view .LVU39
+ 234 001c FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+ 235              	.LVL15:
+  43:xiagb/bottom/canStepMotor.cpp ****                     state = true;
+ 236              		.loc 1 43 21 is_stmt 1 view .LVU40
+ 237              		.loc 1 43 27 is_stmt 0 view .LVU41
+ 238 0020 0123     		movs	r3, #1
+ 239 0022 2372     		strb	r3, [r4, #8]
+  44:xiagb/bottom/canStepMotor.cpp ****                 }
+  45:xiagb/bottom/canStepMotor.cpp ****             }
+ 240              		.loc 1 45 13 view .LVU42
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 6
+
+
+ 241 0024 04B0     		add	sp, sp, #16
+ 242              	.LCFI5:
+ 243              		.cfi_def_cfa_offset 8
+ 244              		@ sp needed
+ 245 0026 10BD     		pop	{r4, pc}
+ 246              	.LVL16:
+ 247              	.L17:
+ 248              		.loc 1 45 13 view .LVU43
+ 249              		.align	2
+ 250              	.L16:
+ 251 0028 00000000 		.word	.LC2
+ 252 002c 04000000 		.word	.LC3
+ 253              		.cfi_endproc
+ 254              	.LFE78:
+ 255              		.fnend
+ 257              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEPNS_22c
+ 258              		.align	2
+ 259              	.LC4:
+ 260 0000 25732025 		.ascii	"%s %d %d %d\012\000"
+ 260      64202564 
+ 260      2025640A 
+ 260      00
+ 261              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEPNS_22com
+ 262              		.align	1
+ 263              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEPNS_22communicat
+ 264              		.syntax unified
+ 265              		.thumb
+ 266              		.thumb_func
+ 267              		.fpu softvfp
+ 269              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEPNS_22communicationNamesp
+ 270              		.fnstart
+ 271              	.LVL17:
+ 272              	.LFB79:
+  46:xiagb/bottom/canStepMotor.cpp **** 
+  47:xiagb/bottom/canStepMotor.cpp ****             void canStepMotorClass::reset(canClass *canHandle, uint8_t slaveBoardCanId, uint8_t sla
+  48:xiagb/bottom/canStepMotor.cpp ****             {
+ 273              		.loc 1 48 13 is_stmt 1 view -0
+ 274              		.cfi_startproc
+ 275              		@ args = 4, pretend = 0, frame = 0
+ 276              		@ frame_needed = 0, uses_anonymous_args = 0
+ 277              		.loc 1 48 13 is_stmt 0 view .LVU45
+ 278 0000 10B5     		push	{r4, lr}
+ 279              		.save {r4, lr}
+ 280              	.LCFI6:
+ 281              		.cfi_def_cfa_offset 8
+ 282              		.cfi_offset 4, -8
+ 283              		.cfi_offset 14, -4
+ 284              		.pad #16
+ 285 0002 84B0     		sub	sp, sp, #16
+ 286              	.LCFI7:
+ 287              		.cfi_def_cfa_offset 24
+  49:xiagb/bottom/canStepMotor.cpp ****                 canHandle->echoPrintf(slaveBoardCanId, "%s %d %d %d\n", resetFlagStr, slaveBoardMot
+ 288              		.loc 1 49 17 is_stmt 1 view .LVU46
+ 289              		.loc 1 49 38 is_stmt 0 view .LVU47
+ 290 0004 BDF81840 		ldrh	r4, [sp, #24]
+ 291 0008 0294     		str	r4, [sp, #8]
+ 292 000a 0193     		str	r3, [sp, #4]
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 7
+
+
+ 293 000c 0092     		str	r2, [sp]
+ 294 000e 034B     		ldr	r3, .L20
+ 295              	.LVL18:
+ 296              		.loc 1 49 38 view .LVU48
+ 297 0010 034A     		ldr	r2, .L20+4
+ 298              	.LVL19:
+ 299              		.loc 1 49 38 view .LVU49
+ 300 0012 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+ 301              	.LVL20:
+  50:xiagb/bottom/canStepMotor.cpp ****                 //方便调试用，所以没有指定状态
+  51:xiagb/bottom/canStepMotor.cpp ****             }
+ 302              		.loc 1 51 13 view .LVU50
+ 303 0016 04B0     		add	sp, sp, #16
+ 304              	.LCFI8:
+ 305              		.cfi_def_cfa_offset 8
+ 306              		@ sp needed
+ 307 0018 10BD     		pop	{r4, pc}
+ 308              	.LVL21:
+ 309              	.L21:
+ 310              		.loc 1 51 13 view .LVU51
+ 311 001a 00BF     		.align	2
+ 312              	.L20:
+ 313 001c 00000000 		.word	.LC2
+ 314 0020 00000000 		.word	.LC4
+ 315              		.cfi_endproc
+ 316              	.LFE79:
+ 317              		.fnend
+ 319              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEv.str1.4
+ 320              		.align	2
+ 321              	.LC5:
+ 322 0000 3400     		.ascii	"4\000"
+ 323              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEv,"ax",%pr
+ 324              		.align	1
+ 325              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEv
+ 326              		.syntax unified
+ 327              		.thumb
+ 328              		.thumb_func
+ 329              		.fpu softvfp
+ 331              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEv:
+ 332              		.fnstart
+ 333              	.LVL22:
+ 334              	.LFB80:
+  52:xiagb/bottom/canStepMotor.cpp **** 
+  53:xiagb/bottom/canStepMotor.cpp ****             void canStepMotorClass::stop()
+  54:xiagb/bottom/canStepMotor.cpp ****             {
+ 335              		.loc 1 54 13 is_stmt 1 view -0
+ 336              		.cfi_startproc
+ 337              		@ args = 0, pretend = 0, frame = 0
+ 338              		@ frame_needed = 0, uses_anonymous_args = 0
+  55:xiagb/bottom/canStepMotor.cpp ****                 if (state)
+ 339              		.loc 1 55 17 view .LVU53
+ 340              		.loc 1 55 21 is_stmt 0 view .LVU54
+ 341 0000 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 342              		.loc 1 55 17 view .LVU55
+ 343 0002 03B9     		cbnz	r3, .L28
+ 344 0004 7047     		bx	lr
+ 345              	.L28:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 8
+
+
+  54:xiagb/bottom/canStepMotor.cpp ****                 if (state)
+ 346              		.loc 1 54 13 view .LVU56
+ 347 0006 10B5     		push	{r4, lr}
+ 348              		.save {r4, lr}
+ 349              	.LCFI9:
+ 350              		.cfi_def_cfa_offset 8
+ 351              		.cfi_offset 4, -8
+ 352              		.cfi_offset 14, -4
+ 353              		.pad #8
+ 354 0008 82B0     		sub	sp, sp, #8
+ 355              	.LCFI10:
+ 356              		.cfi_def_cfa_offset 16
+ 357 000a 0446     		mov	r4, r0
+  56:xiagb/bottom/canStepMotor.cpp ****                 {
+  57:xiagb/bottom/canStepMotor.cpp ****                     canHandle->echoPrintf(slaveBoardCanId, "%s %d\n", stopFlagStr, slaveBoardMotorC
+ 358              		.loc 1 57 21 is_stmt 1 view .LVU57
+ 359              		.loc 1 57 84 is_stmt 0 view .LVU58
+ 360 000c 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 361              		.loc 1 57 42 view .LVU59
+ 362 000e 0093     		str	r3, [sp]
+ 363 0010 044B     		ldr	r3, .L29
+ 364 0012 054A     		ldr	r2, .L29+4
+ 365 0014 0178     		ldrb	r1, [r0]	@ zero_extendqisi2
+ 366 0016 4068     		ldr	r0, [r0, #4]
+ 367              	.LVL23:
+ 368              		.loc 1 57 42 view .LVU60
+ 369 0018 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+ 370              	.LVL24:
+  58:xiagb/bottom/canStepMotor.cpp ****                     state = false;
+ 371              		.loc 1 58 21 is_stmt 1 view .LVU61
+ 372              		.loc 1 58 27 is_stmt 0 view .LVU62
+ 373 001c 0023     		movs	r3, #0
+ 374 001e 2372     		strb	r3, [r4, #8]
+  59:xiagb/bottom/canStepMotor.cpp ****                 }
+  60:xiagb/bottom/canStepMotor.cpp ****             }
+ 375              		.loc 1 60 13 view .LVU63
+ 376 0020 02B0     		add	sp, sp, #8
+ 377              	.LCFI11:
+ 378              		.cfi_def_cfa_offset 8
+ 379              		@ sp needed
+ 380 0022 10BD     		pop	{r4, pc}
+ 381              	.LVL25:
+ 382              	.L30:
+ 383              		.loc 1 60 13 view .LVU64
+ 384              		.align	2
+ 385              	.L29:
+ 386 0024 00000000 		.word	.LC5
+ 387 0028 04000000 		.word	.LC3
+ 388              		.cfi_endproc
+ 389              	.LFE80:
+ 390              		.fnend
+ 392              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEPNS_22comm
+ 393              		.align	1
+ 394              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEPNS_22communicati
+ 395              		.syntax unified
+ 396              		.thumb
+ 397              		.thumb_func
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 9
+
+
+ 398              		.fpu softvfp
+ 400              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEPNS_22communicationNamespa
+ 401              		.fnstart
+ 402              	.LVL26:
+ 403              	.LFB81:
+  61:xiagb/bottom/canStepMotor.cpp **** 
+  62:xiagb/bottom/canStepMotor.cpp ****             void canStepMotorClass::stop(canClass *canHandle, uint8_t slaveBoardCanId, uint8_t slav
+  63:xiagb/bottom/canStepMotor.cpp ****             {
+ 404              		.loc 1 63 13 is_stmt 1 view -0
+ 405              		.cfi_startproc
+ 406              		@ args = 0, pretend = 0, frame = 0
+ 407              		@ frame_needed = 0, uses_anonymous_args = 0
+ 408              		.loc 1 63 13 is_stmt 0 view .LVU66
+ 409 0000 00B5     		push	{lr}
+ 410              		.save {lr}
+ 411              	.LCFI12:
+ 412              		.cfi_def_cfa_offset 4
+ 413              		.cfi_offset 14, -4
+ 414              		.pad #12
+ 415 0002 83B0     		sub	sp, sp, #12
+ 416              	.LCFI13:
+ 417              		.cfi_def_cfa_offset 16
+  64:xiagb/bottom/canStepMotor.cpp ****                 canHandle->echoPrintf(slaveBoardCanId, "%s %d\n", stopFlagStr, slaveBoardMotorChann
+ 418              		.loc 1 64 17 is_stmt 1 view .LVU67
+ 419              		.loc 1 64 38 is_stmt 0 view .LVU68
+ 420 0004 0092     		str	r2, [sp]
+ 421 0006 034B     		ldr	r3, .L33
+ 422 0008 034A     		ldr	r2, .L33+4
+ 423              	.LVL27:
+ 424              		.loc 1 64 38 view .LVU69
+ 425 000a FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+ 426              	.LVL28:
+  65:xiagb/bottom/canStepMotor.cpp ****             }
+ 427              		.loc 1 65 13 view .LVU70
+ 428 000e 03B0     		add	sp, sp, #12
+ 429              	.LCFI14:
+ 430              		.cfi_def_cfa_offset 4
+ 431              		@ sp needed
+ 432 0010 5DF804FB 		ldr	pc, [sp], #4
+ 433              	.L34:
+ 434              		.align	2
+ 435              	.L33:
+ 436 0014 00000000 		.word	.LC5
+ 437 0018 04000000 		.word	.LC3
+ 438              		.cfi_endproc
+ 439              	.LFE81:
+ 440              		.fnend
+ 442              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolu
+ 443              		.align	2
+ 444              	.LC6:
+ 445 0000 3300     		.ascii	"3\000"
+ 446 0002 0000     		.align	2
+ 447              	.LC7:
+ 448 0004 25732025 		.ascii	"%s %d %d %d %d\012\000"
+ 448      64202564 
+ 448      20256420 
+ 448      25640A00 
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 10
+
+
+ 449              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolute
+ 450              		.align	1
+ 451              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositio
+ 452              		.syntax unified
+ 453              		.thumb
+ 454              		.thumb_func
+ 455              		.fpu softvfp
+ 457              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEttt:
+ 458              		.fnstart
+ 459              	.LVL29:
+ 460              	.LFB82:
+  66:xiagb/bottom/canStepMotor.cpp **** 
+  67:xiagb/bottom/canStepMotor.cpp ****             void canStepMotorClass::moveToAbsolutePositionMm(uint16_t absolutePosition, uint16_t ma
+  68:xiagb/bottom/canStepMotor.cpp ****             {
+ 461              		.loc 1 68 13 is_stmt 1 view -0
+ 462              		.cfi_startproc
+ 463              		@ args = 0, pretend = 0, frame = 0
+ 464              		@ frame_needed = 0, uses_anonymous_args = 0
+ 465              		.loc 1 68 13 is_stmt 0 view .LVU72
+ 466 0000 10B5     		push	{r4, lr}
+ 467              		.save {r4, lr}
+ 468              	.LCFI15:
+ 469              		.cfi_def_cfa_offset 8
+ 470              		.cfi_offset 4, -8
+ 471              		.cfi_offset 14, -4
+ 472              		.pad #16
+ 473 0002 84B0     		sub	sp, sp, #16
+ 474              	.LCFI16:
+ 475              		.cfi_def_cfa_offset 24
+ 476 0004 0446     		mov	r4, r0
+  69:xiagb/bottom/canStepMotor.cpp ****                 if (!state)
+ 477              		.loc 1 69 17 is_stmt 1 view .LVU73
+ 478              		.loc 1 69 22 is_stmt 0 view .LVU74
+ 479 0006 007A     		ldrb	r0, [r0, #8]	@ zero_extendqisi2
+ 480              	.LVL30:
+ 481              		.loc 1 69 17 view .LVU75
+ 482 0008 08B1     		cbz	r0, .L38
+ 483              	.LVL31:
+ 484              	.L35:
+  70:xiagb/bottom/canStepMotor.cpp ****                 {
+  71:xiagb/bottom/canStepMotor.cpp ****                     canHandle->echoPrintf(slaveBoardCanId, "%s %d %d %d %d\n", moveFlagStr, slaveBo
+  72:xiagb/bottom/canStepMotor.cpp ****                     state = true;
+  73:xiagb/bottom/canStepMotor.cpp ****                 }
+  74:xiagb/bottom/canStepMotor.cpp ****             }
+ 485              		.loc 1 74 13 view .LVU76
+ 486 000a 04B0     		add	sp, sp, #16
+ 487              	.LCFI17:
+ 488              		.cfi_remember_state
+ 489              		.cfi_def_cfa_offset 8
+ 490              		@ sp needed
+ 491 000c 10BD     		pop	{r4, pc}
+ 492              	.LVL32:
+ 493              	.L38:
+ 494              	.LCFI18:
+ 495              		.cfi_restore_state
+  71:xiagb/bottom/canStepMotor.cpp ****                     state = true;
+ 496              		.loc 1 71 21 is_stmt 1 view .LVU77
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 11
+
+
+  71:xiagb/bottom/canStepMotor.cpp ****                     state = true;
+ 497              		.loc 1 71 93 is_stmt 0 view .LVU78
+ 498 000e 6078     		ldrb	r0, [r4, #1]	@ zero_extendqisi2
+  71:xiagb/bottom/canStepMotor.cpp ****                     state = true;
+ 499              		.loc 1 71 42 view .LVU79
+ 500 0010 0393     		str	r3, [sp, #12]
+ 501 0012 0292     		str	r2, [sp, #8]
+ 502 0014 0191     		str	r1, [sp, #4]
+ 503 0016 0090     		str	r0, [sp]
+ 504 0018 044B     		ldr	r3, .L39
+ 505              	.LVL33:
+  71:xiagb/bottom/canStepMotor.cpp ****                     state = true;
+ 506              		.loc 1 71 42 view .LVU80
+ 507 001a 054A     		ldr	r2, .L39+4
+ 508              	.LVL34:
+  71:xiagb/bottom/canStepMotor.cpp ****                     state = true;
+ 509              		.loc 1 71 42 view .LVU81
+ 510 001c 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 511              	.LVL35:
+  71:xiagb/bottom/canStepMotor.cpp ****                     state = true;
+ 512              		.loc 1 71 42 view .LVU82
+ 513 001e 6068     		ldr	r0, [r4, #4]
+ 514 0020 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+ 515              	.LVL36:
+  72:xiagb/bottom/canStepMotor.cpp ****                 }
+ 516              		.loc 1 72 21 is_stmt 1 view .LVU83
+  72:xiagb/bottom/canStepMotor.cpp ****                 }
+ 517              		.loc 1 72 27 is_stmt 0 view .LVU84
+ 518 0024 0123     		movs	r3, #1
+ 519 0026 2372     		strb	r3, [r4, #8]
+ 520              		.loc 1 74 13 view .LVU85
+ 521 0028 EFE7     		b	.L35
+ 522              	.L40:
+ 523 002a 00BF     		.align	2
+ 524              	.L39:
+ 525 002c 00000000 		.word	.LC6
+ 526 0030 04000000 		.word	.LC7
+ 527              		.cfi_endproc
+ 528              	.LFE82:
+ 529              		.fnend
+ 531              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolute
+ 532              		.align	1
+ 533              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositio
+ 534              		.syntax unified
+ 535              		.thumb
+ 536              		.thumb_func
+ 537              		.fpu softvfp
+ 539              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEPNS_2
+ 540              		.fnstart
+ 541              	.LVL37:
+ 542              	.LFB83:
+  75:xiagb/bottom/canStepMotor.cpp **** 
+  76:xiagb/bottom/canStepMotor.cpp ****             void canStepMotorClass::moveToAbsolutePositionMm(canClass *canHandle, uint8_t slaveBoar
+  77:xiagb/bottom/canStepMotor.cpp ****             {
+ 543              		.loc 1 77 13 is_stmt 1 view -0
+ 544              		.cfi_startproc
+ 545              		@ args = 8, pretend = 0, frame = 0
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 12
+
+
+ 546              		@ frame_needed = 0, uses_anonymous_args = 0
+ 547              		.loc 1 77 13 is_stmt 0 view .LVU87
+ 548 0000 10B5     		push	{r4, lr}
+ 549              		.save {r4, lr}
+ 550              	.LCFI19:
+ 551              		.cfi_def_cfa_offset 8
+ 552              		.cfi_offset 4, -8
+ 553              		.cfi_offset 14, -4
+ 554              		.pad #16
+ 555 0002 84B0     		sub	sp, sp, #16
+ 556              	.LCFI20:
+ 557              		.cfi_def_cfa_offset 24
+  78:xiagb/bottom/canStepMotor.cpp ****                 canHandle->echoPrintf(slaveBoardCanId, "%s %d %d %d %d\n", moveFlagStr, slaveBoardM
+ 558              		.loc 1 78 17 is_stmt 1 view .LVU88
+ 559              		.loc 1 78 38 is_stmt 0 view .LVU89
+ 560 0004 BDF81C40 		ldrh	r4, [sp, #28]
+ 561 0008 0394     		str	r4, [sp, #12]
+ 562 000a BDF81840 		ldrh	r4, [sp, #24]
+ 563 000e 0294     		str	r4, [sp, #8]
+ 564 0010 0193     		str	r3, [sp, #4]
+ 565 0012 0092     		str	r2, [sp]
+ 566 0014 024B     		ldr	r3, .L43
+ 567              	.LVL38:
+ 568              		.loc 1 78 38 view .LVU90
+ 569 0016 034A     		ldr	r2, .L43+4
+ 570              	.LVL39:
+ 571              		.loc 1 78 38 view .LVU91
+ 572 0018 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+ 573              	.LVL40:
+  79:xiagb/bottom/canStepMotor.cpp ****                 //方便调试用，所以没有指定状态
+  80:xiagb/bottom/canStepMotor.cpp ****             }
+ 574              		.loc 1 80 13 view .LVU92
+ 575 001c 04B0     		add	sp, sp, #16
+ 576              	.LCFI21:
+ 577              		.cfi_def_cfa_offset 8
+ 578              		@ sp needed
+ 579 001e 10BD     		pop	{r4, pc}
+ 580              	.LVL41:
+ 581              	.L44:
+ 582              		.loc 1 80 13 view .LVU93
+ 583              		.align	2
+ 584              	.L43:
+ 585 0020 00000000 		.word	.LC6
+ 586 0024 04000000 		.word	.LC7
+ 587              		.cfi_endproc
+ 588              	.LFE83:
+ 589              		.fnend
+ 591              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEbt.s
+ 592              		.align	2
+ 593              	.LC8:
+ 594 0000 3500     		.ascii	"5\000"
+ 595              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEbt,"ax
+ 596              		.align	1
+ 597              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEbt
+ 598              		.syntax unified
+ 599              		.thumb
+ 600              		.thumb_func
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 13
+
+
+ 601              		.fpu softvfp
+ 603              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEbt:
+ 604              		.fnstart
+ 605              	.LVL42:
+ 606              	.LFB84:
+  81:xiagb/bottom/canStepMotor.cpp **** 
+  82:xiagb/bottom/canStepMotor.cpp ****             void canStepMotorClass::keepMove(bool dir, uint16_t maxSpeed)
+  83:xiagb/bottom/canStepMotor.cpp ****             {
+ 607              		.loc 1 83 13 is_stmt 1 view -0
+ 608              		.cfi_startproc
+ 609              		@ args = 0, pretend = 0, frame = 0
+ 610              		@ frame_needed = 0, uses_anonymous_args = 0
+  84:xiagb/bottom/canStepMotor.cpp ****                 if (!state)
+ 611              		.loc 1 84 17 view .LVU95
+ 612              		.loc 1 84 22 is_stmt 0 view .LVU96
+ 613 0000 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 614              		.loc 1 84 17 view .LVU97
+ 615 0002 03B1     		cbz	r3, .L51
+ 616 0004 7047     		bx	lr
+ 617              	.L51:
+  83:xiagb/bottom/canStepMotor.cpp ****                 if (!state)
+ 618              		.loc 1 83 13 view .LVU98
+ 619 0006 10B5     		push	{r4, lr}
+ 620              		.save {r4, lr}
+ 621              	.LCFI22:
+ 622              		.cfi_def_cfa_offset 8
+ 623              		.cfi_offset 4, -8
+ 624              		.cfi_offset 14, -4
+ 625              		.pad #16
+ 626 0008 84B0     		sub	sp, sp, #16
+ 627              	.LCFI23:
+ 628              		.cfi_def_cfa_offset 24
+ 629 000a 0446     		mov	r4, r0
+  85:xiagb/bottom/canStepMotor.cpp ****                 {
+  86:xiagb/bottom/canStepMotor.cpp ****                     canHandle->echoPrintf(slaveBoardCanId, "%s %d %d %d\n", keepMoveFlagStr, slaveB
+ 630              		.loc 1 86 21 is_stmt 1 view .LVU99
+ 631              		.loc 1 86 94 is_stmt 0 view .LVU100
+ 632 000c 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 633              		.loc 1 86 42 view .LVU101
+ 634 000e 0292     		str	r2, [sp, #8]
+ 635 0010 0191     		str	r1, [sp, #4]
+ 636 0012 0093     		str	r3, [sp]
+ 637 0014 044B     		ldr	r3, .L52
+ 638 0016 054A     		ldr	r2, .L52+4
+ 639              	.LVL43:
+ 640              		.loc 1 86 42 view .LVU102
+ 641 0018 0178     		ldrb	r1, [r0]	@ zero_extendqisi2
+ 642              	.LVL44:
+ 643              		.loc 1 86 42 view .LVU103
+ 644 001a 4068     		ldr	r0, [r0, #4]
+ 645              	.LVL45:
+ 646              		.loc 1 86 42 view .LVU104
+ 647 001c FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+ 648              	.LVL46:
+  87:xiagb/bottom/canStepMotor.cpp ****                     state = true;
+ 649              		.loc 1 87 21 is_stmt 1 view .LVU105
+ 650              		.loc 1 87 27 is_stmt 0 view .LVU106
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 14
+
+
+ 651 0020 0123     		movs	r3, #1
+ 652 0022 2372     		strb	r3, [r4, #8]
+  88:xiagb/bottom/canStepMotor.cpp ****                 }
+  89:xiagb/bottom/canStepMotor.cpp ****             }
+ 653              		.loc 1 89 13 view .LVU107
+ 654 0024 04B0     		add	sp, sp, #16
+ 655              	.LCFI24:
+ 656              		.cfi_def_cfa_offset 8
+ 657              		@ sp needed
+ 658 0026 10BD     		pop	{r4, pc}
+ 659              	.LVL47:
+ 660              	.L53:
+ 661              		.loc 1 89 13 view .LVU108
+ 662              		.align	2
+ 663              	.L52:
+ 664 0028 00000000 		.word	.LC8
+ 665 002c 00000000 		.word	.LC4
+ 666              		.cfi_endproc
+ 667              	.LFE84:
+ 668              		.fnend
+ 670              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEPNS_22
+ 671              		.align	1
+ 672              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEPNS_22communi
+ 673              		.syntax unified
+ 674              		.thumb
+ 675              		.thumb_func
+ 676              		.fpu softvfp
+ 678              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEPNS_22communicationNam
+ 679              		.fnstart
+ 680              	.LVL48:
+ 681              	.LFB85:
+  90:xiagb/bottom/canStepMotor.cpp **** 
+  91:xiagb/bottom/canStepMotor.cpp ****             void canStepMotorClass::keepMove(canClass *canHandle, uint8_t slaveBoardCanId, uint8_t 
+  92:xiagb/bottom/canStepMotor.cpp ****             {
+ 682              		.loc 1 92 13 is_stmt 1 view -0
+ 683              		.cfi_startproc
+ 684              		@ args = 4, pretend = 0, frame = 0
+ 685              		@ frame_needed = 0, uses_anonymous_args = 0
+ 686              		.loc 1 92 13 is_stmt 0 view .LVU110
+ 687 0000 10B5     		push	{r4, lr}
+ 688              		.save {r4, lr}
+ 689              	.LCFI25:
+ 690              		.cfi_def_cfa_offset 8
+ 691              		.cfi_offset 4, -8
+ 692              		.cfi_offset 14, -4
+ 693              		.pad #16
+ 694 0002 84B0     		sub	sp, sp, #16
+ 695              	.LCFI26:
+ 696              		.cfi_def_cfa_offset 24
+  93:xiagb/bottom/canStepMotor.cpp ****                 canHandle->echoPrintf(slaveBoardCanId, "%s %d %d %d\n", keepMoveFlagStr, slaveBoard
+ 697              		.loc 1 93 17 is_stmt 1 view .LVU111
+ 698              		.loc 1 93 38 is_stmt 0 view .LVU112
+ 699 0004 BDF81840 		ldrh	r4, [sp, #24]
+ 700 0008 0294     		str	r4, [sp, #8]
+ 701 000a 0193     		str	r3, [sp, #4]
+ 702 000c 0092     		str	r2, [sp]
+ 703 000e 034B     		ldr	r3, .L56
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 15
+
+
+ 704              	.LVL49:
+ 705              		.loc 1 93 38 view .LVU113
+ 706 0010 034A     		ldr	r2, .L56+4
+ 707              	.LVL50:
+ 708              		.loc 1 93 38 view .LVU114
+ 709 0012 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+ 710              	.LVL51:
+  94:xiagb/bottom/canStepMotor.cpp ****             }
+ 711              		.loc 1 94 13 view .LVU115
+ 712 0016 04B0     		add	sp, sp, #16
+ 713              	.LCFI27:
+ 714              		.cfi_def_cfa_offset 8
+ 715              		@ sp needed
+ 716 0018 10BD     		pop	{r4, pc}
+ 717              	.LVL52:
+ 718              	.L57:
+ 719              		.loc 1 94 13 view .LVU116
+ 720 001a 00BF     		.align	2
+ 721              	.L56:
+ 722 001c 00000000 		.word	.LC8
+ 723 0020 00000000 		.word	.LC4
+ 724              		.cfi_endproc
+ 725              	.LFE85:
+ 726              		.fnend
+ 728              		.section	.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12waitMoveStopEv
+ 729              		.align	1
+ 730              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12waitMoveStopEv
+ 731              		.syntax unified
+ 732              		.thumb
+ 733              		.thumb_func
+ 734              		.fpu softvfp
+ 736              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12waitMoveStopEv:
+ 737              		.fnstart
+ 738              	.LVL53:
+ 739              	.LFB86:
+  95:xiagb/bottom/canStepMotor.cpp **** 
+  96:xiagb/bottom/canStepMotor.cpp ****             void canStepMotorClass::waitMoveStop()
+  97:xiagb/bottom/canStepMotor.cpp ****             {
+ 740              		.loc 1 97 13 is_stmt 1 view -0
+ 741              		.cfi_startproc
+ 742              		@ args = 0, pretend = 0, frame = 0
+ 743              		@ frame_needed = 0, uses_anonymous_args = 0
+ 744              		.loc 1 97 13 is_stmt 0 view .LVU118
+ 745 0000 10B5     		push	{r4, lr}
+ 746              		.save {r4, lr}
+ 747              	.LCFI28:
+ 748              		.cfi_def_cfa_offset 8
+ 749              		.cfi_offset 4, -8
+ 750              		.cfi_offset 14, -4
+ 751 0002 0446     		mov	r4, r0
+ 752              	.LVL54:
+ 753              	.L60:
+  98:xiagb/bottom/canStepMotor.cpp ****                 while (state)
+ 754              		.loc 1 98 17 is_stmt 1 view .LVU119
+ 755              		.loc 1 98 24 view .LVU120
+ 756 0004 237A     		ldrb	r3, [r4, #8]	@ zero_extendqisi2
+ 757 0006 1BB1     		cbz	r3, .L58
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 16
+
+
+  99:xiagb/bottom/canStepMotor.cpp ****                     osDelay(1);
+ 758              		.loc 1 99 21 view .LVU121
+ 759              		.loc 1 99 28 is_stmt 0 view .LVU122
+ 760 0008 0120     		movs	r0, #1
+ 761 000a FFF7FEFF 		bl	osDelay
+ 762              	.LVL55:
+  98:xiagb/bottom/canStepMotor.cpp ****                 while (state)
+ 763              		.loc 1 98 17 view .LVU123
+ 764 000e F9E7     		b	.L60
+ 765              	.L58:
+ 100:xiagb/bottom/canStepMotor.cpp ****             }
+ 766              		.loc 1 100 13 view .LVU124
+ 767 0010 10BD     		pop	{r4, pc}
+ 768              		.loc 1 100 13 view .LVU125
+ 769              		.cfi_endproc
+ 770              	.LFE86:
+ 771              		.fnend
+ 773              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass20stepCountDownFlagStrE
+ 774              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 775              		.align	2
+ 776              	.LC9:
+ 777 0000 3800     		.ascii	"8\000"
+ 778              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stepFlagStrE
+ 779 0002 0000     		.align	2
+ 780              	.LC10:
+ 781 0004 3700     		.ascii	"7\000"
+ 782              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass13sensorFlagStrE
+ 783 0006 0000     		.align	2
+ 784              	.LC11:
+ 785 0008 3600     		.ascii	"6\000"
+ 786              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass15keepMoveFlagStrE
+ 787              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stopFlagStrE
+ 788              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11moveFlagStrE
+ 789              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12resetFlagStrE
+ 790              		.global	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass10argFlagStrE
+ 791              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass10argFlagStrE,
+ 792              		.align	2
+ 795              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass10argFlagStrE:
+ 796 0000 00000000 		.word	.LC0
+ 797              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11moveFlagStrE
+ 798              		.align	2
+ 801              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11moveFlagStrE:
+ 802 0000 00000000 		.word	.LC6
+ 803              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stepFlagStrE
+ 804              		.align	2
+ 807              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stepFlagStrE:
+ 808 0000 04000000 		.word	.LC10
+ 809              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stopFlagStrE
+ 810              		.align	2
+ 813              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stopFlagStrE:
+ 814 0000 00000000 		.word	.LC5
+ 815              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12resetFlagStr
+ 816              		.align	2
+ 819              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12resetFlagStrE:
+ 820 0000 00000000 		.word	.LC2
+ 821              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass13sensorFlagSt
+ 822              		.align	2
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 17
+
+
+ 825              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass13sensorFlagStrE:
+ 826 0000 08000000 		.word	.LC11
+ 827              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass15keepMoveFlag
+ 828              		.align	2
+ 831              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass15keepMoveFlagStrE:
+ 832 0000 00000000 		.word	.LC8
+ 833              		.section	.rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass20stepCountDow
+ 834              		.align	2
+ 837              	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass20stepCountDownFlagStrE:
+ 838 0000 00000000 		.word	.LC9
+ 839              		.text
+ 840              	.Letext0:
+ 841              		.file 2 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\machine\\
+ 842              		.file 3 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_std
+ 843              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+ 844              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 845              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 846              		.file 7 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 847              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h"
+ 848              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 849              		.file 10 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h"
+ 850              		.file 11 "xiagb/bottom/can.hpp"
+ 851              		.file 12 "xiagb/bottom/canStepMotor.hpp"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 canStepMotor.cpp
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:16     .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:24     .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC2Ev:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC2Ev
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:24     .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC2Ev:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC1Ev
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:44     .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassD2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:51     .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassD2Ev:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassD2Ev
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassD2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:51     .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassD2Ev:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassD1Ev
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:70     .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhhbbhh.str1.4:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:77     .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhhbbhh:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:84     .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhhbbhh:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhhbbhh
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:169    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhhbbhh:00000048 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhhbbhh:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:176    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt.str1.4:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:183    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:190    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:251    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt:00000028 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:258    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEPNS_22communicationNamespace12canNamespace8canClassEhhtt.str1.4:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:262    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEPNS_22communicationNamespace12canNamespace8canClassEhhtt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:269    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEPNS_22communicationNamespace12canNamespace8canClassEhhtt:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEPNS_22communicationNamespace12canNamespace8canClassEhhtt
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:313    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEPNS_22communicationNamespace12canNamespace8canClassEhhtt:0000001c $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEPNS_22communicationNamespace12canNamespace8canClassEhhtt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:320    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEv.str1.4:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:324    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:331    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEv:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEv
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:386    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEv:00000024 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:393    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEPNS_22communicationNamespace12canNamespace8canClassEhh:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:400    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEPNS_22communicationNamespace12canNamespace8canClassEhh:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEPNS_22communicationNamespace12canNamespace8canClassEhh
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:436    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEPNS_22communicationNamespace12canNamespace8canClassEhh:00000014 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4stopEPNS_22communicationNamespace12canNamespace8canClassEhh:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:443    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEttt.str1.4:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:450    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEttt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:457    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEttt:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEttt
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:525    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEttt:0000002c $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEttt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:532    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEPNS_22communicationNamespace12canNamespace8canClassEhhttt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:539    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEPNS_22communicationNamespace12canNamespace8canClassEhhttt:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEPNS_22communicationNamespace12canNamespace8canClassEhhttt
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:585    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEPNS_22communicationNamespace12canNamespace8canClassEhhttt:00000020 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass24moveToAbsolutePositionMmEPNS_22communicationNamespace12canNamespace8canClassEhhttt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:592    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEbt.str1.4:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:596    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEbt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:603    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEbt:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEbt
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:664    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEbt:00000028 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEbt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:671    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEPNS_22communicationNamespace12canNamespace8canClassEhhbt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:678    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEPNS_22communicationNamespace12canNamespace8canClassEhhbt:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEPNS_22communicationNamespace12canNamespace8canClassEhhbt
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:722    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEPNS_22communicationNamespace12canNamespace8canClassEhhbt:0000001c $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass8keepMoveEPNS_22communicationNamespace12canNamespace8canClassEhhbt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:729    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12waitMoveStopEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:736    .text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12waitMoveStopEv:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12waitMoveStopEv
+.ARM.exidx.text._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12waitMoveStopEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:837    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass20stepCountDownFlagStrE:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass20stepCountDownFlagStrE
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:775    .rodata.str1.4:00000000 $d
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s 			page 19
+
+
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:807    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stepFlagStrE:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stepFlagStrE
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:825    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass13sensorFlagStrE:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass13sensorFlagStrE
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:831    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass15keepMoveFlagStrE:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass15keepMoveFlagStrE
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:813    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stopFlagStrE:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stopFlagStrE
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:801    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11moveFlagStrE:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11moveFlagStrE
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:819    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12resetFlagStrE:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12resetFlagStrE
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:795    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass10argFlagStrE:00000000 _ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass10argFlagStrE
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:792    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass10argFlagStrE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:798    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11moveFlagStrE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:804    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stepFlagStrE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:810    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass11stopFlagStrE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:816    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12resetFlagStrE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:822    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass13sensorFlagStrE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:828    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass15keepMoveFlagStrE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccC4JpRb.s:834    .rodata._ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass20stepCountDownFlagStrE:00000000 $d
+
+UNDEFINED SYMBOLS
+_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+osDelay
+__aeabi_unwind_cpp_pr0

@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "start",
+            "type": "shell",
+            "command": "cd ${workspaceFolder}/project; make -j8; openocd -f interface/stlink.cfg -f target/stm32f1x.cfg",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": ""
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^",
+                    "endsPattern": "arm-none-eabi-objcopy|Nothing to be done for 'all'"
+                }
+            }
+        },
+        {
+            "label": "stop",
+            "command": "echo ${input:terminate}",
+            "type": "shell"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "terminate",
+            "type": "command",
+            "command": "workbench.action.tasks.terminate",
+            "args": "terminateAll"
+        }
+    ]
+}

@@ -1,0 +1,1195 @@
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"cliTask.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._ZN5xiagb5upper16cliTaskNamespace25getMasterCommandAndputCliEPvS2_,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN5xiagb5upper16cliTaskNamespace25getMasterCommandAndputCliEPvS2_
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	_ZN5xiagb5upper16cliTaskNamespace25getMasterCommandAndputCliEPvS2_:
+  25              		.fnstart
+  26              	.LVL0:
+  27              	.LFB73:
+  28              		.file 1 "xiagb/upper/cliTask.cpp"
+   1:xiagb/upper/cliTask.cpp **** #include "cliTask.hpp"
+   2:xiagb/upper/cliTask.cpp **** #include "main.h"
+   3:xiagb/upper/cliTask.cpp **** #include "cmsis_os2.h"
+   4:xiagb/upper/cliTask.cpp **** 
+   5:xiagb/upper/cliTask.cpp **** #include "cli.hpp"
+   6:xiagb/upper/cliTask.cpp **** #include "can.hpp"
+   7:xiagb/upper/cliTask.cpp **** 
+   8:xiagb/upper/cliTask.cpp **** #include "machineTask.hpp"
+   9:xiagb/upper/cliTask.cpp **** 
+  10:xiagb/upper/cliTask.cpp **** extern CAN_HandleTypeDef hcan;
+  11:xiagb/upper/cliTask.cpp **** extern UART_HandleTypeDef huart1;
+  12:xiagb/upper/cliTask.cpp **** extern DMA_HandleTypeDef hdma_usart1_rx;
+  13:xiagb/upper/cliTask.cpp **** extern DMA_HandleTypeDef hdma_usart1_tx;
+  14:xiagb/upper/cliTask.cpp **** 
+  15:xiagb/upper/cliTask.cpp **** namespace xiagb
+  16:xiagb/upper/cliTask.cpp **** {
+  17:xiagb/upper/cliTask.cpp ****     namespace upper
+  18:xiagb/upper/cliTask.cpp ****     {
+  19:xiagb/upper/cliTask.cpp ****         namespace cliTaskNamespace
+  20:xiagb/upper/cliTask.cpp ****         {
+  21:xiagb/upper/cliTask.cpp ****             using xiagb::communicationNamespace::canNamespace::canClass;
+  22:xiagb/upper/cliTask.cpp ****             using xiagb::communicationNamespace::uartNamespace::uartClass;
+  23:xiagb/upper/cliTask.cpp ****             using xiagb::parserNamespace::cliNamespace::cliClass;
+  24:xiagb/upper/cliTask.cpp ****             using xiagb::upper::machineTaskNamespace::machineTaskStart;
+  25:xiagb/upper/cliTask.cpp **** 
+  26:xiagb/upper/cliTask.cpp ****             canClass *canCommunication;
+  27:xiagb/upper/cliTask.cpp ****             cliClass *commandParser;
+  28:xiagb/upper/cliTask.cpp ****             uartClass *uartCommunication;
+  29:xiagb/upper/cliTask.cpp **** 
+  30:xiagb/upper/cliTask.cpp ****             uint8_t const commandQueueNum = 1;    //有几个从机就写几
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 2
+
+
+  31:xiagb/upper/cliTask.cpp ****             uint8_t const salveCanIdBeginNum = 2; //从机从Id几开始的
+  32:xiagb/upper/cliTask.cpp ****             const osThreadAttr_t cliTaskAttributes = {.name = "cliTask", .stack_size = 128 * 4, .pr
+  33:xiagb/upper/cliTask.cpp ****             osMessageQueueId_t masterCommandQueue;                 //主机的命令的队列
+  34:xiagb/upper/cliTask.cpp ****             osMessageQueueId_t salveCommandQueue[commandQueueNum]; //从机反馈的命令的队列
+  35:xiagb/upper/cliTask.cpp **** 
+  36:xiagb/upper/cliTask.cpp ****             //获取主机的命令并放入cli
+  37:xiagb/upper/cliTask.cpp ****             void getMasterCommandAndputCli(osMessageQueueId_t srcQueue, osMessageQueueId_t InputQue
+  38:xiagb/upper/cliTask.cpp ****             {
+  29              		.loc 1 38 13 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 8
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 38 13 is_stmt 0 view .LVU1
+  34 0000 70B5     		push	{r4, r5, r6, lr}
+  35              		.save {r4, r5, r6, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 16
+  38              		.cfi_offset 4, -16
+  39              		.cfi_offset 5, -12
+  40              		.cfi_offset 6, -8
+  41              		.cfi_offset 14, -4
+  42              		.pad #8
+  43 0002 82B0     		sub	sp, sp, #8
+  44              	.LCFI1:
+  45              		.cfi_def_cfa_offset 24
+  46 0004 0546     		mov	r5, r0
+  47 0006 0E46     		mov	r6, r1
+  48 0008 03E0     		b	.L6
+  49              	.LVL1:
+  50              	.L5:
+  51              	.LBB7:
+  39:xiagb/upper/cliTask.cpp ****                 uint8_t buffer, dataCount;
+  40:xiagb/upper/cliTask.cpp ****                 while (osMessageQueueGet(srcQueue, &dataCount, nullptr, 0) == osOK) //获取数据�
+  41:xiagb/upper/cliTask.cpp ****                 {
+  42:xiagb/upper/cliTask.cpp ****                     if (dataCount == 0) //结束符就直接跳出
+  43:xiagb/upper/cliTask.cpp ****                         return;
+  44:xiagb/upper/cliTask.cpp **** 
+  45:xiagb/upper/cliTask.cpp ****                     for (uint8_t i = 0; i < dataCount; i++)
+  46:xiagb/upper/cliTask.cpp ****                     {
+  47:xiagb/upper/cliTask.cpp ****                         osMessageQueueGet(srcQueue, &buffer, nullptr, osWaitForever); //获取数�
+  48:xiagb/upper/cliTask.cpp ****                         osMessageQueuePut(InputQueue, &buffer, 0, osWaitForever);     //放入队�
+  49:xiagb/upper/cliTask.cpp ****                     }
+  50:xiagb/upper/cliTask.cpp **** 
+  51:xiagb/upper/cliTask.cpp ****                     if (buffer == '\n') //如果是结尾就把这个队列里的数据全部放入
+  52              		.loc 1 51 21 is_stmt 1 view .LVU2
+  53              		.loc 1 51 32 is_stmt 0 view .LVU3
+  54 000a 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+  55              		.loc 1 51 21 view .LVU4
+  56 000e 0A2B     		cmp	r3, #10
+  57 0010 22D0     		beq	.L10
+  58              	.LVL2:
+  59              	.L6:
+  60              		.loc 1 51 21 view .LVU5
+  61              	.LBE7:
+  39:xiagb/upper/cliTask.cpp ****                 uint8_t buffer, dataCount;
+  62              		.loc 1 39 17 is_stmt 1 view .LVU6
+  40:xiagb/upper/cliTask.cpp ****                 {
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 3
+
+
+  63              		.loc 1 40 17 view .LVU7
+  40:xiagb/upper/cliTask.cpp ****                 {
+  64              		.loc 1 40 76 view .LVU8
+  40:xiagb/upper/cliTask.cpp ****                 {
+  65              		.loc 1 40 41 is_stmt 0 view .LVU9
+  66 0012 0023     		movs	r3, #0
+  67 0014 1A46     		mov	r2, r3
+  68 0016 0DF10601 		add	r1, sp, #6
+  69 001a 2846     		mov	r0, r5
+  70 001c FFF7FEFF 		bl	osMessageQueueGet
+  71              	.LVL3:
+  40:xiagb/upper/cliTask.cpp ****                 {
+  72              		.loc 1 40 76 view .LVU10
+  73 0020 00BB     		cbnz	r0, .L1
+  74              	.LBB9:
+  42:xiagb/upper/cliTask.cpp ****                         return;
+  75              		.loc 1 42 21 is_stmt 1 view .LVU11
+  42:xiagb/upper/cliTask.cpp ****                         return;
+  76              		.loc 1 42 35 is_stmt 0 view .LVU12
+  77 0022 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
+  42:xiagb/upper/cliTask.cpp ****                         return;
+  78              		.loc 1 42 21 view .LVU13
+  79 0026 EBB1     		cbz	r3, .L1
+  80              	.LBB8:
+  45:xiagb/upper/cliTask.cpp ****                     {
+  81              		.loc 1 45 34 view .LVU14
+  82 0028 0024     		movs	r4, #0
+  83              	.L3:
+  84              	.LVL4:
+  45:xiagb/upper/cliTask.cpp ****                     {
+  85              		.loc 1 45 43 is_stmt 1 discriminator 1 view .LVU15
+  86 002a 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
+  87 002e A342     		cmp	r3, r4
+  88 0030 EBD9     		bls	.L5
+  47:xiagb/upper/cliTask.cpp ****                         osMessageQueuePut(InputQueue, &buffer, 0, osWaitForever);     //放入队�
+  89              		.loc 1 47 25 view .LVU16
+  47:xiagb/upper/cliTask.cpp ****                         osMessageQueuePut(InputQueue, &buffer, 0, osWaitForever);     //放入队�
+  90              		.loc 1 47 42 is_stmt 0 view .LVU17
+  91 0032 4FF0FF33 		mov	r3, #-1
+  92 0036 0022     		movs	r2, #0
+  93 0038 0DF10701 		add	r1, sp, #7
+  94 003c 2846     		mov	r0, r5
+  95 003e FFF7FEFF 		bl	osMessageQueueGet
+  96              	.LVL5:
+  48:xiagb/upper/cliTask.cpp ****                     }
+  97              		.loc 1 48 25 is_stmt 1 view .LVU18
+  48:xiagb/upper/cliTask.cpp ****                     }
+  98              		.loc 1 48 42 is_stmt 0 view .LVU19
+  99 0042 4FF0FF33 		mov	r3, #-1
+ 100 0046 0022     		movs	r2, #0
+ 101 0048 0DF10701 		add	r1, sp, #7
+ 102 004c 3046     		mov	r0, r6
+ 103 004e FFF7FEFF 		bl	osMessageQueuePut
+ 104              	.LVL6:
+  45:xiagb/upper/cliTask.cpp ****                     {
+ 105              		.loc 1 45 21 is_stmt 1 view .LVU20
+ 106 0052 0134     		adds	r4, r4, #1
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 4
+
+
+ 107              	.LVL7:
+  45:xiagb/upper/cliTask.cpp ****                     {
+ 108              		.loc 1 45 21 is_stmt 0 view .LVU21
+ 109 0054 E4B2     		uxtb	r4, r4
+ 110              	.LVL8:
+  45:xiagb/upper/cliTask.cpp ****                     {
+ 111              		.loc 1 45 21 view .LVU22
+ 112 0056 E8E7     		b	.L3
+ 113              	.L10:
+  45:xiagb/upper/cliTask.cpp ****                     {
+ 114              		.loc 1 45 21 view .LVU23
+ 115              	.LBE8:
+  52:xiagb/upper/cliTask.cpp ****                         commandParser->receiveQueueStr(InputQueue);
+ 116              		.loc 1 52 25 is_stmt 1 view .LVU24
+ 117              		.loc 1 52 55 is_stmt 0 view .LVU25
+ 118 0058 3146     		mov	r1, r6
+ 119 005a 034B     		ldr	r3, .L11
+ 120 005c 1868     		ldr	r0, [r3]
+ 121 005e FFF7FEFF 		bl	_ZN5xiagb15parserNamespace12cliNamespace8cliClass15receiveQueueStrEPv
+ 122              	.LVL9:
+ 123 0062 D6E7     		b	.L6
+ 124              	.LVL10:
+ 125              	.L1:
+ 126              		.loc 1 52 55 view .LVU26
+ 127              	.LBE9:
+  53:xiagb/upper/cliTask.cpp ****                 }
+  54:xiagb/upper/cliTask.cpp ****             }
+ 128              		.loc 1 54 13 view .LVU27
+ 129 0064 02B0     		add	sp, sp, #8
+ 130              	.LCFI2:
+ 131              		.cfi_def_cfa_offset 16
+ 132              		@ sp needed
+ 133 0066 70BD     		pop	{r4, r5, r6, pc}
+ 134              	.LVL11:
+ 135              	.L12:
+ 136              		.loc 1 54 13 view .LVU28
+ 137              		.align	2
+ 138              	.L11:
+ 139 0068 00000000 		.word	.LANCHOR0
+ 140              		.cfi_endproc
+ 141              	.LFE73:
+ 142              		.fnend
+ 144              		.section	.text._ZN5xiagb5upper16cliTaskNamespace24getSalveCommandAndputCliEPvPS2_,"ax",%progbits
+ 145              		.align	1
+ 146              		.global	_ZN5xiagb5upper16cliTaskNamespace24getSalveCommandAndputCliEPvPS2_
+ 147              		.syntax unified
+ 148              		.thumb
+ 149              		.thumb_func
+ 150              		.fpu softvfp
+ 152              	_ZN5xiagb5upper16cliTaskNamespace24getSalveCommandAndputCliEPvPS2_:
+ 153              		.fnstart
+ 154              	.LVL12:
+ 155              	.LFB74:
+  55:xiagb/upper/cliTask.cpp **** 
+  56:xiagb/upper/cliTask.cpp ****             //获取从机反馈的命令并放入cli
+  57:xiagb/upper/cliTask.cpp ****             void getSalveCommandAndputCli(osMessageQueueId_t srcQueue, osMessageQueueId_t *InputQue
+  58:xiagb/upper/cliTask.cpp ****             {
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 5
+
+
+ 156              		.loc 1 58 13 is_stmt 1 view -0
+ 157              		.cfi_startproc
+ 158              		@ args = 0, pretend = 0, frame = 8
+ 159              		@ frame_needed = 0, uses_anonymous_args = 0
+ 160              		.loc 1 58 13 is_stmt 0 view .LVU30
+ 161 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 162              		.save {r4, r5, r6, r7, lr}
+ 163              	.LCFI3:
+ 164              		.cfi_def_cfa_offset 20
+ 165              		.cfi_offset 4, -20
+ 166              		.cfi_offset 5, -16
+ 167              		.cfi_offset 6, -12
+ 168              		.cfi_offset 7, -8
+ 169              		.cfi_offset 14, -4
+ 170              		.pad #12
+ 171 0002 83B0     		sub	sp, sp, #12
+ 172              	.LCFI4:
+ 173              		.cfi_def_cfa_offset 32
+ 174 0004 0646     		mov	r6, r0
+ 175 0006 0F46     		mov	r7, r1
+ 176 0008 03E0     		b	.L17
+ 177              	.LVL13:
+ 178              	.L15:
+ 179              	.LBB10:
+  59:xiagb/upper/cliTask.cpp ****                 uint8_t buffer, id, dataCount;
+  60:xiagb/upper/cliTask.cpp ****                 while (osMessageQueueGet(srcQueue, &id, nullptr, 0) == osOK) //获取id
+  61:xiagb/upper/cliTask.cpp ****                 {
+  62:xiagb/upper/cliTask.cpp ****                     osMessageQueueGet(srcQueue, &dataCount, nullptr, osWaitForever); //获取数据
+  63:xiagb/upper/cliTask.cpp ****                     for (uint8_t i = 0; i < dataCount; i++)
+  64:xiagb/upper/cliTask.cpp ****                     {
+  65:xiagb/upper/cliTask.cpp ****                         osMessageQueueGet(srcQueue, &buffer, nullptr, osWaitForever);              
+  66:xiagb/upper/cliTask.cpp ****                         osMessageQueuePut(InputQueue[id - salveCanIdBeginNum], &buffer, 0, osWaitFo
+  67:xiagb/upper/cliTask.cpp ****                     }
+  68:xiagb/upper/cliTask.cpp **** 
+  69:xiagb/upper/cliTask.cpp ****                     if (buffer == '\n') //如果是结尾就把这个队列里的数据全部放入
+ 180              		.loc 1 69 21 is_stmt 1 view .LVU31
+ 181              		.loc 1 69 32 is_stmt 0 view .LVU32
+ 182 000a 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+ 183              		.loc 1 69 21 view .LVU33
+ 184 000e 0A2B     		cmp	r3, #10
+ 185 0010 2BD0     		beq	.L20
+ 186              	.LVL14:
+ 187              	.L17:
+ 188              		.loc 1 69 21 view .LVU34
+ 189              	.LBE10:
+  59:xiagb/upper/cliTask.cpp ****                 uint8_t buffer, id, dataCount;
+ 190              		.loc 1 59 17 is_stmt 1 view .LVU35
+  60:xiagb/upper/cliTask.cpp ****                 {
+ 191              		.loc 1 60 17 view .LVU36
+  60:xiagb/upper/cliTask.cpp ****                 {
+ 192              		.loc 1 60 69 view .LVU37
+  60:xiagb/upper/cliTask.cpp ****                 {
+ 193              		.loc 1 60 41 is_stmt 0 view .LVU38
+ 194 0012 0023     		movs	r3, #0
+ 195 0014 1A46     		mov	r2, r3
+ 196 0016 0DF10601 		add	r1, sp, #6
+ 197 001a 3046     		mov	r0, r6
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 6
+
+
+ 198 001c FFF7FEFF 		bl	osMessageQueueGet
+ 199              	.LVL15:
+  60:xiagb/upper/cliTask.cpp ****                 {
+ 200              		.loc 1 60 69 view .LVU39
+ 201 0020 68BB     		cbnz	r0, .L13
+ 202              	.LBB12:
+  62:xiagb/upper/cliTask.cpp ****                     for (uint8_t i = 0; i < dataCount; i++)
+ 203              		.loc 1 62 21 is_stmt 1 view .LVU40
+  62:xiagb/upper/cliTask.cpp ****                     for (uint8_t i = 0; i < dataCount; i++)
+ 204              		.loc 1 62 38 is_stmt 0 view .LVU41
+ 205 0022 4FF0FF33 		mov	r3, #-1
+ 206 0026 0022     		movs	r2, #0
+ 207 0028 0DF10501 		add	r1, sp, #5
+ 208 002c 3046     		mov	r0, r6
+ 209 002e FFF7FEFF 		bl	osMessageQueueGet
+ 210              	.LVL16:
+ 211              	.LBB11:
+  63:xiagb/upper/cliTask.cpp ****                     {
+ 212              		.loc 1 63 34 view .LVU42
+ 213 0032 0024     		movs	r4, #0
+ 214              	.L16:
+ 215              	.LVL17:
+  63:xiagb/upper/cliTask.cpp ****                     {
+ 216              		.loc 1 63 43 is_stmt 1 discriminator 1 view .LVU43
+ 217 0034 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
+ 218 0038 A342     		cmp	r3, r4
+ 219 003a E6D9     		bls	.L15
+  65:xiagb/upper/cliTask.cpp ****                         osMessageQueuePut(InputQueue[id - salveCanIdBeginNum], &buffer, 0, osWaitFo
+ 220              		.loc 1 65 25 view .LVU44
+  65:xiagb/upper/cliTask.cpp ****                         osMessageQueuePut(InputQueue[id - salveCanIdBeginNum], &buffer, 0, osWaitFo
+ 221              		.loc 1 65 42 is_stmt 0 view .LVU45
+ 222 003c 4FF0FF33 		mov	r3, #-1
+ 223 0040 0022     		movs	r2, #0
+ 224 0042 0DF10701 		add	r1, sp, #7
+ 225 0046 3046     		mov	r0, r6
+ 226 0048 FFF7FEFF 		bl	osMessageQueueGet
+ 227              	.LVL18:
+  66:xiagb/upper/cliTask.cpp ****                     }
+ 228              		.loc 1 66 25 is_stmt 1 view .LVU46
+  66:xiagb/upper/cliTask.cpp ****                     }
+ 229              		.loc 1 66 77 is_stmt 0 view .LVU47
+ 230 004c 9DF80650 		ldrb	r5, [sp, #6]	@ zero_extendqisi2
+ 231 0050 023D     		subs	r5, r5, #2
+  66:xiagb/upper/cliTask.cpp ****                     }
+ 232              		.loc 1 66 42 view .LVU48
+ 233 0052 4FF0FF33 		mov	r3, #-1
+ 234 0056 0022     		movs	r2, #0
+ 235 0058 0DF10701 		add	r1, sp, #7
+ 236 005c 57F82500 		ldr	r0, [r7, r5, lsl #2]
+ 237 0060 FFF7FEFF 		bl	osMessageQueuePut
+ 238              	.LVL19:
+  63:xiagb/upper/cliTask.cpp ****                     {
+ 239              		.loc 1 63 21 is_stmt 1 view .LVU49
+ 240 0064 0134     		adds	r4, r4, #1
+ 241              	.LVL20:
+  63:xiagb/upper/cliTask.cpp ****                     {
+ 242              		.loc 1 63 21 is_stmt 0 view .LVU50
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 7
+
+
+ 243 0066 E4B2     		uxtb	r4, r4
+ 244              	.LVL21:
+  63:xiagb/upper/cliTask.cpp ****                     {
+ 245              		.loc 1 63 21 view .LVU51
+ 246 0068 E4E7     		b	.L16
+ 247              	.L20:
+  63:xiagb/upper/cliTask.cpp ****                     {
+ 248              		.loc 1 63 21 view .LVU52
+ 249              	.LBE11:
+  70:xiagb/upper/cliTask.cpp ****                         commandParser->receiveQueueStr(InputQueue[id - salveCanIdBeginNum]);
+ 250              		.loc 1 70 25 is_stmt 1 view .LVU53
+ 251              		.loc 1 70 90 is_stmt 0 view .LVU54
+ 252 006a 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
+ 253 006e 023B     		subs	r3, r3, #2
+ 254              		.loc 1 70 55 view .LVU55
+ 255 0070 57F82310 		ldr	r1, [r7, r3, lsl #2]
+ 256 0074 034B     		ldr	r3, .L21
+ 257 0076 1868     		ldr	r0, [r3]
+ 258 0078 FFF7FEFF 		bl	_ZN5xiagb15parserNamespace12cliNamespace8cliClass15receiveQueueStrEPv
+ 259              	.LVL22:
+ 260 007c C9E7     		b	.L17
+ 261              	.LVL23:
+ 262              	.L13:
+ 263              		.loc 1 70 55 view .LVU56
+ 264              	.LBE12:
+  71:xiagb/upper/cliTask.cpp ****                 }
+  72:xiagb/upper/cliTask.cpp ****             }
+ 265              		.loc 1 72 13 view .LVU57
+ 266 007e 03B0     		add	sp, sp, #12
+ 267              	.LCFI5:
+ 268              		.cfi_def_cfa_offset 20
+ 269              		@ sp needed
+ 270 0080 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 271              	.LVL24:
+ 272              	.L22:
+ 273              		.loc 1 72 13 view .LVU58
+ 274 0082 00BF     		.align	2
+ 275              	.L21:
+ 276 0084 00000000 		.word	.LANCHOR0
+ 277              		.cfi_endproc
+ 278              	.LFE74:
+ 279              		.fnend
+ 281              		.section	.text._ZN5xiagb5upper16cliTaskNamespace7cliTaskEPv,"ax",%progbits
+ 282              		.align	1
+ 283              		.global	_ZN5xiagb5upper16cliTaskNamespace7cliTaskEPv
+ 284              		.syntax unified
+ 285              		.thumb
+ 286              		.thumb_func
+ 287              		.fpu softvfp
+ 289              	_ZN5xiagb5upper16cliTaskNamespace7cliTaskEPv:
+ 290              		.fnstart
+ 291              	.LVL25:
+ 292              	.LFB75:
+  73:xiagb/upper/cliTask.cpp **** 
+  74:xiagb/upper/cliTask.cpp ****             void cliTask(void *arg)
+  75:xiagb/upper/cliTask.cpp ****             {
+ 293              		.loc 1 75 13 is_stmt 1 view -0
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 8
+
+
+ 294              		.cfi_startproc
+ 295              		@ args = 0, pretend = 0, frame = 0
+ 296              		@ frame_needed = 0, uses_anonymous_args = 0
+ 297              		.loc 1 75 13 is_stmt 0 view .LVU60
+ 298 0000 10B5     		push	{r4, lr}
+ 299              		.save {r4, lr}
+ 300              	.LCFI6:
+ 301              		.cfi_def_cfa_offset 8
+ 302              		.cfi_offset 4, -8
+ 303              		.cfi_offset 14, -4
+ 304              		.pad #8
+ 305 0002 82B0     		sub	sp, sp, #8
+ 306              	.LCFI7:
+ 307              		.cfi_def_cfa_offset 16
+  76:xiagb/upper/cliTask.cpp ****                 uartCommunication = new uartClass;
+ 308              		.loc 1 76 17 is_stmt 1 view .LVU61
+ 309              		.loc 1 76 41 is_stmt 0 view .LVU62
+ 310 0004 2420     		movs	r0, #36
+ 311              	.LVL26:
+ 312              	.LEHB0:
+ 313              		.loc 1 76 41 view .LVU63
+ 314 0006 FFF7FEFF 		bl	_Znwj
+ 315              	.LVL27:
+ 316              	.LEHE0:
+ 317 000a 0446     		mov	r4, r0
+ 318              	.LEHB1:
+ 319 000c FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace13uartNamespace9uartClassC1Ev
+ 320              	.LVL28:
+ 321              	.LEHE1:
+ 322              		.loc 1 76 35 discriminator 2 view .LVU64
+ 323 0010 344B     		ldr	r3, .L35
+ 324 0012 1C60     		str	r4, [r3]
+  77:xiagb/upper/cliTask.cpp ****                 uartCommunication->init(USART1, 115200, &huart1, &hdma_usart1_rx, &hdma_usart1_tx);
+ 325              		.loc 1 77 17 is_stmt 1 discriminator 2 view .LVU65
+ 326              		.loc 1 77 40 is_stmt 0 discriminator 2 view .LVU66
+ 327 0014 344B     		ldr	r3, .L35+4
+ 328 0016 0193     		str	r3, [sp, #4]
+ 329 0018 344B     		ldr	r3, .L35+8
+ 330 001a 0093     		str	r3, [sp]
+ 331 001c 344B     		ldr	r3, .L35+12
+ 332 001e 4FF4E132 		mov	r2, #115200
+ 333 0022 3449     		ldr	r1, .L35+16
+ 334 0024 2046     		mov	r0, r4
+ 335              	.LEHB2:
+ 336 0026 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace13uartNamespace9uartClass4initEP13USART_TypeDefmP20__UART_Hand
+ 337              	.LVL29:
+  78:xiagb/upper/cliTask.cpp **** 
+  79:xiagb/upper/cliTask.cpp ****                 canCommunication = new canClass;
+ 338              		.loc 1 79 17 is_stmt 1 discriminator 2 view .LVU67
+ 339              		.loc 1 79 40 is_stmt 0 discriminator 2 view .LVU68
+ 340 002a 4820     		movs	r0, #72
+ 341 002c FFF7FEFF 		bl	_Znwj
+ 342              	.LVL30:
+ 343              	.LEHE2:
+ 344 0030 0446     		mov	r4, r0
+ 345              	.LEHB3:
+ 346 0032 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClassC1Ev
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 9
+
+
+ 347              	.LVL31:
+ 348              	.LEHE3:
+ 349              		.loc 1 79 34 discriminator 2 view .LVU69
+ 350 0036 304B     		ldr	r3, .L35+20
+ 351 0038 1C60     		str	r4, [r3]
+  80:xiagb/upper/cliTask.cpp ****                 canCommunication->init(CAN1, 1, &hcan);
+ 352              		.loc 1 80 17 is_stmt 1 discriminator 2 view .LVU70
+ 353              		.loc 1 80 39 is_stmt 0 discriminator 2 view .LVU71
+ 354 003a 304B     		ldr	r3, .L35+24
+ 355 003c 0122     		movs	r2, #1
+ 356 003e 3049     		ldr	r1, .L35+28
+ 357 0040 2046     		mov	r0, r4
+ 358              	.LEHB4:
+ 359 0042 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass4initEP11CAN_TypeDefhP19__CAN_HandleTyp
+ 360              	.LVL32:
+  81:xiagb/upper/cliTask.cpp **** 
+  82:xiagb/upper/cliTask.cpp ****                 commandParser = new cliClass;
+ 361              		.loc 1 82 17 is_stmt 1 discriminator 2 view .LVU72
+ 362              		.loc 1 82 37 is_stmt 0 discriminator 2 view .LVU73
+ 363 0046 2820     		movs	r0, #40
+ 364 0048 FFF7FEFF 		bl	_Znwj
+ 365              	.LVL33:
+ 366              	.LEHE4:
+ 367 004c 0446     		mov	r4, r0
+ 368              	.LEHB5:
+ 369 004e FFF7FEFF 		bl	_ZN5xiagb15parserNamespace12cliNamespace8cliClassC1Ev
+ 370              	.LVL34:
+ 371              	.LEHE5:
+ 372              		.loc 1 82 31 discriminator 2 view .LVU74
+ 373 0052 2C4B     		ldr	r3, .L35+32
+ 374 0054 1C60     		str	r4, [r3]
+  83:xiagb/upper/cliTask.cpp ****                 commandParser->init(uartCommunication);
+ 375              		.loc 1 83 17 is_stmt 1 discriminator 2 view .LVU75
+ 376              		.loc 1 83 36 is_stmt 0 discriminator 2 view .LVU76
+ 377 0056 234B     		ldr	r3, .L35
+ 378 0058 1968     		ldr	r1, [r3]
+ 379 005a 2046     		mov	r0, r4
+ 380              	.LEHB6:
+ 381 005c FFF7FEFF 		bl	_ZN5xiagb15parserNamespace12cliNamespace8cliClass4initEPNS_22communicationNamespace13uartNamesp
+ 382              	.LVL35:
+  84:xiagb/upper/cliTask.cpp **** 
+  85:xiagb/upper/cliTask.cpp ****                 machineTaskStart(); //启动命令执行任务
+ 383              		.loc 1 85 17 is_stmt 1 discriminator 2 view .LVU77
+ 384              		.loc 1 85 33 is_stmt 0 discriminator 2 view .LVU78
+ 385 0060 FFF7FEFF 		bl	_ZN5xiagb5upper20machineTaskNamespace16machineTaskStartEv
+ 386              	.LVL36:
+  86:xiagb/upper/cliTask.cpp **** 
+  87:xiagb/upper/cliTask.cpp ****                 //队列里只存一条完整的命令
+  88:xiagb/upper/cliTask.cpp ****                 //创建主机命令队列
+  89:xiagb/upper/cliTask.cpp ****                 masterCommandQueue = osMessageQueueNew(100, sizeof(uint8_t), nullptr); //单次命�
+ 387              		.loc 1 89 17 is_stmt 1 discriminator 2 view .LVU79
+ 388              		.loc 1 89 55 is_stmt 0 discriminator 2 view .LVU80
+ 389 0064 0022     		movs	r2, #0
+ 390 0066 0121     		movs	r1, #1
+ 391 0068 6420     		movs	r0, #100
+ 392 006a FFF7FEFF 		bl	osMessageQueueNew
+ 393              	.LVL37:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 10
+
+
+ 394              		.loc 1 89 36 discriminator 2 view .LVU81
+ 395 006e 264A     		ldr	r2, .L35+36
+ 396 0070 1060     		str	r0, [r2]
+ 397              	.L24:
+  90:xiagb/upper/cliTask.cpp ****                 while (masterCommandQueue == 0)
+ 398              		.loc 1 90 17 is_stmt 1 view .LVU82
+ 399              		.loc 1 90 43 view .LVU83
+ 400 0072 0028     		cmp	r0, #0
+ 401 0074 FDD0     		beq	.L24
+ 402              	.LBB13:
+  91:xiagb/upper/cliTask.cpp ****                     ;
+  92:xiagb/upper/cliTask.cpp ****                 //为每个从机创建一个队列，用以接收其反馈信息
+  93:xiagb/upper/cliTask.cpp ****                 for (uint8_t i = 0; i < commandQueueNum; i++)
+ 403              		.loc 1 93 30 is_stmt 0 view .LVU84
+ 404 0076 0024     		movs	r4, #0
+ 405              	.L27:
+ 406              	.LVL38:
+ 407              		.loc 1 93 39 is_stmt 1 discriminator 1 view .LVU85
+ 408 0078 64B9     		cbnz	r4, .L25
+  94:xiagb/upper/cliTask.cpp ****                 {
+  95:xiagb/upper/cliTask.cpp ****                     salveCommandQueue[i] = osMessageQueueNew(100, sizeof(uint8_t), nullptr); //单�
+ 409              		.loc 1 95 21 view .LVU86
+ 410              		.loc 1 95 61 is_stmt 0 view .LVU87
+ 411 007a 0022     		movs	r2, #0
+ 412 007c 0121     		movs	r1, #1
+ 413 007e 6420     		movs	r0, #100
+ 414 0080 FFF7FEFF 		bl	osMessageQueueNew
+ 415              	.LVL39:
+ 416              		.loc 1 95 42 view .LVU88
+ 417 0084 214A     		ldr	r2, .L35+40
+ 418 0086 42F82400 		str	r0, [r2, r4, lsl #2]
+ 419              	.L26:
+  96:xiagb/upper/cliTask.cpp ****                     while (salveCommandQueue[i] == 0)
+ 420              		.loc 1 96 21 is_stmt 1 view .LVU89
+ 421              		.loc 1 96 49 view .LVU90
+ 422 008a 0028     		cmp	r0, #0
+ 423 008c FDD0     		beq	.L26
+  93:xiagb/upper/cliTask.cpp ****                 {
+ 424              		.loc 1 93 17 discriminator 2 view .LVU91
+ 425 008e 0134     		adds	r4, r4, #1
+ 426              	.LVL40:
+  93:xiagb/upper/cliTask.cpp ****                 {
+ 427              		.loc 1 93 17 is_stmt 0 discriminator 2 view .LVU92
+ 428 0090 E4B2     		uxtb	r4, r4
+ 429              	.LVL41:
+  93:xiagb/upper/cliTask.cpp ****                 {
+ 430              		.loc 1 93 17 discriminator 2 view .LVU93
+ 431 0092 F1E7     		b	.L27
+ 432              	.L25:
+  93:xiagb/upper/cliTask.cpp ****                 {
+ 433              		.loc 1 93 17 discriminator 2 view .LVU94
+ 434              	.LBE13:
+  97:xiagb/upper/cliTask.cpp ****                         ;
+  98:xiagb/upper/cliTask.cpp ****                 }
+  99:xiagb/upper/cliTask.cpp **** 
+ 100:xiagb/upper/cliTask.cpp ****                 for (;;)
+ 435              		.loc 1 100 17 is_stmt 1 discriminator 1 view .LVU95
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 11
+
+
+ 101:xiagb/upper/cliTask.cpp ****                 {
+ 102:xiagb/upper/cliTask.cpp ****                     osDelay(1);
+ 436              		.loc 1 102 21 discriminator 1 view .LVU96
+ 437              		.loc 1 102 28 is_stmt 0 discriminator 1 view .LVU97
+ 438 0094 0120     		movs	r0, #1
+ 439 0096 FFF7FEFF 		bl	osDelay
+ 440              	.LVL42:
+ 103:xiagb/upper/cliTask.cpp **** 
+ 104:xiagb/upper/cliTask.cpp ****                     getMasterCommandAndputCli(uartCommunication->getRxQueue(), masterCommandQueue);
+ 441              		.loc 1 104 21 is_stmt 1 discriminator 1 view .LVU98
+ 442              		.loc 1 104 46 is_stmt 0 discriminator 1 view .LVU99
+ 443 009a 124B     		ldr	r3, .L35
+ 444 009c 1B68     		ldr	r3, [r3]
+ 445              	.LVL43:
+ 446              	.LBB14:
+ 447              	.LBI14:
+ 448              		.file 2 "xiagb/bottom/uart.hpp"
+   1:xiagb/bottom/uart.hpp **** #ifndef uartH
+   2:xiagb/bottom/uart.hpp **** #define uartH
+   3:xiagb/bottom/uart.hpp **** 
+   4:xiagb/bottom/uart.hpp **** #include "main.h"
+   5:xiagb/bottom/uart.hpp **** #include "cmsis_os2.h"
+   6:xiagb/bottom/uart.hpp **** 
+   7:xiagb/bottom/uart.hpp **** /*
+   8:xiagb/bottom/uart.hpp **** 打开dma的发送和接收，循环模式，使能硬件的全局中断
+   9:xiagb/bottom/uart.hpp **** 空闲中断处理最后的数据，串口完成中断处理过程数据
+  10:xiagb/bottom/uart.hpp **** 空闲中断只会被接收触发，不会被发送触发
+  11:xiagb/bottom/uart.hpp **** dma接收完成中断最后调用的是串口接收完成的回调函数，发送是调用串口发
+  12:xiagb/bottom/uart.hpp **** 第一个字节是数据个数，后面的是数据，如果数据个数为0，说明是空闲中�
+  13:xiagb/bottom/uart.hpp **** dma得到的个数是继续上一次的
+  14:xiagb/bottom/uart.hpp **** 
+  15:xiagb/bottom/uart.hpp **** 如果空闲和完成同时触发？接收完成先辈调用
+  16:xiagb/bottom/uart.hpp **** */
+  17:xiagb/bottom/uart.hpp **** 
+  18:xiagb/bottom/uart.hpp **** namespace xiagb
+  19:xiagb/bottom/uart.hpp **** {
+  20:xiagb/bottom/uart.hpp ****     namespace communicationNamespace
+  21:xiagb/bottom/uart.hpp ****     {
+  22:xiagb/bottom/uart.hpp ****         namespace uartNamespace
+  23:xiagb/bottom/uart.hpp ****         {
+  24:xiagb/bottom/uart.hpp ****             class uartClass
+  25:xiagb/bottom/uart.hpp ****             {
+  26:xiagb/bottom/uart.hpp ****             private:
+  27:xiagb/bottom/uart.hpp ****                 uint8_t rxBufferSize = 20;  //单次缓存容量
+  28:xiagb/bottom/uart.hpp ****                 uint16_t rxQueueSize = 300; //队列容量
+  29:xiagb/bottom/uart.hpp ****                 uint16_t printfBufferSize = 80;
+  30:xiagb/bottom/uart.hpp **** 
+  31:xiagb/bottom/uart.hpp ****                 UART_HandleTypeDef *uartHandle;
+  32:xiagb/bottom/uart.hpp ****                 DMA_HandleTypeDef *dmaRxHandle, *dmaTxHandle;
+  33:xiagb/bottom/uart.hpp ****                 osMessageQueueId_t rxQueueHandle;
+  34:xiagb/bottom/uart.hpp ****                 osMutexId_t mutexHandle;
+  35:xiagb/bottom/uart.hpp ****                 uint8_t *rxBuffer;
+  36:xiagb/bottom/uart.hpp ****                 uint8_t *printfBuffer;
+  37:xiagb/bottom/uart.hpp **** 
+  38:xiagb/bottom/uart.hpp ****             public:
+  39:xiagb/bottom/uart.hpp ****                 uartClass();
+  40:xiagb/bottom/uart.hpp ****                 ~uartClass();
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 12
+
+
+  41:xiagb/bottom/uart.hpp **** 
+  42:xiagb/bottom/uart.hpp ****                 void init(USART_TypeDef *uartHardwareHandle, uint32_t baudRate, UART_HandleTypeDef 
+  43:xiagb/bottom/uart.hpp ****                 void idleCallback();       //在全局中断里执行
+  44:xiagb/bottom/uart.hpp ****                 void rxCompleteCallback(); //在HAL_UART_RxCpltCallback里执行
+  45:xiagb/bottom/uart.hpp ****                 void send(uint8_t *data, uint16_t size);
+  46:xiagb/bottom/uart.hpp ****                 void printf(char *fmt, ...);
+  47:xiagb/bottom/uart.hpp **** 
+  48:xiagb/bottom/uart.hpp ****                 osMessageQueueId_t getRxQueue() { return rxQueueHandle; }
+ 449              		.loc 2 48 36 is_stmt 1 discriminator 1 view .LVU100
+ 450              	.LBB15:
+ 451              		.loc 2 48 51 discriminator 1 view .LVU101
+ 452              		.loc 2 48 51 is_stmt 0 discriminator 1 view .LVU102
+ 453              	.LBE15:
+ 454              	.LBE14:
+ 455              		.loc 1 104 46 discriminator 1 view .LVU103
+ 456 009e 1A4A     		ldr	r2, .L35+36
+ 457 00a0 1168     		ldr	r1, [r2]
+ 458 00a2 5869     		ldr	r0, [r3, #20]
+ 459 00a4 FFF7FEFF 		bl	_ZN5xiagb5upper16cliTaskNamespace25getMasterCommandAndputCliEPvS2_
+ 460              	.LVL44:
+ 105:xiagb/upper/cliTask.cpp ****                     getSalveCommandAndputCli(canCommunication->getRxQueue(), salveCommandQueue);
+ 461              		.loc 1 105 21 is_stmt 1 discriminator 1 view .LVU104
+ 462              		.loc 1 105 45 is_stmt 0 discriminator 1 view .LVU105
+ 463 00a8 134B     		ldr	r3, .L35+20
+ 464 00aa 1B68     		ldr	r3, [r3]
+ 465              	.LVL45:
+ 466              	.LBB16:
+ 467              	.LBI16:
+ 468              		.file 3 "xiagb/bottom/can.hpp"
+   1:xiagb/bottom/can.hpp **** #ifndef canH
+   2:xiagb/bottom/can.hpp **** #define canH
+   3:xiagb/bottom/can.hpp **** 
+   4:xiagb/bottom/can.hpp **** #include "main.h"
+   5:xiagb/bottom/can.hpp **** #include "cmsis_os2.h"
+   6:xiagb/bottom/can.hpp **** 
+   7:xiagb/bottom/can.hpp **** namespace xiagb
+   8:xiagb/bottom/can.hpp **** {
+   9:xiagb/bottom/can.hpp ****     namespace communicationNamespace
+  10:xiagb/bottom/can.hpp ****     {
+  11:xiagb/bottom/can.hpp ****         namespace canNamespace
+  12:xiagb/bottom/can.hpp ****         {
+  13:xiagb/bottom/can.hpp ****             class canClass
+  14:xiagb/bottom/can.hpp ****             {
+  15:xiagb/bottom/can.hpp ****             private:
+  16:xiagb/bottom/can.hpp ****                 static const char *const echoCommandStr;
+  17:xiagb/bottom/can.hpp ****                 uint16_t rxQueueSize = 300; //队列容量
+  18:xiagb/bottom/can.hpp **** 
+  19:xiagb/bottom/can.hpp ****                 CAN_HandleTypeDef *canHandle;
+  20:xiagb/bottom/can.hpp ****                 uint8_t id;
+  21:xiagb/bottom/can.hpp ****                 CAN_TxHeaderTypeDef txHeader;
+  22:xiagb/bottom/can.hpp ****                 CAN_RxHeaderTypeDef rxHeader;
+  23:xiagb/bottom/can.hpp ****                 osMutexId_t mutex;
+  24:xiagb/bottom/can.hpp ****                 osMessageQueueId_t rxQueueHandle;
+  25:xiagb/bottom/can.hpp **** 
+  26:xiagb/bottom/can.hpp ****                 void send(uint8_t *data, uint8_t size); //size小于等于8
+  27:xiagb/bottom/can.hpp **** 
+  28:xiagb/bottom/can.hpp ****             public:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 13
+
+
+  29:xiagb/bottom/can.hpp ****                 canClass();
+  30:xiagb/bottom/can.hpp ****                 ~canClass();
+  31:xiagb/bottom/can.hpp **** 
+  32:xiagb/bottom/can.hpp ****                 void init(CAN_TypeDef *canHardwareHandle, uint8_t id, CAN_HandleTypeDef *canHandle)
+  33:xiagb/bottom/can.hpp ****                 void echoPrintf(uint8_t targetId, const char *fmt, ...);
+  34:xiagb/bottom/can.hpp ****                 void receiveCallback();
+  35:xiagb/bottom/can.hpp **** 
+  36:xiagb/bottom/can.hpp ****                 uint8_t getId() { return id; }
+  37:xiagb/bottom/can.hpp ****                 osMessageQueueId_t getRxQueue() { return rxQueueHandle; }
+ 469              		.loc 3 37 36 is_stmt 1 discriminator 1 view .LVU106
+ 470              	.LBB17:
+ 471              		.loc 3 37 51 discriminator 1 view .LVU107
+ 472              		.loc 3 37 51 is_stmt 0 discriminator 1 view .LVU108
+ 473              	.LBE17:
+ 474              	.LBE16:
+ 475              		.loc 1 105 45 discriminator 1 view .LVU109
+ 476 00ac 1749     		ldr	r1, .L35+40
+ 477 00ae 586C     		ldr	r0, [r3, #68]
+ 478 00b0 FFF7FEFF 		bl	_ZN5xiagb5upper16cliTaskNamespace24getSalveCommandAndputCliEPvPS2_
+ 479              	.LVL46:
+ 106:xiagb/upper/cliTask.cpp **** 
+ 107:xiagb/upper/cliTask.cpp ****                     commandParser->loop();
+ 480              		.loc 1 107 21 is_stmt 1 discriminator 1 view .LVU110
+ 481              		.loc 1 107 40 is_stmt 0 discriminator 1 view .LVU111
+ 482 00b4 134B     		ldr	r3, .L35+32
+ 483 00b6 1868     		ldr	r0, [r3]
+ 484 00b8 FFF7FEFF 		bl	_ZN5xiagb15parserNamespace12cliNamespace8cliClass4loopEv
+ 485              	.LVL47:
+ 100:xiagb/upper/cliTask.cpp ****                 {
+ 486              		.loc 1 100 17 is_stmt 1 discriminator 1 view .LVU112
+ 487 00bc EAE7     		b	.L25
+ 488              	.LVL48:
+ 489              	.L31:
+  76:xiagb/upper/cliTask.cpp ****                 uartCommunication->init(USART1, 115200, &huart1, &hdma_usart1_rx, &hdma_usart1_tx);
+ 490              		.loc 1 76 41 is_stmt 0 view .LVU113
+ 491 00be 2421     		movs	r1, #36
+ 492 00c0 2046     		mov	r0, r4
+ 493 00c2 FFF7FEFF 		bl	_ZdlPvj
+ 494              	.LVL49:
+ 495 00c6 FFF7FEFF 		bl	__cxa_end_cleanup
+ 496              	.LVL50:
+ 497              	.L32:
+  79:xiagb/upper/cliTask.cpp ****                 canCommunication->init(CAN1, 1, &hcan);
+ 498              		.loc 1 79 40 view .LVU114
+ 499 00ca 4821     		movs	r1, #72
+ 500 00cc 2046     		mov	r0, r4
+ 501 00ce FFF7FEFF 		bl	_ZdlPvj
+ 502              	.LVL51:
+ 503 00d2 FFF7FEFF 		bl	__cxa_end_cleanup
+ 504              	.LVL52:
+ 505              	.L33:
+  82:xiagb/upper/cliTask.cpp ****                 commandParser->init(uartCommunication);
+ 506              		.loc 1 82 37 view .LVU115
+ 507 00d6 2821     		movs	r1, #40
+ 508 00d8 2046     		mov	r0, r4
+ 509 00da FFF7FEFF 		bl	_ZdlPvj
+ 510              	.LVL53:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 14
+
+
+ 511 00de FFF7FEFF 		bl	__cxa_end_cleanup
+ 512              	.LVL54:
+ 513              	.LEHE6:
+ 514              	.L36:
+ 515 00e2 00BF     		.align	2
+ 516              	.L35:
+ 517 00e4 00000000 		.word	.LANCHOR1
+ 518 00e8 00000000 		.word	hdma_usart1_tx
+ 519 00ec 00000000 		.word	hdma_usart1_rx
+ 520 00f0 00000000 		.word	huart1
+ 521 00f4 00380140 		.word	1073821696
+ 522 00f8 00000000 		.word	.LANCHOR2
+ 523 00fc 00000000 		.word	hcan
+ 524 0100 00640040 		.word	1073767424
+ 525 0104 00000000 		.word	.LANCHOR0
+ 526 0108 00000000 		.word	.LANCHOR3
+ 527 010c 00000000 		.word	.LANCHOR4
+ 528              		.cfi_endproc
+ 529              	.LFE75:
+ 530              		.global	__gxx_personality_v0
+ 531              		.personality	__gxx_personality_v0
+ 532              		.handlerdata
+ 533              	.LLSDA75:
+ 534 0008 FF       		.byte	0xff
+ 535 0009 FF       		.byte	0xff
+ 536 000a 01       		.byte	0x1
+ 537 000b 20       		.uleb128 .LLSDACSE75-.LLSDACSB75
+ 538              	.LLSDACSB75:
+ 539 000c 06       		.uleb128 .LEHB0-.LFB75
+ 540 000d 04       		.uleb128 .LEHE0-.LEHB0
+ 541 000e 00       		.uleb128 0
+ 542 000f 00       		.uleb128 0
+ 543 0010 0C       		.uleb128 .LEHB1-.LFB75
+ 544 0011 04       		.uleb128 .LEHE1-.LEHB1
+ 545 0012 BE01     		.uleb128 .L31-.LFB75
+ 546 0014 00       		.uleb128 0
+ 547 0015 26       		.uleb128 .LEHB2-.LFB75
+ 548 0016 0A       		.uleb128 .LEHE2-.LEHB2
+ 549 0017 00       		.uleb128 0
+ 550 0018 00       		.uleb128 0
+ 551 0019 32       		.uleb128 .LEHB3-.LFB75
+ 552 001a 04       		.uleb128 .LEHE3-.LEHB3
+ 553 001b CA01     		.uleb128 .L32-.LFB75
+ 554 001d 00       		.uleb128 0
+ 555 001e 42       		.uleb128 .LEHB4-.LFB75
+ 556 001f 0A       		.uleb128 .LEHE4-.LEHB4
+ 557 0020 00       		.uleb128 0
+ 558 0021 00       		.uleb128 0
+ 559 0022 4E       		.uleb128 .LEHB5-.LFB75
+ 560 0023 04       		.uleb128 .LEHE5-.LEHB5
+ 561 0024 D601     		.uleb128 .L33-.LFB75
+ 562 0026 00       		.uleb128 0
+ 563 0027 5C       		.uleb128 .LEHB6-.LFB75
+ 564 0028 8601     		.uleb128 .LEHE6-.LEHB6
+ 565 002a 00       		.uleb128 0
+ 566 002b 00       		.uleb128 0
+ 567              	.LLSDACSE75:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 15
+
+
+ 568              		.section	.text._ZN5xiagb5upper16cliTaskNamespace7cliTaskEPv
+ 569              		.fnend
+ 571              		.section	.text.uart1IrqCallback,"ax",%progbits
+ 572              		.align	1
+ 573              		.global	uart1IrqCallback
+ 574              		.syntax unified
+ 575              		.thumb
+ 576              		.thumb_func
+ 577              		.fpu softvfp
+ 579              	uart1IrqCallback:
+ 580              		.fnstart
+ 581              	.LFB76:
+ 108:xiagb/upper/cliTask.cpp ****                 }
+ 109:xiagb/upper/cliTask.cpp ****             }
+ 110:xiagb/upper/cliTask.cpp **** 
+ 111:xiagb/upper/cliTask.cpp ****             // 串口1的空闲中断回调函数
+ 112:xiagb/upper/cliTask.cpp ****             // 放到串口1的全局中断里
+ 113:xiagb/upper/cliTask.cpp ****             extern "C" void uart1IrqCallback()
+ 114:xiagb/upper/cliTask.cpp ****             {
+ 582              		.loc 1 114 13 is_stmt 1 view -0
+ 583              		.cfi_startproc
+ 584              		@ args = 0, pretend = 0, frame = 0
+ 585              		@ frame_needed = 0, uses_anonymous_args = 0
+ 586 0000 08B5     		push	{r3, lr}
+ 587              		.save {r3, lr}
+ 588              	.LCFI8:
+ 589              		.cfi_def_cfa_offset 8
+ 590              		.cfi_offset 3, -8
+ 591              		.cfi_offset 14, -4
+ 115:xiagb/upper/cliTask.cpp ****                 uartCommunication->idleCallback();
+ 592              		.loc 1 115 17 view .LVU117
+ 593              		.loc 1 115 48 is_stmt 0 view .LVU118
+ 594 0002 024B     		ldr	r3, .L39
+ 595 0004 1868     		ldr	r0, [r3]
+ 596 0006 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace13uartNamespace9uartClass12idleCallbackEv
+ 597              	.LVL55:
+ 116:xiagb/upper/cliTask.cpp ****             }
+ 598              		.loc 1 116 13 view .LVU119
+ 599 000a 08BD     		pop	{r3, pc}
+ 600              	.L40:
+ 601              		.align	2
+ 602              	.L39:
+ 603 000c 00000000 		.word	.LANCHOR1
+ 604              		.cfi_endproc
+ 605              	.LFE76:
+ 606              		.fnend
+ 608              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
+ 609              		.align	1
+ 610              		.global	HAL_UART_RxCpltCallback
+ 611              		.syntax unified
+ 612              		.thumb
+ 613              		.thumb_func
+ 614              		.fpu softvfp
+ 616              	HAL_UART_RxCpltCallback:
+ 617              		.fnstart
+ 618              	.LVL56:
+ 619              	.LFB77:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 16
+
+
+ 117:xiagb/upper/cliTask.cpp **** 
+ 118:xiagb/upper/cliTask.cpp ****             // hal库uart接收完成回调函数
+ 119:xiagb/upper/cliTask.cpp ****             extern "C" void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+ 120:xiagb/upper/cliTask.cpp ****             {
+ 620              		.loc 1 120 13 is_stmt 1 view -0
+ 621              		.cfi_startproc
+ 622              		@ args = 0, pretend = 0, frame = 0
+ 623              		@ frame_needed = 0, uses_anonymous_args = 0
+ 624              		.loc 1 120 13 is_stmt 0 view .LVU121
+ 625 0000 08B5     		push	{r3, lr}
+ 626              		.save {r3, lr}
+ 627              	.LCFI9:
+ 628              		.cfi_def_cfa_offset 8
+ 629              		.cfi_offset 3, -8
+ 630              		.cfi_offset 14, -4
+ 121:xiagb/upper/cliTask.cpp ****                 if (huart == &huart1)
+ 631              		.loc 1 121 17 is_stmt 1 view .LVU122
+ 632 0002 044B     		ldr	r3, .L45
+ 633 0004 8342     		cmp	r3, r0
+ 634 0006 00D0     		beq	.L44
+ 635              	.LVL57:
+ 636              	.L41:
+ 122:xiagb/upper/cliTask.cpp ****                     uartCommunication->rxCompleteCallback();
+ 123:xiagb/upper/cliTask.cpp ****             }
+ 637              		.loc 1 123 13 is_stmt 0 view .LVU123
+ 638 0008 08BD     		pop	{r3, pc}
+ 639              	.LVL58:
+ 640              	.L44:
+ 122:xiagb/upper/cliTask.cpp ****                     uartCommunication->rxCompleteCallback();
+ 641              		.loc 1 122 21 is_stmt 1 view .LVU124
+ 122:xiagb/upper/cliTask.cpp ****                     uartCommunication->rxCompleteCallback();
+ 642              		.loc 1 122 58 is_stmt 0 view .LVU125
+ 643 000a 034B     		ldr	r3, .L45+4
+ 644 000c 1868     		ldr	r0, [r3]
+ 645              	.LVL59:
+ 122:xiagb/upper/cliTask.cpp ****                     uartCommunication->rxCompleteCallback();
+ 646              		.loc 1 122 58 view .LVU126
+ 647 000e FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace13uartNamespace9uartClass18rxCompleteCallbackEv
+ 648              	.LVL60:
+ 649              		.loc 1 123 13 view .LVU127
+ 650 0012 F9E7     		b	.L41
+ 651              	.L46:
+ 652              		.align	2
+ 653              	.L45:
+ 654 0014 00000000 		.word	huart1
+ 655 0018 00000000 		.word	.LANCHOR1
+ 656              		.cfi_endproc
+ 657              	.LFE77:
+ 658              		.fnend
+ 660              		.section	.text.HAL_CAN_RxFifo0MsgPendingCallback,"ax",%progbits
+ 661              		.align	1
+ 662              		.global	HAL_CAN_RxFifo0MsgPendingCallback
+ 663              		.syntax unified
+ 664              		.thumb
+ 665              		.thumb_func
+ 666              		.fpu softvfp
+ 668              	HAL_CAN_RxFifo0MsgPendingCallback:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 17
+
+
+ 669              		.fnstart
+ 670              	.LVL61:
+ 671              	.LFB78:
+ 124:xiagb/upper/cliTask.cpp **** 
+ 125:xiagb/upper/cliTask.cpp ****             extern "C" void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+ 126:xiagb/upper/cliTask.cpp ****             {
+ 672              		.loc 1 126 13 is_stmt 1 view -0
+ 673              		.cfi_startproc
+ 674              		@ args = 0, pretend = 0, frame = 0
+ 675              		@ frame_needed = 0, uses_anonymous_args = 0
+ 676              		.loc 1 126 13 is_stmt 0 view .LVU129
+ 677 0000 08B5     		push	{r3, lr}
+ 678              		.save {r3, lr}
+ 679              	.LCFI10:
+ 680              		.cfi_def_cfa_offset 8
+ 681              		.cfi_offset 3, -8
+ 682              		.cfi_offset 14, -4
+ 127:xiagb/upper/cliTask.cpp ****                 canCommunication->receiveCallback();
+ 683              		.loc 1 127 17 is_stmt 1 view .LVU130
+ 684              		.loc 1 127 50 is_stmt 0 view .LVU131
+ 685 0002 024B     		ldr	r3, .L49
+ 686 0004 1868     		ldr	r0, [r3]
+ 687              	.LVL62:
+ 688              		.loc 1 127 50 view .LVU132
+ 689 0006 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass15receiveCallbackEv
+ 690              	.LVL63:
+ 128:xiagb/upper/cliTask.cpp ****             }
+ 691              		.loc 1 128 13 view .LVU133
+ 692 000a 08BD     		pop	{r3, pc}
+ 693              	.L50:
+ 694              		.align	2
+ 695              	.L49:
+ 696 000c 00000000 		.word	.LANCHOR2
+ 697              		.cfi_endproc
+ 698              	.LFE78:
+ 699              		.fnend
+ 701              		.section	.text._ZN5xiagb5upper16cliTaskNamespace12cliTaskStartEv,"ax",%progbits
+ 702              		.align	1
+ 703              		.global	_ZN5xiagb5upper16cliTaskNamespace12cliTaskStartEv
+ 704              		.syntax unified
+ 705              		.thumb
+ 706              		.thumb_func
+ 707              		.fpu softvfp
+ 709              	_ZN5xiagb5upper16cliTaskNamespace12cliTaskStartEv:
+ 710              		.fnstart
+ 711              	.LFB79:
+ 129:xiagb/upper/cliTask.cpp **** 
+ 130:xiagb/upper/cliTask.cpp ****             void cliTaskStart()
+ 131:xiagb/upper/cliTask.cpp ****             {
+ 712              		.loc 1 131 13 is_stmt 1 view -0
+ 713              		.cfi_startproc
+ 714              		@ args = 0, pretend = 0, frame = 0
+ 715              		@ frame_needed = 0, uses_anonymous_args = 0
+ 716 0000 08B5     		push	{r3, lr}
+ 717              		.save {r3, lr}
+ 718              	.LCFI11:
+ 719              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 18
+
+
+ 720              		.cfi_offset 3, -8
+ 721              		.cfi_offset 14, -4
+ 132:xiagb/upper/cliTask.cpp ****                 osThreadNew(cliTask, nullptr, &cliTaskAttributes);
+ 722              		.loc 1 132 17 view .LVU135
+ 723              		.loc 1 132 28 is_stmt 0 view .LVU136
+ 724 0002 034A     		ldr	r2, .L53
+ 725 0004 0021     		movs	r1, #0
+ 726 0006 0348     		ldr	r0, .L53+4
+ 727 0008 FFF7FEFF 		bl	osThreadNew
+ 728              	.LVL64:
+ 133:xiagb/upper/cliTask.cpp ****             }
+ 729              		.loc 1 133 13 view .LVU137
+ 730 000c 08BD     		pop	{r3, pc}
+ 731              	.L54:
+ 732 000e 00BF     		.align	2
+ 733              	.L53:
+ 734 0010 00000000 		.word	.LANCHOR5
+ 735 0014 00000000 		.word	_ZN5xiagb5upper16cliTaskNamespace7cliTaskEPv
+ 736              		.cfi_endproc
+ 737              	.LFE79:
+ 738              		.fnend
+ 740              		.global	_ZN5xiagb5upper16cliTaskNamespace17salveCommandQueueE
+ 741              		.global	_ZN5xiagb5upper16cliTaskNamespace18masterCommandQueueE
+ 742              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 743              		.align	2
+ 744              	.LC0:
+ 745 0000 636C6954 		.ascii	"cliTask\000"
+ 745      61736B00 
+ 746              		.global	_ZN5xiagb5upper16cliTaskNamespace17uartCommunicationE
+ 747              		.global	_ZN5xiagb5upper16cliTaskNamespace13commandParserE
+ 748              		.global	_ZN5xiagb5upper16cliTaskNamespace16canCommunicationE
+ 749              		.section	.bss._ZN5xiagb5upper16cliTaskNamespace13commandParserE,"aw",%nobits
+ 750              		.align	2
+ 751              		.set	.LANCHOR0,. + 0
+ 754              	_ZN5xiagb5upper16cliTaskNamespace13commandParserE:
+ 755 0000 00000000 		.space	4
+ 756              		.section	.bss._ZN5xiagb5upper16cliTaskNamespace16canCommunicationE,"aw",%nobits
+ 757              		.align	2
+ 758              		.set	.LANCHOR2,. + 0
+ 761              	_ZN5xiagb5upper16cliTaskNamespace16canCommunicationE:
+ 762 0000 00000000 		.space	4
+ 763              		.section	.bss._ZN5xiagb5upper16cliTaskNamespace17salveCommandQueueE,"aw",%nobits
+ 764              		.align	2
+ 765              		.set	.LANCHOR4,. + 0
+ 768              	_ZN5xiagb5upper16cliTaskNamespace17salveCommandQueueE:
+ 769 0000 00000000 		.space	4
+ 770              		.section	.bss._ZN5xiagb5upper16cliTaskNamespace17uartCommunicationE,"aw",%nobits
+ 771              		.align	2
+ 772              		.set	.LANCHOR1,. + 0
+ 775              	_ZN5xiagb5upper16cliTaskNamespace17uartCommunicationE:
+ 776 0000 00000000 		.space	4
+ 777              		.section	.bss._ZN5xiagb5upper16cliTaskNamespace18masterCommandQueueE,"aw",%nobits
+ 778              		.align	2
+ 779              		.set	.LANCHOR3,. + 0
+ 782              	_ZN5xiagb5upper16cliTaskNamespace18masterCommandQueueE:
+ 783 0000 00000000 		.space	4
+ 784              		.section	.rodata._ZN5xiagb5upper16cliTaskNamespaceL17cliTaskAttributesE,"a"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 19
+
+
+ 785              		.align	2
+ 786              		.set	.LANCHOR5,. + 0
+ 789              	_ZN5xiagb5upper16cliTaskNamespaceL17cliTaskAttributesE:
+ 790 0000 00000000 		.word	.LC0
+ 791 0004 00000000 		.space	16
+ 791      00000000 
+ 791      00000000 
+ 791      00000000 
+ 792 0014 00020000 		.word	512
+ 793 0018 18000000 		.word	24
+ 794 001c 00000000 		.space	8
+ 794      00000000 
+ 795              		.text
+ 796              	.Letext0:
+ 797              		.file 4 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\machine\\
+ 798              		.file 5 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_std
+ 799              		.file 6 "Drivers/CMSIS/Include/core_cm3.h"
+ 800              		.file 7 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 801              		.file 8 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 802              		.file 9 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 803              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 804              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 805              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h"
+ 806              		.file 13 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 807              		.file 14 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 808              		.file 15 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h"
+ 809              		.file 16 "xiagb/bottom/cli.hpp"
+ 810              		.file 17 "xiagb/upper/cliTask.hpp"
+ 811              		.file 18 "xiagb/upper/machineTask.hpp"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 20
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 cliTask.cpp
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:16     .text._ZN5xiagb5upper16cliTaskNamespace25getMasterCommandAndputCliEPvS2_:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:24     .text._ZN5xiagb5upper16cliTaskNamespace25getMasterCommandAndputCliEPvS2_:00000000 _ZN5xiagb5upper16cliTaskNamespace25getMasterCommandAndputCliEPvS2_
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:139    .text._ZN5xiagb5upper16cliTaskNamespace25getMasterCommandAndputCliEPvS2_:00000068 $d
+.ARM.exidx.text._ZN5xiagb5upper16cliTaskNamespace25getMasterCommandAndputCliEPvS2_:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:145    .text._ZN5xiagb5upper16cliTaskNamespace24getSalveCommandAndputCliEPvPS2_:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:152    .text._ZN5xiagb5upper16cliTaskNamespace24getSalveCommandAndputCliEPvPS2_:00000000 _ZN5xiagb5upper16cliTaskNamespace24getSalveCommandAndputCliEPvPS2_
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:276    .text._ZN5xiagb5upper16cliTaskNamespace24getSalveCommandAndputCliEPvPS2_:00000084 $d
+.ARM.exidx.text._ZN5xiagb5upper16cliTaskNamespace24getSalveCommandAndputCliEPvPS2_:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:282    .text._ZN5xiagb5upper16cliTaskNamespace7cliTaskEPv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:289    .text._ZN5xiagb5upper16cliTaskNamespace7cliTaskEPv:00000000 _ZN5xiagb5upper16cliTaskNamespace7cliTaskEPv
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:517    .text._ZN5xiagb5upper16cliTaskNamespace7cliTaskEPv:000000e4 $d
+.ARM.extab.text._ZN5xiagb5upper16cliTaskNamespace7cliTaskEPv:00000000 $d
+.ARM.exidx.text._ZN5xiagb5upper16cliTaskNamespace7cliTaskEPv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:572    .text.uart1IrqCallback:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:579    .text.uart1IrqCallback:00000000 uart1IrqCallback
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:603    .text.uart1IrqCallback:0000000c $d
+ .ARM.extab.text.uart1IrqCallback:00000000 $d
+ .ARM.exidx.text.uart1IrqCallback:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:609    .text.HAL_UART_RxCpltCallback:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:616    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:654    .text.HAL_UART_RxCpltCallback:00000014 $d
+.ARM.extab.text.HAL_UART_RxCpltCallback:00000000 $d
+.ARM.exidx.text.HAL_UART_RxCpltCallback:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:661    .text.HAL_CAN_RxFifo0MsgPendingCallback:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:668    .text.HAL_CAN_RxFifo0MsgPendingCallback:00000000 HAL_CAN_RxFifo0MsgPendingCallback
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:696    .text.HAL_CAN_RxFifo0MsgPendingCallback:0000000c $d
+.ARM.extab.text.HAL_CAN_RxFifo0MsgPendingCallback:00000000 $d
+.ARM.exidx.text.HAL_CAN_RxFifo0MsgPendingCallback:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:702    .text._ZN5xiagb5upper16cliTaskNamespace12cliTaskStartEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:709    .text._ZN5xiagb5upper16cliTaskNamespace12cliTaskStartEv:00000000 _ZN5xiagb5upper16cliTaskNamespace12cliTaskStartEv
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:734    .text._ZN5xiagb5upper16cliTaskNamespace12cliTaskStartEv:00000010 $d
+.ARM.extab.text._ZN5xiagb5upper16cliTaskNamespace12cliTaskStartEv:00000000 $d
+.ARM.exidx.text._ZN5xiagb5upper16cliTaskNamespace12cliTaskStartEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:768    .bss._ZN5xiagb5upper16cliTaskNamespace17salveCommandQueueE:00000000 _ZN5xiagb5upper16cliTaskNamespace17salveCommandQueueE
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:782    .bss._ZN5xiagb5upper16cliTaskNamespace18masterCommandQueueE:00000000 _ZN5xiagb5upper16cliTaskNamespace18masterCommandQueueE
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:743    .rodata.str1.4:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:775    .bss._ZN5xiagb5upper16cliTaskNamespace17uartCommunicationE:00000000 _ZN5xiagb5upper16cliTaskNamespace17uartCommunicationE
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:754    .bss._ZN5xiagb5upper16cliTaskNamespace13commandParserE:00000000 _ZN5xiagb5upper16cliTaskNamespace13commandParserE
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:761    .bss._ZN5xiagb5upper16cliTaskNamespace16canCommunicationE:00000000 _ZN5xiagb5upper16cliTaskNamespace16canCommunicationE
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:750    .bss._ZN5xiagb5upper16cliTaskNamespace13commandParserE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:757    .bss._ZN5xiagb5upper16cliTaskNamespace16canCommunicationE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:764    .bss._ZN5xiagb5upper16cliTaskNamespace17salveCommandQueueE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:771    .bss._ZN5xiagb5upper16cliTaskNamespace17uartCommunicationE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:778    .bss._ZN5xiagb5upper16cliTaskNamespace18masterCommandQueueE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:785    .rodata._ZN5xiagb5upper16cliTaskNamespaceL17cliTaskAttributesE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s:789    .rodata._ZN5xiagb5upper16cliTaskNamespaceL17cliTaskAttributesE:00000000 _ZN5xiagb5upper16cliTaskNamespaceL17cliTaskAttributesE
+
+UNDEFINED SYMBOLS
+osMessageQueueGet
+osMessageQueuePut
+_ZN5xiagb15parserNamespace12cliNamespace8cliClass15receiveQueueStrEPv
+__aeabi_unwind_cpp_pr0
+_Znwj
+_ZN5xiagb22communicationNamespace13uartNamespace9uartClassC1Ev
+_ZN5xiagb22communicationNamespace13uartNamespace9uartClass4initEP13USART_TypeDefmP20__UART_HandleTypeDefP19__DMA_HandleTypeDefS8_
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccNGWwJP.s 			page 21
+
+
+_ZN5xiagb22communicationNamespace12canNamespace8canClassC1Ev
+_ZN5xiagb22communicationNamespace12canNamespace8canClass4initEP11CAN_TypeDefhP19__CAN_HandleTypeDef
+_ZN5xiagb15parserNamespace12cliNamespace8cliClassC1Ev
+_ZN5xiagb15parserNamespace12cliNamespace8cliClass4initEPNS_22communicationNamespace13uartNamespace9uartClassE
+_ZN5xiagb5upper20machineTaskNamespace16machineTaskStartEv
+osMessageQueueNew
+osDelay
+_ZN5xiagb15parserNamespace12cliNamespace8cliClass4loopEv
+_ZdlPvj
+__cxa_end_cleanup
+hdma_usart1_tx
+hdma_usart1_rx
+huart1
+hcan
+__gxx_personality_v0
+_ZN5xiagb22communicationNamespace13uartNamespace9uartClass12idleCallbackEv
+__aeabi_unwind_cpp_pr1
+_ZN5xiagb22communicationNamespace13uartNamespace9uartClass18rxCompleteCallbackEv
+_ZN5xiagb22communicationNamespace12canNamespace8canClass15receiveCallbackEv
+osThreadNew

@@ -1,0 +1,240 @@
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"led.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC2Ev,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC2Ev
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC2Ev:
+  25              		.fnstart
+  26              	.LVL0:
+  27              	.LFB66:
+  28              		.file 1 "xiagb/bottom/led.cpp"
+   1:xiagb/bottom/led.cpp **** #include "led.hpp"
+   2:xiagb/bottom/led.cpp **** 
+   3:xiagb/bottom/led.cpp **** namespace xiagb
+   4:xiagb/bottom/led.cpp **** {
+   5:xiagb/bottom/led.cpp ****     namespace pilotLampNamespace
+   6:xiagb/bottom/led.cpp ****     {
+   7:xiagb/bottom/led.cpp ****         namespace ledNamespace
+   8:xiagb/bottom/led.cpp ****         {
+   9:xiagb/bottom/led.cpp ****             ledClass::ledClass()
+  29              		.loc 1 9 13 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  10:xiagb/bottom/led.cpp ****             {
+  11:xiagb/bottom/led.cpp ****             }
+  34              		.loc 1 11 13 is_stmt 0 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE66:
+  38              		.cantunwind
+  39              		.fnend
+  41              		.global	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC1Ev
+  42              		.thumb_set _ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC1Ev,_ZN5xiagb18pilotLampNamespace1
+  43              		.section	.text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassD2Ev,"ax",%progbits
+  44              		.align	1
+  45              		.global	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassD2Ev
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s 			page 2
+
+
+  49              		.fpu softvfp
+  51              	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassD2Ev:
+  52              		.fnstart
+  53              	.LVL1:
+  54              	.LFB69:
+  12:xiagb/bottom/led.cpp **** 
+  13:xiagb/bottom/led.cpp ****             ledClass::~ledClass()
+  55              		.loc 1 13 13 is_stmt 1 view -0
+  56              		.cfi_startproc
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59              		@ link register save eliminated.
+  14:xiagb/bottom/led.cpp ****             {
+  15:xiagb/bottom/led.cpp ****             }
+  60              		.loc 1 15 13 is_stmt 0 view .LVU3
+  61 0000 7047     		bx	lr
+  62              		.cfi_endproc
+  63              	.LFE69:
+  64              		.cantunwind
+  65              		.fnend
+  67              		.global	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassD1Ev
+  68              		.thumb_set _ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassD1Ev,_ZN5xiagb18pilotLampNamespace1
+  69              		.section	.text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass4initEP12GPIO_TypeDeftbb,"ax",%
+  70              		.align	1
+  71              		.global	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass4initEP12GPIO_TypeDeftbb
+  72              		.syntax unified
+  73              		.thumb
+  74              		.thumb_func
+  75              		.fpu softvfp
+  77              	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass4initEP12GPIO_TypeDeftbb:
+  78              		.fnstart
+  79              	.LVL2:
+  80              	.LFB71:
+  16:xiagb/bottom/led.cpp **** 
+  17:xiagb/bottom/led.cpp ****             void ledClass::init(GPIO_TypeDef *gpioGroupHandle, uint16_t gpioPin, bool lightLv, bool
+  18:xiagb/bottom/led.cpp ****             {
+  81              		.loc 1 18 13 is_stmt 1 view -0
+  82              		.cfi_startproc
+  83              		@ args = 4, pretend = 0, frame = 0
+  84              		@ frame_needed = 0, uses_anonymous_args = 0
+  85              		.loc 1 18 13 is_stmt 0 view .LVU5
+  86 0000 10B5     		push	{r4, lr}
+  87              		.save {r4, lr}
+  88              	.LCFI0:
+  89              		.cfi_def_cfa_offset 8
+  90              		.cfi_offset 4, -8
+  91              		.cfi_offset 14, -4
+  92 0002 0446     		mov	r4, r0
+  93 0004 0846     		mov	r0, r1
+  94              	.LVL3:
+  95              		.loc 1 18 13 view .LVU6
+  96 0006 1146     		mov	r1, r2
+  97              	.LVL4:
+  98              		.loc 1 18 13 view .LVU7
+  99 0008 9DF80820 		ldrb	r2, [sp, #8]	@ zero_extendqisi2
+ 100              	.LVL5:
+  19:xiagb/bottom/led.cpp ****                 this->gpioGroupHandle = gpioGroupHandle;
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s 			page 3
+
+
+ 101              		.loc 1 19 17 is_stmt 1 view .LVU8
+ 102              		.loc 1 19 39 is_stmt 0 view .LVU9
+ 103 000c 2060     		str	r0, [r4]
+  20:xiagb/bottom/led.cpp ****                 this->gpioPin = gpioPin;
+ 104              		.loc 1 20 17 is_stmt 1 view .LVU10
+ 105              		.loc 1 20 31 is_stmt 0 view .LVU11
+ 106 000e A180     		strh	r1, [r4, #4]	@ movhi
+  21:xiagb/bottom/led.cpp ****                 this->lightLv = lightLv;
+ 107              		.loc 1 21 17 is_stmt 1 view .LVU12
+ 108              		.loc 1 21 31 is_stmt 0 view .LVU13
+ 109 0010 A371     		strb	r3, [r4, #6]
+  22:xiagb/bottom/led.cpp ****                 this->defaultState = defaultState;
+ 110              		.loc 1 22 17 is_stmt 1 view .LVU14
+ 111              		.loc 1 22 36 is_stmt 0 view .LVU15
+ 112 0012 E271     		strb	r2, [r4, #7]
+  23:xiagb/bottom/led.cpp **** 
+  24:xiagb/bottom/led.cpp ****                 HAL_GPIO_WritePin(this->gpioGroupHandle, this->gpioPin, GPIO_PinState(defaultState 
+ 113              		.loc 1 24 17 is_stmt 1 view .LVU16
+ 114              		.loc 1 24 34 is_stmt 0 view .LVU17
+ 115 0014 1AB1     		cbz	r2, .L4
+ 116              		.loc 1 24 34 discriminator 1 view .LVU18
+ 117 0016 1A46     		mov	r2, r3
+ 118              	.L5:
+ 119              		.loc 1 24 34 discriminator 4 view .LVU19
+ 120 0018 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 121              	.LVL6:
+  25:xiagb/bottom/led.cpp ****             }
+ 122              		.loc 1 25 13 discriminator 4 view .LVU20
+ 123 001c 10BD     		pop	{r4, pc}
+ 124              	.LVL7:
+ 125              	.L4:
+  24:xiagb/bottom/led.cpp ****             }
+ 126              		.loc 1 24 112 discriminator 2 view .LVU21
+ 127 001e 83F00102 		eor	r2, r3, #1
+ 128 0022 F9E7     		b	.L5
+ 129              		.cfi_endproc
+ 130              	.LFE71:
+ 131              		.fnend
+ 133              		.section	.text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass6toggleEv,"ax",%progbits
+ 134              		.align	1
+ 135              		.global	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass6toggleEv
+ 136              		.syntax unified
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.fpu softvfp
+ 141              	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass6toggleEv:
+ 142              		.fnstart
+ 143              	.LVL8:
+ 144              	.LFB72:
+  26:xiagb/bottom/led.cpp **** 
+  27:xiagb/bottom/led.cpp ****             void ledClass::toggle()
+  28:xiagb/bottom/led.cpp ****             {
+ 145              		.loc 1 28 13 is_stmt 1 view -0
+ 146              		.cfi_startproc
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149              		.loc 1 28 13 is_stmt 0 view .LVU23
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s 			page 4
+
+
+ 150 0000 08B5     		push	{r3, lr}
+ 151              		.save {r3, lr}
+ 152              	.LCFI1:
+ 153              		.cfi_def_cfa_offset 8
+ 154              		.cfi_offset 3, -8
+ 155              		.cfi_offset 14, -4
+  29:xiagb/bottom/led.cpp ****                 HAL_GPIO_TogglePin(this->gpioGroupHandle, this->gpioPin);
+ 156              		.loc 1 29 17 is_stmt 1 view .LVU24
+ 157              		.loc 1 29 35 is_stmt 0 view .LVU25
+ 158 0002 8188     		ldrh	r1, [r0, #4]
+ 159 0004 0068     		ldr	r0, [r0]
+ 160              	.LVL9:
+ 161              		.loc 1 29 35 view .LVU26
+ 162 0006 FFF7FEFF 		bl	HAL_GPIO_TogglePin
+ 163              	.LVL10:
+  30:xiagb/bottom/led.cpp ****             }
+ 164              		.loc 1 30 13 view .LVU27
+ 165 000a 08BD     		pop	{r3, pc}
+ 166              		.cfi_endproc
+ 167              	.LFE72:
+ 168              		.fnend
+ 170              		.text
+ 171              	.Letext0:
+ 172              		.file 2 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\machine\\
+ 173              		.file 3 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_std
+ 174              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+ 175              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 176              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 177              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 178              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 179              		.file 9 "xiagb/bottom/led.hpp"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 led.cpp
+C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s:16     .text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s:24     .text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC2Ev:00000000 _ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC2Ev
+.ARM.exidx.text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s:24     .text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC2Ev:00000000 _ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC1Ev
+C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s:44     .text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassD2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s:51     .text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassD2Ev:00000000 _ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassD2Ev
+.ARM.exidx.text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassD2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s:51     .text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassD2Ev:00000000 _ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassD1Ev
+C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s:70     .text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass4initEP12GPIO_TypeDeftbb:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s:77     .text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass4initEP12GPIO_TypeDeftbb:00000000 _ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass4initEP12GPIO_TypeDeftbb
+.ARM.exidx.text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass4initEP12GPIO_TypeDeftbb:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s:134    .text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass6toggleEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\cc59Gcyr.s:141    .text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass6toggleEv:00000000 _ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass6toggleEv
+.ARM.extab.text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass6toggleEv:00000000 $d
+.ARM.exidx.text._ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass6toggleEv:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+__aeabi_unwind_cpp_pr0
+HAL_GPIO_TogglePin
+__aeabi_unwind_cpp_pr1

@@ -1,0 +1,131 @@
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\cc7E5H0p.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"platform.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._Znwj,"ax",%progbits
+  16              		.align	1
+  17              		.global	_Znwj
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	_Znwj:
+  25              		.fnstart
+  26              	.LVL0:
+  27              	.LFB65:
+  28              		.file 1 "xiagb/bottom/platform.cpp"
+   1:xiagb/bottom/platform.cpp **** #include "main.h"
+   2:xiagb/bottom/platform.cpp **** 
+   3:xiagb/bottom/platform.cpp **** //函数声明
+   4:xiagb/bottom/platform.cpp **** extern "C"
+   5:xiagb/bottom/platform.cpp **** {
+   6:xiagb/bottom/platform.cpp ****     extern void *pvPortMalloc(size_t xWantedSize);
+   7:xiagb/bottom/platform.cpp ****     extern void vPortFree(void *pv);
+   8:xiagb/bottom/platform.cpp **** }
+   9:xiagb/bottom/platform.cpp **** 
+  10:xiagb/bottom/platform.cpp **** //只要这个文件被编译进去，这些东西就能起效
+  11:xiagb/bottom/platform.cpp **** //重载new
+  12:xiagb/bottom/platform.cpp **** void *operator new(size_t size)
+  13:xiagb/bottom/platform.cpp **** {
+  29              		.loc 1 13 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 13 1 is_stmt 0 view .LVU1
+  34 0000 08B5     		push	{r3, lr}
+  35              		.save {r3, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 3, -8
+  39              		.cfi_offset 14, -4
+  14:xiagb/bottom/platform.cpp ****     return pvPortMalloc(size);
+  40              		.loc 1 14 5 is_stmt 1 view .LVU2
+  41              		.loc 1 14 24 is_stmt 0 view .LVU3
+  42 0002 FFF7FEFF 		bl	pvPortMalloc
+  43              	.LVL1:
+  15:xiagb/bottom/platform.cpp **** }
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\cc7E5H0p.s 			page 2
+
+
+  44              		.loc 1 15 1 view .LVU4
+  45 0006 08BD     		pop	{r3, pc}
+  46              		.cfi_endproc
+  47              	.LFE65:
+  48              		.fnend
+  50              		.section	.text._ZdlPv,"ax",%progbits
+  51              		.align	1
+  52              		.global	_ZdlPv
+  53              		.syntax unified
+  54              		.thumb
+  55              		.thumb_func
+  56              		.fpu softvfp
+  58              	_ZdlPv:
+  59              		.fnstart
+  60              	.LVL2:
+  61              	.LFB66:
+  16:xiagb/bottom/platform.cpp **** 
+  17:xiagb/bottom/platform.cpp **** //重载delete
+  18:xiagb/bottom/platform.cpp **** void operator delete(void *pointer)
+  19:xiagb/bottom/platform.cpp **** {
+  62              		.loc 1 19 1 is_stmt 1 view -0
+  63              		.cfi_startproc
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		.loc 1 19 1 is_stmt 0 view .LVU6
+  67 0000 08B5     		push	{r3, lr}
+  68              		.save {r3, lr}
+  69              	.LCFI1:
+  70              		.cfi_def_cfa_offset 8
+  71              		.cfi_offset 3, -8
+  72              		.cfi_offset 14, -4
+  20:xiagb/bottom/platform.cpp ****     vPortFree(pointer);
+  73              		.loc 1 20 5 is_stmt 1 view .LVU7
+  74              		.loc 1 20 14 is_stmt 0 view .LVU8
+  75 0002 FFF7FEFF 		bl	vPortFree
+  76              	.LVL3:
+  21:xiagb/bottom/platform.cpp **** }...
+  77              		.loc 1 21 1 view .LVU9
+  78 0006 08BD     		pop	{r3, pc}
+  79              		.cfi_endproc
+  80              	.LFE66:
+  81              		.fnend
+  83              		.text
+  84              	.Letext0:
+  85              		.file 2 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\machine\\
+  86              		.file 3 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_std
+  87              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+  88              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+  89              		.file 6 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\lib\\gcc\\arm-none-eabi\\9.3.1\\i
+  90              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\cc7E5H0p.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 platform.cpp
+C:\Users\XieFang\AppData\Local\Temp\cc7E5H0p.s:16     .text._Znwj:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\cc7E5H0p.s:24     .text._Znwj:00000000 _Znwj
+            .ARM.extab.text._Znwj:00000000 $d
+            .ARM.exidx.text._Znwj:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\cc7E5H0p.s:51     .text._ZdlPv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\cc7E5H0p.s:58     .text._ZdlPv:00000000 _ZdlPv
+           .ARM.extab.text._ZdlPv:00000000 $d
+           .ARM.exidx.text._ZdlPv:00000000 $d
+
+UNDEFINED SYMBOLS
+pvPortMalloc
+__aeabi_unwind_cpp_pr1
+vPortFree

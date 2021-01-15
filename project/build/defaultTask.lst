@@ -1,0 +1,378 @@
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"defaultTask.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._ZN20defaultTaskNamespace11defaultTaskEPv,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN20defaultTaskNamespace11defaultTaskEPv
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	_ZN20defaultTaskNamespace11defaultTaskEPv:
+  25              		.fnstart
+  26              	.LVL0:
+  27              	.LFB73:
+  28              		.file 1 "xiagb/upper/defaultTask.cpp"
+   1:xiagb/upper/defaultTask.cpp **** #include "main.h"
+   2:xiagb/upper/defaultTask.cpp **** #include "cmsis_os2.h"
+   3:xiagb/upper/defaultTask.cpp **** 
+   4:xiagb/upper/defaultTask.cpp **** #include "led.hpp"
+   5:xiagb/upper/defaultTask.cpp **** 
+   6:xiagb/upper/defaultTask.cpp **** #include "cliTask.hpp"
+   7:xiagb/upper/defaultTask.cpp **** 
+   8:xiagb/upper/defaultTask.cpp **** namespace defaultTaskNamespace
+   9:xiagb/upper/defaultTask.cpp **** {
+  10:xiagb/upper/defaultTask.cpp ****     using xiagb::pilotLampNamespace::ledNamespace::ledClass;
+  11:xiagb/upper/defaultTask.cpp ****     using xiagb::upper::cliTaskNamespace::cliTaskStart;
+  12:xiagb/upper/defaultTask.cpp **** 
+  13:xiagb/upper/defaultTask.cpp ****     //变量定义
+  14:xiagb/upper/defaultTask.cpp ****     const osThreadAttr_t defaultTaskAttributes = {.name = "defaultTask", .stack_size = 128 * 4, .pr
+  15:xiagb/upper/defaultTask.cpp ****     osTimerId_t systemPilotLampTimerHandle; //软件定时器句柄
+  16:xiagb/upper/defaultTask.cpp ****     ledClass *systemPilotLampHandle; //指示灯句柄
+  17:xiagb/upper/defaultTask.cpp **** 
+  18:xiagb/upper/defaultTask.cpp ****     //函数声明
+  19:xiagb/upper/defaultTask.cpp ****     void systemPilotLampTimerCallback(void *arg);
+  20:xiagb/upper/defaultTask.cpp **** 
+  21:xiagb/upper/defaultTask.cpp ****     //默认任务
+  22:xiagb/upper/defaultTask.cpp ****     void defaultTask(void *arg)
+  23:xiagb/upper/defaultTask.cpp ****     {
+  29              		.loc 1 23 5 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 23 5 is_stmt 0 view .LVU1
+  34 0000 30B5     		push	{r4, r5, lr}
+  35              		.save {r4, r5, lr}
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s 			page 2
+
+
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 12
+  38              		.cfi_offset 4, -12
+  39              		.cfi_offset 5, -8
+  40              		.cfi_offset 14, -4
+  41              		.pad #12
+  42 0002 83B0     		sub	sp, sp, #12
+  43              	.LCFI1:
+  44              		.cfi_def_cfa_offset 24
+  24:xiagb/upper/defaultTask.cpp ****         /*led begin*/
+  25:xiagb/upper/defaultTask.cpp ****         systemPilotLampHandle = new ledClass;
+  45              		.loc 1 25 9 is_stmt 1 view .LVU2
+  46              		.loc 1 25 37 is_stmt 0 view .LVU3
+  47 0004 0820     		movs	r0, #8
+  48              	.LVL1:
+  49              	.LEHB0:
+  50              		.loc 1 25 37 view .LVU4
+  51 0006 FFF7FEFF 		bl	_Znwj
+  52              	.LVL2:
+  53              	.LEHE0:
+  54 000a 0446     		mov	r4, r0
+  55              	.LEHB1:
+  56 000c FFF7FEFF 		bl	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC1Ev
+  57              	.LVL3:
+  58              	.LEHE1:
+  59              		.loc 1 25 31 discriminator 2 view .LVU5
+  60 0010 104B     		ldr	r3, .L5
+  61 0012 1C60     		str	r4, [r3]
+  26:xiagb/upper/defaultTask.cpp ****         systemPilotLampHandle->init(GPIOC, GPIO_PIN_13, 0);
+  62              		.loc 1 26 9 is_stmt 1 discriminator 2 view .LVU6
+  63              		.loc 1 26 36 is_stmt 0 discriminator 2 view .LVU7
+  64 0014 0025     		movs	r5, #0
+  65 0016 0095     		str	r5, [sp]
+  66 0018 2B46     		mov	r3, r5
+  67 001a 4FF40052 		mov	r2, #8192
+  68 001e 0E49     		ldr	r1, .L5+4
+  69 0020 2046     		mov	r0, r4
+  70              	.LEHB2:
+  71 0022 FFF7FEFF 		bl	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass4initEP12GPIO_TypeDeftbb
+  72              	.LVL4:
+  27:xiagb/upper/defaultTask.cpp **** 
+  28:xiagb/upper/defaultTask.cpp ****         //led的rtos软定时器
+  29:xiagb/upper/defaultTask.cpp ****         systemPilotLampTimerHandle = osTimerNew(systemPilotLampTimerCallback, osTimerPeriodic, null
+  73              		.loc 1 29 9 is_stmt 1 discriminator 2 view .LVU8
+  74              		.loc 1 29 48 is_stmt 0 discriminator 2 view .LVU9
+  75 0026 2B46     		mov	r3, r5
+  76 0028 2A46     		mov	r2, r5
+  77 002a 0121     		movs	r1, #1
+  78 002c 0B48     		ldr	r0, .L5+8
+  79 002e FFF7FEFF 		bl	osTimerNew
+  80              	.LVL5:
+  81              		.loc 1 29 36 discriminator 2 view .LVU10
+  82 0032 0B4B     		ldr	r3, .L5+12
+  83 0034 1860     		str	r0, [r3]
+  30:xiagb/upper/defaultTask.cpp ****         osTimerStart(systemPilotLampTimerHandle, 1000); //每1000tick调用一次
+  84              		.loc 1 30 9 is_stmt 1 discriminator 2 view .LVU11
+  85              		.loc 1 30 21 is_stmt 0 discriminator 2 view .LVU12
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s 			page 3
+
+
+  86 0036 4FF47A71 		mov	r1, #1000
+  87 003a FFF7FEFF 		bl	osTimerStart
+  88              	.LVL6:
+  31:xiagb/upper/defaultTask.cpp ****         /*led end*/
+  32:xiagb/upper/defaultTask.cpp **** 
+  33:xiagb/upper/defaultTask.cpp ****         /*other task begin*/
+  34:xiagb/upper/defaultTask.cpp ****         cliTaskStart();
+  89              		.loc 1 34 9 is_stmt 1 discriminator 2 view .LVU13
+  90              		.loc 1 34 21 is_stmt 0 discriminator 2 view .LVU14
+  91 003e FFF7FEFF 		bl	_ZN5xiagb5upper16cliTaskNamespace12cliTaskStartEv
+  92              	.LVL7:
+  35:xiagb/upper/defaultTask.cpp ****         /*other task end*/
+  36:xiagb/upper/defaultTask.cpp **** 
+  37:xiagb/upper/defaultTask.cpp ****         osThreadExit(); //结束该线程
+  93              		.loc 1 37 9 is_stmt 1 discriminator 2 view .LVU15
+  94              		.loc 1 37 21 is_stmt 0 discriminator 2 view .LVU16
+  95 0042 FFF7FEFF 		bl	osThreadExit
+  96              	.LVL8:
+  97              	.L3:
+  25:xiagb/upper/defaultTask.cpp ****         systemPilotLampHandle->init(GPIOC, GPIO_PIN_13, 0);
+  98              		.loc 1 25 37 view .LVU17
+  99 0046 0821     		movs	r1, #8
+ 100 0048 2046     		mov	r0, r4
+ 101 004a FFF7FEFF 		bl	_ZdlPvj
+ 102              	.LVL9:
+ 103 004e FFF7FEFF 		bl	__cxa_end_cleanup
+ 104              	.LVL10:
+ 105              	.LEHE2:
+ 106              	.L6:
+ 107 0052 00BF     		.align	2
+ 108              	.L5:
+ 109 0054 00000000 		.word	.LANCHOR0
+ 110 0058 00100140 		.word	1073811456
+ 111 005c 00000000 		.word	_ZN20defaultTaskNamespace28systemPilotLampTimerCallbackEPv
+ 112 0060 00000000 		.word	.LANCHOR1
+ 113              		.cfi_endproc
+ 114              	.LFE73:
+ 115              		.global	__gxx_personality_v0
+ 116              		.personality	__gxx_personality_v0
+ 117              		.handlerdata
+ 118              	.LLSDA73:
+ 119 0008 FF       		.byte	0xff
+ 120 0009 FF       		.byte	0xff
+ 121 000a 01       		.byte	0x1
+ 122 000b 0C       		.uleb128 .LLSDACSE73-.LLSDACSB73
+ 123              	.LLSDACSB73:
+ 124 000c 06       		.uleb128 .LEHB0-.LFB73
+ 125 000d 04       		.uleb128 .LEHE0-.LEHB0
+ 126 000e 00       		.uleb128 0
+ 127 000f 00       		.uleb128 0
+ 128 0010 0C       		.uleb128 .LEHB1-.LFB73
+ 129 0011 04       		.uleb128 .LEHE1-.LEHB1
+ 130 0012 46       		.uleb128 .L3-.LFB73
+ 131 0013 00       		.uleb128 0
+ 132 0014 22       		.uleb128 .LEHB2-.LFB73
+ 133 0015 30       		.uleb128 .LEHE2-.LEHB2
+ 134 0016 00       		.uleb128 0
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s 			page 4
+
+
+ 135 0017 00       		.uleb128 0
+ 136              	.LLSDACSE73:
+ 137              		.section	.text._ZN20defaultTaskNamespace11defaultTaskEPv
+ 138              		.fnend
+ 140              		.section	.text._ZN20defaultTaskNamespace28systemPilotLampTimerCallbackEPv,"ax",%progbits
+ 141              		.align	1
+ 142              		.global	_ZN20defaultTaskNamespace28systemPilotLampTimerCallbackEPv
+ 143              		.syntax unified
+ 144              		.thumb
+ 145              		.thumb_func
+ 146              		.fpu softvfp
+ 148              	_ZN20defaultTaskNamespace28systemPilotLampTimerCallbackEPv:
+ 149              		.fnstart
+ 150              	.LVL11:
+ 151              	.LFB75:
+  38:xiagb/upper/defaultTask.cpp ****     }
+  39:xiagb/upper/defaultTask.cpp **** 
+  40:xiagb/upper/defaultTask.cpp ****     //启动默认任务
+  41:xiagb/upper/defaultTask.cpp ****     extern "C" void defaultTaskStart()
+  42:xiagb/upper/defaultTask.cpp ****     {
+  43:xiagb/upper/defaultTask.cpp ****         osThreadNew(defaultTask, nullptr, &defaultTaskAttributes);
+  44:xiagb/upper/defaultTask.cpp ****     }
+  45:xiagb/upper/defaultTask.cpp **** 
+  46:xiagb/upper/defaultTask.cpp ****     //led的回调函数
+  47:xiagb/upper/defaultTask.cpp ****     void systemPilotLampTimerCallback(void *arg)
+  48:xiagb/upper/defaultTask.cpp ****     {
+ 152              		.loc 1 48 5 is_stmt 1 view -0
+ 153              		.cfi_startproc
+ 154              		@ args = 0, pretend = 0, frame = 0
+ 155              		@ frame_needed = 0, uses_anonymous_args = 0
+ 156              		.loc 1 48 5 is_stmt 0 view .LVU19
+ 157 0000 08B5     		push	{r3, lr}
+ 158              		.save {r3, lr}
+ 159              	.LCFI2:
+ 160              		.cfi_def_cfa_offset 8
+ 161              		.cfi_offset 3, -8
+ 162              		.cfi_offset 14, -4
+  49:xiagb/upper/defaultTask.cpp ****         systemPilotLampHandle->toggle();
+ 163              		.loc 1 49 9 is_stmt 1 view .LVU20
+ 164              		.loc 1 49 38 is_stmt 0 view .LVU21
+ 165 0002 024B     		ldr	r3, .L9
+ 166 0004 1868     		ldr	r0, [r3]
+ 167              	.LVL12:
+ 168              		.loc 1 49 38 view .LVU22
+ 169 0006 FFF7FEFF 		bl	_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass6toggleEv
+ 170              	.LVL13:
+  50:xiagb/upper/defaultTask.cpp ****     }
+ 171              		.loc 1 50 5 view .LVU23
+ 172 000a 08BD     		pop	{r3, pc}
+ 173              	.L10:
+ 174              		.align	2
+ 175              	.L9:
+ 176 000c 00000000 		.word	.LANCHOR0
+ 177              		.cfi_endproc
+ 178              	.LFE75:
+ 179              		.fnend
+ 181              		.section	.text.defaultTaskStart,"ax",%progbits
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s 			page 5
+
+
+ 182              		.align	1
+ 183              		.global	defaultTaskStart
+ 184              		.syntax unified
+ 185              		.thumb
+ 186              		.thumb_func
+ 187              		.fpu softvfp
+ 189              	defaultTaskStart:
+ 190              		.fnstart
+ 191              	.LFB74:
+  42:xiagb/upper/defaultTask.cpp ****         osThreadNew(defaultTask, nullptr, &defaultTaskAttributes);
+ 192              		.loc 1 42 5 is_stmt 1 view -0
+ 193              		.cfi_startproc
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196 0000 08B5     		push	{r3, lr}
+ 197              		.save {r3, lr}
+ 198              	.LCFI3:
+ 199              		.cfi_def_cfa_offset 8
+ 200              		.cfi_offset 3, -8
+ 201              		.cfi_offset 14, -4
+  43:xiagb/upper/defaultTask.cpp ****     }
+ 202              		.loc 1 43 9 view .LVU25
+  43:xiagb/upper/defaultTask.cpp ****     }
+ 203              		.loc 1 43 20 is_stmt 0 view .LVU26
+ 204 0002 034A     		ldr	r2, .L13
+ 205 0004 0021     		movs	r1, #0
+ 206 0006 0348     		ldr	r0, .L13+4
+ 207 0008 FFF7FEFF 		bl	osThreadNew
+ 208              	.LVL14:
+  44:xiagb/upper/defaultTask.cpp **** 
+ 209              		.loc 1 44 5 view .LVU27
+ 210 000c 08BD     		pop	{r3, pc}
+ 211              	.L14:
+ 212 000e 00BF     		.align	2
+ 213              	.L13:
+ 214 0010 00000000 		.word	.LANCHOR2
+ 215 0014 00000000 		.word	_ZN20defaultTaskNamespace11defaultTaskEPv
+ 216              		.cfi_endproc
+ 217              	.LFE74:
+ 218              		.fnend
+ 220              		.global	_ZN20defaultTaskNamespace21systemPilotLampHandleE
+ 221              		.global	_ZN20defaultTaskNamespace26systemPilotLampTimerHandleE
+ 222              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 223              		.align	2
+ 224              	.LC0:
+ 225 0000 64656661 		.ascii	"defaultTask\000"
+ 225      756C7454 
+ 225      61736B00 
+ 226              		.section	.bss._ZN20defaultTaskNamespace21systemPilotLampHandleE,"aw",%nobits
+ 227              		.align	2
+ 228              		.set	.LANCHOR0,. + 0
+ 231              	_ZN20defaultTaskNamespace21systemPilotLampHandleE:
+ 232 0000 00000000 		.space	4
+ 233              		.section	.bss._ZN20defaultTaskNamespace26systemPilotLampTimerHandleE,"aw",%nobits
+ 234              		.align	2
+ 235              		.set	.LANCHOR1,. + 0
+ 238              	_ZN20defaultTaskNamespace26systemPilotLampTimerHandleE:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s 			page 6
+
+
+ 239 0000 00000000 		.space	4
+ 240              		.section	.rodata._ZN20defaultTaskNamespaceL21defaultTaskAttributesE,"a"
+ 241              		.align	2
+ 242              		.set	.LANCHOR2,. + 0
+ 245              	_ZN20defaultTaskNamespaceL21defaultTaskAttributesE:
+ 246 0000 00000000 		.word	.LC0
+ 247 0004 00000000 		.space	16
+ 247      00000000 
+ 247      00000000 
+ 247      00000000 
+ 248 0014 00020000 		.word	512
+ 249 0018 18000000 		.word	24
+ 250 001c 00000000 		.space	8
+ 250      00000000 
+ 251              		.text
+ 252              	.Letext0:
+ 253              		.file 2 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\machine\\
+ 254              		.file 3 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_std
+ 255              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+ 256              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 257              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 258              		.file 7 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 259              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 260              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 261              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h"
+ 262              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 263              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 264              		.file 13 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h"
+ 265              		.file 14 "xiagb/bottom/led.hpp"
+ 266              		.file 15 "xiagb/bottom/uart.hpp"
+ 267              		.file 16 "xiagb/bottom/can.hpp"
+ 268              		.file 17 "xiagb/bottom/cli.hpp"
+ 269              		.file 18 "xiagb/upper/cliTask.hpp"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 defaultTask.cpp
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:16     .text._ZN20defaultTaskNamespace11defaultTaskEPv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:24     .text._ZN20defaultTaskNamespace11defaultTaskEPv:00000000 _ZN20defaultTaskNamespace11defaultTaskEPv
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:109    .text._ZN20defaultTaskNamespace11defaultTaskEPv:00000054 $d
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:148    .text._ZN20defaultTaskNamespace28systemPilotLampTimerCallbackEPv:00000000 _ZN20defaultTaskNamespace28systemPilotLampTimerCallbackEPv
+.ARM.extab.text._ZN20defaultTaskNamespace11defaultTaskEPv:00000000 $d
+.ARM.exidx.text._ZN20defaultTaskNamespace11defaultTaskEPv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:141    .text._ZN20defaultTaskNamespace28systemPilotLampTimerCallbackEPv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:176    .text._ZN20defaultTaskNamespace28systemPilotLampTimerCallbackEPv:0000000c $d
+.ARM.extab.text._ZN20defaultTaskNamespace28systemPilotLampTimerCallbackEPv:00000000 $d
+.ARM.exidx.text._ZN20defaultTaskNamespace28systemPilotLampTimerCallbackEPv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:182    .text.defaultTaskStart:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:189    .text.defaultTaskStart:00000000 defaultTaskStart
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:214    .text.defaultTaskStart:00000010 $d
+ .ARM.extab.text.defaultTaskStart:00000000 $d
+ .ARM.exidx.text.defaultTaskStart:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:231    .bss._ZN20defaultTaskNamespace21systemPilotLampHandleE:00000000 _ZN20defaultTaskNamespace21systemPilotLampHandleE
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:238    .bss._ZN20defaultTaskNamespace26systemPilotLampTimerHandleE:00000000 _ZN20defaultTaskNamespace26systemPilotLampTimerHandleE
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:223    .rodata.str1.4:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:227    .bss._ZN20defaultTaskNamespace21systemPilotLampHandleE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:234    .bss._ZN20defaultTaskNamespace26systemPilotLampTimerHandleE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:241    .rodata._ZN20defaultTaskNamespaceL21defaultTaskAttributesE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccYAlIC5.s:245    .rodata._ZN20defaultTaskNamespaceL21defaultTaskAttributesE:00000000 _ZN20defaultTaskNamespaceL21defaultTaskAttributesE
+
+UNDEFINED SYMBOLS
+_Znwj
+_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClassC1Ev
+_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass4initEP12GPIO_TypeDeftbb
+osTimerNew
+osTimerStart
+_ZN5xiagb5upper16cliTaskNamespace12cliTaskStartEv
+osThreadExit
+_ZdlPvj
+__cxa_end_cleanup
+__gxx_personality_v0
+_ZN5xiagb18pilotLampNamespace12ledNamespace8ledClass6toggleEv
+__aeabi_unwind_cpp_pr1
+osThreadNew

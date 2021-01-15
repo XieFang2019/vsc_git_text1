@@ -1,0 +1,2134 @@
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"ivesStepMotor.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassC2Ev,"ax",%pro
+  16              		.align	1
+  17              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassC2Ev
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassC2Ev:
+  25              		.fnstart
+  26              	.LVL0:
+  27              	.LFB295:
+  28              		.file 1 "xiagb/bottom/ivesStepMotor.cpp"
+   1:xiagb/bottom/ivesStepMotor.cpp **** #include "ivesStepMotor.hpp"
+   2:xiagb/bottom/ivesStepMotor.cpp **** #include <math.h>
+   3:xiagb/bottom/ivesStepMotor.cpp **** 
+   4:xiagb/bottom/ivesStepMotor.cpp **** namespace xiagb
+   5:xiagb/bottom/ivesStepMotor.cpp **** {
+   6:xiagb/bottom/ivesStepMotor.cpp ****     namespace motorNamespace
+   7:xiagb/bottom/ivesStepMotor.cpp ****     {
+   8:xiagb/bottom/ivesStepMotor.cpp ****         namespace ivesStepMotorNamespace
+   9:xiagb/bottom/ivesStepMotor.cpp ****         {
+  10:xiagb/bottom/ivesStepMotor.cpp ****             float const ivesStepMotorClass::pi = 3.1415926;
+  11:xiagb/bottom/ivesStepMotor.cpp ****             float *ivesStepMotorClass::curve_s_table;
+  12:xiagb/bottom/ivesStepMotor.cpp ****             bool ivesStepMotorClass::curve_s_data_build_flag;
+  13:xiagb/bottom/ivesStepMotor.cpp **** 
+  14:xiagb/bottom/ivesStepMotor.cpp ****             ivesStepMotorClass::ivesStepMotorClass()
+  29              		.loc 1 14 13 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  15:xiagb/bottom/ivesStepMotor.cpp ****             {
+  16:xiagb/bottom/ivesStepMotor.cpp ****             }
+  34              		.loc 1 16 13 is_stmt 0 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE295:
+  38              		.cantunwind
+  39              		.fnend
+  41              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassC1Ev
+  42              		.thumb_set _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassC1Ev,_ZN5xiagb14mo
+  43              		.section	.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassD2Ev,"ax",%pro
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 2
+
+
+  44              		.align	1
+  45              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassD2Ev
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  49              		.fpu softvfp
+  51              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassD2Ev:
+  52              		.fnstart
+  53              	.LVL1:
+  54              	.LFB298:
+  17:xiagb/bottom/ivesStepMotor.cpp **** 
+  18:xiagb/bottom/ivesStepMotor.cpp ****             ivesStepMotorClass::~ivesStepMotorClass()
+  55              		.loc 1 18 13 is_stmt 1 view -0
+  56              		.cfi_startproc
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59              		@ link register save eliminated.
+  19:xiagb/bottom/ivesStepMotor.cpp ****             {
+  20:xiagb/bottom/ivesStepMotor.cpp ****             }
+  60              		.loc 1 20 13 is_stmt 0 view .LVU3
+  61 0000 7047     		bx	lr
+  62              		.cfi_endproc
+  63              	.LFE298:
+  64              		.cantunwind
+  65              		.fnend
+  67              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassD1Ev
+  68              		.thumb_set _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassD1Ev,_ZN5xiagb14mo
+  69              		.global	__aeabi_i2d
+  70              		.global	__aeabi_dmul
+  71              		.global	__aeabi_dadd
+  72              		.global	__aeabi_ddiv
+  73              		.global	__aeabi_d2f
+  74              		.section	.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass12curve_s_init
+  75              		.align	1
+  76              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass12curve_s_initEv
+  77              		.syntax unified
+  78              		.thumb
+  79              		.thumb_func
+  80              		.fpu softvfp
+  82              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass12curve_s_initEv:
+  83              		.fnstart
+  84              	.LFB300:
+  21:xiagb/bottom/ivesStepMotor.cpp **** 
+  22:xiagb/bottom/ivesStepMotor.cpp ****             void ivesStepMotorClass::curve_s_init()
+  23:xiagb/bottom/ivesStepMotor.cpp ****             {
+  85              		.loc 1 23 13 is_stmt 1 view -0
+  86              		.cfi_startproc
+  87              		@ args = 0, pretend = 0, frame = 0
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89 0000 38B5     		push	{r3, r4, r5, lr}
+  90              		.save {r3, r4, r5, lr}
+  91              	.LCFI0:
+  92              		.cfi_def_cfa_offset 16
+  93              		.cfi_offset 3, -16
+  94              		.cfi_offset 4, -12
+  95              		.cfi_offset 5, -8
+  96              		.cfi_offset 14, -4
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 3
+
+
+  24:xiagb/bottom/ivesStepMotor.cpp ****                 curve_s_table = new float[curve_s_num];
+  97              		.loc 1 24 17 view .LVU5
+  98              		.loc 1 24 54 is_stmt 0 view .LVU6
+  99 0002 4FF44870 		mov	r0, #800
+ 100 0006 FFF7FEFF 		bl	_Znaj
+ 101              	.LVL2:
+ 102              		.loc 1 24 31 view .LVU7
+ 103 000a 174B     		ldr	r3, .L7+8
+ 104 000c 1860     		str	r0, [r3]
+  25:xiagb/bottom/ivesStepMotor.cpp **** 
+  26:xiagb/bottom/ivesStepMotor.cpp ****                 for (uint16_t x = 0; x < curve_s_num; x++)
+ 105              		.loc 1 26 17 is_stmt 1 view .LVU8
+ 106              	.LVL3:
+ 107              	.LBB10:
+ 108              		.loc 1 26 31 is_stmt 0 view .LVU9
+ 109 000e 0024     		movs	r4, #0
+ 110              	.LVL4:
+ 111              	.L5:
+ 112              		.loc 1 26 40 is_stmt 1 discriminator 3 view .LVU10
+ 113 0010 C72C     		cmp	r4, #199
+ 114 0012 20D8     		bhi	.L4
+  27:xiagb/bottom/ivesStepMotor.cpp ****                     curve_s_table[x] = 1.0 / (1.0 + exp((curve_s_pan_right * 2.0 / curve_s_num * -x
+ 115              		.loc 1 27 21 discriminator 2 view .LVU11
+ 116              		.loc 1 27 96 is_stmt 0 discriminator 2 view .LVU12
+ 117 0014 6042     		rsbs	r0, r4, #0
+ 118 0016 FFF7FEFF 		bl	__aeabi_i2d
+ 119              	.LVL5:
+ 120 001a 11A3     		adr	r3, .L7
+ 121 001c D3E90023 		ldrd	r2, [r3]
+ 122 0020 FFF7FEFF 		bl	__aeabi_dmul
+ 123              	.LVL6:
+ 124              		.loc 1 27 56 discriminator 2 view .LVU13
+ 125 0024 0022     		movs	r2, #0
+ 126 0026 114B     		ldr	r3, .L7+12
+ 127 0028 FFF7FEFF 		bl	__aeabi_dadd
+ 128              	.LVL7:
+ 129 002c FFF7FEFF 		bl	exp
+ 130              	.LVL8:
+ 131              		.loc 1 27 51 discriminator 2 view .LVU14
+ 132 0030 0022     		movs	r2, #0
+ 133 0032 0F4B     		ldr	r3, .L7+16
+ 134 0034 FFF7FEFF 		bl	__aeabi_dadd
+ 135              	.LVL9:
+ 136 0038 0246     		mov	r2, r0
+ 137 003a 0B46     		mov	r3, r1
+ 138              		.loc 1 27 36 discriminator 2 view .LVU15
+ 139 003c 0A49     		ldr	r1, .L7+8
+ 140 003e 0D68     		ldr	r5, [r1]
+ 141              		.loc 1 27 44 discriminator 2 view .LVU16
+ 142 0040 0020     		movs	r0, #0
+ 143 0042 0B49     		ldr	r1, .L7+16
+ 144 0044 FFF7FEFF 		bl	__aeabi_ddiv
+ 145              	.LVL10:
+ 146 0048 FFF7FEFF 		bl	__aeabi_d2f
+ 147              	.LVL11:
+ 148              		.loc 1 27 38 discriminator 2 view .LVU17
+ 149 004c 45F82400 		str	r0, [r5, r4, lsl #2]	@ float
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 4
+
+
+  26:xiagb/bottom/ivesStepMotor.cpp ****                     curve_s_table[x] = 1.0 / (1.0 + exp((curve_s_pan_right * 2.0 / curve_s_num * -x
+ 150              		.loc 1 26 17 is_stmt 1 discriminator 2 view .LVU18
+ 151 0050 0134     		adds	r4, r4, #1
+ 152              	.LVL12:
+  26:xiagb/bottom/ivesStepMotor.cpp ****                     curve_s_table[x] = 1.0 / (1.0 + exp((curve_s_pan_right * 2.0 / curve_s_num * -x
+ 153              		.loc 1 26 17 is_stmt 0 discriminator 2 view .LVU19
+ 154 0052 A4B2     		uxth	r4, r4
+ 155              	.LVL13:
+  26:xiagb/bottom/ivesStepMotor.cpp ****                     curve_s_table[x] = 1.0 / (1.0 + exp((curve_s_pan_right * 2.0 / curve_s_num * -x
+ 156              		.loc 1 26 17 discriminator 2 view .LVU20
+ 157 0054 DCE7     		b	.L5
+ 158              	.L4:
+  26:xiagb/bottom/ivesStepMotor.cpp ****                     curve_s_table[x] = 1.0 / (1.0 + exp((curve_s_pan_right * 2.0 / curve_s_num * -x
+ 159              		.loc 1 26 17 discriminator 2 view .LVU21
+ 160              	.LBE10:
+  28:xiagb/bottom/ivesStepMotor.cpp **** 
+  29:xiagb/bottom/ivesStepMotor.cpp ****                 curve_s_data_build_flag = true;
+ 161              		.loc 1 29 17 is_stmt 1 view .LVU22
+ 162              		.loc 1 29 41 is_stmt 0 view .LVU23
+ 163 0056 074B     		ldr	r3, .L7+20
+ 164 0058 0122     		movs	r2, #1
+ 165 005a 1A70     		strb	r2, [r3]
+  30:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 166              		.loc 1 30 13 view .LVU24
+ 167 005c 38BD     		pop	{r3, r4, r5, pc}
+ 168              	.LVL14:
+ 169              	.L8:
+ 170              		.loc 1 30 13 view .LVU25
+ 171 005e 00BF     		.align	3
+ 172              	.L7:
+ 173 0060 B81E85EB 		.word	-343597384
+ 174 0064 51B89E3F 		.word	1067366481
+ 175 0068 00000000 		.word	.LANCHOR0
+ 176 006c 00000840 		.word	1074266112
+ 177 0070 0000F03F 		.word	1072693248
+ 178 0074 00000000 		.word	.LANCHOR1
+ 179              		.cfi_endproc
+ 180              	.LFE300:
+ 181              		.fnend
+ 183              		.section	.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv,"ax",%
+ 184              		.align	1
+ 185              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv
+ 186              		.syntax unified
+ 187              		.thumb
+ 188              		.thumb_func
+ 189              		.fpu softvfp
+ 191              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv:
+ 192              		.fnstart
+ 193              	.LVL15:
+ 194              	.LFB307:
+  31:xiagb/bottom/ivesStepMotor.cpp **** 
+  32:xiagb/bottom/ivesStepMotor.cpp ****             void ivesStepMotorClass::init(GPIO_TypeDef *step_gpiox, uint16_t step_gpio_x, GPIO_Type
+  33:xiagb/bottom/ivesStepMotor.cpp ****             {
+  34:xiagb/bottom/ivesStepMotor.cpp ****                 if (curve_s_data_build_flag == false)
+  35:xiagb/bottom/ivesStepMotor.cpp ****                     curve_s_init(), curve_s_data_build_flag = true;
+  36:xiagb/bottom/ivesStepMotor.cpp **** 
+  37:xiagb/bottom/ivesStepMotor.cpp ****                 this->step_gpiox = step_gpiox;
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 5
+
+
+  38:xiagb/bottom/ivesStepMotor.cpp ****                 this->step_gpio_x = step_gpio_x;
+  39:xiagb/bottom/ivesStepMotor.cpp **** 
+  40:xiagb/bottom/ivesStepMotor.cpp ****                 this->dir_gpiox = dir_gpiox;
+  41:xiagb/bottom/ivesStepMotor.cpp ****                 this->dir_gpio_x = dir_gpio_x;
+  42:xiagb/bottom/ivesStepMotor.cpp **** 
+  43:xiagb/bottom/ivesStepMotor.cpp ****                 this->reset_sensor_gpiox = reset_sensor_gpiox;
+  44:xiagb/bottom/ivesStepMotor.cpp ****                 this->reset_sensor_gpio_x = reset_sensor_gpio_x;
+  45:xiagb/bottom/ivesStepMotor.cpp ****                 this->reset_sensor_io_lv = reset_sensor_io_lv;
+  46:xiagb/bottom/ivesStepMotor.cpp ****                 this->reset_dir_io_lv = reset_dir_io_lv;
+  47:xiagb/bottom/ivesStepMotor.cpp **** 
+  48:xiagb/bottom/ivesStepMotor.cpp ****                 stop();
+  49:xiagb/bottom/ivesStepMotor.cpp ****             }
+  50:xiagb/bottom/ivesStepMotor.cpp **** 
+  51:xiagb/bottom/ivesStepMotor.cpp ****             void ivesStepMotorClass::move(int32_t need_run_step, uint16_t max_speed, uint16_t acc_d
+  52:xiagb/bottom/ivesStepMotor.cpp ****             {
+  53:xiagb/bottom/ivesStepMotor.cpp ****                 if (need_run_step == 0)
+  54:xiagb/bottom/ivesStepMotor.cpp ****                 {
+  55:xiagb/bottom/ivesStepMotor.cpp ****                     stop();
+  56:xiagb/bottom/ivesStepMotor.cpp ****                     return;
+  57:xiagb/bottom/ivesStepMotor.cpp ****                 }
+  58:xiagb/bottom/ivesStepMotor.cpp **** 
+  59:xiagb/bottom/ivesStepMotor.cpp ****                 this->need_run_step = need_run_step;
+  60:xiagb/bottom/ivesStepMotor.cpp ****                 step_counter = 0;
+  61:xiagb/bottom/ivesStepMotor.cpp ****                 speed = 0;
+  62:xiagb/bottom/ivesStepMotor.cpp ****                 this->max_speed = max_speed > max_speed_threshold - 100 ? max_speed_threshold : max
+  63:xiagb/bottom/ivesStepMotor.cpp ****                 interrupt_counter_flag = true;
+  64:xiagb/bottom/ivesStepMotor.cpp ****                 interrupt_counter = 0;
+  65:xiagb/bottom/ivesStepMotor.cpp ****                 acc_dec_counter = 0;
+  66:xiagb/bottom/ivesStepMotor.cpp ****                 acc_dec_step = 0;
+  67:xiagb/bottom/ivesStepMotor.cpp ****                 this->acc_dec_interval = acc_dec_interval;
+  68:xiagb/bottom/ivesStepMotor.cpp ****                 speed_accumulator = 0;
+  69:xiagb/bottom/ivesStepMotor.cpp **** 
+  70:xiagb/bottom/ivesStepMotor.cpp ****                 if (need_run_step > 0)
+  71:xiagb/bottom/ivesStepMotor.cpp ****                 {
+  72:xiagb/bottom/ivesStepMotor.cpp ****                     if (reset_dir_io_lv == GPIO_PIN_SET)
+  73:xiagb/bottom/ivesStepMotor.cpp ****                         HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, GPIO_PIN_RESET);
+  74:xiagb/bottom/ivesStepMotor.cpp ****                     else
+  75:xiagb/bottom/ivesStepMotor.cpp ****                         HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, GPIO_PIN_SET);
+  76:xiagb/bottom/ivesStepMotor.cpp ****                 }
+  77:xiagb/bottom/ivesStepMotor.cpp ****                 else
+  78:xiagb/bottom/ivesStepMotor.cpp ****                     HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, reset_dir_io_lv);
+  79:xiagb/bottom/ivesStepMotor.cpp ****                 state = motor_accelerate;
+  80:xiagb/bottom/ivesStepMotor.cpp ****             }
+  81:xiagb/bottom/ivesStepMotor.cpp **** 
+  82:xiagb/bottom/ivesStepMotor.cpp ****             void ivesStepMotorClass::move_to_position(uint16_t position, uint16_t max_speed, uint16
+  83:xiagb/bottom/ivesStepMotor.cpp ****             {
+  84:xiagb/bottom/ivesStepMotor.cpp ****                 //会将毫米转换成步数
+  85:xiagb/bottom/ivesStepMotor.cpp ****                 if (position * mm_setp > this->position)
+  86:xiagb/bottom/ivesStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+  87:xiagb/bottom/ivesStepMotor.cpp ****                 else
+  88:xiagb/bottom/ivesStepMotor.cpp ****                     move(-(this->position - position * mm_setp), max_speed, acc_dec_action_interval
+  89:xiagb/bottom/ivesStepMotor.cpp ****             }
+  90:xiagb/bottom/ivesStepMotor.cpp **** 
+  91:xiagb/bottom/ivesStepMotor.cpp ****             void ivesStepMotorClass::motor_run_time_check()
+  92:xiagb/bottom/ivesStepMotor.cpp ****             {
+  93:xiagb/bottom/ivesStepMotor.cpp ****                 if (HAL_GPIO_ReadPin(reset_sensor_gpiox, reset_sensor_gpio_x) == reset_sensor_io_lv
+  94:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 6
+
+
+  95:xiagb/bottom/ivesStepMotor.cpp ****                     if (reset_flag == true)
+  96:xiagb/bottom/ivesStepMotor.cpp ****                     {
+  97:xiagb/bottom/ivesStepMotor.cpp ****                         stop();
+  98:xiagb/bottom/ivesStepMotor.cpp ****                         reset_flag = false, position = 0; //绝对位置置0
+  99:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 100:xiagb/bottom/ivesStepMotor.cpp ****                     else if (need_run_step < 0) //不能继续向复位的方向走，但可以向�
+ 101:xiagb/bottom/ivesStepMotor.cpp ****                         stop();
+ 102:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 103:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 104:xiagb/bottom/ivesStepMotor.cpp **** 
+ 105:xiagb/bottom/ivesStepMotor.cpp ****             void ivesStepMotorClass::loop()
+ 106:xiagb/bottom/ivesStepMotor.cpp ****             {
+ 107:xiagb/bottom/ivesStepMotor.cpp ****                 if (state == motor_stop)
+ 108:xiagb/bottom/ivesStepMotor.cpp ****                     return;
+ 109:xiagb/bottom/ivesStepMotor.cpp **** 
+ 110:xiagb/bottom/ivesStepMotor.cpp ****                 //拉低脉冲信号
+ 111:xiagb/bottom/ivesStepMotor.cpp ****                 HAL_GPIO_WritePin(step_gpiox, step_gpio_x, GPIO_PIN_RESET);
+ 112:xiagb/bottom/ivesStepMotor.cpp **** 
+ 113:xiagb/bottom/ivesStepMotor.cpp ****                 bool carry_v = false;
+ 114:xiagb/bottom/ivesStepMotor.cpp ****                 speed_accumulator += speed;                   //叠加速度
+ 115:xiagb/bottom/ivesStepMotor.cpp ****                 if (speed_accumulator >= max_speed_threshold) //阈值，如果当前速度达到�
+ 116:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 117:xiagb/bottom/ivesStepMotor.cpp ****                     carry_v = true;
+ 118:xiagb/bottom/ivesStepMotor.cpp ****                     speed_accumulator -= max_speed_threshold;
+ 119:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 120:xiagb/bottom/ivesStepMotor.cpp **** 
+ 121:xiagb/bottom/ivesStepMotor.cpp ****                 if (carry_v == true) //判断是否溢出
+ 122:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 123:xiagb/bottom/ivesStepMotor.cpp ****                     step_counter++;
+ 124:xiagb/bottom/ivesStepMotor.cpp ****                     //拉高脉冲信号产生
+ 125:xiagb/bottom/ivesStepMotor.cpp ****                     HAL_GPIO_WritePin(step_gpiox, step_gpio_x, GPIO_PIN_SET);
+ 126:xiagb/bottom/ivesStepMotor.cpp **** 
+ 127:xiagb/bottom/ivesStepMotor.cpp ****                     if (need_run_step > 0)
+ 128:xiagb/bottom/ivesStepMotor.cpp ****                         position++;
+ 129:xiagb/bottom/ivesStepMotor.cpp ****                     else
+ 130:xiagb/bottom/ivesStepMotor.cpp ****                         position--;
+ 131:xiagb/bottom/ivesStepMotor.cpp **** 
+ 132:xiagb/bottom/ivesStepMotor.cpp ****                     //额外的操作
+ 133:xiagb/bottom/ivesStepMotor.cpp ****                     motor_run_time_check();
+ 134:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 135:xiagb/bottom/ivesStepMotor.cpp **** 
+ 136:xiagb/bottom/ivesStepMotor.cpp ****                 //根据电机的状态进行工作
+ 137:xiagb/bottom/ivesStepMotor.cpp ****                 switch (state)
+ 138:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 139:xiagb/bottom/ivesStepMotor.cpp ****                 case motor_accelerate:
+ 140:xiagb/bottom/ivesStepMotor.cpp **** 
+ 141:xiagb/bottom/ivesStepMotor.cpp ****                     //记录加速的步数
+ 142:xiagb/bottom/ivesStepMotor.cpp ****                     if (carry_v == true)
+ 143:xiagb/bottom/ivesStepMotor.cpp ****                         acc_dec_step++;
+ 144:xiagb/bottom/ivesStepMotor.cpp **** 
+ 145:xiagb/bottom/ivesStepMotor.cpp ****                     if (interrupt_counter_flag)
+ 146:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 147:xiagb/bottom/ivesStepMotor.cpp ****                         interrupt_counter++;
+ 148:xiagb/bottom/ivesStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval)
+ 149:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 150:xiagb/bottom/ivesStepMotor.cpp ****                             interrupt_counter = 0;
+ 151:xiagb/bottom/ivesStepMotor.cpp ****                             acc_dec_counter++; //计录加速的次数
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 7
+
+
+ 152:xiagb/bottom/ivesStepMotor.cpp **** 
+ 153:xiagb/bottom/ivesStepMotor.cpp ****                             speed = curve_s_table[acc_dec_counter] * max_speed; //计算当前速�
+ 154:xiagb/bottom/ivesStepMotor.cpp **** 
+ 155:xiagb/bottom/ivesStepMotor.cpp ****                             //如果加速次数达到最高次数，就停止加速，并让速度
+ 156:xiagb/bottom/ivesStepMotor.cpp ****                             if (acc_dec_counter >= curve_s_num)
+ 157:xiagb/bottom/ivesStepMotor.cpp ****                             {
+ 158:xiagb/bottom/ivesStepMotor.cpp ****                                 interrupt_counter_flag = false;
+ 159:xiagb/bottom/ivesStepMotor.cpp ****                                 speed = max_speed;
+ 160:xiagb/bottom/ivesStepMotor.cpp ****                                 state = motor_max_speed;
+ 161:xiagb/bottom/ivesStepMotor.cpp ****                             }
+ 162:xiagb/bottom/ivesStepMotor.cpp ****                         }
+ 163:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 164:xiagb/bottom/ivesStepMotor.cpp **** 
+ 165:xiagb/bottom/ivesStepMotor.cpp ****                     //如果总步数大于1步
+ 166:xiagb/bottom/ivesStepMotor.cpp ****                     if ((uint32_t)fabs(need_run_step) > 1)
+ 167:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 168:xiagb/bottom/ivesStepMotor.cpp ****                         if (step_counter >= (uint32_t)fabs(need_run_step) / 2) //如果已走步数
+ 169:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 170:xiagb/bottom/ivesStepMotor.cpp ****                             //加速时中断计数被断，所以要调整，最后一次加速多
+ 171:xiagb/bottom/ivesStepMotor.cpp ****                             interrupt_counter = acc_dec_interval - interrupt_counter;
+ 172:xiagb/bottom/ivesStepMotor.cpp ****                             state = motor_decelerate;
+ 173:xiagb/bottom/ivesStepMotor.cpp ****                         }
+ 174:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 175:xiagb/bottom/ivesStepMotor.cpp ****                     else if (step_counter > 0) //只有1步就至少走1步
+ 176:xiagb/bottom/ivesStepMotor.cpp ****                         state = motor_decelerate;
+ 177:xiagb/bottom/ivesStepMotor.cpp **** 
+ 178:xiagb/bottom/ivesStepMotor.cpp ****                     break;
+ 179:xiagb/bottom/ivesStepMotor.cpp **** 
+ 180:xiagb/bottom/ivesStepMotor.cpp ****                 case motor_max_speed:
+ 181:xiagb/bottom/ivesStepMotor.cpp ****                     if (keep_turn_flag && carry_v == true) //当处于保持转动的状态时
+ 182:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 183:xiagb/bottom/ivesStepMotor.cpp ****                         step_counter--; //加一次就减一次，防止步数达到进入减速的
+ 184:xiagb/bottom/ivesStepMotor.cpp ****                         if (need_run_step > 0)
+ 185:xiagb/bottom/ivesStepMotor.cpp ****                             position--;
+ 186:xiagb/bottom/ivesStepMotor.cpp ****                         else
+ 187:xiagb/bottom/ivesStepMotor.cpp ****                             position++;
+ 188:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 189:xiagb/bottom/ivesStepMotor.cpp **** 
+ 190:xiagb/bottom/ivesStepMotor.cpp ****                     if ((uint32_t)fabs(need_run_step) - step_counter <= acc_dec_step)
+ 191:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 192:xiagb/bottom/ivesStepMotor.cpp ****                         interrupt_counter_flag = true;
+ 193:xiagb/bottom/ivesStepMotor.cpp ****                         //进入减速状态就要切换为减速状态时的最大速度
+ 194:xiagb/bottom/ivesStepMotor.cpp ****                         acc_dec_counter--;
+ 195:xiagb/bottom/ivesStepMotor.cpp ****                         speed = curve_s_table[acc_dec_counter] * max_speed; //计算当前速度
+ 196:xiagb/bottom/ivesStepMotor.cpp ****                         state = motor_decelerate;
+ 197:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 198:xiagb/bottom/ivesStepMotor.cpp **** 
+ 199:xiagb/bottom/ivesStepMotor.cpp ****                     break;
+ 200:xiagb/bottom/ivesStepMotor.cpp **** 
+ 201:xiagb/bottom/ivesStepMotor.cpp ****                 case motor_decelerate:
+ 202:xiagb/bottom/ivesStepMotor.cpp **** 
+ 203:xiagb/bottom/ivesStepMotor.cpp ****                     if (interrupt_counter_flag)
+ 204:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 205:xiagb/bottom/ivesStepMotor.cpp ****                         interrupt_counter++;
+ 206:xiagb/bottom/ivesStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval) //如果中断次数达到设定
+ 207:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 208:xiagb/bottom/ivesStepMotor.cpp ****                             interrupt_counter = 0;
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 8
+
+
+ 209:xiagb/bottom/ivesStepMotor.cpp ****                             acc_dec_counter--;
+ 210:xiagb/bottom/ivesStepMotor.cpp **** 
+ 211:xiagb/bottom/ivesStepMotor.cpp ****                             speed = curve_s_table[acc_dec_counter] * max_speed; //计算当前速�
+ 212:xiagb/bottom/ivesStepMotor.cpp **** 
+ 213:xiagb/bottom/ivesStepMotor.cpp ****                             if (acc_dec_counter <= 1)
+ 214:xiagb/bottom/ivesStepMotor.cpp ****                                 interrupt_counter_flag = false;
+ 215:xiagb/bottom/ivesStepMotor.cpp ****                         }
+ 216:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 217:xiagb/bottom/ivesStepMotor.cpp **** 
+ 218:xiagb/bottom/ivesStepMotor.cpp ****                     if (step_counter >= (uint32_t)fabs(need_run_step))
+ 219:xiagb/bottom/ivesStepMotor.cpp ****                         stop();
+ 220:xiagb/bottom/ivesStepMotor.cpp ****                     break;
+ 221:xiagb/bottom/ivesStepMotor.cpp **** 
+ 222:xiagb/bottom/ivesStepMotor.cpp ****                 default:
+ 223:xiagb/bottom/ivesStepMotor.cpp ****                     break;
+ 224:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 225:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 226:xiagb/bottom/ivesStepMotor.cpp **** 
+ 227:xiagb/bottom/ivesStepMotor.cpp ****             void ivesStepMotorClass::reset(uint16_t max_speed, uint16_t acc_dec_action_interval)
+ 228:xiagb/bottom/ivesStepMotor.cpp ****             {
+ 229:xiagb/bottom/ivesStepMotor.cpp ****                 reset_flag = true;
+ 230:xiagb/bottom/ivesStepMotor.cpp ****                 move(a_circle_step * -1000, max_speed, acc_dec_action_interval);
+ 231:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 232:xiagb/bottom/ivesStepMotor.cpp **** 
+ 233:xiagb/bottom/ivesStepMotor.cpp ****             void ivesStepMotorClass::stop()
+ 234:xiagb/bottom/ivesStepMotor.cpp ****             {
+ 195              		.loc 1 234 13 is_stmt 1 view -0
+ 196              		.cfi_startproc
+ 197              		@ args = 0, pretend = 0, frame = 0
+ 198              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199              		@ link register save eliminated.
+ 235:xiagb/bottom/ivesStepMotor.cpp ****                 state = motor_stop;
+ 200              		.loc 1 235 17 view .LVU27
+ 201              		.loc 1 235 23 is_stmt 0 view .LVU28
+ 202 0000 0023     		movs	r3, #0
+ 203 0002 0374     		strb	r3, [r0, #16]
+ 236:xiagb/bottom/ivesStepMotor.cpp ****                 stop_flag = true;
+ 204              		.loc 1 236 17 is_stmt 1 view .LVU29
+ 205              		.loc 1 236 27 is_stmt 0 view .LVU30
+ 206 0004 0122     		movs	r2, #1
+ 207 0006 80F84020 		strb	r2, [r0, #64]
+ 237:xiagb/bottom/ivesStepMotor.cpp ****                 keep_turn_flag = false;
+ 208              		.loc 1 237 17 is_stmt 1 view .LVU31
+ 209              		.loc 1 237 32 is_stmt 0 view .LVU32
+ 210 000a 80F84130 		strb	r3, [r0, #65]
+ 238:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 211              		.loc 1 238 13 view .LVU33
+ 212 000e 7047     		bx	lr
+ 213              		.cfi_endproc
+ 214              	.LFE307:
+ 215              		.cantunwind
+ 216              		.fnend
+ 218              		.section	.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4initEP12GPIO_
+ 219              		.align	1
+ 220              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4initEP12GPIO_TypeDef
+ 221              		.syntax unified
+ 222              		.thumb
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 9
+
+
+ 223              		.thumb_func
+ 224              		.fpu softvfp
+ 226              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4initEP12GPIO_TypeDeftS4_tS4_t
+ 227              		.fnstart
+ 228              	.LVL16:
+ 229              	.LFB301:
+  33:xiagb/bottom/ivesStepMotor.cpp ****                 if (curve_s_data_build_flag == false)
+ 230              		.loc 1 33 13 is_stmt 1 view -0
+ 231              		.cfi_startproc
+ 232              		@ args = 20, pretend = 0, frame = 0
+ 233              		@ frame_needed = 0, uses_anonymous_args = 0
+  33:xiagb/bottom/ivesStepMotor.cpp ****                 if (curve_s_data_build_flag == false)
+ 234              		.loc 1 33 13 is_stmt 0 view .LVU35
+ 235 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 236              		.save {r3, r4, r5, r6, r7, lr}
+ 237              	.LCFI1:
+ 238              		.cfi_def_cfa_offset 24
+ 239              		.cfi_offset 3, -24
+ 240              		.cfi_offset 4, -20
+ 241              		.cfi_offset 5, -16
+ 242              		.cfi_offset 6, -12
+ 243              		.cfi_offset 7, -8
+ 244              		.cfi_offset 14, -4
+ 245 0002 0446     		mov	r4, r0
+ 246 0004 0F46     		mov	r7, r1
+ 247 0006 1646     		mov	r6, r2
+ 248 0008 1D46     		mov	r5, r3
+  34:xiagb/bottom/ivesStepMotor.cpp ****                     curve_s_init(), curve_s_data_build_flag = true;
+ 249              		.loc 1 34 17 is_stmt 1 view .LVU36
+  34:xiagb/bottom/ivesStepMotor.cpp ****                     curve_s_init(), curve_s_data_build_flag = true;
+ 250              		.loc 1 34 45 is_stmt 0 view .LVU37
+ 251 000a 104B     		ldr	r3, .L14
+ 252              	.LVL17:
+  34:xiagb/bottom/ivesStepMotor.cpp ****                     curve_s_init(), curve_s_data_build_flag = true;
+ 253              		.loc 1 34 45 view .LVU38
+ 254 000c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  34:xiagb/bottom/ivesStepMotor.cpp ****                     curve_s_init(), curve_s_data_build_flag = true;
+ 255              		.loc 1 34 17 view .LVU39
+ 256 000e B3B1     		cbz	r3, .L13
+ 257              	.LVL18:
+ 258              	.L11:
+  37:xiagb/bottom/ivesStepMotor.cpp ****                 this->step_gpio_x = step_gpio_x;
+ 259              		.loc 1 37 17 is_stmt 1 view .LVU40
+  37:xiagb/bottom/ivesStepMotor.cpp ****                 this->step_gpio_x = step_gpio_x;
+ 260              		.loc 1 37 34 is_stmt 0 view .LVU41
+ 261 0010 E762     		str	r7, [r4, #44]
+  38:xiagb/bottom/ivesStepMotor.cpp **** 
+ 262              		.loc 1 38 17 is_stmt 1 view .LVU42
+  38:xiagb/bottom/ivesStepMotor.cpp **** 
+ 263              		.loc 1 38 35 is_stmt 0 view .LVU43
+ 264 0012 2687     		strh	r6, [r4, #56]	@ movhi
+  40:xiagb/bottom/ivesStepMotor.cpp ****                 this->dir_gpio_x = dir_gpio_x;
+ 265              		.loc 1 40 17 is_stmt 1 view .LVU44
+  40:xiagb/bottom/ivesStepMotor.cpp ****                 this->dir_gpio_x = dir_gpio_x;
+ 266              		.loc 1 40 33 is_stmt 0 view .LVU45
+ 267 0014 2563     		str	r5, [r4, #48]
+  41:xiagb/bottom/ivesStepMotor.cpp **** 
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 10
+
+
+ 268              		.loc 1 41 17 is_stmt 1 view .LVU46
+  41:xiagb/bottom/ivesStepMotor.cpp **** 
+ 269              		.loc 1 41 34 is_stmt 0 view .LVU47
+ 270 0016 BDF81830 		ldrh	r3, [sp, #24]
+ 271 001a 6387     		strh	r3, [r4, #58]	@ movhi
+  43:xiagb/bottom/ivesStepMotor.cpp ****                 this->reset_sensor_gpio_x = reset_sensor_gpio_x;
+ 272              		.loc 1 43 17 is_stmt 1 view .LVU48
+  43:xiagb/bottom/ivesStepMotor.cpp ****                 this->reset_sensor_gpio_x = reset_sensor_gpio_x;
+ 273              		.loc 1 43 42 is_stmt 0 view .LVU49
+ 274 001c 079B     		ldr	r3, [sp, #28]
+ 275 001e 6363     		str	r3, [r4, #52]
+  44:xiagb/bottom/ivesStepMotor.cpp ****                 this->reset_sensor_io_lv = reset_sensor_io_lv;
+ 276              		.loc 1 44 17 is_stmt 1 view .LVU50
+  44:xiagb/bottom/ivesStepMotor.cpp ****                 this->reset_sensor_io_lv = reset_sensor_io_lv;
+ 277              		.loc 1 44 43 is_stmt 0 view .LVU51
+ 278 0020 BDF82030 		ldrh	r3, [sp, #32]
+ 279 0024 A387     		strh	r3, [r4, #60]	@ movhi
+  45:xiagb/bottom/ivesStepMotor.cpp ****                 this->reset_dir_io_lv = reset_dir_io_lv;
+ 280              		.loc 1 45 17 is_stmt 1 view .LVU52
+  45:xiagb/bottom/ivesStepMotor.cpp ****                 this->reset_dir_io_lv = reset_dir_io_lv;
+ 281              		.loc 1 45 42 is_stmt 0 view .LVU53
+ 282 0026 9DF82430 		ldrb	r3, [sp, #36]	@ zero_extendqisi2
+ 283 002a 84F83E30 		strb	r3, [r4, #62]
+  46:xiagb/bottom/ivesStepMotor.cpp **** 
+ 284              		.loc 1 46 17 is_stmt 1 view .LVU54
+  46:xiagb/bottom/ivesStepMotor.cpp **** 
+ 285              		.loc 1 46 39 is_stmt 0 view .LVU55
+ 286 002e 9DF82830 		ldrb	r3, [sp, #40]	@ zero_extendqisi2
+ 287 0032 84F82430 		strb	r3, [r4, #36]
+  48:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 288              		.loc 1 48 17 is_stmt 1 view .LVU56
+  48:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 289              		.loc 1 48 21 is_stmt 0 view .LVU57
+ 290 0036 2046     		mov	r0, r4
+ 291 0038 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv
+ 292              	.LVL19:
+  49:xiagb/bottom/ivesStepMotor.cpp **** 
+ 293              		.loc 1 49 13 view .LVU58
+ 294 003c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 295              	.LVL20:
+ 296              	.L13:
+  35:xiagb/bottom/ivesStepMotor.cpp **** 
+ 297              		.loc 1 35 21 is_stmt 1 view .LVU59
+  35:xiagb/bottom/ivesStepMotor.cpp **** 
+ 298              		.loc 1 35 33 is_stmt 0 view .LVU60
+ 299 003e FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass12curve_s_initEv
+ 300              	.LVL21:
+  35:xiagb/bottom/ivesStepMotor.cpp **** 
+ 301              		.loc 1 35 61 view .LVU61
+ 302 0042 024B     		ldr	r3, .L14
+ 303 0044 0122     		movs	r2, #1
+ 304 0046 1A70     		strb	r2, [r3]
+ 305 0048 E2E7     		b	.L11
+ 306              	.L15:
+ 307 004a 00BF     		.align	2
+ 308              	.L14:
+ 309 004c 00000000 		.word	.LANCHOR1
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 11
+
+
+ 310              		.cfi_endproc
+ 311              	.LFE301:
+ 312              		.fnend
+ 314              		.section	.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt,"ax"
+ 315              		.align	1
+ 316              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt
+ 317              		.syntax unified
+ 318              		.thumb
+ 319              		.thumb_func
+ 320              		.fpu softvfp
+ 322              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt:
+ 323              		.fnstart
+ 324              	.LVL22:
+ 325              	.LFB302:
+  52:xiagb/bottom/ivesStepMotor.cpp ****                 if (need_run_step == 0)
+ 326              		.loc 1 52 13 is_stmt 1 view -0
+ 327              		.cfi_startproc
+ 328              		@ args = 0, pretend = 0, frame = 0
+ 329              		@ frame_needed = 0, uses_anonymous_args = 0
+  52:xiagb/bottom/ivesStepMotor.cpp ****                 if (need_run_step == 0)
+ 330              		.loc 1 52 13 is_stmt 0 view .LVU63
+ 331 0000 38B5     		push	{r3, r4, r5, lr}
+ 332              		.save {r3, r4, r5, lr}
+ 333              	.LCFI2:
+ 334              		.cfi_def_cfa_offset 16
+ 335              		.cfi_offset 3, -16
+ 336              		.cfi_offset 4, -12
+ 337              		.cfi_offset 5, -8
+ 338              		.cfi_offset 14, -4
+ 339 0002 0446     		mov	r4, r0
+  53:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 340              		.loc 1 53 17 is_stmt 1 view .LVU64
+ 341 0004 01B3     		cbz	r1, .L23
+ 342 0006 0846     		mov	r0, r1
+ 343              	.LVL23:
+  59:xiagb/bottom/ivesStepMotor.cpp ****                 step_counter = 0;
+ 344              		.loc 1 59 17 view .LVU65
+  59:xiagb/bottom/ivesStepMotor.cpp ****                 step_counter = 0;
+ 345              		.loc 1 59 37 is_stmt 0 view .LVU66
+ 346 0008 6160     		str	r1, [r4, #4]
+  60:xiagb/bottom/ivesStepMotor.cpp ****                 speed = 0;
+ 347              		.loc 1 60 17 is_stmt 1 view .LVU67
+  60:xiagb/bottom/ivesStepMotor.cpp ****                 speed = 0;
+ 348              		.loc 1 60 30 is_stmt 0 view .LVU68
+ 349 000a 0021     		movs	r1, #0
+ 350              	.LVL24:
+  60:xiagb/bottom/ivesStepMotor.cpp ****                 speed = 0;
+ 351              		.loc 1 60 30 view .LVU69
+ 352 000c A160     		str	r1, [r4, #8]
+  61:xiagb/bottom/ivesStepMotor.cpp ****                 this->max_speed = max_speed > max_speed_threshold - 100 ? max_speed_threshold : max
+ 353              		.loc 1 61 17 is_stmt 1 view .LVU70
+  61:xiagb/bottom/ivesStepMotor.cpp ****                 this->max_speed = max_speed > max_speed_threshold - 100 ? max_speed_threshold : max
+ 354              		.loc 1 61 23 is_stmt 0 view .LVU71
+ 355 000e A181     		strh	r1, [r4, #12]	@ movhi
+  62:xiagb/bottom/ivesStepMotor.cpp ****                 interrupt_counter_flag = true;
+ 356              		.loc 1 62 17 is_stmt 1 view .LVU72
+  62:xiagb/bottom/ivesStepMotor.cpp ****                 interrupt_counter_flag = true;
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 12
+
+
+ 357              		.loc 1 62 33 is_stmt 0 view .LVU73
+ 358 0010 4FF69B75 		movw	r5, #65435
+ 359 0014 AA42     		cmp	r2, r5
+ 360 0016 28BF     		it	cs
+ 361 0018 2A46     		movcs	r2, r5
+ 362              	.LVL25:
+  62:xiagb/bottom/ivesStepMotor.cpp ****                 interrupt_counter_flag = true;
+ 363              		.loc 1 62 33 view .LVU74
+ 364 001a 6432     		adds	r2, r2, #100
+ 365 001c E281     		strh	r2, [r4, #14]	@ movhi
+  63:xiagb/bottom/ivesStepMotor.cpp ****                 interrupt_counter = 0;
+ 366              		.loc 1 63 17 is_stmt 1 view .LVU75
+  63:xiagb/bottom/ivesStepMotor.cpp ****                 interrupt_counter = 0;
+ 367              		.loc 1 63 40 is_stmt 0 view .LVU76
+ 368 001e 0122     		movs	r2, #1
+ 369 0020 6274     		strb	r2, [r4, #17]
+  64:xiagb/bottom/ivesStepMotor.cpp ****                 acc_dec_counter = 0;
+ 370              		.loc 1 64 17 is_stmt 1 view .LVU77
+  64:xiagb/bottom/ivesStepMotor.cpp ****                 acc_dec_counter = 0;
+ 371              		.loc 1 64 35 is_stmt 0 view .LVU78
+ 372 0022 A182     		strh	r1, [r4, #20]	@ movhi
+  65:xiagb/bottom/ivesStepMotor.cpp ****                 acc_dec_step = 0;
+ 373              		.loc 1 65 17 is_stmt 1 view .LVU79
+  65:xiagb/bottom/ivesStepMotor.cpp ****                 acc_dec_step = 0;
+ 374              		.loc 1 65 33 is_stmt 0 view .LVU80
+ 375 0024 A161     		str	r1, [r4, #24]
+  66:xiagb/bottom/ivesStepMotor.cpp ****                 this->acc_dec_interval = acc_dec_interval;
+ 376              		.loc 1 66 17 is_stmt 1 view .LVU81
+  66:xiagb/bottom/ivesStepMotor.cpp ****                 this->acc_dec_interval = acc_dec_interval;
+ 377              		.loc 1 66 30 is_stmt 0 view .LVU82
+ 378 0026 E161     		str	r1, [r4, #28]
+  67:xiagb/bottom/ivesStepMotor.cpp ****                 speed_accumulator = 0;
+ 379              		.loc 1 67 17 is_stmt 1 view .LVU83
+  67:xiagb/bottom/ivesStepMotor.cpp ****                 speed_accumulator = 0;
+ 380              		.loc 1 67 40 is_stmt 0 view .LVU84
+ 381 0028 6382     		strh	r3, [r4, #18]	@ movhi
+  68:xiagb/bottom/ivesStepMotor.cpp **** 
+ 382              		.loc 1 68 17 is_stmt 1 view .LVU85
+  68:xiagb/bottom/ivesStepMotor.cpp **** 
+ 383              		.loc 1 68 35 is_stmt 0 view .LVU86
+ 384 002a 2162     		str	r1, [r4, #32]
+  70:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 385              		.loc 1 70 17 is_stmt 1 view .LVU87
+ 386 002c 8842     		cmp	r0, r1
+ 387 002e 14DD     		ble	.L19
+  72:xiagb/bottom/ivesStepMotor.cpp ****                         HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, GPIO_PIN_RESET);
+ 388              		.loc 1 72 21 view .LVU88
+  72:xiagb/bottom/ivesStepMotor.cpp ****                         HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, GPIO_PIN_RESET);
+ 389              		.loc 1 72 25 is_stmt 0 view .LVU89
+ 390 0030 94F82430 		ldrb	r3, [r4, #36]	@ zero_extendqisi2
+ 391              	.LVL26:
+  72:xiagb/bottom/ivesStepMotor.cpp ****                         HAL_GPIO_WritePin(dir_gpiox, dir_gpio_x, GPIO_PIN_RESET);
+ 392              		.loc 1 72 21 view .LVU90
+ 393 0034 9342     		cmp	r3, r2
+ 394 0036 0AD0     		beq	.L24
+  75:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 395              		.loc 1 75 25 is_stmt 1 view .LVU91
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 13
+
+
+  75:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 396              		.loc 1 75 42 is_stmt 0 view .LVU92
+ 397 0038 0122     		movs	r2, #1
+ 398 003a 618F     		ldrh	r1, [r4, #58]
+ 399 003c 206B     		ldr	r0, [r4, #48]
+ 400              	.LVL27:
+  75:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 401              		.loc 1 75 42 view .LVU93
+ 402 003e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 403              	.LVL28:
+ 404              	.L21:
+  79:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 405              		.loc 1 79 17 is_stmt 1 view .LVU94
+  79:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 406              		.loc 1 79 23 is_stmt 0 view .LVU95
+ 407 0042 0123     		movs	r3, #1
+ 408 0044 2374     		strb	r3, [r4, #16]
+ 409              	.L16:
+  80:xiagb/bottom/ivesStepMotor.cpp **** 
+ 410              		.loc 1 80 13 view .LVU96
+ 411 0046 38BD     		pop	{r3, r4, r5, pc}
+ 412              	.LVL29:
+ 413              	.L23:
+  55:xiagb/bottom/ivesStepMotor.cpp ****                     return;
+ 414              		.loc 1 55 21 is_stmt 1 view .LVU97
+  55:xiagb/bottom/ivesStepMotor.cpp ****                     return;
+ 415              		.loc 1 55 25 is_stmt 0 view .LVU98
+ 416 0048 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv
+ 417              	.LVL30:
+  56:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 418              		.loc 1 56 21 is_stmt 1 view .LVU99
+ 419 004c FBE7     		b	.L16
+ 420              	.LVL31:
+ 421              	.L24:
+  73:xiagb/bottom/ivesStepMotor.cpp ****                     else
+ 422              		.loc 1 73 25 view .LVU100
+  73:xiagb/bottom/ivesStepMotor.cpp ****                     else
+ 423              		.loc 1 73 42 is_stmt 0 view .LVU101
+ 424 004e 0A46     		mov	r2, r1
+ 425 0050 618F     		ldrh	r1, [r4, #58]
+ 426 0052 206B     		ldr	r0, [r4, #48]
+ 427              	.LVL32:
+  73:xiagb/bottom/ivesStepMotor.cpp ****                     else
+ 428              		.loc 1 73 42 view .LVU102
+ 429 0054 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 430              	.LVL33:
+  73:xiagb/bottom/ivesStepMotor.cpp ****                     else
+ 431              		.loc 1 73 42 view .LVU103
+ 432 0058 F3E7     		b	.L21
+ 433              	.LVL34:
+ 434              	.L19:
+  78:xiagb/bottom/ivesStepMotor.cpp ****                 state = motor_accelerate;
+ 435              		.loc 1 78 21 is_stmt 1 view .LVU104
+  78:xiagb/bottom/ivesStepMotor.cpp ****                 state = motor_accelerate;
+ 436              		.loc 1 78 38 is_stmt 0 view .LVU105
+ 437 005a 94F82420 		ldrb	r2, [r4, #36]	@ zero_extendqisi2
+ 438 005e 618F     		ldrh	r1, [r4, #58]
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 14
+
+
+ 439 0060 206B     		ldr	r0, [r4, #48]
+ 440              	.LVL35:
+  78:xiagb/bottom/ivesStepMotor.cpp ****                 state = motor_accelerate;
+ 441              		.loc 1 78 38 view .LVU106
+ 442 0062 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 443              	.LVL36:
+  78:xiagb/bottom/ivesStepMotor.cpp ****                 state = motor_accelerate;
+ 444              		.loc 1 78 38 view .LVU107
+ 445 0066 ECE7     		b	.L21
+ 446              		.cfi_endproc
+ 447              	.LFE302:
+ 448              		.fnend
+ 450              		.global	__aeabi_i2f
+ 451              		.global	__aeabi_fmul
+ 452              		.global	__aeabi_fcmpgt
+ 453              		.global	__aeabi_fsub
+ 454              		.global	__aeabi_f2iz
+ 455              		.section	.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass16move_to_posi
+ 456              		.align	1
+ 457              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass16move_to_positionEtt
+ 458              		.syntax unified
+ 459              		.thumb
+ 460              		.thumb_func
+ 461              		.fpu softvfp
+ 463              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass16move_to_positionEttt:
+ 464              		.fnstart
+ 465              	.LVL37:
+ 466              	.LFB303:
+  83:xiagb/bottom/ivesStepMotor.cpp ****                 //会将毫米转换成步数
+ 467              		.loc 1 83 13 is_stmt 1 view -0
+ 468              		.cfi_startproc
+ 469              		@ args = 0, pretend = 0, frame = 0
+ 470              		@ frame_needed = 0, uses_anonymous_args = 0
+  83:xiagb/bottom/ivesStepMotor.cpp ****                 //会将毫米转换成步数
+ 471              		.loc 1 83 13 is_stmt 0 view .LVU109
+ 472 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 473              		.save {r4, r5, r6, r7, r8, lr}
+ 474              	.LCFI3:
+ 475              		.cfi_def_cfa_offset 24
+ 476              		.cfi_offset 4, -24
+ 477              		.cfi_offset 5, -20
+ 478              		.cfi_offset 6, -16
+ 479              		.cfi_offset 7, -12
+ 480              		.cfi_offset 8, -8
+ 481              		.cfi_offset 14, -4
+ 482 0004 0446     		mov	r4, r0
+ 483 0006 1746     		mov	r7, r2
+ 484 0008 9846     		mov	r8, r3
+  85:xiagb/bottom/ivesStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 485              		.loc 1 85 17 is_stmt 1 view .LVU110
+  85:xiagb/bottom/ivesStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 486              		.loc 1 85 32 is_stmt 0 view .LVU111
+ 487 000a 856A     		ldr	r5, [r0, #40]	@ float
+  85:xiagb/bottom/ivesStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 488              		.loc 1 85 30 view .LVU112
+ 489 000c 0846     		mov	r0, r1
+ 490              	.LVL38:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 15
+
+
+  85:xiagb/bottom/ivesStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 491              		.loc 1 85 30 view .LVU113
+ 492 000e FFF7FEFF 		bl	__aeabi_i2f
+ 493              	.LVL39:
+  85:xiagb/bottom/ivesStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 494              		.loc 1 85 30 view .LVU114
+ 495 0012 2946     		mov	r1, r5
+ 496 0014 FFF7FEFF 		bl	__aeabi_fmul
+ 497              	.LVL40:
+ 498 0018 0646     		mov	r6, r0
+  85:xiagb/bottom/ivesStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 499              		.loc 1 85 40 view .LVU115
+ 500 001a 2068     		ldr	r0, [r4]
+ 501 001c FFF7FEFF 		bl	__aeabi_i2f
+ 502              	.LVL41:
+ 503 0020 0546     		mov	r5, r0
+  85:xiagb/bottom/ivesStepMotor.cpp ****                     move(position * mm_setp - this->position, max_speed, acc_dec_action_interval);
+ 504              		.loc 1 85 17 view .LVU116
+ 505 0022 0146     		mov	r1, r0
+ 506 0024 3046     		mov	r0, r6
+ 507 0026 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 508              	.LVL42:
+ 509 002a 68B1     		cbz	r0, .L30
+  86:xiagb/bottom/ivesStepMotor.cpp ****                 else
+ 510              		.loc 1 86 21 is_stmt 1 view .LVU117
+  86:xiagb/bottom/ivesStepMotor.cpp ****                 else
+ 511              		.loc 1 86 45 is_stmt 0 view .LVU118
+ 512 002c 2946     		mov	r1, r5
+ 513 002e 3046     		mov	r0, r6
+ 514 0030 FFF7FEFF 		bl	__aeabi_fsub
+ 515              	.LVL43:
+  86:xiagb/bottom/ivesStepMotor.cpp ****                 else
+ 516              		.loc 1 86 25 view .LVU119
+ 517 0034 FFF7FEFF 		bl	__aeabi_f2iz
+ 518              	.LVL44:
+ 519 0038 0146     		mov	r1, r0
+ 520 003a 4346     		mov	r3, r8
+ 521 003c 3A46     		mov	r2, r7
+ 522 003e 2046     		mov	r0, r4
+ 523 0040 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt
+ 524              	.LVL45:
+ 525              	.L25:
+  89:xiagb/bottom/ivesStepMotor.cpp **** 
+ 526              		.loc 1 89 13 view .LVU120
+ 527 0044 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 528              	.LVL46:
+ 529              	.L30:
+  88:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 530              		.loc 1 88 21 is_stmt 1 view .LVU121
+  88:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 531              		.loc 1 88 43 is_stmt 0 view .LVU122
+ 532 0048 3146     		mov	r1, r6
+ 533 004a 2846     		mov	r0, r5
+ 534 004c FFF7FEFF 		bl	__aeabi_fsub
+ 535              	.LVL47:
+  88:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 536              		.loc 1 88 26 view .LVU123
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 16
+
+
+ 537 0050 00F10040 		add	r0, r0, #-2147483648
+  88:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 538              		.loc 1 88 25 view .LVU124
+ 539 0054 FFF7FEFF 		bl	__aeabi_f2iz
+ 540              	.LVL48:
+ 541 0058 0146     		mov	r1, r0
+ 542 005a 4346     		mov	r3, r8
+ 543 005c 3A46     		mov	r2, r7
+ 544 005e 2046     		mov	r0, r4
+ 545 0060 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt
+ 546              	.LVL49:
+  89:xiagb/bottom/ivesStepMotor.cpp **** 
+ 547              		.loc 1 89 13 view .LVU125
+ 548 0064 EEE7     		b	.L25
+ 549              		.cfi_endproc
+ 550              	.LFE303:
+ 551              		.fnend
+ 553              		.section	.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass5resetEtt,"ax"
+ 554              		.align	1
+ 555              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass5resetEtt
+ 556              		.syntax unified
+ 557              		.thumb
+ 558              		.thumb_func
+ 559              		.fpu softvfp
+ 561              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass5resetEtt:
+ 562              		.fnstart
+ 563              	.LVL50:
+ 564              	.LFB306:
+ 228:xiagb/bottom/ivesStepMotor.cpp ****                 reset_flag = true;
+ 565              		.loc 1 228 13 is_stmt 1 view -0
+ 566              		.cfi_startproc
+ 567              		@ args = 0, pretend = 0, frame = 0
+ 568              		@ frame_needed = 0, uses_anonymous_args = 0
+ 228:xiagb/bottom/ivesStepMotor.cpp ****                 reset_flag = true;
+ 569              		.loc 1 228 13 is_stmt 0 view .LVU127
+ 570 0000 08B5     		push	{r3, lr}
+ 571              		.save {r3, lr}
+ 572              	.LCFI4:
+ 573              		.cfi_def_cfa_offset 8
+ 574              		.cfi_offset 3, -8
+ 575              		.cfi_offset 14, -4
+ 576 0002 1346     		mov	r3, r2
+ 229:xiagb/bottom/ivesStepMotor.cpp ****                 move(a_circle_step * -1000, max_speed, acc_dec_action_interval);
+ 577              		.loc 1 229 17 is_stmt 1 view .LVU128
+ 229:xiagb/bottom/ivesStepMotor.cpp ****                 move(a_circle_step * -1000, max_speed, acc_dec_action_interval);
+ 578              		.loc 1 229 28 is_stmt 0 view .LVU129
+ 579 0004 0122     		movs	r2, #1
+ 580              	.LVL51:
+ 229:xiagb/bottom/ivesStepMotor.cpp ****                 move(a_circle_step * -1000, max_speed, acc_dec_action_interval);
+ 581              		.loc 1 229 28 view .LVU130
+ 582 0006 80F83F20 		strb	r2, [r0, #63]
+ 230:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 583              		.loc 1 230 17 is_stmt 1 view .LVU131
+ 230:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 584              		.loc 1 230 21 is_stmt 0 view .LVU132
+ 585 000a 0A46     		mov	r2, r1
+ 586 000c 0149     		ldr	r1, .L34
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 17
+
+
+ 587              	.LVL52:
+ 230:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 588              		.loc 1 230 21 view .LVU133
+ 589 000e FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt
+ 590              	.LVL53:
+ 231:xiagb/bottom/ivesStepMotor.cpp **** 
+ 591              		.loc 1 231 13 view .LVU134
+ 592 0012 08BD     		pop	{r3, pc}
+ 593              	.L35:
+ 594              		.align	2
+ 595              	.L34:
+ 596 0014 002CCFFF 		.word	-3200000
+ 597              		.cfi_endproc
+ 598              	.LFE306:
+ 599              		.fnend
+ 601              		.section	.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass20motor_run_ti
+ 602              		.align	1
+ 603              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass20motor_run_time_chec
+ 604              		.syntax unified
+ 605              		.thumb
+ 606              		.thumb_func
+ 607              		.fpu softvfp
+ 609              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass20motor_run_time_checkEv:
+ 610              		.fnstart
+ 611              	.LVL54:
+ 612              	.LFB304:
+  92:xiagb/bottom/ivesStepMotor.cpp ****                 if (HAL_GPIO_ReadPin(reset_sensor_gpiox, reset_sensor_gpio_x) == reset_sensor_io_lv
+ 613              		.loc 1 92 13 is_stmt 1 view -0
+ 614              		.cfi_startproc
+ 615              		@ args = 0, pretend = 0, frame = 0
+ 616              		@ frame_needed = 0, uses_anonymous_args = 0
+  92:xiagb/bottom/ivesStepMotor.cpp ****                 if (HAL_GPIO_ReadPin(reset_sensor_gpiox, reset_sensor_gpio_x) == reset_sensor_io_lv
+ 617              		.loc 1 92 13 is_stmt 0 view .LVU136
+ 618 0000 10B5     		push	{r4, lr}
+ 619              		.save {r4, lr}
+ 620              	.LCFI5:
+ 621              		.cfi_def_cfa_offset 8
+ 622              		.cfi_offset 4, -8
+ 623              		.cfi_offset 14, -4
+ 624 0002 0446     		mov	r4, r0
+  93:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 625              		.loc 1 93 17 is_stmt 1 view .LVU137
+  93:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 626              		.loc 1 93 37 is_stmt 0 view .LVU138
+ 627 0004 818F     		ldrh	r1, [r0, #60]
+ 628 0006 406B     		ldr	r0, [r0, #52]
+ 629              	.LVL55:
+  93:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 630              		.loc 1 93 37 view .LVU139
+ 631 0008 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 632              	.LVL56:
+  93:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 633              		.loc 1 93 82 view .LVU140
+ 634 000c 94F83E30 		ldrb	r3, [r4, #62]	@ zero_extendqisi2
+  93:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 635              		.loc 1 93 17 view .LVU141
+ 636 0010 8342     		cmp	r3, r0
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 18
+
+
+ 637 0012 00D0     		beq	.L40
+ 638              	.L36:
+ 103:xiagb/bottom/ivesStepMotor.cpp **** 
+ 639              		.loc 1 103 13 view .LVU142
+ 640 0014 10BD     		pop	{r4, pc}
+ 641              	.LVL57:
+ 642              	.L40:
+  95:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 643              		.loc 1 95 21 is_stmt 1 view .LVU143
+  95:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 644              		.loc 1 95 25 is_stmt 0 view .LVU144
+ 645 0016 94F83F30 		ldrb	r3, [r4, #63]	@ zero_extendqisi2
+  95:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 646              		.loc 1 95 21 view .LVU145
+ 647 001a 33B9     		cbnz	r3, .L41
+ 100:xiagb/bottom/ivesStepMotor.cpp ****                         stop();
+ 648              		.loc 1 100 26 is_stmt 1 view .LVU146
+ 100:xiagb/bottom/ivesStepMotor.cpp ****                         stop();
+ 649              		.loc 1 100 30 is_stmt 0 view .LVU147
+ 650 001c 6368     		ldr	r3, [r4, #4]
+ 100:xiagb/bottom/ivesStepMotor.cpp ****                         stop();
+ 651              		.loc 1 100 26 view .LVU148
+ 652 001e 002B     		cmp	r3, #0
+ 653 0020 F8DA     		bge	.L36
+ 101:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 654              		.loc 1 101 25 is_stmt 1 view .LVU149
+ 101:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 655              		.loc 1 101 29 is_stmt 0 view .LVU150
+ 656 0022 2046     		mov	r0, r4
+ 657 0024 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv
+ 658              	.LVL58:
+ 103:xiagb/bottom/ivesStepMotor.cpp **** 
+ 659              		.loc 1 103 13 view .LVU151
+ 660 0028 F4E7     		b	.L36
+ 661              	.L41:
+  97:xiagb/bottom/ivesStepMotor.cpp ****                         reset_flag = false, position = 0; //绝对位置置0
+ 662              		.loc 1 97 25 is_stmt 1 view .LVU152
+  97:xiagb/bottom/ivesStepMotor.cpp ****                         reset_flag = false, position = 0; //绝对位置置0
+ 663              		.loc 1 97 29 is_stmt 0 view .LVU153
+ 664 002a 2046     		mov	r0, r4
+ 665 002c FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv
+ 666              	.LVL59:
+  98:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 667              		.loc 1 98 25 is_stmt 1 view .LVU154
+  98:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 668              		.loc 1 98 36 is_stmt 0 view .LVU155
+ 669 0030 0023     		movs	r3, #0
+ 670 0032 84F83F30 		strb	r3, [r4, #63]
+  98:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 671              		.loc 1 98 54 view .LVU156
+ 672 0036 2360     		str	r3, [r4]
+ 673 0038 ECE7     		b	.L36
+ 674              		.cfi_endproc
+ 675              	.LFE304:
+ 676              		.fnend
+ 678              		.global	__aeabi_f2uiz
+ 679              		.global	__aeabi_d2uiz
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 19
+
+
+ 680              		.section	.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4loopEv,"ax",%
+ 681              		.align	1
+ 682              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4loopEv
+ 683              		.syntax unified
+ 684              		.thumb
+ 685              		.thumb_func
+ 686              		.fpu softvfp
+ 688              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4loopEv:
+ 689              		.fnstart
+ 690              	.LVL60:
+ 691              	.LFB305:
+ 106:xiagb/bottom/ivesStepMotor.cpp ****                 if (state == motor_stop)
+ 692              		.loc 1 106 13 is_stmt 1 view -0
+ 693              		.cfi_startproc
+ 694              		@ args = 0, pretend = 0, frame = 0
+ 695              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106:xiagb/bottom/ivesStepMotor.cpp ****                 if (state == motor_stop)
+ 696              		.loc 1 106 13 is_stmt 0 view .LVU158
+ 697 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 698              		.save {r3, r4, r5, r6, r7, lr}
+ 699              	.LCFI6:
+ 700              		.cfi_def_cfa_offset 24
+ 701              		.cfi_offset 3, -24
+ 702              		.cfi_offset 4, -20
+ 703              		.cfi_offset 5, -16
+ 704              		.cfi_offset 6, -12
+ 705              		.cfi_offset 7, -8
+ 706              		.cfi_offset 14, -4
+ 107:xiagb/bottom/ivesStepMotor.cpp ****                     return;
+ 707              		.loc 1 107 17 is_stmt 1 view .LVU159
+ 107:xiagb/bottom/ivesStepMotor.cpp ****                     return;
+ 708              		.loc 1 107 21 is_stmt 0 view .LVU160
+ 709 0002 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2
+ 107:xiagb/bottom/ivesStepMotor.cpp ****                     return;
+ 710              		.loc 1 107 17 view .LVU161
+ 711 0004 03B9     		cbnz	r3, .L57
+ 712              	.LVL61:
+ 713              	.L42:
+ 225:xiagb/bottom/ivesStepMotor.cpp **** 
+ 714              		.loc 1 225 13 view .LVU162
+ 715 0006 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 716              	.LVL62:
+ 717              	.L57:
+ 225:xiagb/bottom/ivesStepMotor.cpp **** 
+ 718              		.loc 1 225 13 view .LVU163
+ 719 0008 0446     		mov	r4, r0
+ 111:xiagb/bottom/ivesStepMotor.cpp **** 
+ 720              		.loc 1 111 17 is_stmt 1 view .LVU164
+ 111:xiagb/bottom/ivesStepMotor.cpp **** 
+ 721              		.loc 1 111 34 is_stmt 0 view .LVU165
+ 722 000a 0022     		movs	r2, #0
+ 723 000c 018F     		ldrh	r1, [r0, #56]
+ 724 000e C06A     		ldr	r0, [r0, #44]
+ 725              	.LVL63:
+ 111:xiagb/bottom/ivesStepMotor.cpp **** 
+ 726              		.loc 1 111 34 view .LVU166
+ 727 0010 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 20
+
+
+ 728              	.LVL64:
+ 113:xiagb/bottom/ivesStepMotor.cpp ****                 speed_accumulator += speed;                   //叠加速度
+ 729              		.loc 1 113 17 is_stmt 1 view .LVU167
+ 114:xiagb/bottom/ivesStepMotor.cpp ****                 if (speed_accumulator >= max_speed_threshold) //阈值，如果当前速度达到�
+ 730              		.loc 1 114 17 view .LVU168
+ 114:xiagb/bottom/ivesStepMotor.cpp ****                 if (speed_accumulator >= max_speed_threshold) //阈值，如果当前速度达到�
+ 731              		.loc 1 114 38 is_stmt 0 view .LVU169
+ 732 0014 A389     		ldrh	r3, [r4, #12]
+ 114:xiagb/bottom/ivesStepMotor.cpp ****                 if (speed_accumulator >= max_speed_threshold) //阈值，如果当前速度达到�
+ 733              		.loc 1 114 35 view .LVU170
+ 734 0016 226A     		ldr	r2, [r4, #32]
+ 735 0018 1344     		add	r3, r3, r2
+ 736 001a 2362     		str	r3, [r4, #32]
+ 115:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 737              		.loc 1 115 17 is_stmt 1 view .LVU171
+ 738 001c 4FF6FE72 		movw	r2, #65534
+ 739 0020 9342     		cmp	r3, r2
+ 740 0022 44D8     		bhi	.L58
+ 113:xiagb/bottom/ivesStepMotor.cpp ****                 speed_accumulator += speed;                   //叠加速度
+ 741              		.loc 1 113 22 is_stmt 0 view .LVU172
+ 742 0024 0022     		movs	r2, #0
+ 743              	.LVL65:
+ 744              	.L44:
+ 137:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 745              		.loc 1 137 17 is_stmt 1 view .LVU173
+ 137:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 746              		.loc 1 137 25 is_stmt 0 view .LVU174
+ 747 0026 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
+ 137:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 748              		.loc 1 137 17 view .LVU175
+ 749 0028 022B     		cmp	r3, #2
+ 750 002a 61D0     		beq	.L47
+ 751 002c 032B     		cmp	r3, #3
+ 752 002e 00F09380 		beq	.L48
+ 753 0032 012B     		cmp	r3, #1
+ 754 0034 E7D1     		bne	.L42
+ 139:xiagb/bottom/ivesStepMotor.cpp **** 
+ 755              		.loc 1 139 17 is_stmt 1 view .LVU176
+ 142:xiagb/bottom/ivesStepMotor.cpp ****                         acc_dec_step++;
+ 756              		.loc 1 142 21 view .LVU177
+ 757 0036 12B1     		cbz	r2, .L49
+ 143:xiagb/bottom/ivesStepMotor.cpp **** 
+ 758              		.loc 1 143 25 view .LVU178
+ 759 0038 E369     		ldr	r3, [r4, #28]
+ 143:xiagb/bottom/ivesStepMotor.cpp **** 
+ 760              		.loc 1 143 37 is_stmt 0 view .LVU179
+ 761 003a 0133     		adds	r3, r3, #1
+ 762 003c E361     		str	r3, [r4, #28]
+ 763              	.L49:
+ 145:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 764              		.loc 1 145 21 is_stmt 1 view .LVU180
+ 145:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 765              		.loc 1 145 25 is_stmt 0 view .LVU181
+ 766 003e 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
+ 145:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 767              		.loc 1 145 21 view .LVU182
+ 768 0040 03B3     		cbz	r3, .L50
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 21
+
+
+ 147:xiagb/bottom/ivesStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval)
+ 769              		.loc 1 147 25 is_stmt 1 view .LVU183
+ 770 0042 A38A     		ldrh	r3, [r4, #20]
+ 147:xiagb/bottom/ivesStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval)
+ 771              		.loc 1 147 42 is_stmt 0 view .LVU184
+ 772 0044 0133     		adds	r3, r3, #1
+ 773 0046 9BB2     		uxth	r3, r3
+ 774 0048 A382     		strh	r3, [r4, #20]	@ movhi
+ 148:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 775              		.loc 1 148 25 is_stmt 1 view .LVU185
+ 148:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 776              		.loc 1 148 50 is_stmt 0 view .LVU186
+ 777 004a 628A     		ldrh	r2, [r4, #18]
+ 148:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 778              		.loc 1 148 25 view .LVU187
+ 779 004c 9342     		cmp	r3, r2
+ 780 004e 19D3     		bcc	.L50
+ 150:xiagb/bottom/ivesStepMotor.cpp ****                             acc_dec_counter++; //计录加速的次数
+ 781              		.loc 1 150 29 is_stmt 1 view .LVU188
+ 150:xiagb/bottom/ivesStepMotor.cpp ****                             acc_dec_counter++; //计录加速的次数
+ 782              		.loc 1 150 47 is_stmt 0 view .LVU189
+ 783 0050 0023     		movs	r3, #0
+ 784 0052 A382     		strh	r3, [r4, #20]	@ movhi
+ 151:xiagb/bottom/ivesStepMotor.cpp **** 
+ 785              		.loc 1 151 29 is_stmt 1 view .LVU190
+ 786 0054 A569     		ldr	r5, [r4, #24]
+ 151:xiagb/bottom/ivesStepMotor.cpp **** 
+ 787              		.loc 1 151 44 is_stmt 0 view .LVU191
+ 788 0056 0135     		adds	r5, r5, #1
+ 789 0058 A561     		str	r5, [r4, #24]
+ 153:xiagb/bottom/ivesStepMotor.cpp **** 
+ 790              		.loc 1 153 29 is_stmt 1 view .LVU192
+ 153:xiagb/bottom/ivesStepMotor.cpp **** 
+ 791              		.loc 1 153 66 is_stmt 0 view .LVU193
+ 792 005a 574B     		ldr	r3, .L60
+ 793 005c 1B68     		ldr	r3, [r3]
+ 794 005e 53F82570 		ldr	r7, [r3, r5, lsl #2]	@ float
+ 153:xiagb/bottom/ivesStepMotor.cpp **** 
+ 795              		.loc 1 153 70 view .LVU194
+ 796 0062 E689     		ldrh	r6, [r4, #14]
+ 153:xiagb/bottom/ivesStepMotor.cpp **** 
+ 797              		.loc 1 153 68 view .LVU195
+ 798 0064 3046     		mov	r0, r6
+ 799 0066 FFF7FEFF 		bl	__aeabi_i2f
+ 800              	.LVL66:
+ 801 006a 3946     		mov	r1, r7
+ 802 006c FFF7FEFF 		bl	__aeabi_fmul
+ 803              	.LVL67:
+ 153:xiagb/bottom/ivesStepMotor.cpp **** 
+ 804              		.loc 1 153 35 view .LVU196
+ 805 0070 FFF7FEFF 		bl	__aeabi_f2uiz
+ 806              	.LVL68:
+ 807 0074 A081     		strh	r0, [r4, #12]	@ movhi
+ 156:xiagb/bottom/ivesStepMotor.cpp ****                             {
+ 808              		.loc 1 156 29 is_stmt 1 view .LVU197
+ 809 0076 C72D     		cmp	r5, #199
+ 810 0078 04D9     		bls	.L50
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 22
+
+
+ 158:xiagb/bottom/ivesStepMotor.cpp ****                                 speed = max_speed;
+ 811              		.loc 1 158 33 view .LVU198
+ 158:xiagb/bottom/ivesStepMotor.cpp ****                                 speed = max_speed;
+ 812              		.loc 1 158 56 is_stmt 0 view .LVU199
+ 813 007a 0023     		movs	r3, #0
+ 814 007c 6374     		strb	r3, [r4, #17]
+ 159:xiagb/bottom/ivesStepMotor.cpp ****                                 state = motor_max_speed;
+ 815              		.loc 1 159 33 is_stmt 1 view .LVU200
+ 159:xiagb/bottom/ivesStepMotor.cpp ****                                 state = motor_max_speed;
+ 816              		.loc 1 159 39 is_stmt 0 view .LVU201
+ 817 007e A681     		strh	r6, [r4, #12]	@ movhi
+ 160:xiagb/bottom/ivesStepMotor.cpp ****                             }
+ 818              		.loc 1 160 33 is_stmt 1 view .LVU202
+ 160:xiagb/bottom/ivesStepMotor.cpp ****                             }
+ 819              		.loc 1 160 39 is_stmt 0 view .LVU203
+ 820 0080 0223     		movs	r3, #2
+ 821 0082 2374     		strb	r3, [r4, #16]
+ 822              	.L50:
+ 166:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 823              		.loc 1 166 21 is_stmt 1 view .LVU204
+ 824              	.LVL69:
+ 825              	.LBB11:
+ 826              	.LBI11:
+ 827              		.file 2 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3.
+   1:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // -*- C++ -*- C forwarding header.
+   2:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+   3:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // Copyright (C) 1997-2019 Free Software Foundation, Inc.
+   4:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** //
+   5:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // software; you can redistribute it and/or modify it under the
+   7:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // terms of the GNU General Public License as published by the
+   8:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // Free Software Foundation; either version 3, or (at your option)
+   9:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // any later version.
+  10:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  11:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // This library is distributed in the hope that it will be useful,
+  12:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // GNU General Public License for more details.
+  15:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  16:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // Under Section 7 of GPL version 3, you are granted additional
+  17:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // permissions described in the GCC Runtime Library Exception, version
+  18:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // 3.1, as published by the Free Software Foundation.
+  19:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  20:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // You should have received a copy of the GNU General Public License and
+  21:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // <http://www.gnu.org/licenses/>.
+  24:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  25:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** /** @file include/cmath
+  26:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  This is a Standard C++ Library file.  You should @c \#include this file
+  27:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  in your programs, rather than any of the @a *.h implementation files.
+  28:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *
+  29:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  This is the C++ version of the Standard C Library header @c math.h,
+  30:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  and its contents are (mostly) the same as that header, but are all
+  31:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  contained in the namespace @c std (except for names which are defined
+  32:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  *  as macros in C).
+  33:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****  */
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 23
+
+
+  34:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  35:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** //
+  36:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // ISO C++ 14882: 26.5  C library
+  37:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** //
+  38:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  39:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #pragma GCC system_header
+  40:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  41:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #include <bits/c++config.h>
+  42:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #include <bits/cpp_type_traits.h>
+  43:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #include <ext/type_traits.h>
+  44:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #define _GLIBCXX_INCLUDE_NEXT_C_HEADERS
+  45:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #include_next <math.h>
+  46:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef _GLIBCXX_INCLUDE_NEXT_C_HEADERS
+  47:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #include <bits/std_abs.h>
+  48:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  49:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef _GLIBCXX_CMATH
+  50:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #define _GLIBCXX_CMATH 1
+  51:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  52:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** // Get rid of those macros defined in <math.h> in lieu of real functions.
+  53:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef div
+  54:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef acos
+  55:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef asin
+  56:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef atan
+  57:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef atan2
+  58:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef ceil
+  59:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef cos
+  60:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef cosh
+  61:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef exp
+  62:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef fabs
+  63:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef floor
+  64:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef fmod
+  65:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef frexp
+  66:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef ldexp
+  67:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef log
+  68:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef log10
+  69:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef modf
+  70:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef pow
+  71:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef sin
+  72:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef sinh
+  73:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef sqrt
+  74:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef tan
+  75:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #undef tanh
+  76:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  77:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** extern "C++"
+  78:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** {
+  79:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** namespace std _GLIBCXX_VISIBILITY(default)
+  80:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** {
+  81:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  82:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  83:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::acos;
+  84:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  85:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+  86:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+  87:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   acos(float __x)
+  88:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_acosf(__x); }
+  89:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  90:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 24
+
+
+  91:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   acos(long double __x)
+  92:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_acosl(__x); }
+  93:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+  94:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+  95:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+  96:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+  97:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+  98:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+  99:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     acos(_Tp __x)
+ 100:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_acos(__x); }
+ 101:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 102:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::asin;
+ 103:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 104:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 105:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 106:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   asin(float __x)
+ 107:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_asinf(__x); }
+ 108:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 109:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 110:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   asin(long double __x)
+ 111:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_asinl(__x); }
+ 112:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 113:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 114:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 115:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 116:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 117:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 118:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     asin(_Tp __x)
+ 119:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_asin(__x); }
+ 120:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 121:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::atan;
+ 122:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 123:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 124:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 125:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   atan(float __x)
+ 126:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_atanf(__x); }
+ 127:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 128:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 129:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   atan(long double __x)
+ 130:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_atanl(__x); }
+ 131:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 132:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 133:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 134:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 135:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 136:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 137:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     atan(_Tp __x)
+ 138:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_atan(__x); }
+ 139:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 140:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::atan2;
+ 141:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 142:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 143:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 144:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   atan2(float __y, float __x)
+ 145:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_atan2f(__y, __x); }
+ 146:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 147:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 25
+
+
+ 148:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   atan2(long double __y, long double __x)
+ 149:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_atan2l(__y, __x); }
+ 150:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 151:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 152:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp, typename _Up>
+ 153:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 154:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__promote_2<_Tp, _Up>::__type
+ 155:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     atan2(_Tp __y, _Up __x)
+ 156:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     {
+ 157:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****       typedef typename __gnu_cxx::__promote_2<_Tp, _Up>::__type __type;
+ 158:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****       return atan2(__type(__y), __type(__x));
+ 159:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     }
+ 160:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 161:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::ceil;
+ 162:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 163:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 164:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 165:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   ceil(float __x)
+ 166:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_ceilf(__x); }
+ 167:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 168:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 169:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   ceil(long double __x)
+ 170:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_ceill(__x); }
+ 171:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 172:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 173:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 174:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 175:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ 176:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 177:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     ceil(_Tp __x)
+ 178:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_ceil(__x); }
+ 179:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 180:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::cos;
+ 181:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 182:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 183:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 184:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   cos(float __x)
+ 185:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_cosf(__x); }
+ 186:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 187:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 188:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   cos(long double __x)
+ 189:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_cosl(__x); }
+ 190:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 191:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 192:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 193:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 194:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 195:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 196:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     cos(_Tp __x)
+ 197:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_cos(__x); }
+ 198:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 199:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::cosh;
+ 200:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 201:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 202:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 203:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   cosh(float __x)
+ 204:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_coshf(__x); }
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 26
+
+
+ 205:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 206:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 207:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   cosh(long double __x)
+ 208:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_coshl(__x); }
+ 209:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 210:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 211:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 212:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 213:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 214:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 215:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     cosh(_Tp __x)
+ 216:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_cosh(__x); }
+ 217:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 218:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::exp;
+ 219:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 220:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 221:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 222:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   exp(float __x)
+ 223:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_expf(__x); }
+ 224:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 225:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 226:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   exp(long double __x)
+ 227:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_expl(__x); }
+ 228:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 229:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 230:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 231:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 232:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 233:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 234:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     exp(_Tp __x)
+ 235:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_exp(__x); }
+ 236:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 237:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   using ::fabs;
+ 238:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 239:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 240:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 241:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   fabs(float __x)
+ 242:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_fabsf(__x); }
+ 243:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 244:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 245:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   fabs(long double __x)
+ 246:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   { return __builtin_fabsl(__x); }
+ 247:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** #endif
+ 248:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath **** 
+ 249:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****   template<typename _Tp>
+ 250:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 251:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 252:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****                                     double>::__type
+ 253:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     fabs(_Tp __x)
+ 828              		.loc 2 253 5 view .LVU205
+ 829              	.LBB12:
+ 254:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_fabs(__x); }
+ 830              		.loc 2 254 28 is_stmt 0 view .LVU206
+ 831 0084 6068     		ldr	r0, [r4, #4]
+ 832 0086 FFF7FEFF 		bl	__aeabi_i2d
+ 833              	.LVL70:
+ 834              		.loc 2 254 28 view .LVU207
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 27
+
+
+ 835              	.LBE12:
+ 836              	.LBE11:
+ 166:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 837              		.loc 1 166 25 view .LVU208
+ 838 008a 21F00043 		bic	r3, r1, #-2147483648
+ 839 008e 1946     		mov	r1, r3
+ 840 0090 FFF7FEFF 		bl	__aeabi_d2uiz
+ 841              	.LVL71:
+ 166:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 842              		.loc 1 166 21 view .LVU209
+ 843 0094 0128     		cmp	r0, #1
+ 844 0096 25D9     		bls	.L51
+ 168:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 845              		.loc 1 168 25 is_stmt 1 view .LVU210
+ 168:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 846              		.loc 1 168 29 is_stmt 0 view .LVU211
+ 847 0098 A368     		ldr	r3, [r4, #8]
+ 168:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 848              		.loc 1 168 25 view .LVU212
+ 849 009a B3EB500F 		cmp	r3, r0, lsr #1
+ 850 009e B2D3     		bcc	.L42
+ 171:xiagb/bottom/ivesStepMotor.cpp ****                             state = motor_decelerate;
+ 851              		.loc 1 171 29 is_stmt 1 view .LVU213
+ 171:xiagb/bottom/ivesStepMotor.cpp ****                             state = motor_decelerate;
+ 852              		.loc 1 171 49 is_stmt 0 view .LVU214
+ 853 00a0 638A     		ldrh	r3, [r4, #18]
+ 171:xiagb/bottom/ivesStepMotor.cpp ****                             state = motor_decelerate;
+ 854              		.loc 1 171 68 view .LVU215
+ 855 00a2 A28A     		ldrh	r2, [r4, #20]
+ 171:xiagb/bottom/ivesStepMotor.cpp ****                             state = motor_decelerate;
+ 856              		.loc 1 171 66 view .LVU216
+ 857 00a4 9B1A     		subs	r3, r3, r2
+ 171:xiagb/bottom/ivesStepMotor.cpp ****                             state = motor_decelerate;
+ 858              		.loc 1 171 47 view .LVU217
+ 859 00a6 A382     		strh	r3, [r4, #20]	@ movhi
+ 172:xiagb/bottom/ivesStepMotor.cpp ****                         }
+ 860              		.loc 1 172 29 is_stmt 1 view .LVU218
+ 172:xiagb/bottom/ivesStepMotor.cpp ****                         }
+ 861              		.loc 1 172 35 is_stmt 0 view .LVU219
+ 862 00a8 0323     		movs	r3, #3
+ 863 00aa 2374     		strb	r3, [r4, #16]
+ 864 00ac ABE7     		b	.L42
+ 865              	.LVL72:
+ 866              	.L58:
+ 117:xiagb/bottom/ivesStepMotor.cpp ****                     speed_accumulator -= max_speed_threshold;
+ 867              		.loc 1 117 21 is_stmt 1 view .LVU220
+ 118:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 868              		.loc 1 118 21 view .LVU221
+ 118:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 869              		.loc 1 118 39 is_stmt 0 view .LVU222
+ 870 00ae A3F57F43 		sub	r3, r3, #65280
+ 871 00b2 FF3B     		subs	r3, r3, #255
+ 872 00b4 2362     		str	r3, [r4, #32]
+ 121:xiagb/bottom/ivesStepMotor.cpp ****                 {
+ 873              		.loc 1 121 17 is_stmt 1 view .LVU223
+ 123:xiagb/bottom/ivesStepMotor.cpp ****                     //拉高脉冲信号产生
+ 874              		.loc 1 123 21 view .LVU224
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 28
+
+
+ 875 00b6 A368     		ldr	r3, [r4, #8]
+ 123:xiagb/bottom/ivesStepMotor.cpp ****                     //拉高脉冲信号产生
+ 876              		.loc 1 123 33 is_stmt 0 view .LVU225
+ 877 00b8 0133     		adds	r3, r3, #1
+ 878 00ba A360     		str	r3, [r4, #8]
+ 125:xiagb/bottom/ivesStepMotor.cpp **** 
+ 879              		.loc 1 125 21 is_stmt 1 view .LVU226
+ 125:xiagb/bottom/ivesStepMotor.cpp **** 
+ 880              		.loc 1 125 38 is_stmt 0 view .LVU227
+ 881 00bc 0122     		movs	r2, #1
+ 882 00be 218F     		ldrh	r1, [r4, #56]
+ 883 00c0 E06A     		ldr	r0, [r4, #44]
+ 884 00c2 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 885              	.LVL73:
+ 127:xiagb/bottom/ivesStepMotor.cpp ****                         position++;
+ 886              		.loc 1 127 21 is_stmt 1 view .LVU228
+ 127:xiagb/bottom/ivesStepMotor.cpp ****                         position++;
+ 887              		.loc 1 127 25 is_stmt 0 view .LVU229
+ 888 00c6 6368     		ldr	r3, [r4, #4]
+ 127:xiagb/bottom/ivesStepMotor.cpp ****                         position++;
+ 889              		.loc 1 127 21 view .LVU230
+ 890 00c8 002B     		cmp	r3, #0
+ 891 00ca 07DD     		ble	.L45
+ 128:xiagb/bottom/ivesStepMotor.cpp ****                     else
+ 892              		.loc 1 128 25 is_stmt 1 view .LVU231
+ 893 00cc 2368     		ldr	r3, [r4]
+ 128:xiagb/bottom/ivesStepMotor.cpp ****                     else
+ 894              		.loc 1 128 33 is_stmt 0 view .LVU232
+ 895 00ce 0133     		adds	r3, r3, #1
+ 896 00d0 2360     		str	r3, [r4]
+ 897              	.L46:
+ 133:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 898              		.loc 1 133 21 is_stmt 1 view .LVU233
+ 133:xiagb/bottom/ivesStepMotor.cpp ****                 }
+ 899              		.loc 1 133 41 is_stmt 0 view .LVU234
+ 900 00d2 2046     		mov	r0, r4
+ 901 00d4 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass20motor_run_time_checkEv
+ 902              	.LVL74:
+ 117:xiagb/bottom/ivesStepMotor.cpp ****                     speed_accumulator -= max_speed_threshold;
+ 903              		.loc 1 117 29 view .LVU235
+ 904 00d8 0122     		movs	r2, #1
+ 905 00da A4E7     		b	.L44
+ 906              	.L45:
+ 130:xiagb/bottom/ivesStepMotor.cpp **** 
+ 907              		.loc 1 130 25 is_stmt 1 view .LVU236
+ 908 00dc 2368     		ldr	r3, [r4]
+ 130:xiagb/bottom/ivesStepMotor.cpp **** 
+ 909              		.loc 1 130 33 is_stmt 0 view .LVU237
+ 910 00de 013B     		subs	r3, r3, #1
+ 911 00e0 2360     		str	r3, [r4]
+ 912 00e2 F6E7     		b	.L46
+ 913              	.LVL75:
+ 914              	.L51:
+ 175:xiagb/bottom/ivesStepMotor.cpp ****                         state = motor_decelerate;
+ 915              		.loc 1 175 26 is_stmt 1 view .LVU238
+ 175:xiagb/bottom/ivesStepMotor.cpp ****                         state = motor_decelerate;
+ 916              		.loc 1 175 30 is_stmt 0 view .LVU239
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 29
+
+
+ 917 00e4 A368     		ldr	r3, [r4, #8]
+ 175:xiagb/bottom/ivesStepMotor.cpp ****                         state = motor_decelerate;
+ 918              		.loc 1 175 26 view .LVU240
+ 919 00e6 002B     		cmp	r3, #0
+ 920 00e8 8DD0     		beq	.L42
+ 176:xiagb/bottom/ivesStepMotor.cpp **** 
+ 921              		.loc 1 176 25 is_stmt 1 view .LVU241
+ 176:xiagb/bottom/ivesStepMotor.cpp **** 
+ 922              		.loc 1 176 31 is_stmt 0 view .LVU242
+ 923 00ea 0323     		movs	r3, #3
+ 924 00ec 2374     		strb	r3, [r4, #16]
+ 925 00ee 8AE7     		b	.L42
+ 926              	.L47:
+ 180:xiagb/bottom/ivesStepMotor.cpp ****                     if (keep_turn_flag && carry_v == true) //当处于保持转动的状态时
+ 927              		.loc 1 180 17 is_stmt 1 view .LVU243
+ 181:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 928              		.loc 1 181 21 view .LVU244
+ 181:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 929              		.loc 1 181 25 is_stmt 0 view .LVU245
+ 930 00f0 94F84130 		ldrb	r3, [r4, #65]	@ zero_extendqisi2
+ 181:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 931              		.loc 1 181 21 view .LVU246
+ 932 00f4 4BB1     		cbz	r3, .L52
+ 181:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 933              		.loc 1 181 40 discriminator 1 view .LVU247
+ 934 00f6 42B1     		cbz	r2, .L52
+ 183:xiagb/bottom/ivesStepMotor.cpp ****                         if (need_run_step > 0)
+ 935              		.loc 1 183 25 is_stmt 1 view .LVU248
+ 936 00f8 A368     		ldr	r3, [r4, #8]
+ 183:xiagb/bottom/ivesStepMotor.cpp ****                         if (need_run_step > 0)
+ 937              		.loc 1 183 37 is_stmt 0 view .LVU249
+ 938 00fa 013B     		subs	r3, r3, #1
+ 939 00fc A360     		str	r3, [r4, #8]
+ 184:xiagb/bottom/ivesStepMotor.cpp ****                             position--;
+ 940              		.loc 1 184 25 is_stmt 1 view .LVU250
+ 184:xiagb/bottom/ivesStepMotor.cpp ****                             position--;
+ 941              		.loc 1 184 29 is_stmt 0 view .LVU251
+ 942 00fe 6368     		ldr	r3, [r4, #4]
+ 184:xiagb/bottom/ivesStepMotor.cpp ****                             position--;
+ 943              		.loc 1 184 25 view .LVU252
+ 944 0100 002B     		cmp	r3, #0
+ 945 0102 25DD     		ble	.L53
+ 185:xiagb/bottom/ivesStepMotor.cpp ****                         else
+ 946              		.loc 1 185 29 is_stmt 1 view .LVU253
+ 947 0104 2368     		ldr	r3, [r4]
+ 185:xiagb/bottom/ivesStepMotor.cpp ****                         else
+ 948              		.loc 1 185 37 is_stmt 0 view .LVU254
+ 949 0106 013B     		subs	r3, r3, #1
+ 950 0108 2360     		str	r3, [r4]
+ 951              	.L52:
+ 190:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 952              		.loc 1 190 21 is_stmt 1 view .LVU255
+ 953              	.LVL76:
+ 954              	.LBB13:
+ 955              	.LBI13:
+ 253:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_fabs(__x); }
+ 956              		.loc 2 253 5 view .LVU256
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 30
+
+
+ 957              	.LBB14:
+ 958              		.loc 2 254 28 is_stmt 0 view .LVU257
+ 959 010a 6068     		ldr	r0, [r4, #4]
+ 960 010c FFF7FEFF 		bl	__aeabi_i2d
+ 961              	.LVL77:
+ 962              		.loc 2 254 28 view .LVU258
+ 963              	.LBE14:
+ 964              	.LBE13:
+ 190:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 965              		.loc 1 190 25 view .LVU259
+ 966 0110 21F00043 		bic	r3, r1, #-2147483648
+ 967 0114 1946     		mov	r1, r3
+ 968 0116 FFF7FEFF 		bl	__aeabi_d2uiz
+ 969              	.LVL78:
+ 190:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 970              		.loc 1 190 57 view .LVU260
+ 971 011a A368     		ldr	r3, [r4, #8]
+ 190:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 972              		.loc 1 190 55 view .LVU261
+ 973 011c C01A     		subs	r0, r0, r3
+ 190:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 974              		.loc 1 190 73 view .LVU262
+ 975 011e E369     		ldr	r3, [r4, #28]
+ 190:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 976              		.loc 1 190 21 view .LVU263
+ 977 0120 9842     		cmp	r0, r3
+ 978 0122 3FF670AF 		bhi	.L42
+ 192:xiagb/bottom/ivesStepMotor.cpp ****                         //进入减速状态就要切换为减速状态时的最大速度
+ 979              		.loc 1 192 25 is_stmt 1 view .LVU264
+ 192:xiagb/bottom/ivesStepMotor.cpp ****                         //进入减速状态就要切换为减速状态时的最大速度
+ 980              		.loc 1 192 48 is_stmt 0 view .LVU265
+ 981 0126 0123     		movs	r3, #1
+ 982 0128 6374     		strb	r3, [r4, #17]
+ 194:xiagb/bottom/ivesStepMotor.cpp ****                         speed = curve_s_table[acc_dec_counter] * max_speed; //计算当前速度
+ 983              		.loc 1 194 25 is_stmt 1 view .LVU266
+ 984 012a A369     		ldr	r3, [r4, #24]
+ 194:xiagb/bottom/ivesStepMotor.cpp ****                         speed = curve_s_table[acc_dec_counter] * max_speed; //计算当前速度
+ 985              		.loc 1 194 40 is_stmt 0 view .LVU267
+ 986 012c 013B     		subs	r3, r3, #1
+ 987 012e A361     		str	r3, [r4, #24]
+ 195:xiagb/bottom/ivesStepMotor.cpp ****                         state = motor_decelerate;
+ 988              		.loc 1 195 25 is_stmt 1 view .LVU268
+ 195:xiagb/bottom/ivesStepMotor.cpp ****                         state = motor_decelerate;
+ 989              		.loc 1 195 62 is_stmt 0 view .LVU269
+ 990 0130 214A     		ldr	r2, .L60
+ 991 0132 1268     		ldr	r2, [r2]
+ 992 0134 52F82350 		ldr	r5, [r2, r3, lsl #2]	@ float
+ 195:xiagb/bottom/ivesStepMotor.cpp ****                         state = motor_decelerate;
+ 993              		.loc 1 195 64 view .LVU270
+ 994 0138 E089     		ldrh	r0, [r4, #14]
+ 995 013a FFF7FEFF 		bl	__aeabi_i2f
+ 996              	.LVL79:
+ 997 013e 2946     		mov	r1, r5
+ 998 0140 FFF7FEFF 		bl	__aeabi_fmul
+ 999              	.LVL80:
+ 195:xiagb/bottom/ivesStepMotor.cpp ****                         state = motor_decelerate;
+ 1000              		.loc 1 195 31 view .LVU271
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 31
+
+
+ 1001 0144 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1002              	.LVL81:
+ 1003 0148 A081     		strh	r0, [r4, #12]	@ movhi
+ 196:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 1004              		.loc 1 196 25 is_stmt 1 view .LVU272
+ 196:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 1005              		.loc 1 196 31 is_stmt 0 view .LVU273
+ 1006 014a 0323     		movs	r3, #3
+ 1007 014c 2374     		strb	r3, [r4, #16]
+ 1008 014e 5AE7     		b	.L42
+ 1009              	.L53:
+ 187:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 1010              		.loc 1 187 29 is_stmt 1 view .LVU274
+ 1011 0150 2368     		ldr	r3, [r4]
+ 187:xiagb/bottom/ivesStepMotor.cpp ****                     }
+ 1012              		.loc 1 187 37 is_stmt 0 view .LVU275
+ 1013 0152 0133     		adds	r3, r3, #1
+ 1014 0154 2360     		str	r3, [r4]
+ 1015 0156 D8E7     		b	.L52
+ 1016              	.L48:
+ 201:xiagb/bottom/ivesStepMotor.cpp **** 
+ 1017              		.loc 1 201 17 is_stmt 1 view .LVU276
+ 203:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 1018              		.loc 1 203 21 view .LVU277
+ 203:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 1019              		.loc 1 203 25 is_stmt 0 view .LVU278
+ 1020 0158 637C     		ldrb	r3, [r4, #17]	@ zero_extendqisi2
+ 203:xiagb/bottom/ivesStepMotor.cpp ****                     {
+ 1021              		.loc 1 203 21 view .LVU279
+ 1022 015a D3B1     		cbz	r3, .L54
+ 205:xiagb/bottom/ivesStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval) //如果中断次数达到设定
+ 1023              		.loc 1 205 25 is_stmt 1 view .LVU280
+ 1024 015c A38A     		ldrh	r3, [r4, #20]
+ 205:xiagb/bottom/ivesStepMotor.cpp ****                         if (interrupt_counter >= acc_dec_interval) //如果中断次数达到设定
+ 1025              		.loc 1 205 42 is_stmt 0 view .LVU281
+ 1026 015e 0133     		adds	r3, r3, #1
+ 1027 0160 9BB2     		uxth	r3, r3
+ 1028 0162 A382     		strh	r3, [r4, #20]	@ movhi
+ 206:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 1029              		.loc 1 206 25 is_stmt 1 view .LVU282
+ 206:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 1030              		.loc 1 206 50 is_stmt 0 view .LVU283
+ 1031 0164 628A     		ldrh	r2, [r4, #18]
+ 206:xiagb/bottom/ivesStepMotor.cpp ****                         {
+ 1032              		.loc 1 206 25 view .LVU284
+ 1033 0166 9342     		cmp	r3, r2
+ 1034 0168 13D3     		bcc	.L54
+ 208:xiagb/bottom/ivesStepMotor.cpp ****                             acc_dec_counter--;
+ 1035              		.loc 1 208 29 is_stmt 1 view .LVU285
+ 208:xiagb/bottom/ivesStepMotor.cpp ****                             acc_dec_counter--;
+ 1036              		.loc 1 208 47 is_stmt 0 view .LVU286
+ 1037 016a 0023     		movs	r3, #0
+ 1038 016c A382     		strh	r3, [r4, #20]	@ movhi
+ 209:xiagb/bottom/ivesStepMotor.cpp **** 
+ 1039              		.loc 1 209 29 is_stmt 1 view .LVU287
+ 1040 016e A569     		ldr	r5, [r4, #24]
+ 209:xiagb/bottom/ivesStepMotor.cpp **** 
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 32
+
+
+ 1041              		.loc 1 209 44 is_stmt 0 view .LVU288
+ 1042 0170 013D     		subs	r5, r5, #1
+ 1043 0172 A561     		str	r5, [r4, #24]
+ 211:xiagb/bottom/ivesStepMotor.cpp **** 
+ 1044              		.loc 1 211 29 is_stmt 1 view .LVU289
+ 211:xiagb/bottom/ivesStepMotor.cpp **** 
+ 1045              		.loc 1 211 66 is_stmt 0 view .LVU290
+ 1046 0174 104B     		ldr	r3, .L60
+ 1047 0176 1B68     		ldr	r3, [r3]
+ 1048 0178 53F82560 		ldr	r6, [r3, r5, lsl #2]	@ float
+ 211:xiagb/bottom/ivesStepMotor.cpp **** 
+ 1049              		.loc 1 211 68 view .LVU291
+ 1050 017c E089     		ldrh	r0, [r4, #14]
+ 1051 017e FFF7FEFF 		bl	__aeabi_i2f
+ 1052              	.LVL82:
+ 1053 0182 3146     		mov	r1, r6
+ 1054 0184 FFF7FEFF 		bl	__aeabi_fmul
+ 1055              	.LVL83:
+ 211:xiagb/bottom/ivesStepMotor.cpp **** 
+ 1056              		.loc 1 211 35 view .LVU292
+ 1057 0188 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1058              	.LVL84:
+ 1059 018c A081     		strh	r0, [r4, #12]	@ movhi
+ 213:xiagb/bottom/ivesStepMotor.cpp ****                                 interrupt_counter_flag = false;
+ 1060              		.loc 1 213 29 is_stmt 1 view .LVU293
+ 1061 018e 012D     		cmp	r5, #1
+ 1062 0190 0FD9     		bls	.L59
+ 1063              	.L54:
+ 218:xiagb/bottom/ivesStepMotor.cpp ****                         stop();
+ 1064              		.loc 1 218 21 view .LVU294
+ 218:xiagb/bottom/ivesStepMotor.cpp ****                         stop();
+ 1065              		.loc 1 218 25 is_stmt 0 view .LVU295
+ 1066 0192 A568     		ldr	r5, [r4, #8]
+ 1067              	.LVL85:
+ 1068              	.LBB15:
+ 1069              	.LBI15:
+ 253:d:\zkrj\gnu arm embedded toolchain\9 2020-q2-update\arm-none-eabi\include\c++\9.3.1\cmath ****     { return __builtin_fabs(__x); }
+ 1070              		.loc 2 253 5 is_stmt 1 view .LVU296
+ 1071              	.LBB16:
+ 1072              		.loc 2 254 28 is_stmt 0 view .LVU297
+ 1073 0194 6068     		ldr	r0, [r4, #4]
+ 1074 0196 FFF7FEFF 		bl	__aeabi_i2d
+ 1075              	.LVL86:
+ 1076              		.loc 2 254 28 view .LVU298
+ 1077              	.LBE16:
+ 1078              	.LBE15:
+ 218:xiagb/bottom/ivesStepMotor.cpp ****                         stop();
+ 1079              		.loc 1 218 41 view .LVU299
+ 1080 019a 21F00043 		bic	r3, r1, #-2147483648
+ 1081 019e 1946     		mov	r1, r3
+ 1082 01a0 FFF7FEFF 		bl	__aeabi_d2uiz
+ 1083              	.LVL87:
+ 218:xiagb/bottom/ivesStepMotor.cpp ****                         stop();
+ 1084              		.loc 1 218 21 view .LVU300
+ 1085 01a4 8542     		cmp	r5, r0
+ 1086 01a6 FFF42EAF 		bcc	.L42
+ 219:xiagb/bottom/ivesStepMotor.cpp ****                     break;
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 33
+
+
+ 1087              		.loc 1 219 25 is_stmt 1 view .LVU301
+ 219:xiagb/bottom/ivesStepMotor.cpp ****                     break;
+ 1088              		.loc 1 219 29 is_stmt 0 view .LVU302
+ 1089 01aa 2046     		mov	r0, r4
+ 1090 01ac FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv
+ 1091              	.LVL88:
+ 1092 01b0 29E7     		b	.L42
+ 1093              	.L59:
+ 214:xiagb/bottom/ivesStepMotor.cpp ****                         }
+ 1094              		.loc 1 214 33 is_stmt 1 view .LVU303
+ 214:xiagb/bottom/ivesStepMotor.cpp ****                         }
+ 1095              		.loc 1 214 56 is_stmt 0 view .LVU304
+ 1096 01b2 0023     		movs	r3, #0
+ 1097 01b4 6374     		strb	r3, [r4, #17]
+ 1098 01b6 ECE7     		b	.L54
+ 1099              	.L61:
+ 1100              		.align	2
+ 1101              	.L60:
+ 1102 01b8 00000000 		.word	.LANCHOR0
+ 1103              		.cfi_endproc
+ 1104              	.LFE305:
+ 1105              		.fnend
+ 1107              		.section	.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass9keep_turnEbtt
+ 1108              		.align	1
+ 1109              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass9keep_turnEbtt
+ 1110              		.syntax unified
+ 1111              		.thumb
+ 1112              		.thumb_func
+ 1113              		.fpu softvfp
+ 1115              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass9keep_turnEbtt:
+ 1116              		.fnstart
+ 1117              	.LVL89:
+ 1118              	.LFB308:
+ 239:xiagb/bottom/ivesStepMotor.cpp **** 
+ 240:xiagb/bottom/ivesStepMotor.cpp ****             void ivesStepMotorClass::keep_turn(bool dir, uint16_t max_speed, uint16_t acc_dec_actio
+ 241:xiagb/bottom/ivesStepMotor.cpp ****             {
+ 1119              		.loc 1 241 13 is_stmt 1 view -0
+ 1120              		.cfi_startproc
+ 1121              		@ args = 0, pretend = 0, frame = 0
+ 1122              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1123              		.loc 1 241 13 is_stmt 0 view .LVU306
+ 1124 0000 10B5     		push	{r4, lr}
+ 1125              		.save {r4, lr}
+ 1126              	.LCFI7:
+ 1127              		.cfi_def_cfa_offset 8
+ 1128              		.cfi_offset 4, -8
+ 1129              		.cfi_offset 14, -4
+ 242:xiagb/bottom/ivesStepMotor.cpp ****                 keep_turn_flag = true;
+ 1130              		.loc 1 242 17 is_stmt 1 view .LVU307
+ 1131              		.loc 1 242 32 is_stmt 0 view .LVU308
+ 1132 0002 0124     		movs	r4, #1
+ 1133 0004 80F84140 		strb	r4, [r0, #65]
+ 243:xiagb/bottom/ivesStepMotor.cpp ****                 if (dir)
+ 1134              		.loc 1 243 17 is_stmt 1 view .LVU309
+ 1135 0008 19B1     		cbz	r1, .L63
+ 244:xiagb/bottom/ivesStepMotor.cpp ****                     move(a_circle_step * 100, max_speed, acc_dec_action_interval); //步数至少�
+ 1136              		.loc 1 244 21 view .LVU310
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 34
+
+
+ 1137              		.loc 1 244 25 is_stmt 0 view .LVU311
+ 1138 000a 0449     		ldr	r1, .L66
+ 1139              	.LVL90:
+ 1140              		.loc 1 244 25 view .LVU312
+ 1141 000c FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt
+ 1142              	.LVL91:
+ 1143              	.L62:
+ 245:xiagb/bottom/ivesStepMotor.cpp ****                 else
+ 246:xiagb/bottom/ivesStepMotor.cpp ****                     move(a_circle_step * -100, max_speed, acc_dec_action_interval);
+ 247:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 1144              		.loc 1 247 13 view .LVU313
+ 1145 0010 10BD     		pop	{r4, pc}
+ 1146              	.LVL92:
+ 1147              	.L63:
+ 246:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 1148              		.loc 1 246 21 is_stmt 1 view .LVU314
+ 246:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 1149              		.loc 1 246 25 is_stmt 0 view .LVU315
+ 1150 0012 0349     		ldr	r1, .L66+4
+ 1151              	.LVL93:
+ 246:xiagb/bottom/ivesStepMotor.cpp ****             }
+ 1152              		.loc 1 246 25 view .LVU316
+ 1153 0014 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt
+ 1154              	.LVL94:
+ 1155              		.loc 1 247 13 view .LVU317
+ 1156 0018 FAE7     		b	.L62
+ 1157              	.L67:
+ 1158 001a 00BF     		.align	2
+ 1159              	.L66:
+ 1160 001c 00E20400 		.word	320000
+ 1161 0020 001EFBFF 		.word	-320000
+ 1162              		.cfi_endproc
+ 1163              	.LFE308:
+ 1164              		.fnend
+ 1166              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass23curve_s_data_build_
+ 1167              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass13curve_s_tableE
+ 1168              		.global	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass2piE
+ 1169              		.section	.bss._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass13curve_s_table
+ 1170              		.align	2
+ 1171              		.set	.LANCHOR0,. + 0
+ 1174              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass13curve_s_tableE:
+ 1175 0000 00000000 		.space	4
+ 1176              		.section	.bss._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass23curve_s_data_
+ 1177              		.set	.LANCHOR1,. + 0
+ 1180              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass23curve_s_data_build_flagE:
+ 1181 0000 00       		.space	1
+ 1182              		.section	.rodata._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass2piE,"a"
+ 1183              		.align	2
+ 1186              	_ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass2piE:
+ 1187 0000 DA0F4940 		.word	1078530010
+ 1188              		.text
+ 1189              	.Letext0:
+ 1190              		.file 3 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\machine\\
+ 1191              		.file 4 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_std
+ 1192              		.file 5 "Drivers/CMSIS/Include/core_cm3.h"
+ 1193              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 1194              		.file 7 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 35
+
+
+ 1195              		.file 8 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 1196              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 1197              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 1198              		.file 11 "xiagb/bottom/ivesStepMotor.hpp"
+ 1199              		.file 12 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3
+ 1200              		.file 13 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3
+ 1201              		.file 14 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3
+ 1202              		.file 15 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3
+ 1203              		.file 16 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\lib\\gcc\\arm-none-eabi\\9.3.1\\
+ 1204              		.file 17 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_ty
+ 1205              		.file 18 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\ree
+ 1206              		.file 19 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\loc
+ 1207              		.file 20 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\math.h"
+ 1208              		.file 21 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\stdlib.h
+ 1209              		.file 22 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\c++\\9.3
+ 1210              		.file 23 "<built-in>"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 36
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ivesStepMotor.cpp
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:16     .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassC2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:24     .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassC2Ev:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassC2Ev
+.ARM.exidx.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassC2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:24     .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassC2Ev:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassC1Ev
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:44     .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassD2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:51     .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassD2Ev:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassD2Ev
+.ARM.exidx.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassD2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:51     .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassD2Ev:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClassD1Ev
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:75     .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass12curve_s_initEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:82     .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass12curve_s_initEv:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass12curve_s_initEv
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:173    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass12curve_s_initEv:00000060 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass12curve_s_initEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:184    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:191    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv
+.ARM.exidx.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4stopEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:219    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4initEP12GPIO_TypeDeftS4_tS4_t13GPIO_PinStateS5_:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:226    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4initEP12GPIO_TypeDeftS4_tS4_t13GPIO_PinStateS5_:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4initEP12GPIO_TypeDeftS4_tS4_t13GPIO_PinStateS5_
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:309    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4initEP12GPIO_TypeDeftS4_tS4_t13GPIO_PinStateS5_:0000004c $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4initEP12GPIO_TypeDeftS4_tS4_t13GPIO_PinStateS5_:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:315    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:322    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt
+.ARM.exidx.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4moveEltt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:456    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass16move_to_positionEttt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:463    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass16move_to_positionEttt:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass16move_to_positionEttt
+.ARM.exidx.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass16move_to_positionEttt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:554    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass5resetEtt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:561    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass5resetEtt:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass5resetEtt
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:596    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass5resetEtt:00000014 $d
+.ARM.extab.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass5resetEtt:00000000 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass5resetEtt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:602    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass20motor_run_time_checkEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:609    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass20motor_run_time_checkEv:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass20motor_run_time_checkEv
+.ARM.exidx.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass20motor_run_time_checkEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:681    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4loopEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:688    .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4loopEv:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4loopEv
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:1102   .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4loopEv:000001b8 $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass4loopEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:1108   .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass9keep_turnEbtt:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:1115   .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass9keep_turnEbtt:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass9keep_turnEbtt
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:1160   .text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass9keep_turnEbtt:0000001c $d
+.ARM.exidx.text._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass9keep_turnEbtt:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:1180   .bss._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass23curve_s_data_build_flagE:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass23curve_s_data_build_flagE
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:1174   .bss._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass13curve_s_tableE:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass13curve_s_tableE
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:1186   .rodata._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass2piE:00000000 _ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass2piE
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:1170   .bss._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass13curve_s_tableE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:1181   .bss._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass23curve_s_data_build_flagE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s:1183   .rodata._ZN5xiagb14motorNamespace22ivesStepMotorNamespace18ivesStepMotorClass2piE:00000000 $d
+
+UNDEFINED SYMBOLS
+__aeabi_i2d
+__aeabi_dmul
+__aeabi_dadd
+__aeabi_ddiv
+__aeabi_d2f
+_Znaj
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccbZwhig.s 			page 37
+
+
+exp
+__aeabi_unwind_cpp_pr0
+HAL_GPIO_WritePin
+__aeabi_i2f
+__aeabi_fmul
+__aeabi_fcmpgt
+__aeabi_fsub
+__aeabi_f2iz
+__aeabi_unwind_cpp_pr1
+HAL_GPIO_ReadPin
+__aeabi_f2uiz
+__aeabi_d2uiz

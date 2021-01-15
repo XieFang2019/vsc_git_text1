@@ -1,0 +1,1035 @@
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"machineTask.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._ZN5xiagb5upper20machineTaskNamespace12machineTask1EPv,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN5xiagb5upper20machineTaskNamespace12machineTask1EPv
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	_ZN5xiagb5upper20machineTaskNamespace12machineTask1EPv:
+  25              		.fnstart
+  26              	.LVL0:
+  27              	.LFB82:
+  28              		.file 1 "xiagb/upper/machineTask.cpp"
+   1:xiagb/upper/machineTask.cpp **** #include "machineTask.hpp"
+   2:xiagb/upper/machineTask.cpp **** #include "main.h"
+   3:xiagb/upper/machineTask.cpp **** #include "cmsis_os2.h"
+   4:xiagb/upper/machineTask.cpp **** 
+   5:xiagb/upper/machineTask.cpp **** #include "canStepMotor.hpp"
+   6:xiagb/upper/machineTask.cpp **** #include "canSensor.hpp"
+   7:xiagb/upper/machineTask.cpp **** 
+   8:xiagb/upper/machineTask.cpp **** #include "cliTask.hpp"
+   9:xiagb/upper/machineTask.cpp **** 
+  10:xiagb/upper/machineTask.cpp **** namespace xiagb
+  11:xiagb/upper/machineTask.cpp **** {
+  12:xiagb/upper/machineTask.cpp ****     namespace upper
+  13:xiagb/upper/machineTask.cpp ****     {
+  14:xiagb/upper/machineTask.cpp ****         namespace machineTaskNamespace
+  15:xiagb/upper/machineTask.cpp ****         {
+  16:xiagb/upper/machineTask.cpp ****             using xiagb::motorNamespace::canStepMotorNamespace::canStepMotorClass;
+  17:xiagb/upper/machineTask.cpp ****             using xiagb::sensorNamespace::canSensorNamespace::canSensorClass;
+  18:xiagb/upper/machineTask.cpp ****             using xiagb::upper::cliTaskNamespace::canCommunication;
+  19:xiagb/upper/machineTask.cpp ****             using xiagb::upper::cliTaskNamespace::commandParser;
+  20:xiagb/upper/machineTask.cpp **** 
+  21:xiagb/upper/machineTask.cpp ****             const osThreadAttr_t machineTaskAttributes = {.name = "machineTask", .stack_size = 128 
+  22:xiagb/upper/machineTask.cpp ****             const osThreadAttr_t machineTask1Attributes = {.name = "machineTask1", .stack_size = 12
+  23:xiagb/upper/machineTask.cpp ****             osMessageQueueId_t argQueue;
+  24:xiagb/upper/machineTask.cpp ****             uint8_t const stepMotorTotalNumber = 1; //电机个数
+  25:xiagb/upper/machineTask.cpp ****             canStepMotorClass *stepMotor[stepMotorTotalNumber];
+  26:xiagb/upper/machineTask.cpp ****             uint8_t const sensorTotalNumber = 1; //传感器个数
+  27:xiagb/upper/machineTask.cpp ****             canSensorClass *sensor[sensorTotalNumber];
+  28:xiagb/upper/machineTask.cpp **** 
+  29:xiagb/upper/machineTask.cpp ****             void machineTask1Start();
+  30:xiagb/upper/machineTask.cpp ****             void slaveFeedback(uint8_t feedbackType, uint8_t canId, uint8_t number, int32_t state);
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 2
+
+
+  31:xiagb/upper/machineTask.cpp **** 
+  32:xiagb/upper/machineTask.cpp ****             //主机发来的和从机反馈回来的都在这处理
+  33:xiagb/upper/machineTask.cpp ****             void machineTask(void *arg)
+  34:xiagb/upper/machineTask.cpp ****             {
+  35:xiagb/upper/machineTask.cpp ****                 argQueue = osMessageQueueNew(100, sizeof(int32_t), nullptr); //参数总数不能�
+  36:xiagb/upper/machineTask.cpp ****                 while (argQueue == 0)
+  37:xiagb/upper/machineTask.cpp ****                     ;
+  38:xiagb/upper/machineTask.cpp **** 
+  39:xiagb/upper/machineTask.cpp ****                 commandParser->setEchoQueue(argQueue); //将参数队列添加到echo命令参数�
+  40:xiagb/upper/machineTask.cpp **** 
+  41:xiagb/upper/machineTask.cpp ****                 int32_t argCount;
+  42:xiagb/upper/machineTask.cpp ****                 static int32_t argHandle[20];
+  43:xiagb/upper/machineTask.cpp **** 
+  44:xiagb/upper/machineTask.cpp ****                 for (;;)
+  45:xiagb/upper/machineTask.cpp ****                 {
+  46:xiagb/upper/machineTask.cpp ****                     osDelay(1);
+  47:xiagb/upper/machineTask.cpp **** 
+  48:xiagb/upper/machineTask.cpp ****                     if (osMessageQueueGet(argQueue, &argCount, nullptr, 0) == osOK) //第一个参�
+  49:xiagb/upper/machineTask.cpp ****                     {
+  50:xiagb/upper/machineTask.cpp ****                         for (uint8_t i = 0; i < argCount; i++)
+  51:xiagb/upper/machineTask.cpp ****                             osMessageQueueGet(argQueue, &argHandle[i], nullptr, osWaitForever);
+  52:xiagb/upper/machineTask.cpp **** 
+  53:xiagb/upper/machineTask.cpp ****                         switch (argHandle[0])
+  54:xiagb/upper/machineTask.cpp ****                         {
+  55:xiagb/upper/machineTask.cpp ****                         case 1:
+  56:xiagb/upper/machineTask.cpp ****                             machineTask1Start();
+  57:xiagb/upper/machineTask.cpp ****                             break;
+  58:xiagb/upper/machineTask.cpp **** 
+  59:xiagb/upper/machineTask.cpp ****                         case 2:
+  60:xiagb/upper/machineTask.cpp ****                             slaveFeedback(argHandle[1], argHandle[2], argHandle[3], argHandle[4]);
+  61:xiagb/upper/machineTask.cpp **** 
+  62:xiagb/upper/machineTask.cpp ****                         default:
+  63:xiagb/upper/machineTask.cpp ****                             break;
+  64:xiagb/upper/machineTask.cpp ****                         }
+  65:xiagb/upper/machineTask.cpp ****                     }
+  66:xiagb/upper/machineTask.cpp ****                 }
+  67:xiagb/upper/machineTask.cpp ****             }
+  68:xiagb/upper/machineTask.cpp **** 
+  69:xiagb/upper/machineTask.cpp ****             void machineTask1(void *arg)
+  70:xiagb/upper/machineTask.cpp ****             {
+  29              		.loc 1 70 13 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 70 13 is_stmt 0 view .LVU1
+  34 0000 30B5     		push	{r4, r5, lr}
+  35              		.save {r4, r5, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 12
+  38              		.cfi_offset 4, -12
+  39              		.cfi_offset 5, -8
+  40              		.cfi_offset 14, -4
+  41              		.pad #20
+  42 0002 85B0     		sub	sp, sp, #20
+  43              	.LCFI1:
+  44              		.cfi_def_cfa_offset 32
+  71:xiagb/upper/machineTask.cpp ****                 stepMotor[0] = new canStepMotorClass;
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 3
+
+
+  45              		.loc 1 71 17 is_stmt 1 view .LVU2
+  46              		.loc 1 71 36 is_stmt 0 view .LVU3
+  47 0004 0C20     		movs	r0, #12
+  48              	.LVL1:
+  49              	.LEHB0:
+  50              		.loc 1 71 36 view .LVU4
+  51 0006 FFF7FEFF 		bl	_Znwj
+  52              	.LVL2:
+  53              	.LEHE0:
+  54 000a 0446     		mov	r4, r0
+  55              	.LEHB1:
+  56 000c FFF7FEFF 		bl	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC1Ev
+  57              	.LVL3:
+  58              	.LEHE1:
+  59              		.loc 1 71 30 discriminator 2 view .LVU5
+  60 0010 114D     		ldr	r5, .L6
+  61 0012 2C60     		str	r4, [r5]
+  72:xiagb/upper/machineTask.cpp ****                 stepMotor[0]->init(canCommunication, 2, 1, 0, 0, 3, 20);
+  62              		.loc 1 72 17 is_stmt 1 discriminator 2 view .LVU6
+  63              		.loc 1 72 35 is_stmt 0 discriminator 2 view .LVU7
+  64 0014 1423     		movs	r3, #20
+  65 0016 0393     		str	r3, [sp, #12]
+  66 0018 0323     		movs	r3, #3
+  67 001a 0293     		str	r3, [sp, #8]
+  68 001c 0023     		movs	r3, #0
+  69 001e 0193     		str	r3, [sp, #4]
+  70 0020 0093     		str	r3, [sp]
+  71 0022 0123     		movs	r3, #1
+  72 0024 0222     		movs	r2, #2
+  73 0026 0D49     		ldr	r1, .L6+4
+  74 0028 0968     		ldr	r1, [r1]
+  75 002a 2046     		mov	r0, r4
+  76              	.LEHB2:
+  77 002c FFF7FEFF 		bl	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22communicationNam
+  78              	.LVL4:
+  73:xiagb/upper/machineTask.cpp ****                 stepMotor[0]->reset();
+  79              		.loc 1 73 17 is_stmt 1 discriminator 2 view .LVU8
+  80              		.loc 1 73 36 is_stmt 0 discriminator 2 view .LVU9
+  81 0030 6E22     		movs	r2, #110
+  82 0032 41F28831 		movw	r1, #5000
+  83 0036 2868     		ldr	r0, [r5]
+  84 0038 FFF7FEFF 		bl	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt
+  85              	.LVL5:
+  74:xiagb/upper/machineTask.cpp ****                 stepMotor[0]->waitMoveStop();
+  86              		.loc 1 74 17 is_stmt 1 discriminator 2 view .LVU10
+  87              		.loc 1 74 43 is_stmt 0 discriminator 2 view .LVU11
+  88 003c 2868     		ldr	r0, [r5]
+  89 003e FFF7FEFF 		bl	_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12waitMoveStopEv
+  90              	.LVL6:
+  91              	.L2:
+  75:xiagb/upper/machineTask.cpp **** 
+  76:xiagb/upper/machineTask.cpp ****                 for (;;)
+  92              		.loc 1 76 17 is_stmt 1 discriminator 1 view .LVU12
+  77:xiagb/upper/machineTask.cpp ****                 {
+  78:xiagb/upper/machineTask.cpp ****                     osDelay(1);
+  93              		.loc 1 78 21 discriminator 1 view .LVU13
+  94              		.loc 1 78 28 is_stmt 0 discriminator 1 view .LVU14
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 4
+
+
+  95 0042 0120     		movs	r0, #1
+  96 0044 FFF7FEFF 		bl	osDelay
+  97              	.LVL7:
+  76:xiagb/upper/machineTask.cpp ****                 {
+  98              		.loc 1 76 17 is_stmt 1 discriminator 1 view .LVU15
+  99 0048 FBE7     		b	.L2
+ 100              	.L4:
+  71:xiagb/upper/machineTask.cpp ****                 stepMotor[0]->init(canCommunication, 2, 1, 0, 0, 3, 20);
+ 101              		.loc 1 71 36 is_stmt 0 view .LVU16
+ 102 004a 0C21     		movs	r1, #12
+ 103 004c 2046     		mov	r0, r4
+ 104 004e FFF7FEFF 		bl	_ZdlPvj
+ 105              	.LVL8:
+ 106 0052 FFF7FEFF 		bl	__cxa_end_cleanup
+ 107              	.LVL9:
+ 108              	.LEHE2:
+ 109              	.L7:
+ 110 0056 00BF     		.align	2
+ 111              	.L6:
+ 112 0058 00000000 		.word	.LANCHOR0
+ 113 005c 00000000 		.word	_ZN5xiagb5upper16cliTaskNamespace16canCommunicationE
+ 114              		.cfi_endproc
+ 115              	.LFE82:
+ 116              		.global	__gxx_personality_v0
+ 117              		.personality	__gxx_personality_v0
+ 118              		.handlerdata
+ 119              	.LLSDA82:
+ 120 0008 FF       		.byte	0xff
+ 121 0009 FF       		.byte	0xff
+ 122 000a 01       		.byte	0x1
+ 123 000b 0C       		.uleb128 .LLSDACSE82-.LLSDACSB82
+ 124              	.LLSDACSB82:
+ 125 000c 06       		.uleb128 .LEHB0-.LFB82
+ 126 000d 04       		.uleb128 .LEHE0-.LEHB0
+ 127 000e 00       		.uleb128 0
+ 128 000f 00       		.uleb128 0
+ 129 0010 0C       		.uleb128 .LEHB1-.LFB82
+ 130 0011 04       		.uleb128 .LEHE1-.LEHB1
+ 131 0012 4A       		.uleb128 .L4-.LFB82
+ 132 0013 00       		.uleb128 0
+ 133 0014 2C       		.uleb128 .LEHB2-.LFB82
+ 134 0015 2A       		.uleb128 .LEHE2-.LEHB2
+ 135 0016 00       		.uleb128 0
+ 136 0017 00       		.uleb128 0
+ 137              	.LLSDACSE82:
+ 138              		.section	.text._ZN5xiagb5upper20machineTaskNamespace12machineTask1EPv
+ 139              		.fnend
+ 141              		.section	.text._ZN5xiagb5upper20machineTaskNamespace16machineTaskStartEv,"ax",%progbits
+ 142              		.align	1
+ 143              		.global	_ZN5xiagb5upper20machineTaskNamespace16machineTaskStartEv
+ 144              		.syntax unified
+ 145              		.thumb
+ 146              		.thumb_func
+ 147              		.fpu softvfp
+ 149              	_ZN5xiagb5upper20machineTaskNamespace16machineTaskStartEv:
+ 150              		.fnstart
+ 151              	.LFB83:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 5
+
+
+  79:xiagb/upper/machineTask.cpp ****                 }
+  80:xiagb/upper/machineTask.cpp ****             }
+  81:xiagb/upper/machineTask.cpp **** 
+  82:xiagb/upper/machineTask.cpp ****             void machineTaskStart()
+  83:xiagb/upper/machineTask.cpp ****             {
+ 152              		.loc 1 83 13 is_stmt 1 view -0
+ 153              		.cfi_startproc
+ 154              		@ args = 0, pretend = 0, frame = 0
+ 155              		@ frame_needed = 0, uses_anonymous_args = 0
+ 156 0000 08B5     		push	{r3, lr}
+ 157              		.save {r3, lr}
+ 158              	.LCFI2:
+ 159              		.cfi_def_cfa_offset 8
+ 160              		.cfi_offset 3, -8
+ 161              		.cfi_offset 14, -4
+  84:xiagb/upper/machineTask.cpp ****                 osThreadNew(machineTask, nullptr, &machineTaskAttributes);
+ 162              		.loc 1 84 17 view .LVU18
+ 163              		.loc 1 84 28 is_stmt 0 view .LVU19
+ 164 0002 034A     		ldr	r2, .L10
+ 165 0004 0021     		movs	r1, #0
+ 166 0006 0348     		ldr	r0, .L10+4
+ 167 0008 FFF7FEFF 		bl	osThreadNew
+ 168              	.LVL10:
+  85:xiagb/upper/machineTask.cpp ****             }
+ 169              		.loc 1 85 13 view .LVU20
+ 170 000c 08BD     		pop	{r3, pc}
+ 171              	.L11:
+ 172 000e 00BF     		.align	2
+ 173              	.L10:
+ 174 0010 00000000 		.word	.LANCHOR1
+ 175 0014 00000000 		.word	_ZN5xiagb5upper20machineTaskNamespace11machineTaskEPv
+ 176              		.cfi_endproc
+ 177              	.LFE83:
+ 178              		.fnend
+ 180              		.section	.text._ZN5xiagb5upper20machineTaskNamespace17machineTask1StartEv,"ax",%progbits
+ 181              		.align	1
+ 182              		.global	_ZN5xiagb5upper20machineTaskNamespace17machineTask1StartEv
+ 183              		.syntax unified
+ 184              		.thumb
+ 185              		.thumb_func
+ 186              		.fpu softvfp
+ 188              	_ZN5xiagb5upper20machineTaskNamespace17machineTask1StartEv:
+ 189              		.fnstart
+ 190              	.LFB84:
+  86:xiagb/upper/machineTask.cpp **** 
+  87:xiagb/upper/machineTask.cpp ****             void machineTask1Start()
+  88:xiagb/upper/machineTask.cpp ****             {
+ 191              		.loc 1 88 13 is_stmt 1 view -0
+ 192              		.cfi_startproc
+ 193              		@ args = 0, pretend = 0, frame = 0
+ 194              		@ frame_needed = 0, uses_anonymous_args = 0
+ 195 0000 08B5     		push	{r3, lr}
+ 196              		.save {r3, lr}
+ 197              	.LCFI3:
+ 198              		.cfi_def_cfa_offset 8
+ 199              		.cfi_offset 3, -8
+ 200              		.cfi_offset 14, -4
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 6
+
+
+  89:xiagb/upper/machineTask.cpp ****                 osThreadNew(machineTask1, nullptr, &machineTask1Attributes);
+ 201              		.loc 1 89 17 view .LVU22
+ 202              		.loc 1 89 28 is_stmt 0 view .LVU23
+ 203 0002 034A     		ldr	r2, .L14
+ 204 0004 0021     		movs	r1, #0
+ 205 0006 0348     		ldr	r0, .L14+4
+ 206 0008 FFF7FEFF 		bl	osThreadNew
+ 207              	.LVL11:
+  90:xiagb/upper/machineTask.cpp ****             }
+ 208              		.loc 1 90 13 view .LVU24
+ 209 000c 08BD     		pop	{r3, pc}
+ 210              	.L15:
+ 211 000e 00BF     		.align	2
+ 212              	.L14:
+ 213 0010 00000000 		.word	.LANCHOR2
+ 214 0014 00000000 		.word	_ZN5xiagb5upper20machineTaskNamespace12machineTask1EPv
+ 215              		.cfi_endproc
+ 216              	.LFE84:
+ 217              		.fnend
+ 219              		.section	.text._ZN5xiagb5upper20machineTaskNamespace13slaveFeedbackEhhhl,"ax",%progbits
+ 220              		.align	1
+ 221              		.global	_ZN5xiagb5upper20machineTaskNamespace13slaveFeedbackEhhhl
+ 222              		.syntax unified
+ 223              		.thumb
+ 224              		.thumb_func
+ 225              		.fpu softvfp
+ 227              	_ZN5xiagb5upper20machineTaskNamespace13slaveFeedbackEhhhl:
+ 228              		.fnstart
+ 229              	.LVL12:
+ 230              	.LFB85:
+  91:xiagb/upper/machineTask.cpp **** 
+  92:xiagb/upper/machineTask.cpp ****             //处理从机返回的状态
+  93:xiagb/upper/machineTask.cpp ****             void slaveFeedback(uint8_t feedbackType, uint8_t canId, uint8_t number, int32_t state)
+  94:xiagb/upper/machineTask.cpp ****             {
+ 231              		.loc 1 94 13 is_stmt 1 view -0
+ 232              		.cfi_startproc
+ 233              		@ args = 0, pretend = 0, frame = 0
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235              		@ link register save eliminated.
+ 236              		.loc 1 94 13 is_stmt 0 view .LVU26
+ 237 0000 30B4     		push	{r4, r5}
+ 238              	.LCFI4:
+ 239              		.cfi_def_cfa_offset 8
+ 240              		.cfi_offset 4, -8
+ 241              		.cfi_offset 5, -4
+  95:xiagb/upper/machineTask.cpp ****                 switch (feedbackType)
+ 242              		.loc 1 95 17 is_stmt 1 view .LVU27
+ 243              	.LBB18:
+ 244 0002 0128     		cmp	r0, #1
+ 245 0004 03D0     		beq	.L22
+ 246 0006 0228     		cmp	r0, #2
+ 247 0008 16D0     		beq	.L23
+ 248              	.LVL13:
+ 249              	.L16:
+ 250              		.loc 1 95 17 is_stmt 0 view .LVU28
+ 251              	.LBE18:
+  96:xiagb/upper/machineTask.cpp ****                 {
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 7
+
+
+  97:xiagb/upper/machineTask.cpp ****                 case 1: //电机
+  98:xiagb/upper/machineTask.cpp ****                     for (uint8_t i = 0; i < stepMotorTotalNumber; i++)
+  99:xiagb/upper/machineTask.cpp ****                     {
+ 100:xiagb/upper/machineTask.cpp ****                         if (stepMotor[i]->getSlaveBoardCanId() == canId && stepMotor[i]->getSlaveBo
+ 101:xiagb/upper/machineTask.cpp ****                             stepMotor[i]->setState();
+ 102:xiagb/upper/machineTask.cpp ****                     }
+ 103:xiagb/upper/machineTask.cpp ****                     break;
+ 104:xiagb/upper/machineTask.cpp **** 
+ 105:xiagb/upper/machineTask.cpp ****                 case 2: //传感器
+ 106:xiagb/upper/machineTask.cpp ****                     for (uint8_t i = 0; i < stepMotorTotalNumber; i++)
+ 107:xiagb/upper/machineTask.cpp ****                     {
+ 108:xiagb/upper/machineTask.cpp ****                         if (sensor[i]->getSlaveBoardCanId() == canId && sensor[i]->getSlaveBoardSen
+ 109:xiagb/upper/machineTask.cpp ****                             sensor[i]->setState(state);
+ 110:xiagb/upper/machineTask.cpp ****                     }
+ 111:xiagb/upper/machineTask.cpp ****                     break;
+ 112:xiagb/upper/machineTask.cpp ****                 
+ 113:xiagb/upper/machineTask.cpp ****                 default:
+ 114:xiagb/upper/machineTask.cpp ****                     break;
+ 115:xiagb/upper/machineTask.cpp ****                 }
+ 116:xiagb/upper/machineTask.cpp ****             }
+ 252              		.loc 1 116 13 view .LVU29
+ 253 000a 30BC     		pop	{r4, r5}
+ 254              	.LCFI5:
+ 255              		.cfi_remember_state
+ 256              		.cfi_restore 5
+ 257              		.cfi_restore 4
+ 258              		.cfi_def_cfa_offset 0
+ 259 000c 7047     		bx	lr
+ 260              	.LVL14:
+ 261              	.L22:
+ 262              	.LCFI6:
+ 263              		.cfi_restore_state
+ 264              	.LBB33:
+  95:xiagb/upper/machineTask.cpp ****                 switch (feedbackType)
+ 265              		.loc 1 95 17 view .LVU30
+ 266 000e 0023     		movs	r3, #0
+ 267              	.LVL15:
+ 268              	.L17:
+ 269              	.LBB19:
+  98:xiagb/upper/machineTask.cpp ****                     {
+ 270              		.loc 1 98 43 is_stmt 1 discriminator 1 view .LVU31
+ 271 0010 002B     		cmp	r3, #0
+ 272 0012 FAD1     		bne	.L16
+ 100:xiagb/upper/machineTask.cpp ****                             stepMotor[i]->setState();
+ 273              		.loc 1 100 25 view .LVU32
+ 100:xiagb/upper/machineTask.cpp ****                             stepMotor[i]->setState();
+ 274              		.loc 1 100 40 is_stmt 0 view .LVU33
+ 275 0014 1448     		ldr	r0, .L27
+ 276 0016 50F82300 		ldr	r0, [r0, r3, lsl #2]
+ 277              	.LVL16:
+ 278              	.LBB20:
+ 279              	.LBI20:
+ 280              		.file 2 "xiagb/bottom/canStepMotor.hpp"
+   1:xiagb/bottom/canStepMotor.hpp **** #ifndef canMotorH
+   2:xiagb/bottom/canStepMotor.hpp **** #define canMotorH
+   3:xiagb/bottom/canStepMotor.hpp **** 
+   4:xiagb/bottom/canStepMotor.hpp **** #include "main.h"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 8
+
+
+   5:xiagb/bottom/canStepMotor.hpp **** #include "can.hpp"
+   6:xiagb/bottom/canStepMotor.hpp **** 
+   7:xiagb/bottom/canStepMotor.hpp **** namespace xiagb
+   8:xiagb/bottom/canStepMotor.hpp **** {
+   9:xiagb/bottom/canStepMotor.hpp ****     namespace motorNamespace
+  10:xiagb/bottom/canStepMotor.hpp ****     {
+  11:xiagb/bottom/canStepMotor.hpp ****         namespace canStepMotorNamespace
+  12:xiagb/bottom/canStepMotor.hpp ****         {
+  13:xiagb/bottom/canStepMotor.hpp ****             using xiagb::communicationNamespace::canNamespace::canClass;
+  14:xiagb/bottom/canStepMotor.hpp ****             class canStepMotorClass
+  15:xiagb/bottom/canStepMotor.hpp ****             {
+  16:xiagb/bottom/canStepMotor.hpp ****             private:
+  17:xiagb/bottom/canStepMotor.hpp ****                 uint8_t slaveBoardCanId, slaveBoardMotorChannel; //所在的从板的canId，所在
+  18:xiagb/bottom/canStepMotor.hpp ****                 canClass *canHandle;
+  19:xiagb/bottom/canStepMotor.hpp **** 
+  20:xiagb/bottom/canStepMotor.hpp ****                 static const char *const argFlagStr;
+  21:xiagb/bottom/canStepMotor.hpp ****                 static const char *const resetFlagStr;
+  22:xiagb/bottom/canStepMotor.hpp ****                 static const char *const moveFlagStr;
+  23:xiagb/bottom/canStepMotor.hpp ****                 static const char *const stopFlagStr;
+  24:xiagb/bottom/canStepMotor.hpp ****                 static const char *const keepMoveFlagStr;
+  25:xiagb/bottom/canStepMotor.hpp ****                 static const char *const sensorFlagStr;
+  26:xiagb/bottom/canStepMotor.hpp ****                 static const char *const stepFlagStr;
+  27:xiagb/bottom/canStepMotor.hpp ****                 static const char *const stepCountDownFlagStr;
+  28:xiagb/bottom/canStepMotor.hpp **** 
+  29:xiagb/bottom/canStepMotor.hpp ****                 bool state; //true：运行，false：停止。标志由主机打上
+  30:xiagb/bottom/canStepMotor.hpp ****                 // bool activationFlag;
+  31:xiagb/bottom/canStepMotor.hpp ****                 // bool stepCountDownFlag; //倒计时步数已走完的标志
+  32:xiagb/bottom/canStepMotor.hpp **** 
+  33:xiagb/bottom/canStepMotor.hpp ****             public:
+  34:xiagb/bottom/canStepMotor.hpp ****                 canStepMotorClass();
+  35:xiagb/bottom/canStepMotor.hpp ****                 ~canStepMotorClass();
+  36:xiagb/bottom/canStepMotor.hpp **** 
+  37:xiagb/bottom/canStepMotor.hpp ****                 void setState()
+  38:xiagb/bottom/canStepMotor.hpp ****                 {
+  39:xiagb/bottom/canStepMotor.hpp ****                     state = false;
+  40:xiagb/bottom/canStepMotor.hpp ****                     // activationFlag = true;
+  41:xiagb/bottom/canStepMotor.hpp ****                 }
+  42:xiagb/bottom/canStepMotor.hpp ****                 // void setStepCountDownFlag() { stepCountDownFlag = false; }
+  43:xiagb/bottom/canStepMotor.hpp ****                 // bool getStepCountDownFlag() { return stepCountDownFlag; }
+  44:xiagb/bottom/canStepMotor.hpp ****                 bool getState() { return state; }
+  45:xiagb/bottom/canStepMotor.hpp ****                 uint8_t getSlaveBoardCanId() { return slaveBoardCanId; }
+ 281              		.loc 2 45 25 is_stmt 1 view .LVU34
+ 282              	.LBB21:
+ 283              		.loc 2 45 48 view .LVU35
+ 284              		.loc 2 45 55 is_stmt 0 view .LVU36
+ 285 001a 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 286              	.LVL17:
+ 287              		.loc 2 45 55 view .LVU37
+ 288              	.LBE21:
+ 289              	.LBE20:
+ 100:xiagb/upper/machineTask.cpp ****                             stepMotor[i]->setState();
+ 290              		.loc 1 100 73 view .LVU38
+ 291 001c 8142     		cmp	r1, r0
+ 292 001e 02D0     		beq	.L25
+ 293              	.L20:
+  98:xiagb/upper/machineTask.cpp ****                     {
+ 294              		.loc 1 98 21 is_stmt 1 discriminator 2 view .LVU39
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 9
+
+
+ 295 0020 0133     		adds	r3, r3, #1
+ 296              	.LVL18:
+  98:xiagb/upper/machineTask.cpp ****                     {
+ 297              		.loc 1 98 21 is_stmt 0 discriminator 2 view .LVU40
+ 298 0022 DBB2     		uxtb	r3, r3
+ 299              	.LVL19:
+  98:xiagb/upper/machineTask.cpp ****                     {
+ 300              		.loc 1 98 21 discriminator 2 view .LVU41
+ 301 0024 F4E7     		b	.L17
+ 302              	.L25:
+ 100:xiagb/upper/machineTask.cpp ****                             stepMotor[i]->setState();
+ 303              		.loc 1 100 87 discriminator 1 view .LVU42
+ 304 0026 1048     		ldr	r0, .L27
+ 305 0028 50F82300 		ldr	r0, [r0, r3, lsl #2]
+ 306              	.LVL20:
+ 307              	.LBB22:
+ 308              	.LBI22:
+  46:xiagb/bottom/canStepMotor.hpp ****                 uint8_t getSlaveBoardMotorChannel() { return slaveBoardMotorChannel; }
+ 309              		.loc 2 46 25 is_stmt 1 discriminator 1 view .LVU43
+ 310              	.LBB23:
+ 311              		.loc 2 46 55 discriminator 1 view .LVU44
+ 312              		.loc 2 46 62 is_stmt 0 discriminator 1 view .LVU45
+ 313 002c 4478     		ldrb	r4, [r0, #1]	@ zero_extendqisi2
+ 314              	.LVL21:
+ 315              		.loc 2 46 62 discriminator 1 view .LVU46
+ 316              	.LBE23:
+ 317              	.LBE22:
+ 100:xiagb/upper/machineTask.cpp ****                             stepMotor[i]->setState();
+ 318              		.loc 1 100 73 discriminator 1 view .LVU47
+ 319 002e 9442     		cmp	r4, r2
+ 320 0030 F6D1     		bne	.L20
+ 101:xiagb/upper/machineTask.cpp ****                     }
+ 321              		.loc 1 101 29 is_stmt 1 view .LVU48
+ 322              	.LVL22:
+ 323              	.LBB24:
+ 324              	.LBI24:
+  37:xiagb/bottom/canStepMotor.hpp ****                 {
+ 325              		.loc 2 37 22 view .LVU49
+ 326              	.LBB25:
+  39:xiagb/bottom/canStepMotor.hpp ****                     // activationFlag = true;
+ 327              		.loc 2 39 21 view .LVU50
+  39:xiagb/bottom/canStepMotor.hpp ****                     // activationFlag = true;
+ 328              		.loc 2 39 27 is_stmt 0 view .LVU51
+ 329 0032 0024     		movs	r4, #0
+ 330 0034 0472     		strb	r4, [r0, #8]
+  41:xiagb/bottom/canStepMotor.hpp ****                 // void setStepCountDownFlag() { stepCountDownFlag = false; }
+ 331              		.loc 2 41 17 view .LVU52
+ 332 0036 F3E7     		b	.L20
+ 333              	.LVL23:
+ 334              	.L23:
+  41:xiagb/bottom/canStepMotor.hpp ****                 // void setStepCountDownFlag() { stepCountDownFlag = false; }
+ 335              		.loc 2 41 17 view .LVU53
+ 336              	.LBE25:
+ 337              	.LBE24:
+ 338              	.LBE19:
+  95:xiagb/upper/machineTask.cpp ****                 {
+ 339              		.loc 1 95 17 view .LVU54
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 10
+
+
+ 340 0038 0020     		movs	r0, #0
+ 341              	.LVL24:
+ 342              	.L18:
+ 343              	.LBB26:
+ 106:xiagb/upper/machineTask.cpp ****                     {
+ 344              		.loc 1 106 43 is_stmt 1 discriminator 1 view .LVU55
+ 345 003a 0028     		cmp	r0, #0
+ 346 003c E5D1     		bne	.L16
+ 108:xiagb/upper/machineTask.cpp ****                             sensor[i]->setState(state);
+ 347              		.loc 1 108 25 view .LVU56
+ 108:xiagb/upper/machineTask.cpp ****                             sensor[i]->setState(state);
+ 348              		.loc 1 108 37 is_stmt 0 view .LVU57
+ 349 003e 0B4C     		ldr	r4, .L27+4
+ 350 0040 54F82040 		ldr	r4, [r4, r0, lsl #2]
+ 351              	.LVL25:
+ 352              	.LBB27:
+ 353              	.LBI27:
+ 354              		.file 3 "xiagb/bottom/canSensor.hpp"
+   1:xiagb/bottom/canSensor.hpp **** #ifndef canSensorH
+   2:xiagb/bottom/canSensor.hpp **** #define canSensorH
+   3:xiagb/bottom/canSensor.hpp **** 
+   4:xiagb/bottom/canSensor.hpp **** #include "main.h"
+   5:xiagb/bottom/canSensor.hpp **** #include "can.hpp"
+   6:xiagb/bottom/canSensor.hpp **** 
+   7:xiagb/bottom/canSensor.hpp **** namespace xiagb
+   8:xiagb/bottom/canSensor.hpp **** {
+   9:xiagb/bottom/canSensor.hpp ****     namespace sensorNamespace
+  10:xiagb/bottom/canSensor.hpp ****     {
+  11:xiagb/bottom/canSensor.hpp ****         namespace canSensorNamespace
+  12:xiagb/bottom/canSensor.hpp ****         {
+  13:xiagb/bottom/canSensor.hpp ****             using xiagb::communicationNamespace::canNamespace::canClass;
+  14:xiagb/bottom/canSensor.hpp ****             
+  15:xiagb/bottom/canSensor.hpp ****             class canSensorClass
+  16:xiagb/bottom/canSensor.hpp ****             {
+  17:xiagb/bottom/canSensor.hpp ****             private:
+  18:xiagb/bottom/canSensor.hpp ****                 static const char *const sensorFlagStr;
+  19:xiagb/bottom/canSensor.hpp **** 
+  20:xiagb/bottom/canSensor.hpp ****                 uint8_t slaveBoardCanId, slaveBoardSensorChannel;
+  21:xiagb/bottom/canSensor.hpp ****                 canClass *canHandle;
+  22:xiagb/bottom/canSensor.hpp ****                 bool state;
+  23:xiagb/bottom/canSensor.hpp **** 
+  24:xiagb/bottom/canSensor.hpp ****             public:
+  25:xiagb/bottom/canSensor.hpp ****                 canSensorClass();
+  26:xiagb/bottom/canSensor.hpp ****                 ~canSensorClass();
+  27:xiagb/bottom/canSensor.hpp **** 
+  28:xiagb/bottom/canSensor.hpp ****                 void init(canClass *canHandle, uint8_t slaveBoardCanId, uint8_t slaveBoardSensorCha
+  29:xiagb/bottom/canSensor.hpp **** 
+  30:xiagb/bottom/canSensor.hpp ****                 void setState(bool state) { this->state = state; }
+  31:xiagb/bottom/canSensor.hpp ****                 bool getState() { return state; }
+  32:xiagb/bottom/canSensor.hpp **** 
+  33:xiagb/bottom/canSensor.hpp ****                 uint8_t getSlaveBoardCanId() { return slaveBoardCanId; }
+ 355              		.loc 3 33 25 is_stmt 1 view .LVU58
+ 356              	.LBB28:
+ 357              		.loc 3 33 48 view .LVU59
+ 358              		.loc 3 33 55 is_stmt 0 view .LVU60
+ 359 0044 2478     		ldrb	r4, [r4]	@ zero_extendqisi2
+ 360              	.LVL26:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 11
+
+
+ 361              		.loc 3 33 55 view .LVU61
+ 362              	.LBE28:
+ 363              	.LBE27:
+ 108:xiagb/upper/machineTask.cpp ****                             sensor[i]->setState(state);
+ 364              		.loc 1 108 70 view .LVU62
+ 365 0046 A142     		cmp	r1, r4
+ 366 0048 02D0     		beq	.L26
+ 367              	.L21:
+ 106:xiagb/upper/machineTask.cpp ****                     {
+ 368              		.loc 1 106 21 is_stmt 1 discriminator 2 view .LVU63
+ 369 004a 0130     		adds	r0, r0, #1
+ 370              	.LVL27:
+ 106:xiagb/upper/machineTask.cpp ****                     {
+ 371              		.loc 1 106 21 is_stmt 0 discriminator 2 view .LVU64
+ 372 004c C0B2     		uxtb	r0, r0
+ 373              	.LVL28:
+ 106:xiagb/upper/machineTask.cpp ****                     {
+ 374              		.loc 1 106 21 discriminator 2 view .LVU65
+ 375 004e F4E7     		b	.L18
+ 376              	.L26:
+ 108:xiagb/upper/machineTask.cpp ****                             sensor[i]->setState(state);
+ 377              		.loc 1 108 81 discriminator 1 view .LVU66
+ 378 0050 064C     		ldr	r4, .L27+4
+ 379 0052 54F82040 		ldr	r4, [r4, r0, lsl #2]
+ 380              	.LVL29:
+ 381              	.LBB29:
+ 382              	.LBI29:
+  34:xiagb/bottom/canSensor.hpp ****                 uint8_t getSlaveBoardSensorChannel() { return slaveBoardSensorChannel; }
+ 383              		.loc 3 34 25 is_stmt 1 discriminator 1 view .LVU67
+ 384              	.LBB30:
+ 385              		.loc 3 34 56 discriminator 1 view .LVU68
+ 386              		.loc 3 34 63 is_stmt 0 discriminator 1 view .LVU69
+ 387 0056 6578     		ldrb	r5, [r4, #1]	@ zero_extendqisi2
+ 388              	.LVL30:
+ 389              		.loc 3 34 63 discriminator 1 view .LVU70
+ 390              	.LBE30:
+ 391              	.LBE29:
+ 108:xiagb/upper/machineTask.cpp ****                             sensor[i]->setState(state);
+ 392              		.loc 1 108 70 discriminator 1 view .LVU71
+ 393 0058 AA42     		cmp	r2, r5
+ 394 005a F6D1     		bne	.L21
+ 109:xiagb/upper/machineTask.cpp ****                     }
+ 395              		.loc 1 109 29 is_stmt 1 view .LVU72
+ 109:xiagb/upper/machineTask.cpp ****                     }
+ 396              		.loc 1 109 48 is_stmt 0 view .LVU73
+ 397 005c 1D1E     		subs	r5, r3, #0
+ 398 005e 18BF     		it	ne
+ 399 0060 0125     		movne	r5, #1
+ 400              	.LVL31:
+ 401              	.LBB31:
+ 402              	.LBI31:
+  30:xiagb/bottom/canSensor.hpp ****                 bool getState() { return state; }
+ 403              		.loc 3 30 22 is_stmt 1 view .LVU74
+ 404              	.LBB32:
+  30:xiagb/bottom/canSensor.hpp ****                 bool getState() { return state; }
+ 405              		.loc 3 30 45 view .LVU75
+  30:xiagb/bottom/canSensor.hpp ****                 bool getState() { return state; }
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 12
+
+
+ 406              		.loc 3 30 57 is_stmt 0 view .LVU76
+ 407 0062 2572     		strb	r5, [r4, #8]
+  30:xiagb/bottom/canSensor.hpp ****                 bool getState() { return state; }
+ 408              		.loc 3 30 66 view .LVU77
+ 409 0064 F1E7     		b	.L21
+ 410              	.L28:
+ 411 0066 00BF     		.align	2
+ 412              	.L27:
+ 413 0068 00000000 		.word	.LANCHOR0
+ 414 006c 00000000 		.word	.LANCHOR3
+ 415              	.LBE32:
+ 416              	.LBE31:
+ 417              	.LBE26:
+ 418              	.LBE33:
+ 419              		.cfi_endproc
+ 420              	.LFE85:
+ 421              		.cantunwind
+ 422              		.fnend
+ 424              		.section	.text._ZN5xiagb5upper20machineTaskNamespace11machineTaskEPv,"ax",%progbits
+ 425              		.align	1
+ 426              		.global	_ZN5xiagb5upper20machineTaskNamespace11machineTaskEPv
+ 427              		.syntax unified
+ 428              		.thumb
+ 429              		.thumb_func
+ 430              		.fpu softvfp
+ 432              	_ZN5xiagb5upper20machineTaskNamespace11machineTaskEPv:
+ 433              		.fnstart
+ 434              	.LVL32:
+ 435              	.LFB81:
+  34:xiagb/upper/machineTask.cpp ****                 argQueue = osMessageQueueNew(100, sizeof(int32_t), nullptr); //参数总数不能�
+ 436              		.loc 1 34 13 is_stmt 1 view -0
+ 437              		.cfi_startproc
+ 438              		@ args = 0, pretend = 0, frame = 8
+ 439              		@ frame_needed = 0, uses_anonymous_args = 0
+  34:xiagb/upper/machineTask.cpp ****                 argQueue = osMessageQueueNew(100, sizeof(int32_t), nullptr); //参数总数不能�
+ 440              		.loc 1 34 13 is_stmt 0 view .LVU79
+ 441 0000 10B5     		push	{r4, lr}
+ 442              		.save {r4, lr}
+ 443              	.LCFI7:
+ 444              		.cfi_def_cfa_offset 8
+ 445              		.cfi_offset 4, -8
+ 446              		.cfi_offset 14, -4
+ 447              		.pad #8
+ 448 0002 82B0     		sub	sp, sp, #8
+ 449              	.LCFI8:
+ 450              		.cfi_def_cfa_offset 16
+  35:xiagb/upper/machineTask.cpp ****                 while (argQueue == 0)
+ 451              		.loc 1 35 17 is_stmt 1 view .LVU80
+  35:xiagb/upper/machineTask.cpp ****                 while (argQueue == 0)
+ 452              		.loc 1 35 45 is_stmt 0 view .LVU81
+ 453 0004 0022     		movs	r2, #0
+ 454 0006 0421     		movs	r1, #4
+ 455 0008 6420     		movs	r0, #100
+ 456              	.LVL33:
+  35:xiagb/upper/machineTask.cpp ****                 while (argQueue == 0)
+ 457              		.loc 1 35 45 view .LVU82
+ 458 000a FFF7FEFF 		bl	osMessageQueueNew
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 13
+
+
+ 459              	.LVL34:
+ 460 000e 0146     		mov	r1, r0
+  35:xiagb/upper/machineTask.cpp ****                 while (argQueue == 0)
+ 461              		.loc 1 35 26 view .LVU83
+ 462 0010 1B4B     		ldr	r3, .L41
+ 463 0012 1860     		str	r0, [r3]
+ 464              	.L30:
+  36:xiagb/upper/machineTask.cpp ****                     ;
+ 465              		.loc 1 36 17 is_stmt 1 view .LVU84
+  36:xiagb/upper/machineTask.cpp ****                     ;
+ 466              		.loc 1 36 33 view .LVU85
+ 467 0014 0029     		cmp	r1, #0
+ 468 0016 FDD0     		beq	.L30
+  39:xiagb/upper/machineTask.cpp **** 
+ 469              		.loc 1 39 17 view .LVU86
+  39:xiagb/upper/machineTask.cpp **** 
+ 470              		.loc 1 39 44 is_stmt 0 view .LVU87
+ 471 0018 1A4B     		ldr	r3, .L41+4
+ 472 001a 1868     		ldr	r0, [r3]
+ 473 001c FFF7FEFF 		bl	_ZN5xiagb15parserNamespace12cliNamespace8cliClass12setEchoQueueEPv
+ 474              	.LVL35:
+ 475 0020 14E0     		b	.L32
+ 476              	.LVL36:
+ 477              	.L40:
+ 478              	.LBB34:
+ 479              	.LBB35:
+ 480              	.LBB36:
+ 481              	.LBB37:
+  51:xiagb/upper/machineTask.cpp **** 
+ 482              		.loc 1 51 29 is_stmt 1 view .LVU88
+  51:xiagb/upper/machineTask.cpp **** 
+ 483              		.loc 1 51 46 is_stmt 0 view .LVU89
+ 484 0022 4FF0FF33 		mov	r3, #-1
+ 485 0026 0022     		movs	r2, #0
+ 486 0028 1749     		ldr	r1, .L41+8
+ 487 002a 01EB8401 		add	r1, r1, r4, lsl #2
+ 488 002e 1448     		ldr	r0, .L41
+ 489 0030 0068     		ldr	r0, [r0]
+ 490 0032 FFF7FEFF 		bl	osMessageQueueGet
+ 491              	.LVL37:
+  50:xiagb/upper/machineTask.cpp ****                             osMessageQueueGet(argQueue, &argHandle[i], nullptr, osWaitForever);
+ 492              		.loc 1 50 25 is_stmt 1 view .LVU90
+ 493 0036 0134     		adds	r4, r4, #1
+ 494              	.LVL38:
+  50:xiagb/upper/machineTask.cpp ****                             osMessageQueueGet(argQueue, &argHandle[i], nullptr, osWaitForever);
+ 495              		.loc 1 50 25 is_stmt 0 view .LVU91
+ 496 0038 E4B2     		uxtb	r4, r4
+ 497              	.LVL39:
+ 498              	.L34:
+  50:xiagb/upper/machineTask.cpp ****                             osMessageQueueGet(argQueue, &argHandle[i], nullptr, osWaitForever);
+ 499              		.loc 1 50 47 is_stmt 1 discriminator 1 view .LVU92
+ 500 003a 019B     		ldr	r3, [sp, #4]
+ 501 003c 9C42     		cmp	r4, r3
+ 502 003e F0DB     		blt	.L40
+ 503              	.LBE37:
+  53:xiagb/upper/machineTask.cpp ****                         {
+ 504              		.loc 1 53 25 view .LVU93
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 14
+
+
+  53:xiagb/upper/machineTask.cpp ****                         {
+ 505              		.loc 1 53 44 is_stmt 0 view .LVU94
+ 506 0040 114B     		ldr	r3, .L41+8
+ 507 0042 1B68     		ldr	r3, [r3]
+  53:xiagb/upper/machineTask.cpp ****                         {
+ 508              		.loc 1 53 25 view .LVU95
+ 509 0044 012B     		cmp	r3, #1
+ 510 0046 0FD0     		beq	.L35
+ 511 0048 022B     		cmp	r3, #2
+ 512 004a 10D0     		beq	.L36
+ 513              	.LVL40:
+ 514              	.L32:
+  53:xiagb/upper/machineTask.cpp ****                         {
+ 515              		.loc 1 53 25 view .LVU96
+ 516              	.LBE36:
+ 517              	.LBE35:
+ 518              	.LBE34:
+  41:xiagb/upper/machineTask.cpp ****                 static int32_t argHandle[20];
+ 519              		.loc 1 41 17 is_stmt 1 view .LVU97
+  42:xiagb/upper/machineTask.cpp **** 
+ 520              		.loc 1 42 17 view .LVU98
+  44:xiagb/upper/machineTask.cpp ****                 {
+ 521              		.loc 1 44 17 view .LVU99
+ 522              	.LBB41:
+  46:xiagb/upper/machineTask.cpp **** 
+ 523              		.loc 1 46 21 view .LVU100
+  46:xiagb/upper/machineTask.cpp **** 
+ 524              		.loc 1 46 28 is_stmt 0 view .LVU101
+ 525 004c 0120     		movs	r0, #1
+ 526 004e FFF7FEFF 		bl	osDelay
+ 527              	.LVL41:
+  48:xiagb/upper/machineTask.cpp ****                     {
+ 528              		.loc 1 48 21 is_stmt 1 view .LVU102
+ 529              	.LBB40:
+  48:xiagb/upper/machineTask.cpp ****                     {
+ 530              		.loc 1 48 42 is_stmt 0 view .LVU103
+ 531 0052 0023     		movs	r3, #0
+ 532 0054 1A46     		mov	r2, r3
+ 533 0056 01A9     		add	r1, sp, #4
+ 534 0058 0948     		ldr	r0, .L41
+ 535 005a 0068     		ldr	r0, [r0]
+ 536 005c FFF7FEFF 		bl	osMessageQueueGet
+ 537              	.LVL42:
+  48:xiagb/upper/machineTask.cpp ****                     {
+ 538              		.loc 1 48 21 view .LVU104
+ 539 0060 0028     		cmp	r0, #0
+ 540 0062 F3D1     		bne	.L32
+ 541              	.LBB39:
+ 542              	.LBB38:
+  50:xiagb/upper/machineTask.cpp ****                             osMessageQueueGet(argQueue, &argHandle[i], nullptr, osWaitForever);
+ 543              		.loc 1 50 38 view .LVU105
+ 544 0064 0024     		movs	r4, #0
+ 545 0066 E8E7     		b	.L34
+ 546              	.LVL43:
+ 547              	.L35:
+  50:xiagb/upper/machineTask.cpp ****                             osMessageQueueGet(argQueue, &argHandle[i], nullptr, osWaitForever);
+ 548              		.loc 1 50 38 view .LVU106
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 15
+
+
+ 549              	.LBE38:
+  55:xiagb/upper/machineTask.cpp ****                             machineTask1Start();
+ 550              		.loc 1 55 25 is_stmt 1 view .LVU107
+  56:xiagb/upper/machineTask.cpp ****                             break;
+ 551              		.loc 1 56 29 view .LVU108
+  56:xiagb/upper/machineTask.cpp ****                             break;
+ 552              		.loc 1 56 46 is_stmt 0 view .LVU109
+ 553 0068 FFF7FEFF 		bl	_ZN5xiagb5upper20machineTaskNamespace17machineTask1StartEv
+ 554              	.LVL44:
+ 555 006c EEE7     		b	.L32
+ 556              	.L36:
+  59:xiagb/upper/machineTask.cpp ****                             slaveFeedback(argHandle[1], argHandle[2], argHandle[3], argHandle[4]);
+ 557              		.loc 1 59 25 is_stmt 1 view .LVU110
+  60:xiagb/upper/machineTask.cpp **** 
+ 558              		.loc 1 60 29 view .LVU111
+  60:xiagb/upper/machineTask.cpp **** 
+ 559              		.loc 1 60 54 is_stmt 0 view .LVU112
+ 560 006e 0648     		ldr	r0, .L41+8
+  60:xiagb/upper/machineTask.cpp **** 
+ 561              		.loc 1 60 42 view .LVU113
+ 562 0070 0369     		ldr	r3, [r0, #16]
+ 563 0072 027B     		ldrb	r2, [r0, #12]	@ zero_extendqisi2
+ 564 0074 017A     		ldrb	r1, [r0, #8]	@ zero_extendqisi2
+ 565 0076 0079     		ldrb	r0, [r0, #4]	@ zero_extendqisi2
+ 566 0078 FFF7FEFF 		bl	_ZN5xiagb5upper20machineTaskNamespace13slaveFeedbackEhhhl
+ 567              	.LVL45:
+ 568 007c E6E7     		b	.L32
+ 569              	.L42:
+ 570 007e 00BF     		.align	2
+ 571              	.L41:
+ 572 0080 00000000 		.word	.LANCHOR4
+ 573 0084 00000000 		.word	_ZN5xiagb5upper16cliTaskNamespace13commandParserE
+ 574 0088 00000000 		.word	.LANCHOR5
+ 575              	.LBE39:
+ 576              	.LBE40:
+ 577              	.LBE41:
+ 578              		.cfi_endproc
+ 579              	.LFE81:
+ 580              		.fnend
+ 582              		.global	_ZN5xiagb5upper20machineTaskNamespace6sensorE
+ 583              		.global	_ZN5xiagb5upper20machineTaskNamespace9stepMotorE
+ 584              		.global	_ZN5xiagb5upper20machineTaskNamespace8argQueueE
+ 585              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 586              		.align	2
+ 587              	.LC0:
+ 588 0000 6D616368 		.ascii	"machineTask1\000"
+ 588      696E6554 
+ 588      61736B31 
+ 588      00
+ 589 000d 000000   		.align	2
+ 590              	.LC1:
+ 591 0010 6D616368 		.ascii	"machineTask\000"
+ 591      696E6554 
+ 591      61736B00 
+ 592              		.section	.bss._ZN5xiagb5upper20machineTaskNamespace6sensorE,"aw",%nobits
+ 593              		.align	2
+ 594              		.set	.LANCHOR3,. + 0
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 16
+
+
+ 597              	_ZN5xiagb5upper20machineTaskNamespace6sensorE:
+ 598 0000 00000000 		.space	4
+ 599              		.section	.bss._ZN5xiagb5upper20machineTaskNamespace8argQueueE,"aw",%nobits
+ 600              		.align	2
+ 601              		.set	.LANCHOR4,. + 0
+ 604              	_ZN5xiagb5upper20machineTaskNamespace8argQueueE:
+ 605 0000 00000000 		.space	4
+ 606              		.section	.bss._ZN5xiagb5upper20machineTaskNamespace9stepMotorE,"aw",%nobits
+ 607              		.align	2
+ 608              		.set	.LANCHOR0,. + 0
+ 611              	_ZN5xiagb5upper20machineTaskNamespace9stepMotorE:
+ 612 0000 00000000 		.space	4
+ 613              		.section	.bss._ZZN5xiagb5upper20machineTaskNamespace11machineTaskEPvE9argHandle,"aw",%nobits
+ 614              		.align	2
+ 615              		.set	.LANCHOR5,. + 0
+ 618              	_ZZN5xiagb5upper20machineTaskNamespace11machineTaskEPvE9argHandle:
+ 619 0000 00000000 		.space	80
+ 619      00000000 
+ 619      00000000 
+ 619      00000000 
+ 619      00000000 
+ 620              		.section	.rodata._ZN5xiagb5upper20machineTaskNamespaceL21machineTaskAttributesE,"a"
+ 621              		.align	2
+ 622              		.set	.LANCHOR1,. + 0
+ 625              	_ZN5xiagb5upper20machineTaskNamespaceL21machineTaskAttributesE:
+ 626 0000 10000000 		.word	.LC1
+ 627 0004 00000000 		.space	16
+ 627      00000000 
+ 627      00000000 
+ 627      00000000 
+ 628 0014 00020000 		.word	512
+ 629 0018 18000000 		.word	24
+ 630 001c 00000000 		.space	8
+ 630      00000000 
+ 631              		.section	.rodata._ZN5xiagb5upper20machineTaskNamespaceL22machineTask1AttributesE,"a"
+ 632              		.align	2
+ 633              		.set	.LANCHOR2,. + 0
+ 636              	_ZN5xiagb5upper20machineTaskNamespaceL22machineTask1AttributesE:
+ 637 0000 00000000 		.word	.LC0
+ 638 0004 00000000 		.space	16
+ 638      00000000 
+ 638      00000000 
+ 638      00000000 
+ 639 0014 00020000 		.word	512
+ 640 0018 18000000 		.word	24
+ 641 001c 00000000 		.space	8
+ 641      00000000 
+ 642              		.text
+ 643              	.Letext0:
+ 644              		.file 4 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\machine\\
+ 645              		.file 5 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_std
+ 646              		.file 6 "Drivers/CMSIS/Include/core_cm3.h"
+ 647              		.file 7 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 648              		.file 8 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 649              		.file 9 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 650              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 651              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 17
+
+
+ 652              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h"
+ 653              		.file 13 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 654              		.file 14 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 655              		.file 15 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h"
+ 656              		.file 16 "xiagb/upper/machineTask.hpp"
+ 657              		.file 17 "xiagb/bottom/can.hpp"
+ 658              		.file 18 "xiagb/bottom/uart.hpp"
+ 659              		.file 19 "xiagb/bottom/cli.hpp"
+ 660              		.file 20 "xiagb/upper/cliTask.hpp"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 machineTask.cpp
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:16     .text._ZN5xiagb5upper20machineTaskNamespace12machineTask1EPv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:24     .text._ZN5xiagb5upper20machineTaskNamespace12machineTask1EPv:00000000 _ZN5xiagb5upper20machineTaskNamespace12machineTask1EPv
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:112    .text._ZN5xiagb5upper20machineTaskNamespace12machineTask1EPv:00000058 $d
+.ARM.extab.text._ZN5xiagb5upper20machineTaskNamespace12machineTask1EPv:00000000 $d
+.ARM.exidx.text._ZN5xiagb5upper20machineTaskNamespace12machineTask1EPv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:142    .text._ZN5xiagb5upper20machineTaskNamespace16machineTaskStartEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:149    .text._ZN5xiagb5upper20machineTaskNamespace16machineTaskStartEv:00000000 _ZN5xiagb5upper20machineTaskNamespace16machineTaskStartEv
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:174    .text._ZN5xiagb5upper20machineTaskNamespace16machineTaskStartEv:00000010 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:432    .text._ZN5xiagb5upper20machineTaskNamespace11machineTaskEPv:00000000 _ZN5xiagb5upper20machineTaskNamespace11machineTaskEPv
+.ARM.extab.text._ZN5xiagb5upper20machineTaskNamespace16machineTaskStartEv:00000000 $d
+.ARM.exidx.text._ZN5xiagb5upper20machineTaskNamespace16machineTaskStartEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:181    .text._ZN5xiagb5upper20machineTaskNamespace17machineTask1StartEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:188    .text._ZN5xiagb5upper20machineTaskNamespace17machineTask1StartEv:00000000 _ZN5xiagb5upper20machineTaskNamespace17machineTask1StartEv
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:213    .text._ZN5xiagb5upper20machineTaskNamespace17machineTask1StartEv:00000010 $d
+.ARM.extab.text._ZN5xiagb5upper20machineTaskNamespace17machineTask1StartEv:00000000 $d
+.ARM.exidx.text._ZN5xiagb5upper20machineTaskNamespace17machineTask1StartEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:220    .text._ZN5xiagb5upper20machineTaskNamespace13slaveFeedbackEhhhl:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:227    .text._ZN5xiagb5upper20machineTaskNamespace13slaveFeedbackEhhhl:00000000 _ZN5xiagb5upper20machineTaskNamespace13slaveFeedbackEhhhl
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:413    .text._ZN5xiagb5upper20machineTaskNamespace13slaveFeedbackEhhhl:00000068 $d
+.ARM.exidx.text._ZN5xiagb5upper20machineTaskNamespace13slaveFeedbackEhhhl:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:425    .text._ZN5xiagb5upper20machineTaskNamespace11machineTaskEPv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:572    .text._ZN5xiagb5upper20machineTaskNamespace11machineTaskEPv:00000080 $d
+.ARM.exidx.text._ZN5xiagb5upper20machineTaskNamespace11machineTaskEPv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:597    .bss._ZN5xiagb5upper20machineTaskNamespace6sensorE:00000000 _ZN5xiagb5upper20machineTaskNamespace6sensorE
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:611    .bss._ZN5xiagb5upper20machineTaskNamespace9stepMotorE:00000000 _ZN5xiagb5upper20machineTaskNamespace9stepMotorE
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:604    .bss._ZN5xiagb5upper20machineTaskNamespace8argQueueE:00000000 _ZN5xiagb5upper20machineTaskNamespace8argQueueE
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:586    .rodata.str1.4:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:593    .bss._ZN5xiagb5upper20machineTaskNamespace6sensorE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:600    .bss._ZN5xiagb5upper20machineTaskNamespace8argQueueE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:607    .bss._ZN5xiagb5upper20machineTaskNamespace9stepMotorE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:614    .bss._ZZN5xiagb5upper20machineTaskNamespace11machineTaskEPvE9argHandle:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:618    .bss._ZZN5xiagb5upper20machineTaskNamespace11machineTaskEPvE9argHandle:00000000 _ZZN5xiagb5upper20machineTaskNamespace11machineTaskEPvE9argHandle
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:621    .rodata._ZN5xiagb5upper20machineTaskNamespaceL21machineTaskAttributesE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:625    .rodata._ZN5xiagb5upper20machineTaskNamespaceL21machineTaskAttributesE:00000000 _ZN5xiagb5upper20machineTaskNamespaceL21machineTaskAttributesE
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:632    .rodata._ZN5xiagb5upper20machineTaskNamespaceL22machineTask1AttributesE:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s:636    .rodata._ZN5xiagb5upper20machineTaskNamespaceL22machineTask1AttributesE:00000000 _ZN5xiagb5upper20machineTaskNamespaceL22machineTask1AttributesE
+
+UNDEFINED SYMBOLS
+_Znwj
+_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClassC1Ev
+_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhhbbhh
+_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass5resetEtt
+_ZN5xiagb14motorNamespace21canStepMotorNamespace17canStepMotorClass12waitMoveStopEv
+osDelay
+_ZdlPvj
+__cxa_end_cleanup
+_ZN5xiagb5upper16cliTaskNamespace16canCommunicationE
+__gxx_personality_v0
+osThreadNew
+__aeabi_unwind_cpp_pr1
+osMessageQueueNew
+_ZN5xiagb15parserNamespace12cliNamespace8cliClass12setEchoQueueEPv
+osMessageQueueGet
+_ZN5xiagb5upper16cliTaskNamespace13commandParserE
+__aeabi_unwind_cpp_pr0
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccnrvFXk.s 			page 19
+
+

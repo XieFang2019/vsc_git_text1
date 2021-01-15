@@ -1,0 +1,245 @@
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"canSensor.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassC2Ev,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassC2Ev
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	_ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassC2Ev:
+  25              		.fnstart
+  26              	.LVL0:
+  27              	.LFB72:
+  28              		.file 1 "xiagb/bottom/canSensor.cpp"
+   1:xiagb/bottom/canSensor.cpp **** #include "canSensor.hpp"
+   2:xiagb/bottom/canSensor.cpp **** namespace xiagb
+   3:xiagb/bottom/canSensor.cpp **** {
+   4:xiagb/bottom/canSensor.cpp ****     namespace sensorNamespace
+   5:xiagb/bottom/canSensor.cpp ****     {
+   6:xiagb/bottom/canSensor.cpp ****         namespace canSensorNamespace
+   7:xiagb/bottom/canSensor.cpp ****         {
+   8:xiagb/bottom/canSensor.cpp ****             const char *const canSensorClass::sensorFlagStr = "6";
+   9:xiagb/bottom/canSensor.cpp **** 
+  10:xiagb/bottom/canSensor.cpp ****             canSensorClass::canSensorClass()
+  29              		.loc 1 10 13 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  11:xiagb/bottom/canSensor.cpp ****             {
+  12:xiagb/bottom/canSensor.cpp ****             }
+  34              		.loc 1 12 13 is_stmt 0 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE72:
+  38              		.cantunwind
+  39              		.fnend
+  41              		.global	_ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassC1Ev
+  42              		.thumb_set _ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassC1Ev,_ZN5xiagb15sensorNam
+  43              		.section	.text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassD2Ev,"ax",%progbits
+  44              		.align	1
+  45              		.global	_ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassD2Ev
+  46              		.syntax unified
+  47              		.thumb
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s 			page 2
+
+
+  48              		.thumb_func
+  49              		.fpu softvfp
+  51              	_ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassD2Ev:
+  52              		.fnstart
+  53              	.LVL1:
+  54              	.LFB75:
+  13:xiagb/bottom/canSensor.cpp **** 
+  14:xiagb/bottom/canSensor.cpp ****             canSensorClass::~canSensorClass()
+  55              		.loc 1 14 13 is_stmt 1 view -0
+  56              		.cfi_startproc
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59              		@ link register save eliminated.
+  15:xiagb/bottom/canSensor.cpp ****             {
+  16:xiagb/bottom/canSensor.cpp ****             }
+  60              		.loc 1 16 13 is_stmt 0 view .LVU3
+  61 0000 7047     		bx	lr
+  62              		.cfi_endproc
+  63              	.LFE75:
+  64              		.cantunwind
+  65              		.fnend
+  67              		.global	_ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassD1Ev
+  68              		.thumb_set _ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassD1Ev,_ZN5xiagb15sensorNam
+  69              		.section	.rodata._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass4initEPNS_22communi
+  70              		.align	2
+  71              	.LC0:
+  72 0000 3600     		.ascii	"6\000"
+  73 0002 0000     		.align	2
+  74              	.LC1:
+  75 0004 25732025 		.ascii	"%s %d\012\000"
+  75      640A00
+  76              		.section	.text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass4initEPNS_22communica
+  77              		.align	1
+  78              		.global	_ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass4initEPNS_22communicationNam
+  79              		.syntax unified
+  80              		.thumb
+  81              		.thumb_func
+  82              		.fpu softvfp
+  84              	_ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass4initEPNS_22communicationNamespace12c
+  85              		.fnstart
+  86              	.LVL2:
+  87              	.LFB77:
+  17:xiagb/bottom/canSensor.cpp **** 
+  18:xiagb/bottom/canSensor.cpp ****             void canSensorClass::init(canClass *canHandle, uint8_t slaveBoardCanId, uint8_t slaveBo
+  19:xiagb/bottom/canSensor.cpp ****             {
+  88              		.loc 1 19 13 is_stmt 1 view -0
+  89              		.cfi_startproc
+  90              		@ args = 0, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92              		.loc 1 19 13 is_stmt 0 view .LVU5
+  93 0000 10B5     		push	{r4, lr}
+  94              		.save {r4, lr}
+  95              	.LCFI0:
+  96              		.cfi_def_cfa_offset 8
+  97              		.cfi_offset 4, -8
+  98              		.cfi_offset 14, -4
+  99              		.pad #8
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s 			page 3
+
+
+ 100 0002 82B0     		sub	sp, sp, #8
+ 101              	.LCFI1:
+ 102              		.cfi_def_cfa_offset 16
+ 103 0004 0446     		mov	r4, r0
+ 104 0006 0846     		mov	r0, r1
+ 105              	.LVL3:
+ 106              		.loc 1 19 13 view .LVU6
+ 107 0008 1146     		mov	r1, r2
+ 108              	.LVL4:
+  20:xiagb/bottom/canSensor.cpp ****                 this->canHandle = canHandle;
+ 109              		.loc 1 20 17 is_stmt 1 view .LVU7
+ 110              		.loc 1 20 33 is_stmt 0 view .LVU8
+ 111 000a 6060     		str	r0, [r4, #4]
+  21:xiagb/bottom/canSensor.cpp ****                 this->slaveBoardCanId = slaveBoardCanId;
+ 112              		.loc 1 21 17 is_stmt 1 view .LVU9
+ 113              		.loc 1 21 39 is_stmt 0 view .LVU10
+ 114 000c 2270     		strb	r2, [r4]
+  22:xiagb/bottom/canSensor.cpp ****                 this->slaveBoardSensorChannel = slaveBoardSensorChannel;
+ 115              		.loc 1 22 17 is_stmt 1 view .LVU11
+ 116              		.loc 1 22 47 is_stmt 0 view .LVU12
+ 117 000e 6370     		strb	r3, [r4, #1]
+  23:xiagb/bottom/canSensor.cpp **** 
+  24:xiagb/bottom/canSensor.cpp ****                 this->state = false;
+ 118              		.loc 1 24 17 is_stmt 1 view .LVU13
+ 119              		.loc 1 24 29 is_stmt 0 view .LVU14
+ 120 0010 0022     		movs	r2, #0
+ 121              	.LVL5:
+ 122              		.loc 1 24 29 view .LVU15
+ 123 0012 2272     		strb	r2, [r4, #8]
+  25:xiagb/bottom/canSensor.cpp ****                 canHandle->echoPrintf(slaveBoardCanId, "%s %d\n", sensorFlagStr, slaveBoardSensorCh
+ 124              		.loc 1 25 17 is_stmt 1 view .LVU16
+ 125              		.loc 1 25 38 is_stmt 0 view .LVU17
+ 126 0014 0093     		str	r3, [sp]
+ 127              	.LVL6:
+ 128              		.loc 1 25 38 view .LVU18
+ 129 0016 064B     		ldr	r3, .L7
+ 130              	.LVL7:
+ 131              		.loc 1 25 38 view .LVU19
+ 132 0018 064A     		ldr	r2, .L7+4
+ 133 001a FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+ 134              	.LVL8:
+ 135              	.L5:
+  26:xiagb/bottom/canSensor.cpp ****                 while (state == false)
+ 136              		.loc 1 26 17 is_stmt 1 view .LVU20
+ 137              		.loc 1 26 30 view .LVU21
+ 138              		.loc 1 26 24 is_stmt 0 view .LVU22
+ 139 001e 237A     		ldrb	r3, [r4, #8]	@ zero_extendqisi2
+ 140              		.loc 1 26 30 view .LVU23
+ 141 0020 1BB9     		cbnz	r3, .L3
+  27:xiagb/bottom/canSensor.cpp ****                     osDelay(1);
+ 142              		.loc 1 27 21 is_stmt 1 view .LVU24
+ 143              		.loc 1 27 28 is_stmt 0 view .LVU25
+ 144 0022 0120     		movs	r0, #1
+ 145 0024 FFF7FEFF 		bl	osDelay
+ 146              	.LVL9:
+  26:xiagb/bottom/canSensor.cpp ****                 while (state == false)
+ 147              		.loc 1 26 17 view .LVU26
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s 			page 4
+
+
+ 148 0028 F9E7     		b	.L5
+ 149              	.L3:
+  28:xiagb/bottom/canSensor.cpp ****             }
+ 150              		.loc 1 28 13 view .LVU27
+ 151 002a 02B0     		add	sp, sp, #8
+ 152              	.LCFI2:
+ 153              		.cfi_def_cfa_offset 8
+ 154              		@ sp needed
+ 155 002c 10BD     		pop	{r4, pc}
+ 156              	.LVL10:
+ 157              	.L8:
+ 158              		.loc 1 28 13 view .LVU28
+ 159 002e 00BF     		.align	2
+ 160              	.L7:
+ 161 0030 00000000 		.word	.LC0
+ 162 0034 04000000 		.word	.LC1
+ 163              		.cfi_endproc
+ 164              	.LFE77:
+ 165              		.fnend
+ 167              		.global	_ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass13sensorFlagStrE
+ 168              		.section	.rodata._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass13sensorFlagStrE,"a
+ 169              		.align	2
+ 172              	_ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass13sensorFlagStrE:
+ 173 0000 00000000 		.word	.LC0
+ 174              		.text
+ 175              	.Letext0:
+ 176              		.file 2 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\machine\\
+ 177              		.file 3 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_std
+ 178              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+ 179              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 180              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 181              		.file 7 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 182              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h"
+ 183              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 184              		.file 10 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h"
+ 185              		.file 11 "xiagb/bottom/can.hpp"
+ 186              		.file 12 "xiagb/bottom/canSensor.hpp"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 canSensor.cpp
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:16     .text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassC2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:24     .text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassC2Ev:00000000 _ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassC2Ev
+.ARM.exidx.text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassC2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:24     .text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassC2Ev:00000000 _ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassC1Ev
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:44     .text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassD2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:51     .text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassD2Ev:00000000 _ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassD2Ev
+.ARM.exidx.text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassD2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:51     .text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassD2Ev:00000000 _ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClassD1Ev
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:70     .rodata._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhh.str1.4:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:77     .text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhh:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:84     .text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhh:00000000 _ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhh
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:161    .text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhh:00000030 $d
+.ARM.exidx.text._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass4initEPNS_22communicationNamespace12canNamespace8canClassEhh:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:172    .rodata._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass13sensorFlagStrE:00000000 _ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass13sensorFlagStrE
+C:\Users\XieFang\AppData\Local\Temp\ccc9AU5e.s:169    .rodata._ZN5xiagb15sensorNamespace18canSensorNamespace14canSensorClass13sensorFlagStrE:00000000 $d
+
+UNDEFINED SYMBOLS
+_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+osDelay
+__aeabi_unwind_cpp_pr0

@@ -1,0 +1,958 @@
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"can.cpp"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text._ZN5xiagb22communicationNamespace12canNamespace8canClassC2Ev,"ax",%progbits
+  16              		.align	1
+  17              		.global	_ZN5xiagb22communicationNamespace12canNamespace8canClassC2Ev
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	_ZN5xiagb22communicationNamespace12canNamespace8canClassC2Ev:
+  25              		.fnstart
+  26              	.LVL0:
+  27              	.LFB69:
+  28              		.file 1 "xiagb/bottom/can.cpp"
+   1:xiagb/bottom/can.cpp **** #include "can.hpp"
+   2:xiagb/bottom/can.cpp **** 
+   3:xiagb/bottom/can.cpp **** #include <stdio.h>
+   4:xiagb/bottom/can.cpp **** #include <stdarg.h>
+   5:xiagb/bottom/can.cpp **** #include <string.h>
+   6:xiagb/bottom/can.cpp **** 
+   7:xiagb/bottom/can.cpp **** namespace xiagb
+   8:xiagb/bottom/can.cpp **** {
+   9:xiagb/bottom/can.cpp ****     namespace communicationNamespace
+  10:xiagb/bottom/can.cpp ****     {
+  11:xiagb/bottom/can.cpp ****         namespace canNamespace
+  12:xiagb/bottom/can.cpp ****         {
+  13:xiagb/bottom/can.cpp ****             const char *const canClass::echoCommandStr = "echo";
+  14:xiagb/bottom/can.cpp **** 
+  15:xiagb/bottom/can.cpp ****             canClass::canClass()
+  29              		.loc 1 15 13 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              	.LBB2:
+  35              		.loc 1 15 32 is_stmt 0 view .LVU1
+  36 0000 4FF49673 		mov	r3, #300
+  37 0004 0380     		strh	r3, [r0]	@ movhi
+  38              	.LBE2:
+  16:xiagb/bottom/can.cpp ****             {
+  17:xiagb/bottom/can.cpp ****             }
+  39              		.loc 1 17 13 view .LVU2
+  40 0006 7047     		bx	lr
+  41              		.cfi_endproc
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 2
+
+
+  42              	.LFE69:
+  43              		.cantunwind
+  44              		.fnend
+  46              		.global	_ZN5xiagb22communicationNamespace12canNamespace8canClassC1Ev
+  47              		.thumb_set _ZN5xiagb22communicationNamespace12canNamespace8canClassC1Ev,_ZN5xiagb22communicationNa
+  48              		.section	.text._ZN5xiagb22communicationNamespace12canNamespace8canClassD2Ev,"ax",%progbits
+  49              		.align	1
+  50              		.global	_ZN5xiagb22communicationNamespace12canNamespace8canClassD2Ev
+  51              		.syntax unified
+  52              		.thumb
+  53              		.thumb_func
+  54              		.fpu softvfp
+  56              	_ZN5xiagb22communicationNamespace12canNamespace8canClassD2Ev:
+  57              		.fnstart
+  58              	.LVL1:
+  59              	.LFB72:
+  18:xiagb/bottom/can.cpp **** 
+  19:xiagb/bottom/can.cpp ****             canClass::~canClass()
+  60              		.loc 1 19 13 is_stmt 1 view -0
+  61              		.cfi_startproc
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64              		@ link register save eliminated.
+  20:xiagb/bottom/can.cpp ****             {
+  21:xiagb/bottom/can.cpp ****             }
+  65              		.loc 1 21 13 is_stmt 0 view .LVU4
+  66 0000 7047     		bx	lr
+  67              		.cfi_endproc
+  68              	.LFE72:
+  69              		.cantunwind
+  70              		.fnend
+  72              		.global	_ZN5xiagb22communicationNamespace12canNamespace8canClassD1Ev
+  73              		.thumb_set _ZN5xiagb22communicationNamespace12canNamespace8canClassD1Ev,_ZN5xiagb22communicationNa
+  74              		.section	.text._ZN5xiagb22communicationNamespace12canNamespace8canClass4initEP11CAN_TypeDefhP19__C
+  75              		.align	1
+  76              		.global	_ZN5xiagb22communicationNamespace12canNamespace8canClass4initEP11CAN_TypeDefhP19__CAN_Hand
+  77              		.syntax unified
+  78              		.thumb
+  79              		.thumb_func
+  80              		.fpu softvfp
+  82              	_ZN5xiagb22communicationNamespace12canNamespace8canClass4initEP11CAN_TypeDefhP19__CAN_HandleTypeDef
+  83              		.fnstart
+  84              	.LVL2:
+  85              	.LFB74:
+  22:xiagb/bottom/can.cpp **** 
+  23:xiagb/bottom/can.cpp ****             void canClass::init(CAN_TypeDef *canHardwareHandle, uint8_t id, CAN_HandleTypeDef *canH
+  24:xiagb/bottom/can.cpp ****             {
+  86              		.loc 1 24 13 is_stmt 1 view -0
+  87              		.cfi_startproc
+  88              		@ args = 0, pretend = 0, frame = 40
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90              		.loc 1 24 13 is_stmt 0 view .LVU6
+  91 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  92              		.save {r4, r5, r6, r7, r8, lr}
+  93              	.LCFI0:
+  94              		.cfi_def_cfa_offset 24
+  95              		.cfi_offset 4, -24
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 3
+
+
+  96              		.cfi_offset 5, -20
+  97              		.cfi_offset 6, -16
+  98              		.cfi_offset 7, -12
+  99              		.cfi_offset 8, -8
+ 100              		.cfi_offset 14, -4
+ 101              		.pad #40
+ 102 0004 8AB0     		sub	sp, sp, #40
+ 103              	.LCFI1:
+ 104              		.cfi_def_cfa_offset 64
+ 105 0006 0646     		mov	r6, r0
+ 106 0008 1746     		mov	r7, r2
+ 107 000a 1C46     		mov	r4, r3
+  25:xiagb/bottom/can.cpp ****                 rxQueueHandle = osMessageQueueNew(rxQueueSize, sizeof(uint8_t), nullptr);
+ 108              		.loc 1 25 17 is_stmt 1 view .LVU7
+ 109              		.loc 1 25 50 is_stmt 0 view .LVU8
+ 110 000c 0022     		movs	r2, #0
+ 111              	.LVL3:
+ 112              		.loc 1 25 50 view .LVU9
+ 113 000e 0121     		movs	r1, #1
+ 114              	.LVL4:
+ 115              		.loc 1 25 50 view .LVU10
+ 116 0010 0088     		ldrh	r0, [r0]
+ 117              	.LVL5:
+ 118              		.loc 1 25 50 view .LVU11
+ 119 0012 FFF7FEFF 		bl	osMessageQueueNew
+ 120              	.LVL6:
+ 121              		.loc 1 25 31 view .LVU12
+ 122 0016 7064     		str	r0, [r6, #68]
+ 123              	.L4:
+  26:xiagb/bottom/can.cpp ****                 while (rxQueueHandle == 0)
+ 124              		.loc 1 26 17 is_stmt 1 view .LVU13
+ 125              		.loc 1 26 38 view .LVU14
+ 126 0018 0028     		cmp	r0, #0
+ 127 001a FDD0     		beq	.L4
+  27:xiagb/bottom/can.cpp ****                     ;
+  28:xiagb/bottom/can.cpp ****                 mutex = osMutexNew(nullptr);
+ 128              		.loc 1 28 17 view .LVU15
+ 129              		.loc 1 28 35 is_stmt 0 view .LVU16
+ 130 001c 0020     		movs	r0, #0
+ 131 001e FFF7FEFF 		bl	osMutexNew
+ 132              	.LVL7:
+ 133              		.loc 1 28 23 view .LVU17
+ 134 0022 3064     		str	r0, [r6, #64]
+ 135              	.L5:
+  29:xiagb/bottom/can.cpp ****                 while (mutex == 0)
+ 136              		.loc 1 29 17 is_stmt 1 view .LVU18
+ 137              		.loc 1 29 30 view .LVU19
+ 138 0024 0028     		cmp	r0, #0
+ 139 0026 FDD0     		beq	.L5
+  30:xiagb/bottom/can.cpp ****                     ;
+  31:xiagb/bottom/can.cpp **** 
+  32:xiagb/bottom/can.cpp ****                 this->canHandle = canHandle;
+ 140              		.loc 1 32 17 view .LVU20
+ 141              		.loc 1 32 33 is_stmt 0 view .LVU21
+ 142 0028 7460     		str	r4, [r6, #4]
+  33:xiagb/bottom/can.cpp ****                 this->id = id;
+ 143              		.loc 1 33 17 is_stmt 1 view .LVU22
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 4
+
+
+ 144              		.loc 1 33 26 is_stmt 0 view .LVU23
+ 145 002a 3772     		strb	r7, [r6, #8]
+  34:xiagb/bottom/can.cpp **** 
+  35:xiagb/bottom/can.cpp ****                 canHandle->Instance = CAN1;
+ 146              		.loc 1 35 17 is_stmt 1 view .LVU24
+ 147              		.loc 1 35 37 is_stmt 0 view .LVU25
+ 148 002c 1B4B     		ldr	r3, .L7
+ 149 002e 2360     		str	r3, [r4]
+  36:xiagb/bottom/can.cpp ****                 canHandle->Init.Prescaler = 4;
+ 150              		.loc 1 36 17 is_stmt 1 view .LVU26
+ 151              		.loc 1 36 43 is_stmt 0 view .LVU27
+ 152 0030 0423     		movs	r3, #4
+ 153 0032 6360     		str	r3, [r4, #4]
+  37:xiagb/bottom/can.cpp ****                 canHandle->Init.Mode = CAN_MODE_NORMAL;
+ 154              		.loc 1 37 17 is_stmt 1 view .LVU28
+ 155              		.loc 1 37 38 is_stmt 0 view .LVU29
+ 156 0034 0025     		movs	r5, #0
+ 157 0036 A560     		str	r5, [r4, #8]
+  38:xiagb/bottom/can.cpp ****                 canHandle->Init.SyncJumpWidth = CAN_SJW_1TQ;
+ 158              		.loc 1 38 17 is_stmt 1 view .LVU30
+ 159              		.loc 1 38 47 is_stmt 0 view .LVU31
+ 160 0038 E560     		str	r5, [r4, #12]
+  39:xiagb/bottom/can.cpp ****                 canHandle->Init.TimeSeg1 = CAN_BS1_9TQ;
+ 161              		.loc 1 39 17 is_stmt 1 view .LVU32
+ 162              		.loc 1 39 42 is_stmt 0 view .LVU33
+ 163 003a 4FF40023 		mov	r3, #524288
+ 164 003e 2361     		str	r3, [r4, #16]
+  40:xiagb/bottom/can.cpp ****                 canHandle->Init.TimeSeg2 = CAN_BS2_8TQ;
+ 165              		.loc 1 40 17 is_stmt 1 view .LVU34
+ 166              		.loc 1 40 42 is_stmt 0 view .LVU35
+ 167 0040 4FF4E003 		mov	r3, #7340032
+ 168 0044 6361     		str	r3, [r4, #20]
+  41:xiagb/bottom/can.cpp ****                 canHandle->Init.TimeTriggeredMode = DISABLE;
+ 169              		.loc 1 41 17 is_stmt 1 view .LVU36
+ 170              		.loc 1 41 51 is_stmt 0 view .LVU37
+ 171 0046 2576     		strb	r5, [r4, #24]
+  42:xiagb/bottom/can.cpp ****                 canHandle->Init.AutoBusOff = DISABLE;
+ 172              		.loc 1 42 17 is_stmt 1 view .LVU38
+ 173              		.loc 1 42 44 is_stmt 0 view .LVU39
+ 174 0048 6576     		strb	r5, [r4, #25]
+  43:xiagb/bottom/can.cpp ****                 canHandle->Init.AutoWakeUp = DISABLE;
+ 175              		.loc 1 43 17 is_stmt 1 view .LVU40
+ 176              		.loc 1 43 44 is_stmt 0 view .LVU41
+ 177 004a A576     		strb	r5, [r4, #26]
+  44:xiagb/bottom/can.cpp ****                 canHandle->Init.AutoRetransmission = ENABLE;
+ 178              		.loc 1 44 17 is_stmt 1 view .LVU42
+ 179              		.loc 1 44 52 is_stmt 0 view .LVU43
+ 180 004c 4FF00108 		mov	r8, #1
+ 181 0050 84F81B80 		strb	r8, [r4, #27]
+  45:xiagb/bottom/can.cpp ****                 canHandle->Init.ReceiveFifoLocked = DISABLE;
+ 182              		.loc 1 45 17 is_stmt 1 view .LVU44
+ 183              		.loc 1 45 51 is_stmt 0 view .LVU45
+ 184 0054 2577     		strb	r5, [r4, #28]
+  46:xiagb/bottom/can.cpp ****                 canHandle->Init.TransmitFifoPriority = DISABLE;
+ 185              		.loc 1 46 17 is_stmt 1 view .LVU46
+ 186              		.loc 1 46 54 is_stmt 0 view .LVU47
+ 187 0056 6577     		strb	r5, [r4, #29]
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 5
+
+
+  47:xiagb/bottom/can.cpp ****                 HAL_CAN_Init(canHandle);
+ 188              		.loc 1 47 17 is_stmt 1 view .LVU48
+ 189              		.loc 1 47 29 is_stmt 0 view .LVU49
+ 190 0058 2046     		mov	r0, r4
+ 191 005a FFF7FEFF 		bl	HAL_CAN_Init
+ 192              	.LVL8:
+  48:xiagb/bottom/can.cpp **** 
+  49:xiagb/bottom/can.cpp ****                 CAN_FilterTypeDef canFilter;
+ 193              		.loc 1 49 17 is_stmt 1 view .LVU50
+  50:xiagb/bottom/can.cpp **** 
+  51:xiagb/bottom/can.cpp ****                 canFilter.FilterIdHigh = (uint32_t)id << 5; //32 位 ID在16位里的高11位 id由
+ 194              		.loc 1 51 17 view .LVU51
+ 195              		.loc 1 51 55 is_stmt 0 view .LVU52
+ 196 005e 7B01     		lsls	r3, r7, #5
+ 197              		.loc 1 51 40 view .LVU53
+ 198 0060 0093     		str	r3, [sp]
+  52:xiagb/bottom/can.cpp ****                 canFilter.FilterIdLow = 0;
+ 199              		.loc 1 52 17 is_stmt 1 view .LVU54
+ 200              		.loc 1 52 39 is_stmt 0 view .LVU55
+ 201 0062 0195     		str	r5, [sp, #4]
+  53:xiagb/bottom/can.cpp ****                 canFilter.FilterFIFOAssignment = CAN_RX_FIFO0; //过滤器 0 关联到 FIFO0
+ 202              		.loc 1 53 17 is_stmt 1 view .LVU56
+ 203              		.loc 1 53 48 is_stmt 0 view .LVU57
+ 204 0064 0495     		str	r5, [sp, #16]
+  54:xiagb/bottom/can.cpp ****                 canFilter.FilterBank = 0;                      //过滤器 0
+ 205              		.loc 1 54 17 is_stmt 1 view .LVU58
+ 206              		.loc 1 54 38 is_stmt 0 view .LVU59
+ 207 0066 0595     		str	r5, [sp, #20]
+  55:xiagb/bottom/can.cpp ****                 canFilter.FilterMode = CAN_FILTERMODE_IDLIST;  //唯一id模式
+ 208              		.loc 1 55 17 is_stmt 1 view .LVU60
+ 209              		.loc 1 55 38 is_stmt 0 view .LVU61
+ 210 0068 CDF81880 		str	r8, [sp, #24]
+  56:xiagb/bottom/can.cpp ****                 canFilter.FilterScale = CAN_FILTERSCALE_32BIT;
+ 211              		.loc 1 56 17 is_stmt 1 view .LVU62
+ 212              		.loc 1 56 39 is_stmt 0 view .LVU63
+ 213 006c CDF81C80 		str	r8, [sp, #28]
+  57:xiagb/bottom/can.cpp ****                 canFilter.FilterActivation = ENABLE; //激活滤波器 0
+ 214              		.loc 1 57 17 is_stmt 1 view .LVU64
+ 215              		.loc 1 57 44 is_stmt 0 view .LVU65
+ 216 0070 CDF82080 		str	r8, [sp, #32]
+  58:xiagb/bottom/can.cpp ****                 canFilter.SlaveStartFilterBank = 0;
+ 217              		.loc 1 58 17 is_stmt 1 view .LVU66
+ 218              		.loc 1 58 48 is_stmt 0 view .LVU67
+ 219 0074 0995     		str	r5, [sp, #36]
+  59:xiagb/bottom/can.cpp **** 
+  60:xiagb/bottom/can.cpp ****                 HAL_CAN_ConfigFilter(canHandle, &canFilter);
+ 220              		.loc 1 60 17 is_stmt 1 view .LVU68
+ 221              		.loc 1 60 37 is_stmt 0 view .LVU69
+ 222 0076 6946     		mov	r1, sp
+ 223 0078 2046     		mov	r0, r4
+ 224 007a FFF7FEFF 		bl	HAL_CAN_ConfigFilter
+ 225              	.LVL9:
+  61:xiagb/bottom/can.cpp ****                 HAL_CAN_Start(canHandle);
+ 226              		.loc 1 61 17 is_stmt 1 view .LVU70
+ 227              		.loc 1 61 30 is_stmt 0 view .LVU71
+ 228 007e 2046     		mov	r0, r4
+ 229 0080 FFF7FEFF 		bl	HAL_CAN_Start
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 6
+
+
+ 230              	.LVL10:
+  62:xiagb/bottom/can.cpp ****                 HAL_CAN_ActivateNotification(canHandle, CAN_IT_RX_FIFO0_MSG_PENDING);
+ 231              		.loc 1 62 17 is_stmt 1 view .LVU72
+ 232              		.loc 1 62 45 is_stmt 0 view .LVU73
+ 233 0084 0221     		movs	r1, #2
+ 234 0086 2046     		mov	r0, r4
+ 235 0088 FFF7FEFF 		bl	HAL_CAN_ActivateNotification
+ 236              	.LVL11:
+  63:xiagb/bottom/can.cpp **** 
+  64:xiagb/bottom/can.cpp ****                 txHeader.StdId = (uint32_t)id;
+ 237              		.loc 1 64 17 is_stmt 1 view .LVU74
+ 238              		.loc 1 64 32 is_stmt 0 view .LVU75
+ 239 008c F760     		str	r7, [r6, #12]
+  65:xiagb/bottom/can.cpp ****                 txHeader.RTR = CAN_RTR_DATA;
+ 240              		.loc 1 65 17 is_stmt 1 view .LVU76
+ 241              		.loc 1 65 30 is_stmt 0 view .LVU77
+ 242 008e B561     		str	r5, [r6, #24]
+  66:xiagb/bottom/can.cpp ****                 txHeader.IDE = CAN_ID_STD;
+ 243              		.loc 1 66 17 is_stmt 1 view .LVU78
+ 244              		.loc 1 66 30 is_stmt 0 view .LVU79
+ 245 0090 7561     		str	r5, [r6, #20]
+  67:xiagb/bottom/can.cpp ****                 txHeader.TransmitGlobalTime = DISABLE;
+ 246              		.loc 1 67 17 is_stmt 1 view .LVU80
+ 247              		.loc 1 67 45 is_stmt 0 view .LVU81
+ 248 0092 86F82050 		strb	r5, [r6, #32]
+  68:xiagb/bottom/can.cpp ****             }
+ 249              		.loc 1 68 13 view .LVU82
+ 250 0096 0AB0     		add	sp, sp, #40
+ 251              	.LCFI2:
+ 252              		.cfi_def_cfa_offset 24
+ 253              		@ sp needed
+ 254 0098 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 255              	.LVL12:
+ 256              	.L8:
+ 257              		.loc 1 68 13 view .LVU83
+ 258              		.align	2
+ 259              	.L7:
+ 260 009c 00640040 		.word	1073767424
+ 261              		.cfi_endproc
+ 262              	.LFE74:
+ 263              		.fnend
+ 265              		.section	.text._ZN5xiagb22communicationNamespace12canNamespace8canClass4sendEPhh,"ax",%progbits
+ 266              		.align	1
+ 267              		.global	_ZN5xiagb22communicationNamespace12canNamespace8canClass4sendEPhh
+ 268              		.syntax unified
+ 269              		.thumb
+ 270              		.thumb_func
+ 271              		.fpu softvfp
+ 273              	_ZN5xiagb22communicationNamespace12canNamespace8canClass4sendEPhh:
+ 274              		.fnstart
+ 275              	.LVL13:
+ 276              	.LFB75:
+  69:xiagb/bottom/can.cpp **** 
+  70:xiagb/bottom/can.cpp ****             void canClass::send(uint8_t *data, uint8_t size)
+  71:xiagb/bottom/can.cpp ****             {
+ 277              		.loc 1 71 13 is_stmt 1 view -0
+ 278              		.cfi_startproc
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 7
+
+
+ 279              		@ args = 0, pretend = 0, frame = 8
+ 280              		@ frame_needed = 0, uses_anonymous_args = 0
+ 281              		.loc 1 71 13 is_stmt 0 view .LVU85
+ 282 0000 30B5     		push	{r4, r5, lr}
+ 283              		.save {r4, r5, lr}
+ 284              	.LCFI3:
+ 285              		.cfi_def_cfa_offset 12
+ 286              		.cfi_offset 4, -12
+ 287              		.cfi_offset 5, -8
+ 288              		.cfi_offset 14, -4
+ 289              		.pad #12
+ 290 0002 83B0     		sub	sp, sp, #12
+ 291              	.LCFI4:
+ 292              		.cfi_def_cfa_offset 24
+ 293 0004 0446     		mov	r4, r0
+ 294 0006 0D46     		mov	r5, r1
+  72:xiagb/bottom/can.cpp ****                 uint32_t txMailBox;
+ 295              		.loc 1 72 17 is_stmt 1 view .LVU86
+  73:xiagb/bottom/can.cpp ****                 txHeader.DLC = size;
+ 296              		.loc 1 73 17 view .LVU87
+ 297              		.loc 1 73 30 is_stmt 0 view .LVU88
+ 298 0008 C261     		str	r2, [r0, #28]
+ 299              	.LVL14:
+ 300              	.L11:
+  74:xiagb/bottom/can.cpp **** 
+  75:xiagb/bottom/can.cpp ****                 while (HAL_CAN_GetTxMailboxesFreeLevel(canHandle) == 0)
+ 301              		.loc 1 75 17 is_stmt 1 view .LVU89
+ 302              		.loc 1 75 67 view .LVU90
+ 303              		.loc 1 75 55 is_stmt 0 view .LVU91
+ 304 000a 6068     		ldr	r0, [r4, #4]
+ 305 000c FFF7FEFF 		bl	HAL_CAN_GetTxMailboxesFreeLevel
+ 306              	.LVL15:
+ 307              		.loc 1 75 67 view .LVU92
+ 308 0010 18B9     		cbnz	r0, .L10
+  76:xiagb/bottom/can.cpp ****                     osDelay(1);
+ 309              		.loc 1 76 21 is_stmt 1 view .LVU93
+ 310              		.loc 1 76 28 is_stmt 0 view .LVU94
+ 311 0012 0120     		movs	r0, #1
+ 312 0014 FFF7FEFF 		bl	osDelay
+ 313              	.LVL16:
+ 314 0018 F7E7     		b	.L11
+ 315              	.L10:
+  77:xiagb/bottom/can.cpp ****                 while (HAL_CAN_AddTxMessage(canHandle, &txHeader, data, &txMailBox) != HAL_OK)
+ 316              		.loc 1 77 17 is_stmt 1 view .LVU95
+ 317              		.loc 1 77 85 view .LVU96
+ 318              		.loc 1 77 44 is_stmt 0 view .LVU97
+ 319 001a 01AB     		add	r3, sp, #4
+ 320 001c 2A46     		mov	r2, r5
+ 321 001e 04F10C01 		add	r1, r4, #12
+ 322 0022 6068     		ldr	r0, [r4, #4]
+ 323 0024 FFF7FEFF 		bl	HAL_CAN_AddTxMessage
+ 324              	.LVL17:
+ 325              		.loc 1 77 85 view .LVU98
+ 326 0028 18B1     		cbz	r0, .L12
+  78:xiagb/bottom/can.cpp ****                     osDelay(1);
+ 327              		.loc 1 78 21 is_stmt 1 view .LVU99
+ 328              		.loc 1 78 28 is_stmt 0 view .LVU100
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 8
+
+
+ 329 002a 0120     		movs	r0, #1
+ 330 002c FFF7FEFF 		bl	osDelay
+ 331              	.LVL18:
+ 332 0030 F3E7     		b	.L10
+ 333              	.L12:
+  79:xiagb/bottom/can.cpp ****                 osDelay(2);
+ 334              		.loc 1 79 17 is_stmt 1 view .LVU101
+ 335              		.loc 1 79 24 is_stmt 0 view .LVU102
+ 336 0032 0220     		movs	r0, #2
+ 337 0034 FFF7FEFF 		bl	osDelay
+ 338              	.LVL19:
+  80:xiagb/bottom/can.cpp ****             }
+ 339              		.loc 1 80 13 view .LVU103
+ 340 0038 03B0     		add	sp, sp, #12
+ 341              	.LCFI5:
+ 342              		.cfi_def_cfa_offset 12
+ 343              		@ sp needed
+ 344 003a 30BD     		pop	{r4, r5, pc}
+ 345              		.loc 1 80 13 view .LVU104
+ 346              		.cfi_endproc
+ 347              	.LFE75:
+ 348              		.fnend
+ 350              		.section	.text._ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz,"ax",%pr
+ 351              		.align	1
+ 352              		.global	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+ 353              		.syntax unified
+ 354              		.thumb
+ 355              		.thumb_func
+ 356              		.fpu softvfp
+ 358              	_ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz:
+ 359              		.fnstart
+ 360              	.LVL20:
+ 361              	.LFB76:
+  81:xiagb/bottom/can.cpp **** 
+  82:xiagb/bottom/can.cpp ****             //发送出去的帧格式为id data1 data2 ... data7
+  83:xiagb/bottom/can.cpp ****             void canClass::echoPrintf(uint8_t targetId, const char *fmt, ...)
+  84:xiagb/bottom/can.cpp ****             {
+ 362              		.loc 1 84 13 is_stmt 1 view -0
+ 363              		.cfi_startproc
+ 364              		@ args = 4, pretend = 8, frame = 16
+ 365              		@ frame_needed = 0, uses_anonymous_args = 1
+ 366              		.loc 1 84 13 is_stmt 0 view .LVU106
+ 367 0000 0CB4     		push	{r2, r3}
+ 368              		.save {r2, r3}
+ 369              	.LCFI6:
+ 370              		.cfi_def_cfa_offset 8
+ 371              		.cfi_offset 2, -8
+ 372              		.cfi_offset 3, -4
+ 373 0002 F0B5     		push	{r4, r5, r6, r7, lr}
+ 374              		.save {r4, r5, r6, r7, lr}
+ 375              	.LCFI7:
+ 376              		.cfi_def_cfa_offset 28
+ 377              		.cfi_offset 4, -28
+ 378              		.cfi_offset 5, -24
+ 379              		.cfi_offset 6, -20
+ 380              		.cfi_offset 7, -16
+ 381              		.cfi_offset 14, -12
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 9
+
+
+ 382              		.pad #20
+ 383 0004 85B0     		sub	sp, sp, #20
+ 384              	.LCFI8:
+ 385              		.cfi_def_cfa_offset 48
+ 386 0006 0646     		mov	r6, r0
+ 387 0008 0D46     		mov	r5, r1
+ 388 000a 0AAC     		add	r4, sp, #40
+ 389 000c 54F8047B 		ldr	r7, [r4], #4
+  85:xiagb/bottom/can.cpp ****                 const uint8_t bufferSize = 80;
+ 390              		.loc 1 85 17 is_stmt 1 view .LVU107
+ 391              	.LVL21:
+  86:xiagb/bottom/can.cpp ****                 osMutexAcquire(mutex, osWaitForever);
+ 392              		.loc 1 86 17 view .LVU108
+ 393              		.loc 1 86 31 is_stmt 0 view .LVU109
+ 394 0010 4FF0FF31 		mov	r1, #-1
+ 395              	.LVL22:
+ 396              		.loc 1 86 31 view .LVU110
+ 397 0014 006C     		ldr	r0, [r0, #64]
+ 398              	.LVL23:
+ 399              		.loc 1 86 31 view .LVU111
+ 400 0016 FFF7FEFF 		bl	osMutexAcquire
+ 401              	.LVL24:
+  87:xiagb/bottom/can.cpp **** 
+  88:xiagb/bottom/can.cpp ****                 static uint8_t buffer[bufferSize]; //大量使用栈内存可能会导致栈溢出
+ 402              		.loc 1 88 17 is_stmt 1 view .LVU112
+  89:xiagb/bottom/can.cpp **** 
+  90:xiagb/bottom/can.cpp ****                 //复制字符串
+  91:xiagb/bottom/can.cpp ****                 uint8_t size = strlen(echoCommandStr);
+ 403              		.loc 1 91 17 view .LVU113
+  92:xiagb/bottom/can.cpp ****                 strncpy((char *)buffer, echoCommandStr, size + 1);
+ 404              		.loc 1 92 17 view .LVU114
+ 405              		.loc 1 92 24 is_stmt 0 view .LVU115
+ 406 001a 1E48     		ldr	r0, .L21
+ 407 001c 1E4B     		ldr	r3, .L21+4
+ 408 001e 0360     		str	r3, [r0]
+  93:xiagb/bottom/can.cpp ****                 buffer[size] = ' ';
+ 409              		.loc 1 93 17 is_stmt 1 view .LVU116
+ 410              		.loc 1 93 30 is_stmt 0 view .LVU117
+ 411 0020 2023     		movs	r3, #32
+ 412 0022 0371     		strb	r3, [r0, #4]
+  94:xiagb/bottom/can.cpp ****                 size++;
+ 413              		.loc 1 94 17 is_stmt 1 view .LVU118
+ 414              	.LVL25:
+  95:xiagb/bottom/can.cpp **** 
+  96:xiagb/bottom/can.cpp ****                 va_list arg;
+ 415              		.loc 1 96 17 view .LVU119
+  97:xiagb/bottom/can.cpp ****                 va_start(arg, fmt);
+ 416              		.loc 1 97 17 view .LVU120
+ 417 0024 0394     		str	r4, [sp, #12]
+  98:xiagb/bottom/can.cpp ****                 size += vsnprintf((char *)(buffer + size), bufferSize - size, fmt, arg);
+ 418              		.loc 1 98 17 view .LVU121
+ 419              		.loc 1 98 34 is_stmt 0 view .LVU122
+ 420 0026 2346     		mov	r3, r4
+ 421 0028 3A46     		mov	r2, r7
+ 422 002a 4B21     		movs	r1, #75
+ 423 002c 0530     		adds	r0, r0, #5
+ 424 002e FFF7FEFF 		bl	vsnprintf
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 10
+
+
+ 425              	.LVL26:
+ 426              		.loc 1 98 22 view .LVU123
+ 427 0032 471D     		adds	r7, r0, #5
+ 428 0034 FFB2     		uxtb	r7, r7
+ 429              	.LVL27:
+  99:xiagb/bottom/can.cpp ****                 va_end(arg);
+ 430              		.loc 1 99 17 is_stmt 1 view .LVU124
+ 100:xiagb/bottom/can.cpp **** 
+ 101:xiagb/bottom/can.cpp ****                 txHeader.StdId = targetId;
+ 431              		.loc 1 101 17 view .LVU125
+ 432              		.loc 1 101 32 is_stmt 0 view .LVU126
+ 433 0036 F560     		str	r5, [r6, #12]
+ 102:xiagb/bottom/can.cpp **** 
+ 103:xiagb/bottom/can.cpp ****                 for (uint8_t i = 0; i < size;)
+ 434              		.loc 1 103 17 is_stmt 1 view .LVU127
+ 435              	.LVL28:
+ 436              	.LBB3:
+ 437              		.loc 1 103 30 is_stmt 0 view .LVU128
+ 438 0038 0025     		movs	r5, #0
+ 439 003a 13E0     		b	.L18
+ 440              	.LVL29:
+ 441              	.L20:
+ 442              	.LBB4:
+ 443              	.LBB5:
+ 104:xiagb/bottom/can.cpp ****                 {
+ 105:xiagb/bottom/can.cpp ****                     uint8_t buffer2[8];
+ 106:xiagb/bottom/can.cpp ****                     buffer2[0] = id; //第一个字节为自己的id
+ 107:xiagb/bottom/can.cpp ****                     uint8_t num = (size - i) >= 7 ? 7 : (size - i);
+ 108:xiagb/bottom/can.cpp ****                     for (size_t i2 = 0; i2 < num; i2++)
+ 109:xiagb/bottom/can.cpp ****                         buffer2[i2 + 1] = buffer[i + i2];
+ 444              		.loc 1 109 25 is_stmt 1 discriminator 2 view .LVU129
+ 445              		.loc 1 109 52 is_stmt 0 discriminator 2 view .LVU130
+ 446 003c E918     		adds	r1, r5, r3
+ 447              		.loc 1 109 36 discriminator 2 view .LVU131
+ 448 003e 0133     		adds	r3, r3, #1
+ 449              	.LVL30:
+ 450              		.loc 1 109 56 discriminator 2 view .LVU132
+ 451 0040 1448     		ldr	r0, .L21
+ 452 0042 445C     		ldrb	r4, [r0, r1]	@ zero_extendqisi2
+ 453              		.loc 1 109 41 discriminator 2 view .LVU133
+ 454 0044 04A9     		add	r1, sp, #16
+ 455 0046 1944     		add	r1, r1, r3
+ 456 0048 01F80C4C 		strb	r4, [r1, #-12]
+ 108:xiagb/bottom/can.cpp ****                         buffer2[i2 + 1] = buffer[i + i2];
+ 457              		.loc 1 108 21 is_stmt 1 discriminator 2 view .LVU134
+ 458              	.LVL31:
+ 459              	.L17:
+ 108:xiagb/bottom/can.cpp ****                         buffer2[i2 + 1] = buffer[i + i2];
+ 460              		.loc 1 108 44 discriminator 3 view .LVU135
+ 108:xiagb/bottom/can.cpp ****                         buffer2[i2 + 1] = buffer[i + i2];
+ 461              		.loc 1 108 46 is_stmt 0 discriminator 3 view .LVU136
+ 462 004c 5FFA8CF1 		uxtb	r1, ip
+ 108:xiagb/bottom/can.cpp ****                         buffer2[i2 + 1] = buffer[i + i2];
+ 463              		.loc 1 108 44 discriminator 3 view .LVU137
+ 464 0050 9942     		cmp	r1, r3
+ 465 0052 F3D8     		bhi	.L20
+ 466              	.LBE5:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 11
+
+
+ 110:xiagb/bottom/can.cpp ****                     i += num;
+ 467              		.loc 1 110 21 is_stmt 1 view .LVU138
+ 468              		.loc 1 110 23 is_stmt 0 view .LVU139
+ 469 0054 1544     		add	r5, r5, r2
+ 470              	.LVL32:
+ 471              		.loc 1 110 23 view .LVU140
+ 472 0056 EDB2     		uxtb	r5, r5
+ 473              	.LVL33:
+ 111:xiagb/bottom/can.cpp **** 
+ 112:xiagb/bottom/can.cpp ****                     send(buffer2, num + 1);
+ 474              		.loc 1 112 21 is_stmt 1 view .LVU141
+ 475              		.loc 1 112 25 is_stmt 0 view .LVU142
+ 476 0058 0132     		adds	r2, r2, #1
+ 477              	.LVL34:
+ 478              		.loc 1 112 25 view .LVU143
+ 479 005a D2B2     		uxtb	r2, r2
+ 480              	.LVL35:
+ 481              		.loc 1 112 25 view .LVU144
+ 482 005c 01A9     		add	r1, sp, #4
+ 483 005e 3046     		mov	r0, r6
+ 484 0060 FFF7FEFF 		bl	_ZN5xiagb22communicationNamespace12canNamespace8canClass4sendEPhh
+ 485              	.LVL36:
+ 486              	.L18:
+ 487              		.loc 1 112 25 view .LVU145
+ 488              	.LBE4:
+ 103:xiagb/bottom/can.cpp ****                 {
+ 489              		.loc 1 103 39 is_stmt 1 discriminator 1 view .LVU146
+ 490 0064 BD42     		cmp	r5, r7
+ 491 0066 0DD2     		bcs	.L15
+ 492              	.LBB7:
+ 105:xiagb/bottom/can.cpp ****                     buffer2[0] = id; //第一个字节为自己的id
+ 493              		.loc 1 105 21 view .LVU147
+ 106:xiagb/bottom/can.cpp ****                     uint8_t num = (size - i) >= 7 ? 7 : (size - i);
+ 494              		.loc 1 106 21 view .LVU148
+ 106:xiagb/bottom/can.cpp ****                     uint8_t num = (size - i) >= 7 ? 7 : (size - i);
+ 495              		.loc 1 106 34 is_stmt 0 view .LVU149
+ 496 0068 337A     		ldrb	r3, [r6, #8]	@ zero_extendqisi2
+ 106:xiagb/bottom/can.cpp ****                     uint8_t num = (size - i) >= 7 ? 7 : (size - i);
+ 497              		.loc 1 106 32 view .LVU150
+ 498 006a 8DF80430 		strb	r3, [sp, #4]
+ 107:xiagb/bottom/can.cpp ****                     for (size_t i2 = 0; i2 < num; i2++)
+ 499              		.loc 1 107 21 is_stmt 1 view .LVU151
+ 107:xiagb/bottom/can.cpp ****                     for (size_t i2 = 0; i2 < num; i2++)
+ 500              		.loc 1 107 41 is_stmt 0 view .LVU152
+ 501 006e A7EB050C 		sub	ip, r7, r5
+ 107:xiagb/bottom/can.cpp ****                     for (size_t i2 = 0; i2 < num; i2++)
+ 502              		.loc 1 107 51 view .LVU153
+ 503 0072 BCF1070F 		cmp	ip, #7
+ 504 0076 A8BF     		it	ge
+ 505 0078 4FF0070C 		movge	ip, #7
+ 107:xiagb/bottom/can.cpp ****                     for (size_t i2 = 0; i2 < num; i2++)
+ 506              		.loc 1 107 29 view .LVU154
+ 507 007c 5FFA8CF2 		uxtb	r2, ip
+ 508              	.LVL37:
+ 108:xiagb/bottom/can.cpp ****                         buffer2[i2 + 1] = buffer[i + i2];
+ 509              		.loc 1 108 21 is_stmt 1 view .LVU155
+ 510              	.LBB6:
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 12
+
+
+ 108:xiagb/bottom/can.cpp ****                         buffer2[i2 + 1] = buffer[i + i2];
+ 511              		.loc 1 108 33 is_stmt 0 view .LVU156
+ 512 0080 0023     		movs	r3, #0
+ 513 0082 E3E7     		b	.L17
+ 514              	.LVL38:
+ 515              	.L15:
+ 108:xiagb/bottom/can.cpp ****                         buffer2[i2 + 1] = buffer[i + i2];
+ 516              		.loc 1 108 33 view .LVU157
+ 517              	.LBE6:
+ 518              	.LBE7:
+ 519              	.LBE3:
+ 113:xiagb/bottom/can.cpp ****                 }
+ 114:xiagb/bottom/can.cpp ****                 osMutexRelease(mutex);
+ 520              		.loc 1 114 17 is_stmt 1 view .LVU158
+ 521              		.loc 1 114 31 is_stmt 0 view .LVU159
+ 522 0084 306C     		ldr	r0, [r6, #64]
+ 523 0086 FFF7FEFF 		bl	osMutexRelease
+ 524              	.LVL39:
+ 115:xiagb/bottom/can.cpp ****             }
+ 525              		.loc 1 115 13 view .LVU160
+ 526 008a 05B0     		add	sp, sp, #20
+ 527              	.LCFI9:
+ 528              		.cfi_def_cfa_offset 28
+ 529              		@ sp needed
+ 530 008c BDE8F040 		pop	{r4, r5, r6, r7, lr}
+ 531              	.LCFI10:
+ 532              		.cfi_restore 14
+ 533              		.cfi_restore 7
+ 534              		.cfi_restore 6
+ 535              		.cfi_restore 5
+ 536              		.cfi_restore 4
+ 537              		.cfi_def_cfa_offset 8
+ 538              	.LVL40:
+ 539              		.loc 1 115 13 view .LVU161
+ 540 0090 02B0     		add	sp, sp, #8
+ 541              	.LCFI11:
+ 542              		.cfi_restore 3
+ 543              		.cfi_restore 2
+ 544              		.cfi_def_cfa_offset 0
+ 545 0092 7047     		bx	lr
+ 546              	.L22:
+ 547              		.align	2
+ 548              	.L21:
+ 549 0094 00000000 		.word	.LANCHOR0
+ 550 0098 6563686F 		.word	1869112165
+ 551              		.cfi_endproc
+ 552              	.LFE76:
+ 553              		.fnend
+ 555              		.section	.text._ZN5xiagb22communicationNamespace12canNamespace8canClass15receiveCallbackEv,"ax",%p
+ 556              		.align	1
+ 557              		.global	_ZN5xiagb22communicationNamespace12canNamespace8canClass15receiveCallbackEv
+ 558              		.syntax unified
+ 559              		.thumb
+ 560              		.thumb_func
+ 561              		.fpu softvfp
+ 563              	_ZN5xiagb22communicationNamespace12canNamespace8canClass15receiveCallbackEv:
+ 564              		.fnstart
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 13
+
+
+ 565              	.LVL41:
+ 566              	.LFB77:
+ 116:xiagb/bottom/can.cpp **** 
+ 117:xiagb/bottom/can.cpp ****             void canClass::receiveCallback()
+ 118:xiagb/bottom/can.cpp ****             {
+ 567              		.loc 1 118 13 is_stmt 1 view -0
+ 568              		.cfi_startproc
+ 569              		@ args = 0, pretend = 0, frame = 16
+ 570              		@ frame_needed = 0, uses_anonymous_args = 0
+ 571              		.loc 1 118 13 is_stmt 0 view .LVU163
+ 572 0000 30B5     		push	{r4, r5, lr}
+ 573              		.save {r4, r5, lr}
+ 574              	.LCFI12:
+ 575              		.cfi_def_cfa_offset 12
+ 576              		.cfi_offset 4, -12
+ 577              		.cfi_offset 5, -8
+ 578              		.cfi_offset 14, -4
+ 579              		.pad #20
+ 580 0002 85B0     		sub	sp, sp, #20
+ 581              	.LCFI13:
+ 582              		.cfi_def_cfa_offset 32
+ 583 0004 0546     		mov	r5, r0
+ 119:xiagb/bottom/can.cpp ****                 uint8_t buffer[8];
+ 584              		.loc 1 119 17 is_stmt 1 view .LVU164
+ 120:xiagb/bottom/can.cpp ****                 if (HAL_CAN_GetRxMessage(canHandle, CAN_RX_FIFO0, &rxHeader, buffer) == HAL_OK)
+ 585              		.loc 1 120 17 view .LVU165
+ 586              	.LBB8:
+ 587              		.loc 1 120 41 is_stmt 0 view .LVU166
+ 588 0006 02AB     		add	r3, sp, #8
+ 589 0008 00F12402 		add	r2, r0, #36
+ 590 000c 0021     		movs	r1, #0
+ 591 000e 4068     		ldr	r0, [r0, #4]
+ 592              	.LVL42:
+ 593              		.loc 1 120 41 view .LVU167
+ 594 0010 FFF7FEFF 		bl	HAL_CAN_GetRxMessage
+ 595              	.LVL43:
+ 596              		.loc 1 120 17 view .LVU168
+ 597 0014 0446     		mov	r4, r0
+ 598 0016 30BB     		cbnz	r0, .L23
+ 599              	.L25:
+ 600              	.LBB9:
+ 121:xiagb/bottom/can.cpp ****                 {
+ 122:xiagb/bottom/can.cpp ****                     while (osMessageQueuePut(rxQueueHandle, &buffer[0], 0, 0) != osOK) //id
+ 601              		.loc 1 122 21 is_stmt 1 view .LVU169
+ 602              		.loc 1 122 79 view .LVU170
+ 603              		.loc 1 122 45 is_stmt 0 view .LVU171
+ 604 0018 0023     		movs	r3, #0
+ 605 001a 1A46     		mov	r2, r3
+ 606 001c 02A9     		add	r1, sp, #8
+ 607 001e 686C     		ldr	r0, [r5, #68]
+ 608 0020 FFF7FEFF 		bl	osMessageQueuePut
+ 609              	.LVL44:
+ 610              		.loc 1 122 79 view .LVU172
+ 611 0024 0028     		cmp	r0, #0
+ 612 0026 F7D1     		bne	.L25
+ 123:xiagb/bottom/can.cpp ****                         ;
+ 124:xiagb/bottom/can.cpp **** 
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 14
+
+
+ 125:xiagb/bottom/can.cpp ****                     uint8_t bufferU8 = rxHeader.DLC - 1;
+ 613              		.loc 1 125 21 is_stmt 1 view .LVU173
+ 614              		.loc 1 125 49 is_stmt 0 view .LVU174
+ 615 0028 6B6B     		ldr	r3, [r5, #52]
+ 616              		.loc 1 125 53 view .LVU175
+ 617 002a 013B     		subs	r3, r3, #1
+ 618              		.loc 1 125 29 view .LVU176
+ 619 002c 8DF80730 		strb	r3, [sp, #7]
+ 620              	.L26:
+ 126:xiagb/bottom/can.cpp ****                     while (osMessageQueuePut(rxQueueHandle, &bufferU8, 0, 0) != osOK) //数据个�
+ 621              		.loc 1 126 21 is_stmt 1 view .LVU177
+ 622              		.loc 1 126 78 view .LVU178
+ 623              		.loc 1 126 45 is_stmt 0 view .LVU179
+ 624 0030 0023     		movs	r3, #0
+ 625 0032 1A46     		mov	r2, r3
+ 626 0034 0DF10701 		add	r1, sp, #7
+ 627 0038 686C     		ldr	r0, [r5, #68]
+ 628 003a FFF7FEFF 		bl	osMessageQueuePut
+ 629              	.LVL45:
+ 630              		.loc 1 126 78 view .LVU180
+ 631 003e 0028     		cmp	r0, #0
+ 632 0040 F6D1     		bne	.L26
+ 633 0042 01E0     		b	.L29
+ 634              	.LVL46:
+ 635              	.L31:
+ 636              	.LBB10:
+ 127:xiagb/bottom/can.cpp ****                         ;
+ 128:xiagb/bottom/can.cpp **** 
+ 129:xiagb/bottom/can.cpp ****                     for (uint8_t i = 0; i < bufferU8; i++)
+ 637              		.loc 1 129 21 is_stmt 1 discriminator 2 view .LVU181
+ 638 0044 0134     		adds	r4, r4, #1
+ 639              	.LVL47:
+ 640              		.loc 1 129 21 is_stmt 0 discriminator 2 view .LVU182
+ 641 0046 E4B2     		uxtb	r4, r4
+ 642              	.LVL48:
+ 643              	.L29:
+ 644              		.loc 1 129 43 is_stmt 1 discriminator 1 view .LVU183
+ 645 0048 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+ 646 004c A342     		cmp	r3, r4
+ 647 004e 0AD9     		bls	.L23
+ 648              	.L28:
+ 130:xiagb/bottom/can.cpp ****                     {
+ 131:xiagb/bottom/can.cpp ****                         while (osMessageQueuePut(rxQueueHandle, &buffer[i + 1], 0, 0) != osOK)
+ 649              		.loc 1 131 25 view .LVU184
+ 650              		.loc 1 131 87 view .LVU185
+ 651              		.loc 1 131 75 is_stmt 0 view .LVU186
+ 652 0050 611C     		adds	r1, r4, #1
+ 653              		.loc 1 131 49 view .LVU187
+ 654 0052 0023     		movs	r3, #0
+ 655 0054 1A46     		mov	r2, r3
+ 656 0056 02A8     		add	r0, sp, #8
+ 657 0058 0144     		add	r1, r1, r0
+ 658 005a 686C     		ldr	r0, [r5, #68]
+ 659 005c FFF7FEFF 		bl	osMessageQueuePut
+ 660              	.LVL49:
+ 661              		.loc 1 131 87 view .LVU188
+ 662 0060 0028     		cmp	r0, #0
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 15
+
+
+ 663 0062 F5D1     		bne	.L28
+ 664 0064 EEE7     		b	.L31
+ 665              	.LVL50:
+ 666              	.L23:
+ 667              		.loc 1 131 87 view .LVU189
+ 668              	.LBE10:
+ 669              	.LBE9:
+ 670              	.LBE8:
+ 132:xiagb/bottom/can.cpp ****                             ;
+ 133:xiagb/bottom/can.cpp ****                     }
+ 134:xiagb/bottom/can.cpp ****                 }
+ 135:xiagb/bottom/can.cpp ****             }
+ 671              		.loc 1 135 13 view .LVU190
+ 672 0066 05B0     		add	sp, sp, #20
+ 673              	.LCFI14:
+ 674              		.cfi_def_cfa_offset 12
+ 675              		@ sp needed
+ 676 0068 30BD     		pop	{r4, r5, pc}
+ 677              		.loc 1 135 13 view .LVU191
+ 678              		.cfi_endproc
+ 679              	.LFE77:
+ 680              		.fnend
+ 682              		.global	_ZN5xiagb22communicationNamespace12canNamespace8canClass14echoCommandStrE
+ 683              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 684              		.align	2
+ 685              	.LC0:
+ 686 0000 6563686F 		.ascii	"echo\000"
+ 686      00
+ 687              		.section	.bss._ZZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKczE6buffer,
+ 688              		.align	2
+ 689              		.set	.LANCHOR0,. + 0
+ 692              	_ZZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKczE6buffer:
+ 693 0000 00000000 		.space	80
+ 693      00000000 
+ 693      00000000 
+ 693      00000000 
+ 693      00000000 
+ 694              		.section	.rodata._ZN5xiagb22communicationNamespace12canNamespace8canClass14echoCommandStrE,"a"
+ 695              		.align	2
+ 698              	_ZN5xiagb22communicationNamespace12canNamespace8canClass14echoCommandStrE:
+ 699 0000 00000000 		.word	.LC0
+ 700              		.text
+ 701              	.Letext0:
+ 702              		.file 2 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\machine\\
+ 703              		.file 3 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_std
+ 704              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+ 705              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 706              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 707              		.file 7 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 708              		.file 8 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\lib\\gcc\\arm-none-eabi\\9.3.1\\i
+ 709              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 710              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h"
+ 711              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 712              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h"
+ 713              		.file 13 "xiagb/bottom/can.hpp"
+ 714              		.file 14 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\lib\\gcc\\arm-none-eabi\\9.3.1\\
+ 715              		.file 15 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\stdio.h"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 16
+
+
+ 716              		.file 16 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\_ty
+ 717              		.file 17 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\ree
+ 718              		.file 18 "d:\\zkrj\\gnu arm embedded toolchain\\9 2020-q2-update\\arm-none-eabi\\include\\sys\\loc
+ 719              		.file 19 "<built-in>"
+ARM GAS  C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 can.cpp
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:16     .text._ZN5xiagb22communicationNamespace12canNamespace8canClassC2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:24     .text._ZN5xiagb22communicationNamespace12canNamespace8canClassC2Ev:00000000 _ZN5xiagb22communicationNamespace12canNamespace8canClassC2Ev
+.ARM.exidx.text._ZN5xiagb22communicationNamespace12canNamespace8canClassC2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:24     .text._ZN5xiagb22communicationNamespace12canNamespace8canClassC2Ev:00000000 _ZN5xiagb22communicationNamespace12canNamespace8canClassC1Ev
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:49     .text._ZN5xiagb22communicationNamespace12canNamespace8canClassD2Ev:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:56     .text._ZN5xiagb22communicationNamespace12canNamespace8canClassD2Ev:00000000 _ZN5xiagb22communicationNamespace12canNamespace8canClassD2Ev
+.ARM.exidx.text._ZN5xiagb22communicationNamespace12canNamespace8canClassD2Ev:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:56     .text._ZN5xiagb22communicationNamespace12canNamespace8canClassD2Ev:00000000 _ZN5xiagb22communicationNamespace12canNamespace8canClassD1Ev
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:75     .text._ZN5xiagb22communicationNamespace12canNamespace8canClass4initEP11CAN_TypeDefhP19__CAN_HandleTypeDef:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:82     .text._ZN5xiagb22communicationNamespace12canNamespace8canClass4initEP11CAN_TypeDefhP19__CAN_HandleTypeDef:00000000 _ZN5xiagb22communicationNamespace12canNamespace8canClass4initEP11CAN_TypeDefhP19__CAN_HandleTypeDef
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:260    .text._ZN5xiagb22communicationNamespace12canNamespace8canClass4initEP11CAN_TypeDefhP19__CAN_HandleTypeDef:0000009c $d
+.ARM.exidx.text._ZN5xiagb22communicationNamespace12canNamespace8canClass4initEP11CAN_TypeDefhP19__CAN_HandleTypeDef:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:266    .text._ZN5xiagb22communicationNamespace12canNamespace8canClass4sendEPhh:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:273    .text._ZN5xiagb22communicationNamespace12canNamespace8canClass4sendEPhh:00000000 _ZN5xiagb22communicationNamespace12canNamespace8canClass4sendEPhh
+.ARM.exidx.text._ZN5xiagb22communicationNamespace12canNamespace8canClass4sendEPhh:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:351    .text._ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:358    .text._ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz:00000000 _ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:549    .text._ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz:00000094 $d
+.ARM.extab.text._ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz:00000000 $d
+.ARM.exidx.text._ZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKcz:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:556    .text._ZN5xiagb22communicationNamespace12canNamespace8canClass15receiveCallbackEv:00000000 $t
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:563    .text._ZN5xiagb22communicationNamespace12canNamespace8canClass15receiveCallbackEv:00000000 _ZN5xiagb22communicationNamespace12canNamespace8canClass15receiveCallbackEv
+.ARM.exidx.text._ZN5xiagb22communicationNamespace12canNamespace8canClass15receiveCallbackEv:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:698    .rodata._ZN5xiagb22communicationNamespace12canNamespace8canClass14echoCommandStrE:00000000 _ZN5xiagb22communicationNamespace12canNamespace8canClass14echoCommandStrE
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:684    .rodata.str1.4:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:688    .bss._ZZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKczE6buffer:00000000 $d
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:692    .bss._ZZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKczE6buffer:00000000 _ZZN5xiagb22communicationNamespace12canNamespace8canClass10echoPrintfEhPKczE6buffer
+C:\Users\XieFang\AppData\Local\Temp\ccvR385G.s:695    .rodata._ZN5xiagb22communicationNamespace12canNamespace8canClass14echoCommandStrE:00000000 $d
+
+UNDEFINED SYMBOLS
+osMessageQueueNew
+osMutexNew
+HAL_CAN_Init
+HAL_CAN_ConfigFilter
+HAL_CAN_Start
+HAL_CAN_ActivateNotification
+__aeabi_unwind_cpp_pr0
+HAL_CAN_GetTxMailboxesFreeLevel
+osDelay
+HAL_CAN_AddTxMessage
+osMutexAcquire
+vsnprintf
+osMutexRelease
+__aeabi_unwind_cpp_pr1
+HAL_CAN_GetRxMessage
+osMessageQueuePut
